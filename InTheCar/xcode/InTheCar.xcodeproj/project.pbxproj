@@ -22,9 +22,10 @@
 		A10B067D1B0CEC7C00507C88 /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06771B0CEA2100507C88 /* valcriOpen.dat */; };
 		A10B067E1B0CEC7F00507C88 /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06791B0CEA2100507C88 /* valcriClose.dat */; };
 		A10B067F1B0CEC8500507C88 /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06781B0CEA2100507C88 /* valcriVictory.dat */; };
-		A10B06821B0DD98E00507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06811B0DD98E00507C88 /* Label.cpp */; };
 		A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
 		A10B068E1B0E74CE00507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B068C1B0E74BD00507C88 /* whai.dat */; };
+		A10B069B1B0E8F2C00507C88 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B069A1B0E8F2C00507C88 /* Cinderactor.cpp */; };
+		A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B069D1B0E8F5700507C88 /* Label.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -92,10 +93,11 @@
 		A10B06771B0CEA2100507C88 /* valcriOpen.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen.dat; path = ../../../../data/valcriOpen.dat; sourceTree = "<group>"; };
 		A10B06781B0CEA2100507C88 /* valcriVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory.dat; path = ../../../../data/valcriVictory.dat; sourceTree = "<group>"; };
 		A10B06791B0CEA2100507C88 /* valcriClose.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose.dat; path = ../../../../data/valcriClose.dat; sourceTree = "<group>"; };
-		A10B06801B0DD6E100507C88 /* Label.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
-		A10B06811B0DD98E00507C88 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
 		A10B068C1B0E74BD00507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../data/whai.dat; sourceTree = "<group>"; };
-		A10B068F1B0E7D5800507C88 /* Cinderactor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
+		A10B06981B0E8F2C00507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
+		A10B069A1B0E8F2C00507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
+		A10B069C1B0E8F4600507C88 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Label.h; path = ../include/Label.h; sourceTree = "<group>"; };
+		A10B069D1B0E8F5700507C88 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Label.cpp; path = ../src/Label.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +124,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A10B069D1B0E8F5700507C88 /* Label.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
-				A10B06811B0DD98E00507C88 /* Label.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -166,6 +168,7 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A10B06961B0E8F2C00507C88 /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -240,11 +243,36 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		A10B06961B0E8F2C00507C88 /* cindergestooslib */ = {
+			isa = PBXGroup;
+			children = (
+				A10B06971B0E8F2C00507C88 /* include */,
+				A10B06991B0E8F2C00507C88 /* src */,
+			);
+			name = cindergestooslib;
+			path = ../../cindergestooslib;
+			sourceTree = "<group>";
+		};
+		A10B06971B0E8F2C00507C88 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A10B06981B0E8F2C00507C88 /* Cinderactor.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A10B06991B0E8F2C00507C88 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A10B069A1B0E8F2C00507C88 /* Cinderactor.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				A10B06801B0DD6E100507C88 /* Label.h */,
-				A10B068F1B0E7D5800507C88 /* Cinderactor.h */,
+				A10B069C1B0E8F4600507C88 /* Label.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -314,7 +342,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10B06821B0DD98E00507C88 /* Label.cpp in Sources */,
+				A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */,
+				A10B069B1B0E8F2C00507C88 /* Cinderactor.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

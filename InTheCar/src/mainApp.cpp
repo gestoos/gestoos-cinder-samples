@@ -47,10 +47,8 @@ public:
     
     
     Cinderactor cinderactor;
+
     
-    std::pair<gestoos::nui::Hand,gestoos::nui::Hand> hands;
-    
-   
     shared_ptr<std::thread>		mThread;
     bool can_process_thread;
     bool init_ok;
@@ -105,7 +103,7 @@ void exampleApp::processThread()
    	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
    
     //Configure the cinderactor
-    cinderactor.init( getResourcePath("cinderactor.cfg").string() );
+    cinderactor.init( getResourcePath("interactor.cfg").string() );
     cinderactor.set_draw_window(false);
     init_ok = true;
     
