@@ -24,6 +24,7 @@
 		A10B067F1B0CEC8500507C88 /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06781B0CEA2100507C88 /* valcriVictory.dat */; };
 		A10B06821B0DD98E00507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06811B0DD98E00507C88 /* Label.cpp */; };
 		A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
+		A10B068E1B0E74CE00507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B068C1B0E74BD00507C88 /* whai.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
+				A10B068E1B0E74CE00507C88 /* whai.dat in CopyFiles */,
 				A10B06711B0CDD8900507C88 /* hand_detector.dat in CopyFiles */,
 				A10B067D1B0CEC7C00507C88 /* valcriOpen.dat in CopyFiles */,
 				A10B067F1B0CEC8500507C88 /* valcriVictory.dat in CopyFiles */,
@@ -92,6 +94,8 @@
 		A10B06791B0CEA2100507C88 /* valcriClose.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose.dat; path = ../../../../data/valcriClose.dat; sourceTree = "<group>"; };
 		A10B06801B0DD6E100507C88 /* Label.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
 		A10B06811B0DD98E00507C88 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
+		A10B068C1B0E74BD00507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../data/whai.dat; sourceTree = "<group>"; };
+		A10B068F1B0E7D5800507C88 /* Cinderactor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A10B068C1B0E74BD00507C88 /* whai.dat */,
 				A10B06771B0CEA2100507C88 /* valcriOpen.dat */,
 				A10B06781B0CEA2100507C88 /* valcriVictory.dat */,
 				A10B06791B0CEA2100507C88 /* valcriClose.dat */,
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				A10B06801B0DD6E100507C88 /* Label.h */,
+				A10B068F1B0E7D5800507C88 /* Cinderactor.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";

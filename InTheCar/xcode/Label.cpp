@@ -12,9 +12,9 @@ static int label_count = 0;
 
 Label::Label(){}
 
-Label::Label(const std::string & _t, float _w , Sense _sense)
+Label::Label(const std::string & _t, float _w , Cinderactor::StrokeType _sense)
 {
-
+    
     //inherited methods
     text( _t );
     size( _w, TextBox::GROW );
@@ -32,15 +32,15 @@ Label::Label(const std::string & _t, float _w , Sense _sense)
     
     idnum = label_count++;
     
-     X_TARGET_RIGHT = getWindowWidth();
+    X_TARGET_RIGHT = getWindowWidth();
     X_TARGET_LEFT = 0;
     Y_TARGET_UP = 0;
-     TARGET_ALPHA = 0.0;
+    TARGET_ALPHA = 0.0;
     
     mTextTexture = gl::Texture( this->render() );
     
     std::cout<< idnum <<" +++ Label born "<<_t<<std::endl;
-
+    
 }
 
 Label::~Label()
@@ -49,7 +49,7 @@ Label::~Label()
 }
 
 
-void Label::set_sense( Sense _s )
+void Label::set_sense( Cinderactor::StrokeType _s )
 {
     sense = _s;
 }
@@ -68,15 +68,15 @@ bool Label::is_dead() const
 void Label::update()
 {
     //update pos
-    if( sense == RIGHT )
+    if( sense == Cinderactor::RIGHT )
     {
         position.x += ( X_TARGET_RIGHT - position.x ) * 0.08;
     }
-    else if( sense == LEFT )
+    else if( sense == Cinderactor::LEFT )
     {
         position.x += ( X_TARGET_LEFT - position.x ) * 0.08;
     }
-    else if( sense == UP )
+    else if( sense == Cinderactor::UP )
     {
         position.y += ( Y_TARGET_UP - position.y ) * 0.08;
     }
@@ -86,7 +86,7 @@ void Label::update()
     setBackgroundColor( ColorA( 1.0, 1.0, 1.0, alpha ) );
     setColor( ColorA( 0.8f, 0.9f, 1.0f, alpha ) );
     mTextTexture = gl::Texture( this->render() );
-
+    
     
     if( std::fabs( position.x - X_TARGET_RIGHT ) < 2 ||
        std::fabs( position.x - X_TARGET_LEFT ) < 2 ||

@@ -16,9 +16,7 @@
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 
-#include <algorithm>
-
-#include <iostream>
+#include "Cinderactor.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -31,15 +29,14 @@ public:
 
 
     
-    enum Sense {LEFT,RIGHT,UP,DOWN};
     
     Label();
     
-    Label(const std::string & _t, float _w = 200, Sense _sense = RIGHT);
+    Label(const std::string & _t, float _w = 200, Cinderactor::StrokeType _sense = Cinderactor::RIGHT);
        
     virtual ~Label();
     
-    void set_sense( Sense _s );
+    void set_sense( Cinderactor::StrokeType _s );
     
     void signal_kill();
     
@@ -55,11 +52,11 @@ private:
     Font			mFont;
     ColorA          color;
     Vec2f           position;
-    Sense           sense;
     float           alpha;
     bool            dead;
     int             idnum;
-    
+    Cinderactor::StrokeType      sense;
+
     float X_TARGET_RIGHT ;
     float X_TARGET_LEFT ;
     float Y_TARGET_UP ;
