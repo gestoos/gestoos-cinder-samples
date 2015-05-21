@@ -31,7 +31,7 @@ public:
 
 
     
-    enum Sense {LEFT,RIGHT};
+    enum Sense {LEFT,RIGHT,UP,DOWN};
     
     Label();
     
@@ -62,6 +62,7 @@ private:
     
     float X_TARGET_RIGHT ;
     float X_TARGET_LEFT ;
+    float Y_TARGET_UP ;
     float TARGET_ALPHA ;
 
 };

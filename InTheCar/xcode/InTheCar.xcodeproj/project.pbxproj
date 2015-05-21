@@ -18,12 +18,12 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A10B066B1B0CDC3A00507C88 /* tracker.ini in Resources */ = {isa = PBXBuildFile; fileRef = A10B06681B0CDC3A00507C88 /* tracker.ini */; };
 		A10B06711B0CDD8900507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B065F1B0CDC2B00507C88 /* hand_detector.dat */; };
 		A10B067D1B0CEC7C00507C88 /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06771B0CEA2100507C88 /* valcriOpen.dat */; };
 		A10B067E1B0CEC7F00507C88 /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06791B0CEA2100507C88 /* valcriClose.dat */; };
 		A10B067F1B0CEC8500507C88 /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06781B0CEA2100507C88 /* valcriVictory.dat */; };
 		A10B06821B0DD98E00507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06811B0DD98E00507C88 /* Label.cpp */; };
+		A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,7 +86,6 @@
 		A10B06471B0B7DBF00507C88 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = ../../../../../Development/gestoossdk/lib/libcurl.4.dylib; sourceTree = "<group>"; };
 		A10B064E1B0B7DD500507C88 /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI2.dylib; path = "../../../../../Development/OpenNI-MacOSX-x64-2.2/Redist/libOpenNI2.dylib"; sourceTree = "<group>"; };
 		A10B065F1B0CDC2B00507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../data/hand_detector.dat; sourceTree = "<group>"; };
-		A10B06681B0CDC3A00507C88 /* tracker.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tracker.ini; path = ../resources/tracker.ini; sourceTree = "<group>"; };
 		A10B06751B0CE9B400507C88 /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
 		A10B06771B0CEA2100507C88 /* valcriOpen.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen.dat; path = ../../../../data/valcriOpen.dat; sourceTree = "<group>"; };
 		A10B06781B0CEA2100507C88 /* valcriVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory.dat; path = ../../../../data/valcriVictory.dat; sourceTree = "<group>"; };
@@ -185,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				A10B06751B0CE9B400507C88 /* interactor.cfg */,
-				A10B06681B0CDC3A00507C88 /* tracker.ini */,
 				A10B06371B0B79A400507C88 /* Models */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
@@ -299,7 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10B066B1B0CDC3A00507C88 /* tracker.ini in Resources */,
+				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

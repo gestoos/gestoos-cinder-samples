@@ -33,7 +33,8 @@ Label::Label(const std::string & _t, float _w , Sense _sense)
     idnum = label_count++;
     
      X_TARGET_RIGHT = getWindowWidth();
-     X_TARGET_LEFT = 0;
+    X_TARGET_LEFT = 0;
+    Y_TARGET_UP = 0;
      TARGET_ALPHA = 0.0;
     
     mTextTexture = gl::Texture( this->render() );
@@ -75,6 +76,10 @@ void Label::update()
     {
         position.x += ( X_TARGET_LEFT - position.x ) * 0.08;
     }
+    else if( sense == UP )
+    {
+        position.y += ( Y_TARGET_UP - position.y ) * 0.08;
+    }
     
     //Update alpha
     alpha += (TARGET_ALPHA - alpha) * 0.08;
@@ -84,7 +89,8 @@ void Label::update()
 
     
     if( std::fabs( position.x - X_TARGET_RIGHT ) < 2 ||
-       std::fabs( position.x - X_TARGET_LEFT ) < 2)
+       std::fabs( position.x - X_TARGET_LEFT ) < 2 ||
+       std::fabs( position.y - Y_TARGET_UP ) < 2)
     {
         dead = true;
     }

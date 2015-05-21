@@ -160,25 +160,34 @@ void exampleApp::update()
         std::string txt;
         if( hand_gesture == GEST_VICTORY && block_timer.getSeconds() > BLOCK_TIMEOUT )
         {
-            
-            if( hand_vel.x > 6.0 )
+            if( hand_vel.y < -6.0 && std::hand_vel.x )
             {
                 std::cout<<"gest  " <<hand_gesture<<" : vel "<<hand_vel.x<<std::endl;
                 
-                LabelPtr label_ptr( new Label("RIGHT", 300, Label::RIGHT) );
+                LabelPtr label_ptr( new Label("UP", 300, Label::UP) );
                 labels.push_back( label_ptr ) ;
-
-                block_timer.start();
-            }
-            else if( hand_vel.x < -6.0 )
-            {
-                std::cout<<"gest  " <<hand_gesture<<" : vel "<<hand_vel.x<<std::endl;
                 
-                LabelPtr label_ptr( new Label("LEFT", 300, Label::LEFT) );
-                labels.push_back( label_ptr ) ;
-
                 block_timer.start();
             }
+
+//            else if( hand_vel.x > 6.0 )
+//            {
+//                std::cout<<"gest  " <<hand_gesture<<" : vel "<<hand_vel.x<<std::endl;
+//                
+//                LabelPtr label_ptr( new Label("RIGHT", 300, Label::RIGHT) );
+//                labels.push_back( label_ptr ) ;
+//
+//                block_timer.start();
+//            }
+//            else if( hand_vel.x < -6.0 )
+//            {
+//                std::cout<<"gest  " <<hand_gesture<<" : vel "<<hand_vel.x<<std::endl;
+//                
+//                LabelPtr label_ptr( new Label("LEFT", 300, Label::LEFT) );
+//                labels.push_back( label_ptr ) ;
+//
+//                block_timer.start();
+//            }
             
          }
         else
