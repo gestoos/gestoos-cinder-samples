@@ -101,8 +101,10 @@ void EarthquakeApp::prepareSettings( Settings *settings )
 void EarthquakeApp::setup()
 {
 
-#ifdef WIN32    
-	interactor.init("..\\resources\\interactor.cfg");// , "..\resources\gestures320.ini", "..\handGestures.ini");
+#ifdef _WIN32 // this flag is always defined in Windows 32/64
+    
+    /// \todo change interactor.cfg to interactorWin.cfg and add to git.
+	interactor.init("..\\resources\\interactor.cfg");
 #else
     interactor.init(getResourcePath("tracker.ini").string(),
                     getResourcePath("gestures320.ini").string(),

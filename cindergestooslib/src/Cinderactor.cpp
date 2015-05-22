@@ -55,34 +55,42 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest )
 
 void Cinderactor::draw() const
 {
+    
+    draw_hand( get_hands().first,   Vec2f(140, 70 );
+    draw_hand( get_hands().second,  Vec2f(70,  70 );
+   
+}
+
+void Cinderactor::draw_hand( const gestoos::nui::Hand & hand, const Vec2f & where )
+{
     float scale = 3.0;
     
-    if( get_hands().first.is_present() )
+    if( hand.is_present() )
     {
-        if( get_hands().first.get_gesture() == GEST_VICTORY )
+        if( hand.get_gesture() == GEST_VICTORY )
             gl::color( Color(1.0, 0.6, 0.7));
         else
             gl::color( Color(0.5, 0.6, 0.7));
         
         gl::lineWidth(1.0);
-        gl::drawStrokedCircle( Vec2f(70,70), scale*6.0, 32);
+        gl::drawStrokedCircle( where, scale*6.0, 32);
         gl::lineWidth(3.0);
-        gl::drawLine( Vec2f(70,70), Vec2f(70,70) + scale*Vec2f( get_hands().first.get_vel().x , get_hands().first.get_vel().y ) );
+        gl::drawLine( where, where + scale*Vec2f( hand.get_vel().x , hand.get_vel().y ) );
         
         std::stringstream ss;
-        ss<<"gesture "<<get_hands().first.get_gesture();
-        gl::drawStringCentered(	ss.str(), Vec2f( 70, 30), Color(1.0, 1.0, 1.0) );
+        ss<<"gesture "<<hand.get_gesture();
+        gl::drawStringCentered(	ss.str(), where - Vec2f( 0, 40), Color(1.0, 1.0, 1.0) );
     }
     else
     {
         gl::color( Color(0.3, 0.4, 0.5));
         gl::lineWidth(1.0);
-        gl::drawStrokedCircle( Vec2f(70,70), scale*6.0, 32);
+        gl::drawStrokedCircle( where, scale*6.0, 32);
         
-        gl::drawStringCentered(	"no hand", Vec2f( 70, 30), Color(0.3, 0.4, 0.5) );
+        gl::drawStringCentered(	"no hand", where - Vec2f( 0, 40), Color(0.3, 0.4, 0.5) );
     }
     
     //Set color back to white
     gl::color( Color(1.0, 1.0, 1.0));
-    
+
 }

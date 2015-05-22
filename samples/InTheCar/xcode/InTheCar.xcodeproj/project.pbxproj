@@ -18,8 +18,14 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A10B066B1B0CDC3A00507C88 /* tracker.ini in Resources */ = {isa = PBXBuildFile; fileRef = A10B06681B0CDC3A00507C88 /* tracker.ini */; };
-		A10B06711B0CDD8900507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B065F1B0CDC2B00507C88 /* hand_detector.dat */; };
+		A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
+		A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B069D1B0E8F5700507C88 /* Label.cpp */; };
+		A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06C71B0F167200507C88 /* Cinderactor.cpp */; };
+		A10B06C91B0F167900507C88 /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06B91B0F165000507C88 /* valcriVictory.dat */; };
+		A10B06CA1B0F167B00507C88 /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BA1B0F165000507C88 /* valcriOpen.dat */; };
+		A10B06CB1B0F167D00507C88 /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BB1B0F165000507C88 /* valcriClose.dat */; };
+		A10B06CC1B0F167F00507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BC1B0F165000507C88 /* hand_detector.dat */; };
+		A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BD1B0F165000507C88 /* whai.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +35,11 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				A10B06711B0CDD8900507C88 /* hand_detector.dat in CopyFiles */,
+				A10B06C91B0F167900507C88 /* valcriVictory.dat in CopyFiles */,
+				A10B06CA1B0F167B00507C88 /* valcriOpen.dat in CopyFiles */,
+				A10B06CC1B0F167F00507C88 /* hand_detector.dat in CopyFiles */,
+				A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */,
+				A10B06CB1B0F167D00507C88 /* valcriClose.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,39 +57,22 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emptyExample_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* InTheCar_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InTheCar_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* emptyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emptyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10B060B1B0B785200507C88 /* libopencv_videostab.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_videostab.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B060C1B0B785200507C88 /* libopencv_stitching.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_stitching.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_stitching.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B060D1B0B785200507C88 /* libopencv_calib3d.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_calib3d.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B060E1B0B785200507C88 /* libopencv_features2d.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_features2d.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B060F1B0B785200507C88 /* libopencv_superres.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_superres.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_superres.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06101B0B785200507C88 /* libopencv_objdetect.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_objdetect.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06111B0B785200507C88 /* libopencv_shape.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_shape.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_shape.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06121B0B785200507C88 /* libopencv_video.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_video.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06131B0B785200507C88 /* libopencv_photo.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_photo.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_photo.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06141B0B785200507C88 /* libopencv_ml.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_ml.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06151B0B785200507C88 /* libopencv_flann.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_flann.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06161B0B785200507C88 /* libopencv_ts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_ts.a; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_ts.a"; sourceTree = "<group>"; };
-		A10B06171B0B785200507C88 /* libopencv_highgui.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_highgui.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06181B0B785200507C88 /* libopencv_videoio.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_videoio.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B06191B0B785200507C88 /* libopencv_imgcodecs.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_imgcodecs.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B061A1B0B785200507C88 /* libopencv_imgproc.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_imgproc.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B061B1B0B785200507C88 /* libopencv_core.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.0.0.dylib; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_core.3.0.0.dylib"; sourceTree = "<group>"; };
-		A10B061C1B0B785200507C88 /* libopencv_hal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_hal.a; path = "../../../../../Workspace/libs/opencv-3.0.0-rc1/release/lib/libopencv_hal.a"; sourceTree = "<group>"; };
-		A10B06421B0B7DBF00507C88 /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_filesystem-mt.dylib"; path = "../../../../../Development/gestoossdk/lib/libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
-		A10B06431B0B7DBF00507C88 /* libboost_program_options-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_program_options-mt.dylib"; path = "../../../../../Development/gestoossdk/lib/libboost_program_options-mt.dylib"; sourceTree = "<group>"; };
-		A10B06441B0B7DBF00507C88 /* libboost_serialization-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_serialization-mt.dylib"; path = "../../../../../Development/gestoossdk/lib/libboost_serialization-mt.dylib"; sourceTree = "<group>"; };
-		A10B06451B0B7DBF00507C88 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../../Development/gestoossdk/lib/libboost_system-mt.dylib"; sourceTree = "<group>"; };
-		A10B06461B0B7DBF00507C88 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../../Development/gestoossdk/lib/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
-		A10B06471B0B7DBF00507C88 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = ../../../../../Development/gestoossdk/lib/libcurl.4.dylib; sourceTree = "<group>"; };
-		A10B064E1B0B7DD500507C88 /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI2.dylib; path = "../../../../../Development/OpenNI-MacOSX-x64-2.2/Redist/libOpenNI2.dylib"; sourceTree = "<group>"; };
-		A10B065F1B0CDC2B00507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../data/hand_detector.dat; sourceTree = "<group>"; };
-		A10B06681B0CDC3A00507C88 /* tracker.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tracker.ini; path = ../resources/tracker.ini; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* InTheCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTheCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10B06751B0CE9B400507C88 /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
+		A10B069C1B0E8F4600507C88 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Label.h; path = ../include/Label.h; sourceTree = "<group>"; };
+		A10B069D1B0E8F5700507C88 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Label.cpp; path = ../src/Label.cpp; sourceTree = "<group>"; };
+		A10B06B91B0F165000507C88 /* valcriVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory.dat; path = ../../../../../data/valcriVictory.dat; sourceTree = "<group>"; };
+		A10B06BA1B0F165000507C88 /* valcriOpen.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen.dat; path = ../../../../../data/valcriOpen.dat; sourceTree = "<group>"; };
+		A10B06BB1B0F165000507C88 /* valcriClose.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose.dat; path = ../../../../../data/valcriClose.dat; sourceTree = "<group>"; };
+		A10B06BC1B0F165000507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../../data/hand_detector.dat; sourceTree = "<group>"; };
+		A10B06BD1B0F165000507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../../data/whai.dat; sourceTree = "<group>"; };
+		A10B06C51B0F167200507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
+		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +99,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A10B069D1B0E8F5700507C88 /* Label.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
 			);
 			name = Source;
@@ -141,7 +135,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* emptyExample.app */,
+				8D1107320486CEB800E47090 /* InTheCar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +143,7 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A10B06C31B0F167200507C88 /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -162,7 +157,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* InTheCar_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -170,7 +165,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A10B06681B0CDC3A00507C88 /* tracker.ini */,
+				A10B06751B0CE9B400507C88 /* interactor.cfg */,
 				A10B06371B0B79A400507C88 /* Models */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
@@ -180,31 +175,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A10B064E1B0B7DD500507C88 /* libOpenNI2.dylib */,
-				A10B06421B0B7DBF00507C88 /* libboost_filesystem-mt.dylib */,
-				A10B06431B0B7DBF00507C88 /* libboost_program_options-mt.dylib */,
-				A10B06441B0B7DBF00507C88 /* libboost_serialization-mt.dylib */,
-				A10B06451B0B7DBF00507C88 /* libboost_system-mt.dylib */,
-				A10B06461B0B7DBF00507C88 /* libboost_thread-mt.dylib */,
-				A10B06471B0B7DBF00507C88 /* libcurl.4.dylib */,
-				A10B060B1B0B785200507C88 /* libopencv_videostab.3.0.0.dylib */,
-				A10B060C1B0B785200507C88 /* libopencv_stitching.3.0.0.dylib */,
-				A10B060D1B0B785200507C88 /* libopencv_calib3d.3.0.0.dylib */,
-				A10B060E1B0B785200507C88 /* libopencv_features2d.3.0.0.dylib */,
-				A10B060F1B0B785200507C88 /* libopencv_superres.3.0.0.dylib */,
-				A10B06101B0B785200507C88 /* libopencv_objdetect.3.0.0.dylib */,
-				A10B06111B0B785200507C88 /* libopencv_shape.3.0.0.dylib */,
-				A10B06121B0B785200507C88 /* libopencv_video.3.0.0.dylib */,
-				A10B06131B0B785200507C88 /* libopencv_photo.3.0.0.dylib */,
-				A10B06141B0B785200507C88 /* libopencv_ml.3.0.0.dylib */,
-				A10B06151B0B785200507C88 /* libopencv_flann.3.0.0.dylib */,
-				A10B06161B0B785200507C88 /* libopencv_ts.a */,
-				A10B06171B0B785200507C88 /* libopencv_highgui.3.0.0.dylib */,
-				A10B06181B0B785200507C88 /* libopencv_videoio.3.0.0.dylib */,
-				A10B06191B0B785200507C88 /* libopencv_imgcodecs.3.0.0.dylib */,
-				A10B061A1B0B785200507C88 /* libopencv_imgproc.3.0.0.dylib */,
-				A10B061B1B0B785200507C88 /* libopencv_core.3.0.0.dylib */,
-				A10B061C1B0B785200507C88 /* libopencv_hal.a */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -214,14 +184,45 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A10B065F1B0CDC2B00507C88 /* hand_detector.dat */,
+				A10B06B91B0F165000507C88 /* valcriVictory.dat */,
+				A10B06BA1B0F165000507C88 /* valcriOpen.dat */,
+				A10B06BB1B0F165000507C88 /* valcriClose.dat */,
+				A10B06BC1B0F165000507C88 /* hand_detector.dat */,
+				A10B06BD1B0F165000507C88 /* whai.dat */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A10B06C31B0F167200507C88 /* cindergestooslib */ = {
+			isa = PBXGroup;
+			children = (
+				A10B06C41B0F167200507C88 /* include */,
+				A10B06C61B0F167200507C88 /* src */,
+			);
+			name = cindergestooslib;
+			path = ../../../cindergestooslib;
+			sourceTree = "<group>";
+		};
+		A10B06C41B0F167200507C88 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A10B06C51B0F167200507C88 /* Cinderactor.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A10B06C61B0F167200507C88 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A10B06C71B0F167200507C88 /* Cinderactor.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				A10B069C1B0E8F4600507C88 /* Label.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -229,9 +230,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* emptyExample */ = {
+		8D1107260486CEB800E47090 /* InTheCar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "emptyExample" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "InTheCar" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -242,10 +243,10 @@
 			);
 			dependencies = (
 			);
-			name = emptyExample;
+			name = InTheCar;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Earthquake;
-			productReference = 8D1107320486CEB800E47090 /* emptyExample.app */;
+			productReference = 8D1107320486CEB800E47090 /* InTheCar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +257,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "emptyExample" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "InTheCar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -270,7 +271,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* emptyExample */,
+				8D1107260486CEB800E47090 /* InTheCar */,
 			);
 		};
 /* End PBXProject section */
@@ -280,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10B066B1B0CDC3A00507C88 /* tracker.ini in Resources */,
+				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */,
+				A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,14 +305,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
-				CINDER_PATH = ../../lib/macos/cinder_0.8.6_mac;
+				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
-				FEZOOLIB_PATH = ../../../..;
+				FEZOOLIB_PATH = ../../../../..;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = emptyExample_Prefix.pch;
+				GCC_PREFIX_HEADER = InTheCar_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
@@ -330,7 +333,7 @@
 					"$(PROJECT_DIR)",
 				);
 				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "../../../../../OpenNI-MacOSX-x64-2.2";
+				OPENNI2_PATH = "../../../../../../OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
 					"-lOpenNI2",
@@ -353,7 +356,7 @@
 					"-lboost_serialization-mt",
 					"-lcurl.4",
 				);
-				PRODUCT_NAME = emptyExample;
+				PRODUCT_NAME = InTheCar;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -364,15 +367,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
-				CINDER_PATH = ../../lib/macos/cinder_0.8.6_mac;
+				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FEZOOLIB_PATH = ../../../..;
+				FEZOOLIB_PATH = ../../../../..;
 				GCC_FAST_MATH = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = emptyExample_Prefix.pch;
+				GCC_PREFIX_HEADER = InTheCar_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
@@ -393,7 +396,7 @@
 					"$(PROJECT_DIR)",
 				);
 				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "../../../../../OpenNI-MacOSX-x64-2.2";
+				OPENNI2_PATH = "../../../../../../OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
 					"-lopencv_highgui",
@@ -416,7 +419,7 @@
 					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
 					"-lcurl.4",
 				);
-				PRODUCT_NAME = emptyExample;
+				PRODUCT_NAME = InTheCar;
 				STRIP_INSTALLED_PRODUCT = YES;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
 				WRAPPER_EXTENSION = app;
@@ -470,7 +473,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "emptyExample" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "InTheCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -479,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "emptyExample" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "InTheCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

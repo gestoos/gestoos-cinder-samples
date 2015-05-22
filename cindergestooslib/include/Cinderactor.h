@@ -41,6 +41,8 @@ public:
     /// Draw a cool representation of the interaction data.
     void draw() const;
     
+    static void draw_hand( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
+    
 private:
     cinder::Timer block_timer;
 
