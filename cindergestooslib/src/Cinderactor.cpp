@@ -56,7 +56,7 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest )
 void Cinderactor::draw() const
 {
     
-    draw_hand( get_hands().first,   Vec2f(140, 70 ) );
+    draw_hand( get_hands().first,   Vec2f(200, 70 ) );
     draw_hand( get_hands().second,  Vec2f(70,  70 ) );
    
 }
