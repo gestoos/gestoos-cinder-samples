@@ -25,28 +25,36 @@ using namespace ci;
 using namespace ci::app;
 
 
-
+/// \brief Class implementing an active edge representation
 class ActiveEdge {
 
 public:
+    
+    /// Empty constructor
     ActiveEdge();
     
+    /// Constructor with active edge height
     ActiveEdge(float _h);
     
+    /// Default destructor
     virtual ~ActiveEdge();
     
+    /// Signal the active edge to show
     void show();
     
+    /// Signal the active edge to hide
     void hide();
     
-    void reorganize_canvas();
-
+    /// Set the current hand detection
     void set_hand( const gestoos::nui::Hand & h );
 
+    /// NOT USED. Set the cursor position... for debug.
     void set_cursor_pos( const Vec2f & p );
     
+    /// Update the current active edge
     void update();
     
+    /// Draw the active edge
     void draw() const;
     
 private:
@@ -69,6 +77,9 @@ private:
     Vec2f show_c, hide_c, center;
     
     Timer timer;
+    
+    // Reorganize the canvas widgets in a grid. Hardcoded to 3 columns.
+    void reorganize_canvas();
 };
 
 #endif

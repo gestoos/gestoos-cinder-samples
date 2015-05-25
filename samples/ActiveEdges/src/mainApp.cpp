@@ -52,6 +52,8 @@ public:
 
 void exampleApp::setup()
 {
+    setFullScreen(true);
+    
     init_ok = false;
     
     active_edge = ActiveEdge(150);

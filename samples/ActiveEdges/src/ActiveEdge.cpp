@@ -36,10 +36,12 @@ ActiveEdge::ActiveEdge(float _h)
     
     color = ColorA(0.3,0.4,0.5,0.7);
     
-    widgets.push_back( Widget( center + Vec2f(-300,0), Vec2f(100,100), ColorA( 1.0, 0, 0, 1.0) ) );
-    widgets.push_back( Widget( center + Vec2f(-100,0), Vec2f(100,100), ColorA( 1.0, 1.0, 0, 1.0) ) );
-    widgets.push_back( Widget( center + Vec2f(100,0),  Vec2f(100,100), ColorA( 1.0, 0, 1.0, 1.0) ) );
-    widgets.push_back( Widget( center + Vec2f(300,0),  Vec2f(100,100), ColorA( 0.0, 1.0, 1.0, 1.0) ) );
+    int pad = getWindowWidth()/5;
+    
+    widgets.push_back( Widget( center + Vec2f(-1.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 0, 0, 1.0) ) );
+    widgets.push_back( Widget( center + Vec2f(-0.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 1.0, 0, 1.0) ) );
+    widgets.push_back( Widget( center + Vec2f( 0.5*pad,   0),  Vec2f(100,100), ColorA( 1.0, 0, 1.0, 1.0) ) );
+    widgets.push_back( Widget( center + Vec2f( 1.5*pad,   0),  Vec2f(100,100), ColorA( 0.0, 1.0, 1.0, 1.0) ) );
     
     // Set initial rect pos
     rect = Rectf( Vec2f(0,hide_y), Vec2f(getWindowWidth(),hide_y+_h) );
