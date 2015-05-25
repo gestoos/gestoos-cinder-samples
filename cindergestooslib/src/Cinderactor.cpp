@@ -1,6 +1,6 @@
 //
 //  Cinderactor.cpp
-//  InTheCar
+//  ActiveEdge
 //
 //  Created by Mac on 21/05/15.
 //
@@ -56,12 +56,12 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest )
 void Cinderactor::draw() const
 {
     
-    draw_hand( get_hands().first,   Vec2f(200, 70 ) );
-    draw_hand( get_hands().second,  Vec2f(70,  70 ) );
+    draw_hand_representation( get_hands().first,   Vec2f(200, 70 ) );
+    draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
    
 }
 
-void Cinderactor::draw_hand( const gestoos::nui::Hand & hand, const Vec2f & where )
+void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where )
 {
     float scale = 3.0;
     
@@ -93,4 +93,13 @@ void Cinderactor::draw_hand( const gestoos::nui::Hand & hand, const Vec2f & wher
     //Set color back to white
     gl::color( Color(1.0, 1.0, 1.0));
 
+}
+
+void Cinderactor::draw_hand_circle( const gestoos::nui::Hand & hand ) const
+{
+    if( hand.is_present() )
+    {
+        gl::color( Color(0.3, 0.4, 0.5));
+        gl::drawStrokedCircle( Vec2f( hand.get_pos().x * cinder::app::getWindowWidth() / 320.0,  hand.get_pos().y * cinder::app::getWindowHeight() / 240.0), 15.0, 32  );
+    }
 }

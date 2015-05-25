@@ -1,13 +1,13 @@
 //
 //  Cinderactor.h
-//  InTheCar
+//  ActiveEdge
 //
 //  Created by Mac on 21/05/15.
 //
 //
 
-#ifndef InTheCar_Cinderactor_h
-#define InTheCar_Cinderactor_h
+#ifndef ActiveEdge_Cinderactor_h
+#define ActiveEdge_Cinderactor_h
 
 #include "cinder/Cinder.h"
 #include "cinder/app/AppNative.h"
@@ -16,8 +16,11 @@
 
 using namespace ci;
 
-static int     GEST_VICTORY    = 14;
-static float   BLOCK_TIMEOUT   = 1.0;
+static int     GEST_EL          = 13;
+static int     GEST_VICTORY     = 14;
+static int     GEST_GRAB        = 206;
+static int     GEST_RELEASE     = 207;
+static float   BLOCK_TIMEOUT    = 1.0;
 
 /// \brief This class extends gestoos::nui::Interactor, adding new cool features for Cinder apps.
 class Cinderactor : public gestoos::nui::Interactor
@@ -41,7 +44,9 @@ public:
     /// Draw a cool representation of the interaction data.
     void draw() const;
     
-    static void draw_hand( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
+    static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
+    
+    void draw_hand_circle( const gestoos::nui::Hand & hand ) const;
     
 private:
     cinder::Timer block_timer;
