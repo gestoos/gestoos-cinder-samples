@@ -19,9 +19,9 @@
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A10B06B21B0F14DB00507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06B01B0F14B200507C88 /* hand_detector.dat */; };
-		A1E08DC91B147AD2003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */; };
-		A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */; };
-		A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DCB1B147B19003ED9FF /* interactor.cfg */; };
+		A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
+		A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBD1B147715003ED9FF /* MovingRect.cpp */; };
+		A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,18 +49,18 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emptyExample_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* GrabDrop_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrabDrop_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* emptyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emptyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* GrabDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrabDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10B06B01B0F14B200507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../../data/hand_detector.dat; sourceTree = "<group>"; };
-		A1E08DC41B147AD2003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
-		A1E08DC51B147AD2003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
-		A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
-		A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
-		A1E08DCB1B147B19003ED9FF /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
+		A1E08DB91B147715003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
+		A1E08DBA1B147715003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
+		A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
+		A1E08DBD1B147715003ED9FF /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
+		A1E08DC01B14780B003ED9FF /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* emptyExample.app */,
+				8D1107320486CEB800E47090 /* GrabDrop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,7 +130,7 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
-				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
+				A1E08DB71B147715003ED9FF /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -144,7 +144,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* GrabDrop_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A1E08DCB1B147B19003ED9FF /* interactor.cfg */,
+				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
 				A10B06371B0B79A400507C88 /* Models */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
@@ -176,30 +176,30 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		A1E08DC21B147AD2003ED9FF /* cindergestooslib */ = {
+		A1E08DB71B147715003ED9FF /* cindergestooslib */ = {
 			isa = PBXGroup;
 			children = (
-				A1E08DC31B147AD2003ED9FF /* include */,
-				A1E08DC61B147AD2003ED9FF /* src */,
+				A1E08DB81B147715003ED9FF /* include */,
+				A1E08DBB1B147715003ED9FF /* src */,
 			);
 			name = cindergestooslib;
 			path = ../../../cindergestooslib;
 			sourceTree = "<group>";
 		};
-		A1E08DC31B147AD2003ED9FF /* include */ = {
+		A1E08DB81B147715003ED9FF /* include */ = {
 			isa = PBXGroup;
 			children = (
-				A1E08DC41B147AD2003ED9FF /* Cinderactor.h */,
-				A1E08DC51B147AD2003ED9FF /* MovingRect.h */,
+				A1E08DB91B147715003ED9FF /* Cinderactor.h */,
+				A1E08DBA1B147715003ED9FF /* MovingRect.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		A1E08DC61B147AD2003ED9FF /* src */ = {
+		A1E08DBB1B147715003ED9FF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */,
-				A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */,
+				A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */,
+				A1E08DBD1B147715003ED9FF /* MovingRect.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -214,9 +214,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* emptyExample */ = {
+		8D1107260486CEB800E47090 /* GrabDrop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "emptyExample" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "GrabDrop" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -227,10 +227,10 @@
 			);
 			dependencies = (
 			);
-			name = emptyExample;
+			name = GrabDrop;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Earthquake;
-			productReference = 8D1107320486CEB800E47090 /* emptyExample.app */;
+			productReference = 8D1107320486CEB800E47090 /* GrabDrop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -241,7 +241,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "emptyExample" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GrabDrop" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -255,7 +255,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* emptyExample */,
+				8D1107260486CEB800E47090 /* GrabDrop */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */,
+				A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,9 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E08DC91B147AD2003ED9FF /* Cinderactor.cpp in Sources */,
+				A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
-				A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */,
+				A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +296,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = emptyExample_Prefix.pch;
+				GCC_PREFIX_HEADER = GrabDrop_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
@@ -340,7 +340,7 @@
 					"-lboost_serialization-mt",
 					"-lcurl.4",
 				);
-				PRODUCT_NAME = emptyExample;
+				PRODUCT_NAME = GrabDrop;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -359,7 +359,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = emptyExample_Prefix.pch;
+				GCC_PREFIX_HEADER = GrabDrop_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
@@ -403,7 +403,7 @@
 					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
 					"-lcurl.4",
 				);
-				PRODUCT_NAME = emptyExample;
+				PRODUCT_NAME = GrabDrop;
 				STRIP_INSTALLED_PRODUCT = YES;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
 				WRAPPER_EXTENSION = app;
@@ -457,7 +457,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "emptyExample" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "GrabDrop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -466,7 +466,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "emptyExample" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GrabDrop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

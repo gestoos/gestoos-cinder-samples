@@ -12,9 +12,16 @@
 Cinderactor::Cinderactor() 
 {
     block_timer.start();
+    init_ok = false;
 }
 
 Cinderactor::~Cinderactor(){}
+
+void Cinderactor::init(const std::string & ini_file )
+{
+    gestoos::nui::Interactor::init( ini_file );
+    init_ok = true;
+}
 
 Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout )
 {
@@ -54,7 +61,14 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout
 
 void Cinderactor::draw() const
 {
-    
+    // Loading message
+    if( !init_ok )
+    {
+        gl::drawStringCentered(	"Loading models... please wait...", Vec2f( cinder::app::getWindowWidth()/2,cinder::app::getWindowHeight()*0.5 ) );
+        
+        return;
+    }
+
     draw_hand_representation( get_hands().first,   Vec2f(200, 70 ) );
     draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
    
