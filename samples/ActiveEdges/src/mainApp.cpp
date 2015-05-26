@@ -166,7 +166,7 @@ void exampleApp::draw()
     if( !init_ok )
     {
         std::stringstream ss;
-        ss<<"Loading models... "<<(int)cinderactor.get_load_progress()<<"%";
+//        ss<<"Loading models... "<<(int)cinderactor.get_load_progress()<<"%";
         gl::drawStringCentered(	ss.str(), Vec2f( getWindowWidth()/2,getWindowHeight()*0.50 ) );
         gl::drawStringCentered(	"Please wait...", Vec2f( getWindowWidth()/2,getWindowHeight()*0.55 ) );
         
