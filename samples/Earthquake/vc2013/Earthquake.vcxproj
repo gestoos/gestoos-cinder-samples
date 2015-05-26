@@ -62,6 +62,7 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+    <Import Project="EnvironmentVariables.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
@@ -163,7 +164,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\..\..\include;$(CINDER_LIB)\boost;$(CINDER_LIB)\include;$(OPENCV_LIB)\include;$(OPENNI_INCLUDE64);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\..\..\include;$(CINDER_LIB)\boost;$(CINDER_LIB)\include;$(OPENCV_LIB)\include;$(OPENNI_INCLUDE64);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>MSVC;WIN32;NDEBUG;_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -176,7 +177,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;cinder-$(PlatformToolset).lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\lib\release;$(BOOST_LIB)\stage\lib;$(OPENCV_LIB)\$(PlatformTarget)\vc12\lib;$(CINDER_LIB)\lib\msw\$(PlatformTarget);$(GESTOOS_DIR)\external\curl\x64\lib;$(OPENNI_LIB64)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\lib\release;$(BOOST_LIB)\stage\lib;$(OPENCV_LIB)\$(PlatformTarget)\vc12\lib;$(CINDER_LIB)\lib\msw\$(PlatformTarget);$(GESTOOS_DIR)\external\curl\x64\lib;$(OPENNI_LIB64)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
