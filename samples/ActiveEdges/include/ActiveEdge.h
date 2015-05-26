@@ -17,7 +17,7 @@
 #include "cinder/gl/Texture.h"
 
 #include "Cinderactor.h"
-#include "Widget.h"
+#include "MovingRect.h"
 
 #include <list>
 
@@ -29,6 +29,8 @@ using namespace ci::app;
 class ActiveEdge {
 
 public:
+    
+    typedef MovingRect Widget;
     
     /// Empty constructor
     ActiveEdge();
@@ -57,6 +59,7 @@ public:
     /// Draw the active edge
     void draw() const;
     
+    /// Is the active edge being shown or not?
     bool is_showing() const;
     
 private:
@@ -70,6 +73,7 @@ private:
     Cinderactor::StrokeType      sense;
     
     gestoos::nui::Hand hand;
+    Vec2f hand_pos_f;
     
     bool showing ;
 
@@ -81,7 +85,7 @@ private:
     Timer timer;
     
     // Reorganize the canvas widgets in a grid. Hardcoded to 3 columns.
-    void reorganize_canvas();
+    void _reorganize_canvas();
 };
 
 #endif

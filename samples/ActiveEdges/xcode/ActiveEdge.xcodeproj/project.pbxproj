@@ -25,9 +25,9 @@
 		A10B06CB1B0F167D00507C88 /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BB1B0F165000507C88 /* valcriClose.dat */; };
 		A10B06CC1B0F167F00507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BC1B0F165000507C88 /* hand_detector.dat */; };
 		A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BD1B0F165000507C88 /* whai.dat */; };
-		A19992E31B1328D70090C27B /* Widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19992E21B1328D70090C27B /* Widget.cpp */; };
 		A19992E61B1360350090C27B /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A19992E41B13602D0090C27B /* valcriL.dat */; };
 		A19992E71B137F510090C27B /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
+		A19992F01B145FD50090C27B /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19992EE1B145FD50090C27B /* MovingRect.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,9 +76,9 @@
 		A10B06BD1B0F165000507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../../data/whai.dat; sourceTree = "<group>"; };
 		A10B06C51B0F167200507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
-		A19992E11B1328CC0090C27B /* Widget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
-		A19992E21B1328D70090C27B /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
 		A19992E41B13602D0090C27B /* valcriL.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
+		A19992ED1B145FC80090C27B /* MovingRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
+		A19992EE1B145FD50090C27B /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,6 @@
 			children = (
 				A10B069D1B0E8F5700507C88 /* ActiveEdge.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
-				A19992E21B1328D70090C27B /* Widget.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -215,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				A10B06C51B0F167200507C88 /* Cinderactor.h */,
+				A19992ED1B145FC80090C27B /* MovingRect.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -223,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				A10B06C71B0F167200507C88 /* Cinderactor.cpp */,
+				A19992EE1B145FD50090C27B /* MovingRect.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -231,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				A10B069C1B0E8F4600507C88 /* ActiveEdge.h */,
-				A19992E11B1328CC0090C27B /* Widget.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -303,8 +303,8 @@
 			files = (
 				A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */,
 				A10B069E1B0E8F5700507C88 /* ActiveEdge.cpp in Sources */,
+				A19992F01B145FD50090C27B /* MovingRect.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
-				A19992E31B1328D70090C27B /* Widget.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

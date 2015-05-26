@@ -38,6 +38,8 @@ public:
     /// Base destructor
     ~Cinderactor();
     
+    void init(const std::string & ini_file );
+    
     /// Detect hand strokes restricted to a given hand gest.
     /// If gest == -1, strokes are detected for any gesture.
     StrokeType detect_hand_stroke( int gest = -1, float timeout = 0.0 );
@@ -53,7 +55,7 @@ public:
     
 private:
     cinder::Timer block_timer;
-
+    bool init_ok;
     
 };
 

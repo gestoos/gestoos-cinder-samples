@@ -6,14 +6,9 @@
 using namespace ci;
 using namespace ci::app;
 
-#include <vector>
-#include <map>
-#include <list>
 using namespace std;
 
-#include "fezoolib/Core/CaptureRGBD.hpp"
-#include "fezoolib/Core/DepthFiltering.hpp"
-#include "fezoolib/Tracking/WHAITracker.hpp"
+#include "Cinderactor.h"
 
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
@@ -35,17 +30,9 @@ public:
 	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
     
     void processThread();
-
-    gestoos::CaptureRGBD        capture;
     
-    //To store the current frame num
-    gestoos::tracking::ObjectTrack::ts_type frame=0;
+    Cinderactor cinderactor;
     
-    //Declare WHAITracker
-    gestoos::tracking::WHAITracker whai;
-    cv::Mat depth_map;
-    
-   
     shared_ptr<std::thread>		mThread;
     bool can_process_thread;
     
@@ -53,11 +40,7 @@ public:
 
 void exampleApp::setup()
 {
-    //Configure camera
-    capture.init("",  0,  gestoos::CaptureRGBD::QVGA_30FPS);
-    
-    //Configure the tracker
-    whai.init( getResourcePath("tracker.ini").string() );
+    setFullScreen(true);
     
     //Start interactor processing in a separate thread
     can_process_thread = true;
@@ -99,25 +82,15 @@ void exampleApp::mouseDrag( MouseEvent event )
 void exampleApp::processThread()
 {
    	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
-   
+    
+    //Configure the cinderactor
+    cinderactor.init( getResourcePath("interactor.cfg").string() );
+    cinderactor.set_draw_window(false);
+    
     // inifinite processing loop
     while(can_process_thread)
     {
-        /*
-         Capture
-         */
-        capture.get_depth_frame();
-        depth_map = capture.depth_frame();
-        
-        /*
-         Filter data, mainly filling depth holes
-         */
-        depth_map=gestoos::depth_error_filter(depth_map);
-        
-        /*
-         Track hands using WHAI
-         */
-        whai.update(depth_map, frame);
+        cinderactor.process();
     }
 }
 
@@ -132,13 +105,7 @@ void exampleApp::draw()
 	gl::setMatricesWindow( getWindowSize() );
 	gl::clear( Color( 0.1f, 0.1f, 0.1f ) );
     
-    // Get and draw hands
-    std::vector< gestoos::tracking::ObjectTrack *> hands = whai.active_tracks();
-    for( auto it=hands.begin(); it!=hands.end(); ++it)
-    {
-        gl::drawStrokedCircle( Vec2f( (*it)->get_position().x * 800 / 320.0, (*it)->get_position().y * 600 / 240.0), 20.0f );
-    }
-    
+    cinderactor.draw();
 }
 
 void exampleApp::shutdown()
