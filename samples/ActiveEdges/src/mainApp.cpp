@@ -165,10 +165,7 @@ void exampleApp::draw()
     // Loading message
     if( !init_ok )
     {
-        std::stringstream ss;
-        ss<<"Loading models... "<<(int)cinderactor.get_load_progress()<<"%";
-        gl::drawStringCentered(	ss.str(), Vec2f( getWindowWidth()/2,getWindowHeight()*0.50 ) );
-        gl::drawStringCentered(	"Please wait...", Vec2f( getWindowWidth()/2,getWindowHeight()*0.55 ) );
+        gl::drawStringCentered(	"Loading models... please wait...", Vec2f( getWindowWidth()/2,getWindowHeight()*0.5 ) );
         
         return;
         
@@ -178,7 +175,6 @@ void exampleApp::draw()
     
     // Draw cinderactor representation
     cinderactor.draw();
-    //cinderactor.draw_hand_circle( cinderactor.get_hands().first );
 }
 
 void exampleApp::shutdown()

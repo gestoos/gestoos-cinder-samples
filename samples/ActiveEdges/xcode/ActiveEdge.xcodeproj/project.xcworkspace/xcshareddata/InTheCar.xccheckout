@@ -12,8 +12,6 @@
 	<dict>
 		<key>78A7F667-1A8B-4F49-99C8-5CA6A83D6796</key>
 		<string>ssh://bitbucket.org/gestoos/cindersamples.git</string>
-		<key>99AD5A06-B30D-4784-A03F-BCD22563CAF2</key>
-		<string>ssh://bitbucket.org/fezoolib/fezoolib.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>applications/cinder/samples/ActiveEdges/xcode/InTheCar.xcodeproj/project.xcworkspace</string>
@@ -21,15 +19,13 @@
 	<dict>
 		<key>78A7F667-1A8B-4F49-99C8-5CA6A83D6796</key>
 		<string>../../../../..</string>
-		<key>99AD5A06-B30D-4784-A03F-BCD22563CAF2</key>
-		<string>../../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://bitbucket.org/gestoos/cindersamples.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>99AD5A06-B30D-4784-A03F-BCD22563CAF2</string>
+	<string>78A7F667-1A8B-4F49-99C8-5CA6A83D6796</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -39,14 +35,6 @@
 			<string>78A7F667-1A8B-4F49-99C8-5CA6A83D6796</string>
 			<key>IDESourceControlWCCName</key>
 			<string>cinder</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>99AD5A06-B30D-4784-A03F-BCD22563CAF2</string>
-			<key>IDESourceControlWCCName</key>
-			<string>fezoolib</string>
 		</dict>
 	</array>
 </dict>

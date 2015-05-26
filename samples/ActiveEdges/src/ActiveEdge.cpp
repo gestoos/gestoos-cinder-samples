@@ -89,23 +89,26 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
 
     if( hand.is_present() && showing )
     {
+        // Instant hand position scaled to screen
+        Vec2f hand_pos_inst ;
+        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
+        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
         
-        Vec2f hpos ;
-        hpos.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
-        hpos.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
+        // Filter hand
+        hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.3 ;
         
         for (auto it=widgets.begin(); it!=widgets.end(); ++it)
         {
             // if L gesture, create a new widget
-            if( it->is_x_inside( hpos ) &&
+            if( it->is_x_inside( hand_pos_f ) &&
                 hand.get_gesture() == GEST_EL &&
                 timer.getSeconds() > 1.5 )
             {
-                std::cout<<" new! "<<std::endl;
+                std::cout<<" * New widget! "<<std::endl;
                 Vec2f new_pos = Vec2f( Rand::randInt(100,getWindowWidth()-100), Rand::randInt(100,getWindowHeight()-200) );
                 float new_side = Rand::randInt(80, 120);
                 
-                Widget new_widget( new_pos, Vec2f(new_side, new_side), it->w_color );
+                Widget new_widget( new_pos, Vec2f(new_side, new_side), it->get_color() );
                 new_widget.show();
                 canvas_widgets.push_back( new_widget );
                 
@@ -122,13 +125,13 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
         if( hand.get_gesture() == GEST_RELEASE &&
             timer.getSeconds() > 1.0 )
         {
-            reorganize_canvas();
+            _reorganize_canvas();
         }
 
     }
 
     
-    // If no hands, hide
+    // If no hands, hide active edge
     if( !hand.is_present() && showing )
     {
         hide();
@@ -136,23 +139,7 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
    
 }
 
-void ActiveEdge::reorganize_canvas()
-{
-    int cx = 1;
-    int cy = 1;
-    int padx = getWindowWidth()/4;
-    int pady = getWindowHeight()/4;
-    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
-    {
-        it->set_pos( Vec2f( cx * padx, cy * pady + 40) );
-        cx++ ;
-        if( cx > 3 )
-        {
-            cx = 1;
-            cy++;
-        }
-    }
-}
+
 
 void ActiveEdge::update()
 {
@@ -172,7 +159,7 @@ void ActiveEdge::update()
     
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
-        it->update( );
+        it->update();
     }
     
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
@@ -181,7 +168,6 @@ void ActiveEdge::update()
     }
     
     
-    //    cinder::TextBox::setBackgroundColor( ColorA( 1.0, 1.0, 1.0, alpha ) );
 }
 
 void ActiveEdge::draw() const
@@ -201,8 +187,9 @@ void ActiveEdge::draw() const
     if( showing && hand.is_present() )
     {
         Vec2f hpos ;
-        hpos.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;//hand.get_pos().x     *   cinder::app::getWindowWidth()     / 320.0;
-        hpos.y = center.y ;
+        hpos.x = hand_pos_f.x;
+        hpos.y = center.y ; // horizontal
+        
         gl::color( ColorA( 0.6,0.7,0.8,0.6));
         gl::drawSolidCircle( hpos, 20.0, 32 );
     }
@@ -211,4 +198,22 @@ void ActiveEdge::draw() const
 bool ActiveEdge::is_showing() const
 {
     return showing;
+}
+
+void ActiveEdge::_reorganize_canvas()
+{
+    int cx = 1;
+    int cy = 1;
+    int padx = getWindowWidth()/4;
+    int pady = getWindowHeight()/4;
+    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
+    {
+        it->set_pos( Vec2f( cx * padx, cy * pady + 40) );
+        cx++ ;
+        if( cx > 3 )
+        {
+            cx = 1;
+            cy++;
+        }
+    }
 }
