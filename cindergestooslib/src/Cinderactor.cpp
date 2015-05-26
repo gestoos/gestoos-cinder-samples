@@ -81,6 +81,8 @@ void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, con
     {
         if( hand.get_gesture() == GEST_VICTORY )
             gl::color( Color(1.0, 0.6, 0.7));
+        else if( hand.get_gesture() == GEST_EL )
+            gl::color( Color(0.5, 1.0, 0.7));
         else
             gl::color( Color(0.5, 0.6, 0.7));
         

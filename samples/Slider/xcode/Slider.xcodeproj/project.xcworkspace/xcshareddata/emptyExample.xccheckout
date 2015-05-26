@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>500D0783-FE22-4558-A124-5B68346E6C7A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>emptyExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91DBC9DF-7387-4F4E-B458-A8FB33E9ADBB</key>
+		<string>ssh://bitbucket.org/gestoos/cindersamples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>applications/cinder/samples/GrabDrop/xcode/emptyExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91DBC9DF-7387-4F4E-B458-A8FB33E9ADBB</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/gestoos/cindersamples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91DBC9DF-7387-4F4E-B458-A8FB33E9ADBB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91DBC9DF-7387-4F4E-B458-A8FB33E9ADBB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cinder</string>
+		</dict>
+	</array>
+</dict>
+</plist>
