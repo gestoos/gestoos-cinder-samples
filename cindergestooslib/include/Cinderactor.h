@@ -29,6 +29,7 @@ class Cinderactor : public gestoos::nui::Interactor
 
 public:
     
+   
     /// The hand stroke direction
     enum StrokeType {UP,DOWN,LEFT,RIGHT,NONE} ;
     
