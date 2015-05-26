@@ -58,7 +58,6 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout
     return NONE;
 }
 
-
 void Cinderactor::draw() const
 {
     // Loading message

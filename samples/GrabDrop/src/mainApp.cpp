@@ -9,6 +9,7 @@ using namespace ci::app;
 using namespace std;
 
 #include "Cinderactor.h"
+#include "MovingRect.h"
 
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
@@ -30,12 +31,19 @@ public:
 	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
     
     void processThread();
-
+    
     Cinderactor cinderactor;
-   
+    
     shared_ptr<std::thread>		mThread;
     bool can_process_thread;
     
+    gestoos::nui::Hand hand;
+    Vec2f hand_pos_f;
+    
+    MovingRect box;
+    Timer timer;
+    
+    bool grabbing;
 };
 
 void exampleApp::setup()
@@ -46,6 +54,12 @@ void exampleApp::setup()
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
+    box = MovingRect( getWindowSize()/2 , Vec2f(200, 200), ColorA(0.3,0.4,0.5,0.5) );
+    box.show();
+    
+    timer.start();
+    
+    grabbing = false;
 }
 
 void exampleApp::prepareSettings( Settings *settings )
@@ -96,7 +110,45 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
+    hand = cinderactor.get_hands().first;
     
+    
+    if( hand.is_present() )
+    {
+        Vec2f hand_pos_inst ;
+        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
+        hand_pos_inst.y = ( hand.get_pos().y / 240 - 0.5 ) * cinder::app::getWindowHeight() *2.0 +   cinder::app::getWindowHeight()/2.0 ;
+        
+        hand_pos_f += (hand_pos_inst - hand_pos_f) * 0.3;
+        
+        //std::pair<int,int> gr = cinderactor.detect_hand_grabrelease();
+
+        if( hand.get_gesture() == GEST_GRAB &&
+           timer.getSeconds() > 0.2 &&
+           !grabbing )
+        {
+            if( box.contains( hand_pos_f ) )
+            {
+                grabbing = true;
+                timer.start();
+                std::cout<<"GRAB"<<std::endl;
+            }
+        }
+        else if( hand.get_gesture() == GEST_RELEASE &&
+                timer.getSeconds() > 0.2 &&
+                grabbing )
+        {
+            grabbing = false;
+            timer.start();
+            std::cout<<"DROP"<<std::endl;
+        }
+        
+        if( grabbing )
+        {
+            box.set_pos( hand_pos_f );
+        }
+    }
+    box.update();
 }
 
 void exampleApp::draw()
@@ -105,7 +157,34 @@ void exampleApp::draw()
 	gl::setMatricesWindow( getWindowSize() );
 	gl::clear( Color( 0.1f, 0.1f, 0.1f ) );
     
-    cinderactor.draw();   
+    box.draw();
+
+    // Draw hand
+    if( hand.is_present() )
+    {
+        if( !grabbing && box.contains(hand_pos_f) )
+        {
+            gl::color( ColorA(0.6, 0.9, 0.7, 0.5) );
+            Rectf rect(0,0,45,45);
+            rect.offsetCenterTo( hand_pos_f ) ;
+            gl::drawStrokedRoundedRect( rect, 8.0, 32);
+        }
+        else if( grabbing )
+        {
+            gl::color( ColorA(0.6, 0.9, 0.7, 0.5) );
+            Rectf rect(0,0,45,45);
+            rect.offsetCenterTo( hand_pos_f ) ;
+            gl::drawSolidRoundedRect( rect, 8.0, 32);
+        }
+        else
+        {
+            gl::color( ColorA(0.6, 0.7, 0.8, 0.7) );
+            gl::drawStrokedCircle(hand_pos_f, 15, 32);
+        }
+    }
+    
+    cinderactor.draw();
+
 }
 
 void exampleApp::shutdown()

@@ -22,6 +22,9 @@
 		A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
 		A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBD1B147715003ED9FF /* MovingRect.cpp */; };
 		A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
+		A1E08DD11B1486A9003ED9FF /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */; };
+		A1E08DD21B1486AB003ED9FF /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DCE1B14869D003ED9FF /* valcriClose.dat */; };
+		A1E08DD51B148B49003ED9FF /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DD31B148B41003ED9FF /* valcriL.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +35,9 @@
 			dstSubfolderSpec = 7;
 			files = (
 				A10B06B21B0F14DB00507C88 /* hand_detector.dat in CopyFiles */,
+				A1E08DD11B1486A9003ED9FF /* valcriOpen.dat in CopyFiles */,
+				A1E08DD51B148B49003ED9FF /* valcriL.dat in CopyFiles */,
+				A1E08DD21B1486AB003ED9FF /* valcriClose.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +67,9 @@
 		A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
 		A1E08DBD1B147715003ED9FF /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
 		A1E08DC01B14780B003ED9FF /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
+		A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen.dat; path = ../../../../../data/valcriOpen.dat; sourceTree = "<group>"; };
+		A1E08DCE1B14869D003ED9FF /* valcriClose.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose.dat; path = ../../../../../data/valcriClose.dat; sourceTree = "<group>"; };
+		A1E08DD31B148B41003ED9FF /* valcriL.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +180,9 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1E08DD31B148B41003ED9FF /* valcriL.dat */,
+				A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */,
+				A1E08DCE1B14869D003ED9FF /* valcriClose.dat */,
 				A10B06B01B0F14B200507C88 /* hand_detector.dat */,
 			);
 			name = Models;
