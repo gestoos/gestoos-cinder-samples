@@ -139,11 +139,13 @@ void exampleApp::update()
     // Activate active_edge if stroke detected
     switch (stroke) {
         case Cinderactor::UP:
-            active_edge.show();
+            if ( !active_edge.is_showing() )
+                active_edge.show();
             break;
             
         case Cinderactor::DOWN:
-            active_edge.hide();
+            if ( active_edge.is_showing() )
+                active_edge.hide();
             break;
         
         default:

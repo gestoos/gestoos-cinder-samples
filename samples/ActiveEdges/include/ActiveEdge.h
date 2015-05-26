@@ -57,6 +57,8 @@ public:
     /// Draw the active edge
     void draw() const;
     
+    bool is_showing() const;
+    
 private:
     
     std::list< Widget > widgets;

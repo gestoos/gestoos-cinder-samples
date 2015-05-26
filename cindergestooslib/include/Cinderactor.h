@@ -18,9 +18,10 @@ using namespace ci;
 
 static int     GEST_EL          = 13;
 static int     GEST_VICTORY     = 14;
+static int     GEST_OPEN        = 15;
+static int     GEST_CLOSE       = 16;
 static int     GEST_GRAB        = 206;
 static int     GEST_RELEASE     = 207;
-static float   BLOCK_TIMEOUT    = 1.0;
 
 /// \brief This class extends gestoos::nui::Interactor, adding new cool features for Cinder apps.
 class Cinderactor : public gestoos::nui::Interactor
@@ -39,14 +40,16 @@ public:
     
     /// Detect hand strokes restricted to a given hand gest.
     /// If gest == -1, strokes are detected for any gesture.
-    StrokeType detect_hand_stroke( int gest = -1 );
+    StrokeType detect_hand_stroke( int gest = -1, float timeout = 0.0 );
     
     /// Draw a cool representation of the interaction data.
     void draw() const;
     
-    static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
-    
+    ///
     void draw_hand_circle( const gestoos::nui::Hand & hand ) const;
+
+    ///
+    static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
     
 private:
     cinder::Timer block_timer;

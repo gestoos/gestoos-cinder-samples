@@ -57,7 +57,7 @@ ActiveEdge::~ActiveEdge()
 
 void ActiveEdge::show()
 {
-    if( showing ) return;
+    if( showing || timer.getSeconds() < 1.0 ) return;
     
     showing = true;
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
@@ -65,12 +65,13 @@ void ActiveEdge::show()
         it->set_offset( Vec2f(0,-rect.getHeight()) );
         it->show();
     }
+    timer.start();
     std::cout<<"SHOW"<<std::endl;
 }
 
 void ActiveEdge::hide()
 {
-    if( !showing ) return;
+    if( !showing || timer.getSeconds() < 1.0 ) return;
     
     showing = false;
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
@@ -78,6 +79,7 @@ void ActiveEdge::hide()
         it->set_offset( Vec2f(0,rect.getHeight()) );
         it->hide();
     }
+    timer.start();
     std::cout<<"HIDE"<<std::endl;
 }
 
@@ -89,7 +91,7 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
     {
         
         Vec2f hpos ;
-        hpos.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;//  / 320.0;
+        hpos.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
         hpos.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
         
         for (auto it=widgets.begin(); it!=widgets.end(); ++it)
@@ -204,4 +206,9 @@ void ActiveEdge::draw() const
         gl::color( ColorA( 0.6,0.7,0.8,0.6));
         gl::drawSolidCircle( hpos, 20.0, 32 );
     }
+}
+
+bool ActiveEdge::is_showing() const
+{
+    return showing;
 }
