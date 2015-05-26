@@ -62,6 +62,12 @@ public:
     /// Is the active edge being shown or not?
     bool is_showing() const;
     
+    
+    void change_mode();
+    
+    
+    void closest_widget(Vec2f & hand_pos_inst);
+    
 private:
     
     std::list< Widget > widgets;
@@ -83,6 +89,10 @@ private:
     Vec2f show_c, hide_c, center;
     
     Timer timer;
+    
+    int currW;
+    
+    bool snapmode;
     
     // Reorganize the canvas widgets in a grid. Hardcoded to 3 columns.
     void _reorganize_canvas();

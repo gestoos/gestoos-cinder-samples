@@ -33,6 +33,7 @@ ActiveEdge::ActiveEdge(float _h)
     alpha = hide_a;
     
     showing = false;
+    snapmode = false;
     
     color = ColorA(0.2,0.3,0.4,0.7);
     
@@ -83,6 +84,42 @@ void ActiveEdge::hide()
     std::cout<<"HIDE"<<std::endl;
 }
 
+void ActiveEdge::closest_widget(Vec2f & hand_pos_inst )
+{
+    float dmin = 1000000;
+    float dmin2 = 1000000;
+    
+    Widget *wmin;
+    Widget *wmin2;
+    
+    for (auto it=widgets.begin(); it!=widgets.end(); ++it)
+    {
+        it->set_highlight(false);
+        float d = std::abs(it->getX1() - hand_pos_inst.x);
+        if(d < dmin)
+        {
+            dmin = d;
+            wmin = &(*it);
+        }
+        if((d < dmin2) && (d > dmin))
+        {
+            dmin2 = d;
+            
+        }
+        
+        
+    }
+    
+    if(wmin != nullptr)
+    {
+        wmin->set_highlight(true);
+        
+    }
+    
+}
+
+
+
 void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
 {
     hand = h;
@@ -97,27 +134,40 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
         // Filter hand
         hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.3 ;
         
-        for (auto it=widgets.begin(); it!=widgets.end(); ++it)
+        if(snapmode)
         {
-            // if L gesture, create a new widget
-            if( it->is_x_inside( hand_pos_f ) &&
-                hand.get_gesture() == GEST_EL &&
-                timer.getSeconds() > 1.5 )
-            {
-                std::cout<<" * New widget! "<<std::endl;
-                Vec2f new_pos = Vec2f( Rand::randInt(100,getWindowWidth()-100), Rand::randInt(100,getWindowHeight()-200) );
-                float new_side = Rand::randInt(80, 120);
-                
-                Widget new_widget( new_pos, Vec2f(new_side, new_side), it->get_color() );
-                new_widget.show();
-                canvas_widgets.push_back( new_widget );
-                
-                if( canvas_widgets.size() > 6 )
-                    canvas_widgets.pop_front();
-                
-                timer.start();
-            }
+            closest_widget(hand_pos_f);
+ 
         }
+        else
+        {
+            
+            for (auto it=widgets.begin(); it!=widgets.end(); ++it)
+            {
+                // if L gesture, create a new widget
+                if( it->is_x_inside( hand_pos_f ) &&
+                   hand.get_gesture() == GEST_EL &&
+                   timer.getSeconds() > 1.5 )
+                {
+                    std::cout<<" * New widget! "<<std::endl;
+                    Vec2f new_pos = Vec2f( Rand::randInt(100,getWindowWidth()-100), Rand::randInt(100,getWindowHeight()-200) );
+                    float new_side = Rand::randInt(80, 120);
+                    
+                    Widget new_widget( new_pos, Vec2f(new_side, new_side), it->get_color() );
+                    new_widget.show();
+                    canvas_widgets.push_back( new_widget );
+                    
+                    if( canvas_widgets.size() > 6 )
+                        canvas_widgets.pop_front();
+                    
+                    timer.start();
+                }
+            }
+
+            
+            
+        }
+        
     }
     
     if( hand.is_present() && !showing )
@@ -139,6 +189,10 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
    
 }
 
+void ActiveEdge::change_mode()
+{
+    snapmode = !snapmode;
+}
 
 
 void ActiveEdge::update()
