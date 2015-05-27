@@ -62,8 +62,13 @@ public:
     /// Draw the MovingRect.
     virtual void draw() const;
     
+    // set highlight bool
     void set_highlight( bool h );
 
+    // set hover bool
+    void set_hover( bool h );
+
+    // get highlight bool
     bool get_highlight();
 
 

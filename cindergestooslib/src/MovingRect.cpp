@@ -68,6 +68,12 @@ void MovingRect::set_highlight( bool h )
 }
 
 
+void MovingRect::set_hover( bool h )
+{
+    hover = h;
+}
+
+
 bool MovingRect::get_highlight(  )
 {
     return highlight;

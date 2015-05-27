@@ -62,11 +62,11 @@ public:
     /// Is the active edge being shown or not?
     bool is_showing() const;
     
-    
+    /// change snap or cursor mode
     void change_mode();
     
-    
-    void closest_widget(Vec2f & hand_pos_inst);
+    // in snap mode: highlight closest widget, and select if L
+    void snap_on_closest(Vec2f & hand_pos_inst, const gestoos::nui::Hand & h );
     
 private:
     
