@@ -16,7 +16,6 @@
 
 #include  <algorithm>
 
-#include "Cinderactor.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -35,8 +34,10 @@ public:
     /// Default destructor
     virtual ~Slider();
     
+    /// Signal the slider to show
     void show();
     
+    /// Signal the slider to hide
     void hide();
     
     bool is_showing() const;
@@ -47,6 +48,9 @@ public:
     /// Get the slider percentage
     float get_pctg() const;
     
+    /// Update the slider, mainly for animations and viz purposes
+    void update();
+    
     /// Draw the Slider
     void draw( int sense = 0 ) const;
     
@@ -55,10 +59,9 @@ private:
     float pctg;
     
     ColorA          color;
-   // Rectf           rect;
     
-    gestoos::nui::Hand hand;
     Vec2f pos_f;
+    float alpha, alpha_dest;
     
     bool showing ;
     

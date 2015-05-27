@@ -16,6 +16,8 @@ Slider::Slider(const Vec2f & _p, const Vec2f & _s, const ColorA & _c ) : Rectf( 
 {
     color = _c;
     showing = true;
+    alpha = alpha_dest = 1.0;
+    pctg = 0.5;
 }
 
 /// Default destructor
@@ -25,11 +27,13 @@ Slider::~Slider(){}
 void Slider::show()
 {
     showing = true;
+    alpha_dest = 1.0;
 }
 
 void Slider::hide()
 {
     showing = false;
+    alpha_dest = 0.0;
 }
 
 bool Slider::is_showing() const{
@@ -39,7 +43,7 @@ bool Slider::is_showing() const{
 
 void Slider::set_pctg(float _p)
 {
-    pctg += (fmin(fmax( 0.05, _p ), 1.0) - pctg ) * 0.25;
+    pctg += ( constrain<float>(_p, 0.05, 1.0) - pctg ) * 0.25;
 }
 
 float Slider::get_pctg() const
@@ -47,13 +51,18 @@ float Slider::get_pctg() const
     return pctg;
 }
 
+void Slider::update()
+{
+    alpha += (alpha_dest - alpha) * 0.1;
+    color.a = alpha * 0.6;
+}
+
 /// Draw the Slider
 void Slider::draw( int sense ) const
 {
     if(showing)
     {
-        std::cout<<"showing"<<std::endl;
-        gl::color( ColorA( 0.2,0.3,0.4, 1.0) );
+        gl::color( ColorA( 0.2,0.3,0.4, alpha) );
         gl::drawSolidRoundedRect( *this, 5.0, 32 );
         
         gl::color( color );
@@ -66,7 +75,7 @@ void Slider::draw( int sense ) const
         }
         else
         {
-             pctg_rect = Rectf( Vec2f( getX1(), getY2() - pctg*getHeight() ), Vec2f( getX2(), getY2() ) ) ;
+            pctg_rect = Rectf( Vec2f( getX1(), getY2() - pctg*getHeight() ), Vec2f( getX2(), getY2() ) ) ;
         }
         gl::drawSolidRoundedRect( pctg_rect, 5.0, 32);
     }

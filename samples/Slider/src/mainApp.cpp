@@ -43,7 +43,8 @@ public:
     gestoos::nui::Hand empty_hand;
     gestoos::nui::Hand * hand_g;
     gestoos::nui::Hand * hand_slider;
-
+    
+    cv::Point3f ref_pos;
     Vec2f hand_pos_f;
     
     Slider slider_ver, slider_hor;
@@ -55,26 +56,25 @@ void exampleApp::setup()
 {
     setFullScreen(true);
     
-    //Start interactor processing in a separate thread
-    can_process_thread = true;
-    mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
-    
     //init and hide sliders
     slider_ver = Slider( getWindowSize()/2 , Vec2f(30, 500), ColorA(0.9,0.4,0.5,0.5) );
-    slider_ver.set_pctg( 0.42 );
     slider_ver.hide();
     
     slider_hor = Slider( getWindowSize()/2 , Vec2f(500, 30), ColorA(0.3,0.9,0.5,0.5) );
-    slider_hor.set_pctg( 0.42 );
     slider_hor.hide();
     
     //init pointers
-    empty_hand = gestoos::nui::Hand();
+    ref_pos = cv::Point3f(-1,-1,-1);
+    empty_hand.clear();
     hand_g = &empty_hand;
     hand_slider = &empty_hand;
     
     timer.start();
     
+    
+    //Start interactor processing in a separate thread
+    can_process_thread = true;
+    mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
 }
 
 void exampleApp::prepareSettings( Settings *settings )
@@ -131,22 +131,28 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
+    slider_hor.update();
+    slider_ver.update();
+    
     gestoos::nui::Hand hand1 = cinderactor.get_hands().first;
     gestoos::nui::Hand hand2 = cinderactor.get_hands().second;
-   
+    
     // start slider
     if( ( hand1.is_present() && hand1.get_gesture() == GEST_VICTORY ) && !slider_ver.is_showing() )
     {
         hand_g = &hand1;
         hand_slider = &hand2;
+        ref_pos = hand_g->get_pos();
         slider_ver.show();
         slider_hor.hide();
         std::cout<<"showing ver with hand 1"<<std::endl;
     }
+    // start slider
     if( ( hand2.is_present() && hand2.get_gesture() == GEST_VICTORY ) && !slider_ver.is_showing() )
     {
         hand_g = &hand2;
         hand_slider = &hand1;
+        ref_pos = hand_g->get_pos();
         slider_ver.show();
         slider_hor.hide();
         std::cout<<"showing ver with hand 2"<<std::endl;
@@ -156,6 +162,7 @@ void exampleApp::update()
     {
         hand_g = &hand1;
         hand_slider = &hand2;
+        ref_pos = hand_g->get_pos();
         slider_hor.show();
         slider_ver.hide();
         std::cout<<"showing hor with hand 1"<<std::endl;
@@ -165,6 +172,7 @@ void exampleApp::update()
     {
         hand_g = &hand2;
         hand_slider = &hand1;
+        ref_pos = hand_g->get_pos();
         slider_hor.show();
         slider_ver.hide();
         std::cout<<"showing hor with hand 2"<<std::endl;
@@ -174,29 +182,46 @@ void exampleApp::update()
     if( slider_hor.is_showing() && hand_g->get_gesture() != GEST_EL )
     {
         slider_hor.hide();
+        hand_g = hand_slider = &empty_hand;
         std::cout<<"quitting hor"<<std::endl;
     }
     // exit slider
     if( slider_ver.is_showing() && hand_g->get_gesture() != GEST_VICTORY )
     {
         slider_ver.hide();
+        hand_g = hand_slider = &empty_hand;
         std::cout<<"quitting ver"<<std::endl;
     }
     
-    // set slider
-    if( slider_hor.is_showing() && hand_slider->is_present() )
+    // filter ref pos
+    if(slider_ver.is_showing() || slider_hor.is_showing() )
     {
-        slider_hor.set_pctg( hand_slider->get_pos().x / 320.0 ) ;
-        std::cout<<"moving hor"<<slider_hor.get_pctg()<<std::endl;
+        ref_pos += (hand_g->get_pos() - ref_pos) * 0.1;
     }
     
-    // set slider
+    // set slider hor
+    if( slider_hor.is_showing() && hand_slider->is_present() )
+    {
+        float new_pctg = 0.0;
+        if( hand_slider->get_pos().x > hand_g->get_pos().x )
+            new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,    60,  120, 0.0, 1.0 );
+        else
+            new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,  -120,  -60, 0.0, 1.0 );
+        
+        
+        slider_hor.set_pctg( new_pctg ) ;
+        //        std::cout<<"moving hor "<<slider_hor.get_pctg()<<std::endl;
+    }
+    
+    // set slider ver
     if( slider_ver.is_showing() && hand_slider->is_present() )
     {
-        slider_ver.set_pctg( 1.0 - hand_slider->get_pos().y / 240.0 ) ;
-        std::cout<<"moving ver "<<slider_ver.get_pctg() <<std::endl;
+        float new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -40, 40, 1.0, 0.0 );
+        
+        slider_ver.set_pctg( new_pctg ) ;
+        //        std::cout<<"moving ver "<<slider_ver.get_pctg() <<std::endl;
     }
-   }
+}
 
 void exampleApp::draw()
 {
