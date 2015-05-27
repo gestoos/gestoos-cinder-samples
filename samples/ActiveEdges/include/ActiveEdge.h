@@ -47,6 +47,9 @@ public:
     /// Signal the active edge to hide
     void hide();
     
+    /// Clear the canvas removing all the widgets
+    void clear_canvas();
+    
     /// Set the current hand detection
     void set_hand( const gestoos::nui::Hand & h );
 

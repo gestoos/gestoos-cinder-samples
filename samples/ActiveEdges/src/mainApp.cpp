@@ -152,6 +152,12 @@ void exampleApp::update()
             if ( active_edge.is_showing() )
                 active_edge.hide();
             break;
+            
+        case Cinderactor::RIGHT:
+            if ( !active_edge.is_showing() )
+                active_edge.clear_canvas();
+            break;
+
         
         default:
             break;

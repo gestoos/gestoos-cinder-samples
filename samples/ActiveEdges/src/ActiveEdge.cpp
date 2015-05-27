@@ -86,6 +86,18 @@ void ActiveEdge::hide()
     std::cout<<"HIDE"<<std::endl;
 }
 
+void ActiveEdge::clear_canvas()
+{
+    if( timer.getSeconds() < 1.0 ) return;
+    
+    std::cout<<" ---> clear canvas"<<std::endl;
+    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
+    {
+        it->set_offset( Vec2f( getWindowWidth()*1.1 - it->get_pos().x, 0 ) );
+    }
+    timer.start();
+}
+
 
 
 
@@ -277,6 +289,10 @@ void ActiveEdge::update()
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
         it->update();
+        
+        //Kill out of view widgets
+        if( it->get_pos().x > getWindowWidth() )
+            it = canvas_widgets.erase(it);
     }
     
     
