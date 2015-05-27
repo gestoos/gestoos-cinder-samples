@@ -52,6 +52,9 @@ public:
 
     ///
     static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
+
+	///
+	bool get_init_ok();
     
 private:
     cinder::Timer block_timer;

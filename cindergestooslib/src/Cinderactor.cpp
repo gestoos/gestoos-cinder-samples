@@ -116,3 +116,8 @@ void Cinderactor::draw_hand_circle( const gestoos::nui::Hand & hand ) const
         gl::drawStrokedCircle( Vec2f( hand.get_pos().x * cinder::app::getWindowWidth() / 320.0,  hand.get_pos().y * cinder::app::getWindowHeight() / 240.0), 15.0, 32  );
     }
 }
+
+bool Cinderactor::get_init_ok()
+{
+	return init_ok;
+}

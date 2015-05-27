@@ -10,7 +10,9 @@ using namespace ci::app;
 
 using namespace std;
 
+#include "GestureSwitch.h"
 #include "Cinderactor.h"
+#include "resource.h"
 
 #define GESTURE_TEE 1
 #define GESTURE_PAUSE 2
@@ -50,12 +52,35 @@ public:
 	gestoos::detection::GestureDetector::GestureTraits detected_gesture;
 
 	double elapsed = 0;
+	int gesture_pos;
+	std::vector<GestureSwitch> switches;
+	Font font;
+	Color color;
     
 };
 
 void exampleApp::setup()
 {
+	font = Font("Arial", 30.0);
+	color = Color(1.0, 1.0, 1.0);
+
     setFullScreen(true);
+
+	//Load textures
+	float switch_size = 200.0;
+	Rectf rect(0.0, 0.0, switch_size, switch_size);
+	rect.offsetCenterTo(Vec2f(ci::app::getWindowWidth() / 4, ci::app::getWindowHeight() / 3));
+	switches.push_back(GestureSwitch(GESTURE_TEE, IDB_PNG4, rect));
+	rect.offsetCenterTo(Vec2f(ci::app::getWindowWidth() / 4 * 2, ci::app::getWindowHeight() / 3));
+	switches.push_back(GestureSwitch(GESTURE_PAUSE, IDB_PNG2, rect));
+	rect.offsetCenterTo(Vec2f(ci::app::getWindowWidth() / 4 * 3, ci::app::getWindowHeight() / 3));
+	switches.push_back(GestureSwitch(GESTURE_VOLDOWN, IDB_PNG5, rect));
+	rect.offsetCenterTo(Vec2f(ci::app::getWindowWidth() / 4, ci::app::getWindowHeight() / 3 * 2));
+	switches.push_back(GestureSwitch(GESTURE_VOLUP, IDB_PNG6, rect));
+	rect.offsetCenterTo(Vec2f(ci::app::getWindowWidth() / 4 * 2, ci::app::getWindowHeight() / 3 * 2));
+	switches.push_back(GestureSwitch(GESTURE_FWD, IDB_PNG1, rect));
+	rect.offsetCenterTo(Vec2f(ci::app::getWindowWidth() / 4 * 3, ci::app::getWindowHeight() / 3 * 2));
+	switches.push_back(GestureSwitch(GESTURE_RWD, IDB_PNG3, rect));
     
     //Start interactor processing in a separate thread
     can_process_thread = true;
@@ -115,16 +140,39 @@ void exampleApp::processThread()
 
 		gestoos::Timestamp diff_ts = ts2 - ts;
 
-
 		this->elapsed = diff_ts.seconds()*1000.0 + diff_ts.millis();
-
-		std::cout << "\r" << this->elapsed << " ms | " << 1 / (this->elapsed / 1000.0) << " fps" << std::flush;
     }
 }
 
 void exampleApp::update()
 {
 	detected_gesture = cinderactor.get_gesture();
+	
+	switch (detected_gesture.id) {
+	case GESTURE_TEE:
+		gesture_pos = 1;
+		break;
+	case GESTURE_PAUSE:
+		gesture_pos = 2;
+		break;
+	case GESTURE_VOLDOWN:
+		gesture_pos = 3;
+		break;
+	case GESTURE_VOLUP:
+		gesture_pos = 4;
+		break;
+	case GESTURE_FWD:
+		gesture_pos = 5;
+		break;
+	case GESTURE_RWD:
+		gesture_pos = 6;
+		break;
+	default:
+		gesture_pos = 0;
+		break;
+	}
+	if (--gesture_pos >= 0)
+		switches[gesture_pos].switch_update();
     
 }
 
@@ -134,36 +182,18 @@ void exampleApp::draw()
 	gl::setMatricesWindow( getWindowSize() );
 	gl::clear( Color( 0.1f, 0.1f, 0.1f ) );
 
-	std::string elapsedStr = boost::lexical_cast<std::string>(this->elapsed) + " ms | " + boost::lexical_cast<std::string>(1 / (this->elapsed / 1000.0)) + " fps";
-
-	Font font("Arial", 30);
-	Color color(1,1,1);
-	gl::drawString(elapsedStr, Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight() / 4),color,font);
-
-	switch (detected_gesture.id) {
-	case GESTURE_TEE:
-		gl::drawStringCentered("GESTURE TEE", Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight()*0.5),color,font);
-		break;
-	case GESTURE_PAUSE:
-		gl::drawStringCentered("GESTURE PAUSE", Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight()*0.5), color, font);
-		break;
-	case GESTURE_VOLDOWN:
-		gl::drawStringCentered("GESTURE SILENCE", Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight()*0.5), color, font);
-		break;
-	case GESTURE_VOLUP:
-		gl::drawStringCentered("GESTURE AUDIO", Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight()*0.5), color, font);
-		break;
-	case GESTURE_FWD:
-		gl::drawStringCentered("GESTURE FWD", Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight()*0.5), color, font);
-		break;
-	case GESTURE_RWD:
-		gl::drawStringCentered("GESTURE RWD", Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight()*0.5), color, font);
-			break;
-	default:
-		break;
-
+	if (cinderactor.get_init_ok()) {
+		for (auto it = switches.begin(); it != switches.end(); it++)
+			it->draw();
+		
+		/*
+		std::string elapsedStr = boost::lexical_cast<std::string>(this->elapsed) + " ms | " + boost::lexical_cast<std::string>(1 / (this->elapsed / 1000.0)) + " fps";
+		gl::drawString(elapsedStr, Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight() - 100), color, font);
+		std::string detectedStr = "Detected gesture " + boost::lexical_cast<std::string>(detected_gesture.id);
+		gl::drawString(detectedStr, Vec2f(cinder::app::getWindowWidth() / 2, cinder::app::getWindowHeight() - 200), color, font);
+		*/
 	}
-    
+
     cinderactor.draw();
 }
 

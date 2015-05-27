@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\..\cindergestooslib\src\MovingRect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GestureSwitch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\resources\interactor.cfg">
@@ -37,5 +40,36 @@
     <ClInclude Include="..\..\..\cindergestooslib\include\MovingRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GestureSwitch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resources\gest_ffwd_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\gest_pause_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\gest_rwd_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\gest_tee_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\gest_voldown_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\gest_volup_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

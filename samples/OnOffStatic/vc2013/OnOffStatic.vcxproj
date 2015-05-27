@@ -130,10 +130,14 @@
       <AdditionalLibraryDirectories>D:\Fezoo\cinder\Cinderactor\x64\Release;..\..\..\..\..\lib\release;$(BOOST_LIB)\stage\lib;$(OPENCV_LIB)\$(PlatformTarget)\vc12\lib;$(CINDER_LIB)\lib\msw\$(PlatformTarget);$(GESTOOS_DIR)\external\curl\x64\lib;$(OPENNI_LIB64)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;cinder-$(PlatformToolset).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\include;$(CINDER_PATH)\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\cindergestooslib\src\Cinderactor.cpp" />
     <ClCompile Include="..\..\..\cindergestooslib\src\MovingRect.cpp" />
+    <ClCompile Include="..\src\GestureSwitch.cpp" />
     <ClCompile Include="..\src\mainApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +146,19 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\cindergestooslib\include\Cinderactor.h" />
     <ClInclude Include="..\..\..\cindergestooslib\include\MovingRect.h" />
+    <ClInclude Include="..\include\GestureSwitch.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resources\gest_ffwd_big.png" />
+    <Image Include="..\resources\gest_pause_big.png" />
+    <Image Include="..\resources\gest_rwd_big.png" />
+    <Image Include="..\resources\gest_tee_big.png" />
+    <Image Include="..\resources\gest_voldown_big.png" />
+    <Image Include="..\resources\gest_volup_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
