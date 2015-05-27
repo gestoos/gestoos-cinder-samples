@@ -58,7 +58,6 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout
     return NONE;
 }
 
-
 void Cinderactor::draw() const
 {
     // Loading message
@@ -72,6 +71,10 @@ void Cinderactor::draw() const
     draw_hand_representation( get_hands().first,   Vec2f(200, 70 ) );
     draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
    
+       std::stringstream ss;
+        ss<<"Static : "<<get_gesture().id <<std::endl;
+        gl::drawStringCentered(	ss.str(), Vec2f( 330, 30), Color(0.7, 0.8, 0.9) );
+    
 }
 
 void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where )
@@ -82,6 +85,8 @@ void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, con
     {
         if( hand.get_gesture() == GEST_VICTORY )
             gl::color( Color(1.0, 0.6, 0.7));
+        else if( hand.get_gesture() == GEST_EL )
+            gl::color( Color(0.5, 1.0, 0.7));
         else
             gl::color( Color(0.5, 0.6, 0.7));
         
@@ -104,8 +109,7 @@ void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, con
     }
     
     //Set color back to white
-    gl::color( Color(1.0, 1.0, 1.0));
-
+    gl::color( Color(1.0, 1.0, 1.0) );
 }
 
 void Cinderactor::draw_hand_circle( const gestoos::nui::Hand & hand ) const

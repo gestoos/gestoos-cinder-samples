@@ -16,10 +16,13 @@
 
 using namespace ci;
 
+static int     GEST_AUDIO       = 4;
+
 static int     GEST_EL          = 13;
 static int     GEST_VICTORY     = 14;
 static int     GEST_OPEN        = 15;
 static int     GEST_CLOSE       = 16;
+
 static int     GEST_GRAB        = 206;
 static int     GEST_RELEASE     = 207;
 
@@ -29,6 +32,7 @@ class Cinderactor : public gestoos::nui::Interactor
 
 public:
     
+   
     /// The hand stroke direction
     enum StrokeType {UP,DOWN,LEFT,RIGHT,NONE} ;
     

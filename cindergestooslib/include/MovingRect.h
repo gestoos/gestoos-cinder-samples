@@ -61,12 +61,25 @@ public:
     
     /// Draw the MovingRect.
     virtual void draw() const;
+    
+    // set highlight bool
+    void set_highlight( bool h );
+
+    // set hover bool
+    void set_hover( bool h );
+
+    // get highlight bool
+    bool get_highlight();
+
 
 protected:
     bool    hover;
+    bool    highlight;
+    
     float   alpha_dest, alpha;
     Vec2f   pos_dest,   pos;
     ColorA  r_color;
+    
     
 private:
     void _init(const Vec2f & _o, const Vec2f & _s, const ColorA & _c);

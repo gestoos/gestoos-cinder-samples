@@ -111,7 +111,12 @@ void exampleApp::keyDown( KeyEvent event )
             case KeyEvent::KEY_h:
                 active_edge.hide();
                 break;
-		}
+            case KeyEvent::KEY_m:
+                active_edge.change_mode();
+                break;
+
+		
+        }
 	
 }
 
@@ -147,6 +152,12 @@ void exampleApp::update()
             if ( active_edge.is_showing() )
                 active_edge.hide();
             break;
+            
+        case Cinderactor::RIGHT:
+            if ( !active_edge.is_showing() )
+                active_edge.clear_canvas();
+            break;
+
         
         default:
             break;
