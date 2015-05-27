@@ -3,6 +3,7 @@
 #include "cinder/System.h"
 #include "cinder/Rand.h"
 #include "cinder/Thread.h"
+
 using namespace ci;
 using namespace ci::app;
 
@@ -35,12 +36,15 @@ public:
     
     void processThread();
     
+    void hide_all_sliders();
+    bool no_widget_showing();
+    
     Cinderactor cinderactor;
     
     shared_ptr<std::thread>		mThread;
     bool can_process_thread;
     
-    gestoos::nui::Hand empty_hand;
+    gestoos::nui::Hand empty_hand, static_hand;
     gestoos::nui::Hand * hand_g;
     gestoos::nui::Hand * hand_slider;
     
@@ -48,6 +52,9 @@ public:
     Vec2f hand_pos_f;
     
     Slider slider_ver, slider_hor;
+    
+    std::list<Slider> sliders;
+    
     Timer timer;
     
 };
@@ -55,19 +62,16 @@ public:
 void exampleApp::setup()
 {
     setFullScreen(true);
-    
-    //init and hide sliders
-    slider_ver = Slider( getWindowSize()/2 , Vec2f(30, 500), ColorA(0.9,0.4,0.5,0.5) );
-    slider_ver.hide();
-    
-    slider_hor = Slider( getWindowSize()/2 , Vec2f(500, 30), ColorA(0.3,0.9,0.5,0.5) );
-    slider_hor.hide();
+
+    sliders.push_back( Slider( getWindowSize()/2 , Vec2f(30, 500),  ColorA(0.9,0.4,0.5,0.5), GEST_VICTORY,  Slider::VERTICAL )  );
+    sliders.push_back( Slider( getWindowSize()/2 , Vec2f(500, 30),  ColorA(0.5,0.9,0.5,0.5), GEST_EL,       Slider::HORIZONTAL )  );
+    sliders.push_back( Slider( getWindowSize()/2 , Vec2f(300, 300), ColorA(0.9,0.9,0.5,0.5), GEST_AUDIO,    Slider::CIRCULAR )  );
     
     //init pointers
     ref_pos = cv::Point3f(-1,-1,-1);
     empty_hand.clear();
-    hand_g = &empty_hand;
-    hand_slider = &empty_hand;
+    static_hand.clear();
+    hand_g = hand_slider = &empty_hand;
     
     timer.start();
     
@@ -131,96 +135,149 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
-    slider_hor.update();
-    slider_ver.update();
+    //    slider_hor.update();
+    //    slider_ver.update();
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
+        it->update();
     
     gestoos::nui::Hand hand1 = cinderactor.get_hands().first;
     gestoos::nui::Hand hand2 = cinderactor.get_hands().second;
     
     // start slider
-    if( ( hand1.is_present() && hand1.get_gesture() == GEST_VICTORY ) && !slider_ver.is_showing() )
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        hand_g = &hand1;
-        hand_slider = &hand2;
-        ref_pos = hand_g->get_pos();
-        slider_ver.show();
-        slider_hor.hide();
-        std::cout<<"showing ver with hand 1"<<std::endl;
+        if( cinderactor.get_gesture().id == it->get_trigger() && no_widget_showing() )
+        {
+//            hand_g->set_pos( cv::Point3f(cinderactor.get_gesture().u, cinderactor.get_gesture().v, cinderactor.get_gesture().z ) );
+//            ref_pos = hand_g->get_pos();
+            
+            ref_pos = cv::Point3f(cinderactor.get_gesture().u, cinderactor.get_gesture().v, cinderactor.get_gesture().z );
+            
+            hide_all_sliders();
+            it->show();
+            std::cout<<"showing static slider "<<it->get_trigger()<<std::endl;
+            break;
+        }
+        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && no_widget_showing() )
+        {
+            hand_g =        &hand1;
+            hand_slider =   &hand2;
+            ref_pos =       hand_g->get_pos();
+            hide_all_sliders();
+            it->show();
+            std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
+            break;
+        }
+        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger()  && no_widget_showing() )
+        {
+            hand_g =        &hand2;
+            hand_slider =   &hand1;
+            ref_pos =       hand_g->get_pos();
+            hide_all_sliders();
+            it->show();
+            std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
+            break;
+        }
     }
-    // start slider
-    if( ( hand2.is_present() && hand2.get_gesture() == GEST_VICTORY ) && !slider_ver.is_showing() )
+    
+    //Special case, static gesture slider, hand init
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        hand_g = &hand2;
-        hand_slider = &hand1;
-        ref_pos = hand_g->get_pos();
-        slider_ver.show();
-        slider_hor.hide();
-        std::cout<<"showing ver with hand 2"<<std::endl;
-    }
-    // start slider
-    if( ( hand1.is_present() && hand1.get_gesture() == GEST_EL ) && !slider_hor.is_showing() )
-    {
-        hand_g = &hand1;
-        hand_slider = &hand2;
-        ref_pos = hand_g->get_pos();
-        slider_hor.show();
-        slider_ver.hide();
-        std::cout<<"showing hor with hand 1"<<std::endl;
-    }
-    // start slider
-    if( ( hand2.is_present() && hand2.get_gesture() == GEST_EL ) && !slider_hor.is_showing() )
-    {
-        hand_g = &hand2;
-        hand_slider = &hand1;
-        ref_pos = hand_g->get_pos();
-        slider_hor.show();
-        slider_ver.hide();
-        std::cout<<"showing hor with hand 2"<<std::endl;
+        if (it->is_showing() &&
+            it->get_trigger() < 10 &&
+            !hand_slider->is_present() )
+        {
+            if( hand1.is_present() )
+            {
+                std::cout<<"setting hand 1 to "<<it->get_trigger()<<std::endl;
+                hand_slider = &hand1;
+                break;
+            }
+            if( hand2.is_present() )
+            {
+                std::cout<<"setting hand 2 to "<<it->get_trigger()<<std::endl;
+                hand_slider = &hand2;
+                break;
+            }
+            if( !hand1.is_present() && !hand2.is_present() )
+            {
+                std::cout<<"removing hand from "<<it->get_trigger()<<std::endl;
+                hand_slider = &empty_hand;
+                break;
+            }
+        }
     }
     
     // exit slider
-    if( slider_hor.is_showing() && hand_g->get_gesture() != GEST_EL )
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        slider_hor.hide();
-        hand_g = hand_slider = &empty_hand;
-        std::cout<<"quitting hor"<<std::endl;
-    }
-    // exit slider
-    if( slider_ver.is_showing() && hand_g->get_gesture() != GEST_VICTORY )
-    {
-        slider_ver.hide();
-        hand_g = hand_slider = &empty_hand;
-        std::cout<<"quitting ver"<<std::endl;
+        if( it->is_showing() &&
+            ( it->get_trigger() < 10 && cinderactor.get_gesture().id != it->get_trigger() ) )
+        {
+            hide_all_sliders();
+            hand_g = hand_slider = &empty_hand;
+            std::cout<<"quitting "<<it->get_trigger()<<std::endl;
+            break;
+        }
+        
+        if( it->is_showing() &&
+           ( it->get_trigger() > 10 && hand_g->get_gesture() != it->get_trigger() ) )
+        {
+            hide_all_sliders();
+            hand_g = hand_slider = &empty_hand;
+            std::cout<<"quitting "<<it->get_trigger()<<std::endl;
+            break;
+        }
     }
     
     // filter ref pos
-    if(slider_ver.is_showing() || slider_hor.is_showing() )
-    {
+    if( hand_g->is_present() )
         ref_pos += (hand_g->get_pos() - ref_pos) * 0.1;
-    }
     
-    // set slider hor
-    if( slider_hor.is_showing() && hand_slider->is_present() )
+    // update pctg
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        float new_pctg = 0.0;
-        if( hand_slider->get_pos().x > hand_g->get_pos().x )
-            new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,    60,  120, 0.0, 1.0 );
-        else
-            new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,  -120,  -60, 0.0, 1.0 );
-        
-        
-        slider_hor.set_pctg( new_pctg ) ;
-        //        std::cout<<"moving hor "<<slider_hor.get_pctg()<<std::endl;
+        if( it->is_showing() && hand_slider->is_present() )
+        {
+            float new_pctg = 0.0;
+            
+            if( it->get_type() == Slider::HORIZONTAL )
+            {
+                if( hand_slider->get_pos().x > hand_g->get_pos().x )
+                    new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,    60,  120, 0.0, 1.0 );
+                else
+                    new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,  -120,  -60, 0.0, 1.0 );
+            }
+            else if( it->get_type() == Slider::VERTICAL )
+            {
+                new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -40, 40, 1.0, 0.0 );
+            }
+            else if( it->get_type() == Slider::CIRCULAR )
+            {
+                std::cout<<hand_slider->get_pos().y<<" - "<<ref_pos.y<<std::endl;
+                new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -10, 60, 1.0, 0.0 );
+            }
+            
+            it->set_pctg( new_pctg ) ;
+            break;
+        }
     }
-    
-    // set slider ver
-    if( slider_ver.is_showing() && hand_slider->is_present() )
-    {
-        float new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -40, 40, 1.0, 0.0 );
-        
-        slider_ver.set_pctg( new_pctg ) ;
-        //        std::cout<<"moving ver "<<slider_ver.get_pctg() <<std::endl;
     }
+
+void exampleApp::hide_all_sliders()
+{
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
+        it->hide();
+}
+
+bool exampleApp::no_widget_showing()
+{
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
+        if( it->is_showing() )
+        {
+            return false;
+        }
+    return true;
 }
 
 void exampleApp::draw()
@@ -229,8 +286,10 @@ void exampleApp::draw()
 	gl::setMatricesWindow( getWindowSize() );
 	gl::clear( Color( 0.1f, 0.1f, 0.1f ) );
     
-    slider_ver.draw(1);
-    slider_hor.draw(0);
+    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
+        it->draw();
+    //    slider_ver.draw(1);
+    //    slider_hor.draw(0);
     
     cinderactor.draw();
 }

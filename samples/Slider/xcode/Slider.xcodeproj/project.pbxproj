@@ -22,11 +22,10 @@
 		A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
 		A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBD1B147715003ED9FF /* MovingRect.cpp */; };
 		A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
-		A1E08DD11B1486A9003ED9FF /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */; };
-		A1E08DD21B1486AB003ED9FF /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DCE1B14869D003ED9FF /* valcriClose.dat */; };
 		A1E08DD51B148B49003ED9FF /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DD31B148B41003ED9FF /* valcriL.dat */; };
 		A1E08DDA1B14CB11003ED9FF /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DD81B14CB11003ED9FF /* Slider.cpp */; };
 		A1E08DDD1B14D597003ED9FF /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DDB1B14D58E003ED9FF /* valcriVictory.dat */; };
+		A1E08DE01B15CF7B003ED9FF /* GestooAudio_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DDE1B15CF38003ED9FF /* GestooAudio_320.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,10 +36,9 @@
 			dstSubfolderSpec = 7;
 			files = (
 				A1E08DDD1B14D597003ED9FF /* valcriVictory.dat in CopyFiles */,
+				A1E08DE01B15CF7B003ED9FF /* GestooAudio_320.dat in CopyFiles */,
 				A10B06B21B0F14DB00507C88 /* hand_detector.dat in CopyFiles */,
-				A1E08DD11B1486A9003ED9FF /* valcriOpen.dat in CopyFiles */,
 				A1E08DD51B148B49003ED9FF /* valcriL.dat in CopyFiles */,
-				A1E08DD21B1486AB003ED9FF /* valcriClose.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +74,7 @@
 		A1E08DD71B14CB04003ED9FF /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Slider.h; path = ../include/Slider.h; sourceTree = "<group>"; };
 		A1E08DD81B14CB11003ED9FF /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = ../src/Slider.cpp; sourceTree = "<group>"; };
 		A1E08DDB1B14D58E003ED9FF /* valcriVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory.dat; path = ../../../../../data/valcriVictory.dat; sourceTree = "<group>"; };
+		A1E08DDE1B15CF38003ED9FF /* GestooAudio_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooAudio_320.dat; path = ../../../../../data/GestooAudio_320.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +186,7 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1E08DDE1B15CF38003ED9FF /* GestooAudio_320.dat */,
 				A1E08DDB1B14D58E003ED9FF /* valcriVictory.dat */,
 				A1E08DD31B148B41003ED9FF /* valcriL.dat */,
 				A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */,
