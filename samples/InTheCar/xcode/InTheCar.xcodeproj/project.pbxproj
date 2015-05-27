@@ -304,7 +304,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
+				BOOST_PATH = /Users/alopez/workspace/GestoosSDK/lib;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -332,8 +332,8 @@
 					/usr/local/lib,
 					"$(PROJECT_DIR)",
 				);
-				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "../../../../../../OpenNI-MacOSX-x64-2.2";
+				OPENCV_PATH = "/Users/alopez/workspace/opencv-3.0.0-rc1";
+				OPENNI2_PATH = "/Users/alopez/workspace/OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
 					"-lOpenNI2",
@@ -366,7 +366,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
+				BOOST_PATH = /Users/alopez/workspace/GestoosSDK/lib;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -395,8 +395,8 @@
 					/usr/local/lib,
 					"$(PROJECT_DIR)",
 				);
-				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "../../../../../../OpenNI-MacOSX-x64-2.2";
+				OPENCV_PATH = "/Users/alopez/workspace/opencv-3.0.0-rc1";
+				OPENNI2_PATH = "/Users/alopez/workspace/OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
 					"-lopencv_highgui",
