@@ -7,12 +7,12 @@ GestureSwitch::GestureSwitch()
 	timer.start();
 }
 
-GestureSwitch::GestureSwitch(int _id, int _rid, Rectf _pos)
+GestureSwitch::GestureSwitch(int _id, cinder::DataSourceRef _rid, Rectf _pos)
 {
 	id = _id;
 	pos = _pos;
 	on = false;
-	image = gl::Texture(loadImage(loadResource(_rid, "PNG")));
+	image = gl::Texture(loadImage(_rid));
 	timer.start();
 }
 

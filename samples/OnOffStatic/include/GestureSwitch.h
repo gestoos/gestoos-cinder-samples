@@ -1,5 +1,5 @@
-#ifndef ActiveEdge_Label_h
-#define ActiveEdge_Label_h
+#ifndef GestureSwitch_Label_h
+#define GestureSwitch_Label_h
 
 #include "cinder/Cinder.h"
 #include "cinder/Rand.h"
@@ -27,7 +27,7 @@ public:
 	GestureSwitch();
 
 	/// Constructor with a gesture ID
-	GestureSwitch(int _id, int _rid, Rectf _pos);
+	GestureSwitch(int _id, cinder::DataSourceRef _rid, Rectf _pos);
 
 	/// Default destructor
 	virtual ~GestureSwitch();
