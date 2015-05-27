@@ -61,6 +61,25 @@ void MovingRect::set_offset( const Vec2f & o )
     pos_dest += o;
 }
 
+
+void MovingRect::set_highlight( bool h )
+{
+    highlight = h;
+}
+
+
+void MovingRect::set_hover( bool h )
+{
+    hover = h;
+}
+
+
+bool MovingRect::get_highlight(  )
+{
+    return highlight;
+}
+
+
 void MovingRect::set_color( const ColorA & c )
 {
     r_color = c;
@@ -75,7 +94,7 @@ void MovingRect::update()
 {
     alpha += (alpha_dest - alpha) * 0.175;
     
-    if( hover )
+    if( hover || highlight )
         r_color.a = 0.9 * alpha;
     else
         r_color.a = 0.5 * alpha;
@@ -102,6 +121,8 @@ void MovingRect::_init(const Vec2f & _o, const Vec2f & _s, const ColorA & _c)
     this->offsetCenterTo( pos_dest ); //hard setting center position here
     r_color = _c;
     hover = false;
+    highlight = false;
+    
     alpha = 0.0;
     alpha_dest = 0.0;
 }

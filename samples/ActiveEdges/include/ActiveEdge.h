@@ -65,6 +65,12 @@ public:
     /// Is the active edge being shown or not?
     bool is_showing() const;
     
+    /// change snap or cursor mode
+    void change_mode();
+    
+    // in snap mode: highlight closest widget, and select if L
+    void snap_on_closest(Vec2f & hand_pos_inst, const gestoos::nui::Hand & h );
+    
 private:
     
     std::list< Widget > widgets;
@@ -86,6 +92,10 @@ private:
     Vec2f show_c, hide_c, center;
     
     Timer timer;
+    
+    int currW;
+    
+    bool snapmode;
     
     // Reorganize the canvas widgets in a grid. Hardcoded to 3 columns.
     void _reorganize_canvas();

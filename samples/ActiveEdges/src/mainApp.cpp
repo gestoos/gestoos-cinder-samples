@@ -111,7 +111,12 @@ void exampleApp::keyDown( KeyEvent event )
             case KeyEvent::KEY_h:
                 active_edge.hide();
                 break;
-		}
+            case KeyEvent::KEY_m:
+                active_edge.change_mode();
+                break;
+
+		
+        }
 	
 }
 
