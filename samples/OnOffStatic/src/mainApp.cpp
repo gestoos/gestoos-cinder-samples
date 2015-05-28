@@ -12,7 +12,10 @@ using namespace std;
 
 #include "GestureSwitch.h"
 #include "Cinderactor.h"
+
+//#ifdef _WIN32
 #include "resource.h"
+//#endif
 
 #define GESTURE_TEE 1
 #define GESTURE_PAUSE 2
@@ -123,7 +126,7 @@ void exampleApp::processThread()
 #ifdef _WIN32 // this flag is always defined in Windows 32/64
 	cinderactor.init("..\\resources\\interactor.cfg");
 #else
-    cinderactor.init( getResourcePath("interactor.cfg").string() );
+    cinderactor.init( getResourcePath("interactor_macos.cfg").string() );
 #endif
     cinderactor.set_draw_window(false);
     
