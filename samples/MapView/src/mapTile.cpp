@@ -69,6 +69,7 @@ MapTile::MapTile(float _h)
     currW = 0;
     
     zoom = 0.5;
+    offset_zoom = 0.0;
     
     color = ColorA(0.2,0.3,0.4,0.7);
     
@@ -80,7 +81,7 @@ MapTile::MapTile(float _h)
     sliders.push_back( Slider( getWindowSize()/2 , Vec2f(30, 500),  ColorA(0.9,0.4,0.5,0.5), GEST_EL,  Slider::VERTICAL )  );
 
     
-    
+    hide_all_sliders();
     
     // Set initial rect pos
     rect = Rectf( Vec2f(0,hide_y), Vec2f(getWindowWidth(),hide_y+_h) );
@@ -90,66 +91,30 @@ MapTile::MapTile(float _h)
     
     //init pointers
     ref_pos = cv::Point3f(-1,-1,-1);
-    empty_hand.clear();
-    static_hand.clear();
-    hand_g = hand_slider = &empty_hand;
+    empty_hand = new gestoos::nui::Hand();
+    empty_hand2 = new gestoos::nui::Hand();
+    empty_hand->clear();
+    empty_hand2->clear();
+    hand_g = empty_hand;
+    hand_slider = empty_hand2;
 
-    
+    std::cout<<" hand_g present "<<hand_g->is_present()<<std::endl;
     
 }
 
 MapTile::~MapTile()
 {
+    delete empty_hand;
+    delete empty_hand2;
 }
-
-
-void MapTile::show()
-{
-    if( showing || timer.getSeconds() < 1.0 ) return;
-    
-    showing = true;
-    for (auto it=widgets.begin(); it!=widgets.end(); ++it)
-    {
-        it->set_offset( Vec2f(0,-rect.getHeight()) );
-        it->show();
-    }
-    timer.start();
-    std::cout<<"SHOW"<<std::endl;
-}
-
-void MapTile::hide()
-{
-    if( !showing || timer.getSeconds() < 1.0 ) return;
-    
-    showing = false;
-    for (auto it=widgets.begin(); it!=widgets.end(); ++it)
-    {
-        it->set_offset( Vec2f(0,rect.getHeight()) );
-        it->hide();
-    }
-    timer.start();
-    std::cout<<"HIDE"<<std::endl;
-}
-
-void MapTile::clear_canvas()
-{
-    if( timer.getSeconds() < 1.0 ) return;
-    
-    std::cout<<" ---> clear canvas"<<std::endl;
-    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
-    {
-        it->set_offset( Vec2f( getWindowWidth()*1.1 - it->get_pos().x, 0 ) );
-    }
-    timer.start();
-}
-
 
 
 
 void MapTile::set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h )
 {
     hands = h;
-    
+//    std::cout<<"sh hand_g present "<<hand_g->is_present()<<std::endl;
+
     if( hands.first.is_present() && !hands.second.is_present() && showing )
     {
         gestoos::nui::Hand & hand = hands.first;
@@ -208,6 +173,8 @@ void MapTile::set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand>
             
         }
     }
+//    std::cout<<"sh2 hand_g present "<<hand_g->is_present()<<std::endl;
+
 //    else if (hands.first.is_present() && hands.second.is_present()
 //                 && hands.first.get_gesture()==GEST_EL && hands.second.get_gesture()==GEST_EL)
 //        {
@@ -296,7 +263,8 @@ void MapTile::change_mode()
 
 void MapTile::update()
 {
-    
+    std::cout<<"1 hand_g present "<<hand_g->is_present()<<std::endl;
+   
     //    slider_hor.update();
     //    slider_ver.update();
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
@@ -308,8 +276,11 @@ void MapTile::update()
     // start slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() &&no_widget_showing() )
+        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() &&no_widget_showing()&& std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
         {
+            
+            
+            
             track_mode = MODE_ZOOM;
             hand_g =        &hand1;
             hand_slider =   &hand2;
@@ -317,9 +288,14 @@ void MapTile::update()
             hide_all_sliders();
             it->show();
             std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
+            zoomtimer.start();
+            offset_zoom = zoom - 0.5;
+            it->set_pctg( zoom );
+//            std::cout<<"2 hand_g present "<<hand_g->is_present()<<std::endl;
+
             break;
         }
-        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present() && no_widget_showing() )
+        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present() && no_widget_showing() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4  )
         {
             track_mode = MODE_ZOOM;
 
@@ -329,35 +305,36 @@ void MapTile::update()
             hide_all_sliders();
             it->show();
             std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
+            zoomtimer.start();
+            offset_zoom = zoom - 0.5;
+            it->set_pctg( zoom );
+//            std::cout<<"3 hand_g present "<<hand_g->is_present()<<std::endl;
+
             break;
+            
         }
     }
     
-    
+    std::cout<<"3.1 hand_g present "<<hand_g->is_present()<<std::endl;
+
     // exit slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-//        if( it->is_showing() &&
-//           ( it->get_trigger() < 10 && cinderactor.get_gesture().id != it->get_trigger() ) )
-//        {
-//            hide_all_sliders();
-//            hand_g = hand_slider = &empty_hand;
-//            std::cout<<"quitting "<<it->get_trigger()<<std::endl;
-//            break;
-//        }
         
         if( it->is_showing() &&
-           ( it->get_trigger() > 10 && hand_g->get_gesture() != it->get_trigger() ) )
+           it->get_trigger() > 10 && ( !hand1.is_present() || !hand2.is_present() ) )
         {
             track_mode = MODE_IDLE;
 
             hide_all_sliders();
-            hand_g = hand_slider = &empty_hand;
+            hand_g =empty_hand;
+            hand_slider = empty_hand2;
             std::cout<<"quitting "<<it->get_trigger()<<std::endl;
             break;
         }
     }
     
+   std::cout<<"4 hand_g present "<<hand_g->is_present()<<std::endl;
     // filter ref pos
     if( hand_g->is_present() )
         ref_pos += (hand_g->get_pos() - ref_pos) * 0.1;
@@ -386,14 +363,20 @@ void MapTile::update()
                 new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -10, 60, 1.0, 0.0 );
             }
             
-            it->set_pctg( new_pctg ) ;
+           
+            it->set_pctg( (new_pctg + offset_zoom)  ) ;
             break;
         }
     }
     
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        if( it->is_showing()) zoom =  it->get_pctg();
+        if(track_mode == MODE_ZOOM  && it->is_showing())
+        {
+            //track_mode = MODE_ZOOM;
+            float step = 1.0 + std::abs( offset_zoom )*2.0 ;
+            zoom =  it->get_pctg() * step;
+        }
     }
 
     
@@ -405,17 +388,6 @@ void MapTile::hide_all_sliders()
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
         it->hide();
 }
-
-bool MapTile::no_widget_showing()
-{
-    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
-        if( it->is_showing() )
-        {
-            return false;
-        }
-    return true;
-}
-
 
 void MapTile::draw() const
 {
@@ -443,7 +415,7 @@ void MapTile::draw() const
         hpos.x = hand_pos_f.x;
         hpos.y = hand_pos_f.y; // horizontal
         
-        if(track_mode == MODE_PAN)
+        if(track_mode == MODE_PAN || track_mode == MODE_ZOOM)
         {
             gl::color( ColorA( 0.6,0.7,0.8,0.6));
 

@@ -45,7 +45,7 @@ bool Slider::is_showing() const{
 
 void Slider::set_pctg(float _p)
 {
-    pctg += ( constrain<float>(_p, 0.05, 1.0) - pctg ) * 0.25;
+    pctg += ( constrain<float>(_p, 0.05, 1.0) - pctg ) * 0.1;
 }
 
 float Slider::get_pctg() const

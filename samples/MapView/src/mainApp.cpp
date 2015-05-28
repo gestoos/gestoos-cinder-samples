@@ -48,14 +48,15 @@ public:
 
 void exampleApp::setup()
 {
-    
+    std::cout<<"setup\n"<<std::flush;
+ 
     //Start interactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
     map_tile = MapTile(150);
 
-    setFullScreen(true);
+    setFullScreen(false);
     
     
 }
@@ -112,6 +113,8 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
+    
+    std::cout<<"update\n"<<std::flush;
     if ( !map_tile.is_showing() )
         map_tile.show();
 
@@ -140,7 +143,8 @@ void exampleApp::update()
 //        default:
 //            break;
 //    }
-//    
+//
+    
     map_tile.set_hands( cinderactor.get_hands() );
     map_tile.update();
 

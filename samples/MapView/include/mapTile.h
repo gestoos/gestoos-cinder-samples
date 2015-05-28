@@ -114,7 +114,7 @@ private:
     
     int track_mode;
     
-    float zoom;
+    float zoom, offset_zoom;
     
     
     
@@ -122,7 +122,7 @@ private:
     
     std::list<Slider> sliders;
     
-    gestoos::nui::Hand empty_hand, static_hand;
+    gestoos::nui::Hand * empty_hand, * empty_hand2;
 
     
     gestoos::nui::Hand * hand_g;

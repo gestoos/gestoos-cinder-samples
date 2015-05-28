@@ -18,8 +18,8 @@
 		1FDB73651B1744BC0030589F /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FDB73631B1744BC0030589F /* hand_detector_light.dat */; };
 		1FDB73671B17472D0030589F /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FDB73661B17472D0030589F /* valcriVictory_light.dat */; };
 		1FDB73691B1748770030589F /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FDB73681B1748770030589F /* valcriL.dat */; };
-		1FDB73721B1759E80030589F /* mapTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB73701B1759E80030589F /* mapTile.cpp */; };
-		1FDB73731B1759E80030589F /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB73711B1759E80030589F /* Slider.cpp */; };
+		1FDB73761B175AFD0030589F /* mapTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB73741B175AFD0030589F /* mapTile.cpp */; };
+		1FDB73771B175AFD0030589F /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB73751B175AFD0030589F /* Slider.cpp */; };
 		1FF8455C1B160A0800341D4E /* ohio-bike-map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FF8455B1B160A0800341D4E /* ohio-bike-map.jpg */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
@@ -60,11 +60,11 @@
 		1FDB73631B1744BC0030589F /* hand_detector_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
 		1FDB73661B17472D0030589F /* valcriVictory_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
 		1FDB73681B1748770030589F /* valcriL.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
-		1FDB736D1B1759D70030589F /* mapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapTile.h; sourceTree = "<group>"; };
-		1FDB736E1B1759D70030589F /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
-		1FDB736F1B1759D70030589F /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
-		1FDB73701B1759E80030589F /* mapTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mapTile.cpp; sourceTree = "<group>"; };
-		1FDB73711B1759E80030589F /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
+		1FDB73741B175AFD0030589F /* mapTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mapTile.cpp; path = ../src/mapTile.cpp; sourceTree = "<group>"; };
+		1FDB73751B175AFD0030589F /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = ../src/Slider.cpp; sourceTree = "<group>"; };
+		1FDB73781B175B150030589F /* mapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mapTile.h; path = ../include/mapTile.h; sourceTree = "<group>"; };
+		1FDB73791B175B150030589F /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slider.h; path = ../include/Slider.h; sourceTree = "<group>"; };
+		1FDB737A1B175B150030589F /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		1FF8455B1B160A0800341D4E /* ohio-bike-map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ohio-bike-map.jpg"; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -105,8 +105,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1FDB73701B1759E80030589F /* mapTile.cpp */,
-				1FDB73711B1759E80030589F /* Slider.cpp */,
+				1FDB73741B175AFD0030589F /* mapTile.cpp */,
+				1FDB73751B175AFD0030589F /* Slider.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
 			);
 			name = Source;
@@ -239,9 +239,9 @@
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				1FDB736D1B1759D70030589F /* mapTile.h */,
-				1FDB736E1B1759D70030589F /* Slider.h */,
-				1FDB736F1B1759D70030589F /* Resources.h */,
+				1FDB73781B175B150030589F /* mapTile.h */,
+				1FDB73791B175B150030589F /* Slider.h */,
+				1FDB737A1B175B150030589F /* Resources.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -312,10 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FDB73721B1759E80030589F /* mapTile.cpp in Sources */,
+				1FDB73761B175AFD0030589F /* mapTile.cpp in Sources */,
 				A1E08DC91B147AD2003ED9FF /* Cinderactor.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
-				1FDB73731B1759E80030589F /* Slider.cpp in Sources */,
+				1FDB73771B175AFD0030589F /* Slider.cpp in Sources */,
 				A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
