@@ -18,6 +18,7 @@
 		1FDB73651B1744BC0030589F /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FDB73631B1744BC0030589F /* hand_detector_light.dat */; };
 		1FDB73671B17472D0030589F /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FDB73661B17472D0030589F /* valcriVictory_light.dat */; };
 		1FDB73691B1748770030589F /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FDB73681B1748770030589F /* valcriL.dat */; };
+		1FDB736C1B174BD60030589F /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB736B1B174BD60030589F /* Slider.cpp */; };
 		1FF845571B1601A600341D4E /* mapTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FF845551B1601A600341D4E /* mapTile.cpp */; };
 		1FF8455C1B160A0800341D4E /* ohio-bike-map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FF8455B1B160A0800341D4E /* ohio-bike-map.jpg */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
@@ -59,6 +60,8 @@
 		1FDB73631B1744BC0030589F /* hand_detector_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
 		1FDB73661B17472D0030589F /* valcriVictory_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
 		1FDB73681B1748770030589F /* valcriL.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
+		1FDB736A1B174BD60030589F /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		1FDB736B1B174BD60030589F /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
 		1FF845551B1601A600341D4E /* mapTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mapTile.cpp; sourceTree = "<group>"; };
 		1FF845561B1601A600341D4E /* mapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapTile.h; sourceTree = "<group>"; };
 		1FF845581B1605DE00341D4E /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1FDB736B1B174BD60030589F /* Slider.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
 				1FF845551B1601A600341D4E /* mapTile.cpp */,
 			);
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				1FF845561B1601A600341D4E /* mapTile.h */,
+				1FDB736A1B174BD60030589F /* Slider.h */,
 				1FF845581B1605DE00341D4E /* Resources.h */,
 			);
 			name = Headers;
@@ -310,6 +315,7 @@
 				1FF845571B1601A600341D4E /* mapTile.cpp in Sources */,
 				A1E08DC91B147AD2003ED9FF /* Cinderactor.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
+				1FDB736C1B174BD60030589F /* Slider.cpp in Sources */,
 				A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

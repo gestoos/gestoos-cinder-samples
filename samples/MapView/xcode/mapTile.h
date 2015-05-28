@@ -19,6 +19,9 @@
 #include "Cinderactor.h"
 #include "MovingRect.h"
 
+#include "Slider.h"
+
+
 #include <list>
 
 using namespace ci;
@@ -69,6 +72,12 @@ public:
     void change_mode();
     
     
+    void hide_all_sliders();
+    
+    bool no_widget_showing();
+
+    
+    
 private:
     
     std::list< Widget > widgets;
@@ -106,6 +115,22 @@ private:
     int track_mode;
     
     float zoom;
+    
+    
+    
+    Slider slider_ver, slider_hor;
+    
+    std::list<Slider> sliders;
+    
+    gestoos::nui::Hand empty_hand, static_hand;
+
+    
+    gestoos::nui::Hand * hand_g;
+    gestoos::nui::Hand * hand_slider;
+    cv::Point3f ref_pos;
+
+
+
 
     
 };
