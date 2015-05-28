@@ -18,6 +18,7 @@ using namespace std;
 
 #include "Label.h"
 #include "Cinderactor.h"
+#include "DriverInteraction.hpp"
 
 typedef boost::shared_ptr<Label> LabelPtr;
 
