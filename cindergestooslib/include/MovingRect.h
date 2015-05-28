@@ -45,7 +45,7 @@ public:
     void set_pos( const Vec2f & p );
     
     /// Get the current position. Can be animating.
-    const Vec2f & get_pos();
+    const Vec2f & get_pos() const;
     
     /// Add an offset to the MovingRect's position (will animate to the new position)
     void set_offset( const Vec2f & o );

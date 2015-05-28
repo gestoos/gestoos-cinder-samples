@@ -4,6 +4,7 @@
 #include "cinder/Rand.h"
 #include "cinder/Thread.h"
 
+
 using namespace ci;
 using namespace ci::app;
 
@@ -14,7 +15,9 @@ using namespace std;
 
 #include "ActiveEdge.h"
 #include "Cinderactor.h"
+#include "Widget.h"
 
+#include "resource.h"
 
 float MIN_Z_VEL         = 30.0;
 
@@ -48,6 +51,8 @@ public:
     bool init_ok;
 
     ActiveEdge active_edge;
+    
+    Rectf r1, r2;
 };
 
 void exampleApp::setup()
@@ -57,6 +62,15 @@ void exampleApp::setup()
     init_ok = false;
     
     active_edge = ActiveEdge(150);
+    
+    
+    int pad = getWindowWidth()/5;
+    active_edge.add_widget( new Widget( loadResource(L_CHART),      active_edge.rect.getCenter()  + Vec2f(-1.5*pad,   0),  Vec2f(100,100) ) );
+    active_edge.add_widget( new Widget( loadResource(L_MAP) ,       active_edge.rect.getCenter()  + Vec2f(-0.5*pad,   0),  Vec2f(100,100) ) );
+    active_edge.add_widget( new Widget( loadResource(L_PERSONS),    active_edge.rect.getCenter()  + Vec2f( 0.5*pad,   0),  Vec2f(100,100) ) );
+    active_edge.add_widget( new Widget( loadResource(L_ROUND),      active_edge.rect.getCenter()  + Vec2f( 1.5*pad,   0),  Vec2f(100,100) ) );
+    
+
     
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
@@ -114,8 +128,18 @@ void exampleApp::keyDown( KeyEvent event )
             case KeyEvent::KEY_m:
                 active_edge.change_mode();
                 break;
+            case KeyEvent::KEY_a:
+                
+                Vec2f new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
+                
+                r1 = Rectf( new_pos, new_pos + Vec2f(300,300) );
+                new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
+                r2 = Rectf( new_pos, new_pos + Vec2f(300,300) );
+                
+                std::cout<<"INTERSECTS "<<r1<<" | "<<r2<<" -> "<<r1.intersects(r2)<<std::endl;
 
-		
+                break;
+                
         }
 	
 }
@@ -173,7 +197,13 @@ void exampleApp::draw()
 	gl::setMatricesWindow( getWindowSize() );
 	gl::clear( Color( 0.1f, 0.13f, 0.16f ) );
     
+    
+    
     active_edge.draw();
+    
+    gl::color( ColorA(1.0, 1.0, 1.0, 0.8));
+    gl::drawSolidRect( r1);
+    gl::drawSolidRect( r2);
     
     // Draw cinderactor representation
     cinderactor.draw();

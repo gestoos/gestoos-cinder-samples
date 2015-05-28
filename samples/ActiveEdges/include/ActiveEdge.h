@@ -17,7 +17,7 @@
 #include "cinder/gl/Texture.h"
 
 #include "Cinderactor.h"
-#include "MovingRect.h"
+#include "Widget.h"
 
 #include <list>
 
@@ -30,7 +30,7 @@ class ActiveEdge {
 
 public:
     
-    typedef MovingRect Widget;
+   // typedef MovingRect Widget;
     
     /// Empty constructor
     ActiveEdge();
@@ -40,6 +40,9 @@ public:
     
     /// Default destructor
     virtual ~ActiveEdge();
+    
+    /// Add a widget type
+    void add_widget( Widget * _w);
     
     /// Signal the active edge to show
     void show();
@@ -71,13 +74,14 @@ public:
     // in snap mode: highlight closest widget, and select if L
     void snap_on_closest(Vec2f & hand_pos_inst, const gestoos::nui::Hand & h );
     
+    Rectf           rect;
+
 private:
     
-    std::list< Widget > widgets;
-    std::list< Widget > canvas_widgets;
+    std::list< Widget *> widgets;
+    std::list< Widget *> canvas_widgets;
 
     ColorA          color;
-    Rectf           rect;
     float           alpha;
     Cinderactor::StrokeType      sense;
     
@@ -99,6 +103,8 @@ private:
     
     // Reorganize the canvas widgets in a grid. Hardcoded to 3 columns.
     void _reorganize_canvas();
+    
+    bool _overlaps_widgets( const Rectf & r ) const;
 };
 
 #endif

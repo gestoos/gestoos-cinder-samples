@@ -39,12 +39,12 @@ ActiveEdge::ActiveEdge(float _h)
     
     color = ColorA(0.2,0.3,0.4,0.7);
     
-    int pad = getWindowWidth()/5;
-    
-    widgets.push_back( Widget( center + Vec2f(-1.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 0.3, 0.3, 1.0) ) );
-    widgets.push_back( Widget( center + Vec2f(-0.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 1.0, 0.3, 1.0) ) );
-    widgets.push_back( Widget( center + Vec2f( 0.5*pad,   0),  Vec2f(100,100), ColorA( 1.0, 0.3, 1.0, 1.0) ) );
-    widgets.push_back( Widget( center + Vec2f( 1.5*pad,   0),  Vec2f(100,100), ColorA( 0.3, 1.0, 1.0, 1.0) ) );
+//    int pad = getWindowWidth()/5;
+//    
+//    widgets.push_back( Widget( center + Vec2f(-1.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 0.3, 0.3, 1.0) ) );
+//    widgets.push_back( Widget( center + Vec2f(-0.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 1.0, 0.3, 1.0) ) );
+//    widgets.push_back( Widget( center + Vec2f( 0.5*pad,   0),  Vec2f(100,100), ColorA( 1.0, 0.3, 1.0, 1.0) ) );
+//    widgets.push_back( Widget( center + Vec2f( 1.5*pad,   0),  Vec2f(100,100), ColorA( 0.3, 1.0, 1.0, 1.0) ) );
     
     // Set initial rect pos
     rect = Rectf( Vec2f(0,hide_y), Vec2f(getWindowWidth(),hide_y+_h) );
@@ -55,8 +55,17 @@ ActiveEdge::ActiveEdge(float _h)
 
 ActiveEdge::~ActiveEdge()
 {
+    for (auto it=widgets.begin(); it!=widgets.end(); ++it)
+    {
+        delete *it;
+        it =widgets.erase(it);
+    }
 }
 
+void ActiveEdge::add_widget( Widget * _w )
+{
+    widgets.push_back(_w);
+}
 
 void ActiveEdge::show()
 {
@@ -65,8 +74,8 @@ void ActiveEdge::show()
     showing = true;
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
-        it->set_offset( Vec2f(0,-rect.getHeight()) );
-        it->show();
+        (*it)->set_offset( Vec2f(0,-rect.getHeight()) );
+        (*it)->show();
     }
     timer.start();
     std::cout<<"SHOW"<<std::endl;
@@ -79,8 +88,8 @@ void ActiveEdge::hide()
     showing = false;
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
-        it->set_offset( Vec2f(0,rect.getHeight()) );
-        it->hide();
+        (*it)->set_offset( Vec2f(0,rect.getHeight()) );
+        (*it)->hide();
     }
     timer.start();
     std::cout<<"HIDE"<<std::endl;
@@ -93,7 +102,7 @@ void ActiveEdge::clear_canvas()
     std::cout<<" ---> clear canvas"<<std::endl;
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        it->set_offset( Vec2f( getWindowWidth()*1.1 - it->get_pos().x, 0 ) );
+        (*it)->set_offset( Vec2f( getWindowWidth()*1.1 - (*it)->get_pos().x, 0 ) );
     }
     timer.start();
 }
@@ -118,14 +127,14 @@ void ActiveEdge::snap_on_closest(Vec2f & hand_pos_inst , const gestoos::nui::Han
     std::size_t count=0;
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
-        it->set_hover(false);
-        if(count != currW) it->set_highlight(false);
-        else wcurr = &(*it);
-        float d = std::abs(((it->getX1() + it->getWidth()/2.0) ) - hand_pos_inst.x);
+        (*it)->set_hover(false);
+        if(count != currW) (*it)->set_highlight(false);
+        else wcurr = (*it);
+        float d = std::abs((((*it)->getX1() + (*it)->getWidth()/2.0) ) - hand_pos_inst.x);
         if(d < dmin)
         {
             dmin = d;
-            wmin = &(*it);
+            wmin = (*it);
             minid = count;
         }
         
@@ -169,16 +178,27 @@ void ActiveEdge::snap_on_closest(Vec2f & hand_pos_inst , const gestoos::nui::Han
            h.get_gesture() == GEST_EL &&
            timer.getSeconds() > 1.5 )
         {
-            std::cout<<" * New widget! "<<std::endl;
-            Vec2f new_pos = Vec2f( Rand::randInt(100,getWindowWidth()-100), Rand::randInt(100,getWindowHeight()-200) );
-            float new_side = Rand::randInt(80, 120);
-            
-            Widget new_widget( new_pos, Vec2f(new_side, new_side), wcurr->get_color() );
-            new_widget.show();
-            canvas_widgets.push_back( new_widget );
-            
-            if( canvas_widgets.size() > 6 )
+            //remove older if full. Remove first, to leave empty space for next one.
+            if( canvas_widgets.size() > 4 )
+            {
+                delete canvas_widgets.front();
                 canvas_widgets.pop_front();
+            }
+
+            // Find an empty position (no overlap with other widgets)
+            Vec2f  new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
+            int ttl = 100;
+            Vec2f imsize = wcurr->orig_image.getSize();
+            while ( _overlaps_widgets( Rectf( new_pos - imsize/2.0, new_pos + imsize/2.0 )) || ttl <= 0  )
+            {
+                new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
+                ttl--;
+            }
+            std::cout<<" * New widget! "<<ttl<<" : "<<wcurr->orig_image.getSize()<<" at "<<new_pos<<std::endl;
+            
+            canvas_widgets.push_back( new Widget( wcurr->orig_image, new_pos) );
+            canvas_widgets.back()->show();
+
             
             timer.start();
         }
@@ -215,7 +235,7 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
             for (auto it=widgets.begin(); it!=widgets.end(); ++it)
             {
                 // if L gesture, create a new widget
-                if( it->is_x_inside( hand_pos_f ) &&
+                if( (*it)->is_x_inside( hand_pos_f ) &&
                    hand.get_gesture() == GEST_EL &&
                    timer.getSeconds() > 1.5 )
                 {
@@ -223,12 +243,15 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
                     Vec2f new_pos = Vec2f( Rand::randInt(100,getWindowWidth()-100), Rand::randInt(100,getWindowHeight()-200) );
                     float new_side = Rand::randInt(80, 120);
                     
-                    Widget new_widget( new_pos, Vec2f(new_side, new_side), it->get_color() );
-                    new_widget.show();
-                    canvas_widgets.push_back( new_widget );
-                    
+//                    Widget new_widget( (*it)->orig_image,  Vec2f(new_side, new_side) );
+                    canvas_widgets.push_back( new Widget((*it)->orig_image, new_pos ) );
+                    canvas_widgets.back()->show();
+
                     if( canvas_widgets.size() > 6 )
+                    {
+                        delete canvas_widgets.front();
                         canvas_widgets.pop_front();
+                    }
                     
                     timer.start();
                 }
@@ -283,16 +306,19 @@ void ActiveEdge::update()
     
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
-        it->update();
+        (*it)->update();
     }
     
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        it->update();
+        (*it)->update();
         
         //Kill out of view widgets
-        if( it->get_pos().x > getWindowWidth() )
+        if( (*it)->get_pos().x > getWindowWidth() )
+        {
+            delete  *it;
             it = canvas_widgets.erase(it);
+        }
     }
     
     
@@ -305,11 +331,11 @@ void ActiveEdge::draw() const
     
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
-        it->draw();
+        (*it)->draw();
     }
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        it->draw();
+        (*it)->draw();
     }
     
     if( showing && hand.is_present() && (!snapmode))
@@ -333,15 +359,28 @@ void ActiveEdge::_reorganize_canvas()
     int cx = 1;
     int cy = 1;
     int padx = getWindowWidth()/4;
-    int pady = getWindowHeight()/4;
+    int pady = getWindowHeight()/3.5;
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        it->set_pos( Vec2f( cx * padx, cy * pady + 40) );
-        cx++ ;
+        (*it)->set_pos( Vec2f( cx * padx, cy * pady + 40) );
+        cx++;
         if( cx > 3 )
         {
             cx = 1;
             cy++;
         }
     }
+}
+
+bool ActiveEdge::_overlaps_widgets( const Rectf & r ) const
+{
+    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
+    {
+//        std::cout<<"   --- "<<r<<"        "<<**it<<"  -> "<<(*it)->intersects( r )<<std::endl;
+        if( (*it)->intersects( r ) )
+        {
+            return true;
+        }
+    }
+    return false;
 }
