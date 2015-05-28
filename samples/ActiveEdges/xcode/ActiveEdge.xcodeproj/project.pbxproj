@@ -68,12 +68,12 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A10B069E1B0E8F5700507C88 /* ActiveEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B069D1B0E8F5700507C88 /* ActiveEdge.cpp */; };
 		A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06C71B0F167200507C88 /* Cinderactor.cpp */; };
-		A10B06C91B0F167900507C88 /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06B91B0F165000507C88 /* valcriVictory.dat */; };
-		A10B06CA1B0F167B00507C88 /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BA1B0F165000507C88 /* valcriOpen.dat */; };
-		A10B06CB1B0F167D00507C88 /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BB1B0F165000507C88 /* valcriClose.dat */; };
-		A10B06CC1B0F167F00507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BC1B0F165000507C88 /* hand_detector.dat */; };
-		A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BD1B0F165000507C88 /* whai.dat */; };
-		A19992E61B1360350090C27B /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A19992E41B13602D0090C27B /* valcriL.dat */; };
+		A1325AFF1B16274F005E013C /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325AF51B162724005E013C /* valcriVictory_light.dat */; };
+		A1325B001B162750005E013C /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325AF61B162724005E013C /* valcriClose_light.dat */; };
+		A1325B011B162752005E013C /* valcriOpen_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325AF71B162724005E013C /* valcriOpen_light.dat */; };
+		A1325B021B162754005E013C /* valcriL_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325AF81B162724005E013C /* valcriL_light.dat */; };
+		A1325B031B162756005E013C /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325AF91B162724005E013C /* hand_detector_light.dat */; };
+		A1325B061B162910005E013C /* valcriIndex_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B041B16290A005E013C /* valcriIndex_light.dat */; };
 		A19992E71B137F510090C27B /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
 		A19992F01B145FD50090C27B /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19992EE1B145FD50090C27B /* MovingRect.cpp */; };
 /* End PBXBuildFile section */
@@ -142,12 +142,12 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				A10B06C91B0F167900507C88 /* valcriVictory.dat in CopyFiles */,
-				A10B06CA1B0F167B00507C88 /* valcriOpen.dat in CopyFiles */,
-				A10B06CC1B0F167F00507C88 /* hand_detector.dat in CopyFiles */,
-				A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */,
-				A10B06CB1B0F167D00507C88 /* valcriClose.dat in CopyFiles */,
-				A19992E61B1360350090C27B /* valcriL.dat in CopyFiles */,
+				A1325B031B162756005E013C /* hand_detector_light.dat in CopyFiles */,
+				A1325B061B162910005E013C /* valcriIndex_light.dat in CopyFiles */,
+				A1325B021B162754005E013C /* valcriL_light.dat in CopyFiles */,
+				A1325AFF1B16274F005E013C /* valcriVictory_light.dat in CopyFiles */,
+				A1325B001B162750005E013C /* valcriClose_light.dat in CopyFiles */,
+				A1325B011B162752005E013C /* valcriOpen_light.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,14 +246,14 @@
 		A10B06751B0CE9B400507C88 /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
 		A10B069C1B0E8F4600507C88 /* ActiveEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveEdge.h; path = ../include/ActiveEdge.h; sourceTree = "<group>"; };
 		A10B069D1B0E8F5700507C88 /* ActiveEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ActiveEdge.cpp; path = ../src/ActiveEdge.cpp; sourceTree = "<group>"; };
-		A10B06B91B0F165000507C88 /* valcriVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory.dat; path = ../../../../../data/valcriVictory.dat; sourceTree = "<group>"; };
-		A10B06BA1B0F165000507C88 /* valcriOpen.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen.dat; path = ../../../../../data/valcriOpen.dat; sourceTree = "<group>"; };
-		A10B06BB1B0F165000507C88 /* valcriClose.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose.dat; path = ../../../../../data/valcriClose.dat; sourceTree = "<group>"; };
-		A10B06BC1B0F165000507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../../data/hand_detector.dat; sourceTree = "<group>"; };
-		A10B06BD1B0F165000507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../../data/whai.dat; sourceTree = "<group>"; };
 		A10B06C51B0F167200507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
-		A19992E41B13602D0090C27B /* valcriL.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
+		A1325AF51B162724005E013C /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
+		A1325AF61B162724005E013C /* valcriClose_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose_light.dat; path = ../../../../../data/valcriClose_light.dat; sourceTree = "<group>"; };
+		A1325AF71B162724005E013C /* valcriOpen_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen_light.dat; path = ../../../../../data/valcriOpen_light.dat; sourceTree = "<group>"; };
+		A1325AF81B162724005E013C /* valcriL_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL_light.dat; path = ../../../../../data/valcriL_light.dat; sourceTree = "<group>"; };
+		A1325AF91B162724005E013C /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
+		A1325B041B16290A005E013C /* valcriIndex_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriIndex_light.dat; path = ../../../../../data/valcriIndex_light.dat; sourceTree = "<group>"; };
 		A19992ED1B145FC80090C27B /* MovingRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A19992EE1B145FD50090C27B /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -439,12 +439,12 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A19992E41B13602D0090C27B /* valcriL.dat */,
-				A10B06B91B0F165000507C88 /* valcriVictory.dat */,
-				A10B06BA1B0F165000507C88 /* valcriOpen.dat */,
-				A10B06BB1B0F165000507C88 /* valcriClose.dat */,
-				A10B06BC1B0F165000507C88 /* hand_detector.dat */,
-				A10B06BD1B0F165000507C88 /* whai.dat */,
+				A1325B041B16290A005E013C /* valcriIndex_light.dat */,
+				A1325AF51B162724005E013C /* valcriVictory_light.dat */,
+				A1325AF61B162724005E013C /* valcriClose_light.dat */,
+				A1325AF71B162724005E013C /* valcriOpen_light.dat */,
+				A1325AF81B162724005E013C /* valcriL_light.dat */,
+				A1325AF91B162724005E013C /* hand_detector_light.dat */,
 			);
 			name = Models;
 			sourceTree = "<group>";

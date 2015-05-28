@@ -18,15 +18,17 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A10B06B21B0F14DB00507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06B01B0F14B200507C88 /* hand_detector.dat */; };
+		A1325AEE1B161CF6005E013C /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE41B161BE2003ED9FF /* valcriVictory_light.dat */; };
+		A1325AEF1B161CFA005E013C /* valcriL_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE71B161BE2003ED9FF /* valcriL_light.dat */; };
+		A1325AF01B161EE6005E013C /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE51B161BE2003ED9FF /* valcriClose_light.dat */; };
+		A1325AF11B161EE8005E013C /* valcriOpen_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE61B161BE2003ED9FF /* valcriOpen_light.dat */; };
+		A1325AF41B161FB4005E013C /* valcriIndex_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325AF21B161FAE005E013C /* valcriIndex_light.dat */; };
 		A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
 		A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBD1B147715003ED9FF /* MovingRect.cpp */; };
 		A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
-		A1E08DD11B1486A9003ED9FF /* valcriOpen.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */; };
-		A1E08DD21B1486AB003ED9FF /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DCE1B14869D003ED9FF /* valcriClose.dat */; };
-		A1E08DD51B148B49003ED9FF /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DD31B148B41003ED9FF /* valcriL.dat */; };
 		A1E08DDA1B14CB11003ED9FF /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DD81B14CB11003ED9FF /* Slider.cpp */; };
-		A1E08DDD1B14D597003ED9FF /* valcriVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DDB1B14D58E003ED9FF /* valcriVictory.dat */; };
+		A1E08DE01B15CF7B003ED9FF /* GestooAudio_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DDE1B15CF38003ED9FF /* GestooAudio_320.dat */; };
+		A1E08DE31B161B38003ED9FF /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE11B161B1C003ED9FF /* hand_detector_light.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,11 +38,13 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				A1E08DDD1B14D597003ED9FF /* valcriVictory.dat in CopyFiles */,
-				A10B06B21B0F14DB00507C88 /* hand_detector.dat in CopyFiles */,
-				A1E08DD11B1486A9003ED9FF /* valcriOpen.dat in CopyFiles */,
-				A1E08DD51B148B49003ED9FF /* valcriL.dat in CopyFiles */,
-				A1E08DD21B1486AB003ED9FF /* valcriClose.dat in CopyFiles */,
+				A1E08DE01B15CF7B003ED9FF /* GestooAudio_320.dat in CopyFiles */,
+				A1325AF01B161EE6005E013C /* valcriClose_light.dat in CopyFiles */,
+				A1325AF11B161EE8005E013C /* valcriOpen_light.dat in CopyFiles */,
+				A1E08DE31B161B38003ED9FF /* hand_detector_light.dat in CopyFiles */,
+				A1325AEF1B161CFA005E013C /* valcriL_light.dat in CopyFiles */,
+				A1325AF41B161FB4005E013C /* valcriIndex_light.dat in CopyFiles */,
+				A1325AEE1B161CF6005E013C /* valcriVictory_light.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,18 +68,20 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Slider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slider.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10B06B01B0F14B200507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../../data/hand_detector.dat; sourceTree = "<group>"; };
+		A1325AF21B161FAE005E013C /* valcriIndex_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriIndex_light.dat; path = ../../../../../data/valcriIndex_light.dat; sourceTree = "<group>"; };
 		A1E08DB91B147715003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DBA1B147715003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
 		A1E08DBD1B147715003ED9FF /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
 		A1E08DC01B14780B003ED9FF /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
-		A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen.dat; path = ../../../../../data/valcriOpen.dat; sourceTree = "<group>"; };
-		A1E08DCE1B14869D003ED9FF /* valcriClose.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose.dat; path = ../../../../../data/valcriClose.dat; sourceTree = "<group>"; };
-		A1E08DD31B148B41003ED9FF /* valcriL.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
 		A1E08DD71B14CB04003ED9FF /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Slider.h; path = ../include/Slider.h; sourceTree = "<group>"; };
 		A1E08DD81B14CB11003ED9FF /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = ../src/Slider.cpp; sourceTree = "<group>"; };
-		A1E08DDB1B14D58E003ED9FF /* valcriVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory.dat; path = ../../../../../data/valcriVictory.dat; sourceTree = "<group>"; };
+		A1E08DDE1B15CF38003ED9FF /* GestooAudio_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooAudio_320.dat; path = ../../../../../data/GestooAudio_320.dat; sourceTree = "<group>"; };
+		A1E08DE11B161B1C003ED9FF /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
+		A1E08DE41B161BE2003ED9FF /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
+		A1E08DE51B161BE2003ED9FF /* valcriClose_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose_light.dat; path = ../../../../../data/valcriClose_light.dat; sourceTree = "<group>"; };
+		A1E08DE61B161BE2003ED9FF /* valcriOpen_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen_light.dat; path = ../../../../../data/valcriOpen_light.dat; sourceTree = "<group>"; };
+		A1E08DE71B161BE2003ED9FF /* valcriL_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL_light.dat; path = ../../../../../data/valcriL_light.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,11 +193,13 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A1E08DDB1B14D58E003ED9FF /* valcriVictory.dat */,
-				A1E08DD31B148B41003ED9FF /* valcriL.dat */,
-				A1E08DCD1B14869D003ED9FF /* valcriOpen.dat */,
-				A1E08DCE1B14869D003ED9FF /* valcriClose.dat */,
-				A10B06B01B0F14B200507C88 /* hand_detector.dat */,
+				A1325AF21B161FAE005E013C /* valcriIndex_light.dat */,
+				A1E08DE41B161BE2003ED9FF /* valcriVictory_light.dat */,
+				A1E08DE51B161BE2003ED9FF /* valcriClose_light.dat */,
+				A1E08DE61B161BE2003ED9FF /* valcriOpen_light.dat */,
+				A1E08DE71B161BE2003ED9FF /* valcriL_light.dat */,
+				A1E08DE11B161B1C003ED9FF /* hand_detector_light.dat */,
+				A1E08DDE1B15CF38003ED9FF /* GestooAudio_320.dat */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -310,7 +318,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BOOST_PATH = /Users/marcel/Development/boost_1_57_0;
+				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -323,9 +331,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(OPENNI2_PATH)/Include\"",
 					"\"$(FEZOOLIB_PATH)/include\"",
 					"\"$(OPENCV_PATH)/release/include\"",
+					"\"$(OPENNI2_PATH)/Include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -338,8 +346,8 @@
 					/usr/local/lib,
 					"$(PROJECT_DIR)",
 				);
-				OPENCV_PATH = "/Users/marcel/Development/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "/Users/marcel/Development/OpenNI-MacOSX-x64-2.2";
+				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
+				OPENNI2_PATH = "/Users/xaviersuaucuadros/Development/OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
 					"-lOpenNI2",
@@ -372,7 +380,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BOOST_PATH = /Users/marcel/Development/boost_1_57_0;
+				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -386,9 +394,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(OPENNI2_PATH)/Include\"",
 					"\"$(FEZOOLIB_PATH)/include\"",
 					"\"$(OPENCV_PATH)/release/include\"",
+					"\"$(OPENNI2_PATH)/Include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -401,8 +409,8 @@
 					/usr/local/lib,
 					"$(PROJECT_DIR)",
 				);
-				OPENCV_PATH = "/Users/marcel/Development/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "/Users/marcel/Development/OpenNI-MacOSX-x64-2.2";
+				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
+				OPENNI2_PATH = "/Users/xaviersuaucuadros/Development/OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
 					"-lopencv_highgui",

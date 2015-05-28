@@ -16,10 +16,13 @@
 
 using namespace ci;
 
+static int     GEST_AUDIO       = 4;
+
 static int     GEST_EL          = 13;
 static int     GEST_VICTORY     = 14;
 static int     GEST_OPEN        = 15;
 static int     GEST_CLOSE       = 16;
+
 static int     GEST_GRAB        = 206;
 static int     GEST_RELEASE     = 207;
 
@@ -53,6 +56,9 @@ public:
 
     ///
     static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
+
+	///
+	bool get_init_ok();
     
 private:
     cinder::Timer block_timer;
