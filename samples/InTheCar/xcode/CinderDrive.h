@@ -14,7 +14,7 @@
 #include "cinder/app/AppNative.h"
 
 //Make sure it is picked from the local project drive
-#include <DriverInteraction.hpp>
+#include "DriverInteraction.hpp"
 
 using namespace ci;
 
