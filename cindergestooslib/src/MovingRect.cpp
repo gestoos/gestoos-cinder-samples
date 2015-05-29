@@ -43,6 +43,8 @@ void MovingRect::show()
 void MovingRect::hide()
 {
     alpha_dest = 0.0;
+    highlight = false;
+    hover = false;
 }
 
 void MovingRect::set_pos( const Vec2f & p )
@@ -50,7 +52,7 @@ void MovingRect::set_pos( const Vec2f & p )
     pos_dest = p;
 }
 
-const Vec2f & MovingRect::get_pos()
+const Vec2f & MovingRect::get_pos() const
 {
     return pos;
 }
@@ -123,6 +125,6 @@ void MovingRect::_init(const Vec2f & _o, const Vec2f & _s, const ColorA & _c)
     hover = false;
     highlight = false;
     
-    alpha = 0.0;
-    alpha_dest = 0.0;
+    alpha = 1.0;
+    alpha_dest = 1.0;
 }
