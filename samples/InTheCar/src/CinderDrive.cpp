@@ -1,42 +1,31 @@
 //
-//  Cinderactor.cpp
-//  ActiveEdge
+//  CinderDrive.cpp
+//  InTheCar
 //
-//  Created by Mac on 21/05/15.
+//  Created by Adolfo López Méndez on 28/05/15.
 //
 //
 
-#include "Cinderactor.h"
+#include <stdio.h>
+
+#include "CinderDrive.h"
 
 
-Cinderactor::Cinderactor() 
+CinderDrive::CinderDrive()
 {
     block_timer.start();
     init_ok = false;
 }
 
-Cinderactor::~Cinderactor(){}
+CinderDrive::~CinderDrive(){}
 
-void Cinderactor::init(const std::string & ini_file )
+void CinderDrive::init(const std::string & ini_file )
 {
-    // Get a reference to the main bundle
-    CFBundleRef mainBundle = CFBundleGetMainBundle();
-    CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);
-	CFStringRef str = CFURLCopyFileSystemPath( resourcesURL, kCFURLPOSIXPathStyle );
-	CFRelease(resourcesURL);
-	char path[PATH_MAX];
-	
-	CFStringGetCString( str, path, FILENAME_MAX, kCFStringEncodingASCII );
-	CFRelease(str);
-    std::string bundle_path(path);
-    bundle_path= bundle_path+"/Contents/Resources/";
-    std::cout << ">>>>>>>>>>>> BUNDLE : bundle_path " << bundle_path << std::endl;
-    gestoos::nui::Interactor::set_resources_path(bundle_path);
-    gestoos::nui::Interactor::init( ini_file );
+    gestoos::nui::DriverInteraction::init( ini_file );
     init_ok = true;
 }
 
-Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout )
+CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout )
 {
     if( get_hands().first.is_present() )
     {
@@ -71,7 +60,7 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout
     return NONE;
 }
 
-void Cinderactor::draw() const
+void CinderDrive::draw() const
 {
     // Loading message
     if( !init_ok )
@@ -80,28 +69,24 @@ void Cinderactor::draw() const
         
         return;
     }
-
+    
     draw_hand_representation( get_hands().first,   Vec2f(200, 70 ) );
     draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
-   
-       std::stringstream ss;
-        ss<<"Static : "<<get_gesture().id <<std::endl;
-        gl::drawStringCentered(	ss.str(), Vec2f( 330, 30), Color(0.7, 0.8, 0.9) );
     
 }
 
-void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where )
+void CinderDrive::draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where )
 {
     float scale = 3.0;
     
     if( hand.is_present() )
     {
         if( hand.get_gesture() == GEST_VICTORY )
-            gl::color( Color(1.0, 0.6, 0.7));
+        gl::color( Color(1.0, 0.6, 0.7));
         else if( hand.get_gesture() == GEST_EL )
-            gl::color( Color(0.5, 1.0, 0.7));
+        gl::color( Color(0.5, 1.0, 0.7));
         else
-            gl::color( Color(0.5, 0.6, 0.7));
+        gl::color( Color(0.5, 0.6, 0.7));
         
         gl::lineWidth(1.0);
         gl::drawStrokedCircle( where, scale*6.0, 32);
@@ -122,19 +107,15 @@ void Cinderactor::draw_hand_representation( const gestoos::nui::Hand & hand, con
     }
     
     //Set color back to white
-    gl::color( Color(1.0, 1.0, 1.0) );
+    gl::color( Color(1.0, 1.0, 1.0));
+    
 }
 
-void Cinderactor::draw_hand_circle( const gestoos::nui::Hand & hand ) const
+void CinderDrive::draw_hand_circle( const gestoos::nui::Hand & hand ) const
 {
     if( hand.is_present() )
     {
         gl::color( Color(0.3, 0.4, 0.5));
         gl::drawStrokedCircle( Vec2f( hand.get_pos().x * cinder::app::getWindowWidth() / 320.0,  hand.get_pos().y * cinder::app::getWindowHeight() / 240.0), 15.0, 32  );
     }
-}
-
-bool Cinderactor::get_init_ok()
-{
-	return init_ok;
 }
