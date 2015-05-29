@@ -76,6 +76,10 @@
 		A1325B061B162910005E013C /* valcriIndex_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B041B16290A005E013C /* valcriIndex_light.dat */; };
 		A19992E71B137F510090C27B /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
 		A19992F01B145FD50090C27B /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19992EE1B145FD50090C27B /* MovingRect.cpp */; };
+		ACB1778E1B1860F100B64C28 /* w_chart.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB1778A1B1860F100B64C28 /* w_chart.png */; };
+		ACB1778F1B1860F100B64C28 /* w_map.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB1778B1B1860F100B64C28 /* w_map.png */; };
+		ACB177901B1860F100B64C28 /* w_persons.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB1778C1B1860F100B64C28 /* w_persons.png */; };
+		ACB177911B1860F100B64C28 /* w_round.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB1778D1B1860F100B64C28 /* w_round.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -256,6 +260,10 @@
 		A1325B041B16290A005E013C /* valcriIndex_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriIndex_light.dat; path = ../../../../../data/valcriIndex_light.dat; sourceTree = "<group>"; };
 		A19992ED1B145FC80090C27B /* MovingRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A19992EE1B145FD50090C27B /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
+		ACB1778A1B1860F100B64C28 /* w_chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_chart.png; sourceTree = "<group>"; };
+		ACB1778B1B1860F100B64C28 /* w_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_map.png; sourceTree = "<group>"; };
+		ACB1778C1B1860F100B64C28 /* w_persons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_persons.png; sourceTree = "<group>"; };
+		ACB1778D1B1860F100B64C28 /* w_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_round.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +428,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACB177891B1860F100B64C28 /* VALCRI_widgets */,
 				A10B06751B0CE9B400507C88 /* interactor.cfg */,
 				A10B06371B0B79A400507C88 /* Models */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -475,6 +484,18 @@
 				A19992EE1B145FD50090C27B /* MovingRect.cpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		ACB177891B1860F100B64C28 /* VALCRI_widgets */ = {
+			isa = PBXGroup;
+			children = (
+				ACB1778A1B1860F100B64C28 /* w_chart.png */,
+				ACB1778B1B1860F100B64C28 /* w_map.png */,
+				ACB1778C1B1860F100B64C28 /* w_persons.png */,
+				ACB1778D1B1860F100B64C28 /* w_round.png */,
+			);
+			name = VALCRI_widgets;
+			path = ../resources/VALCRI_widgets;
 			sourceTree = "<group>";
 		};
 		E104C53C0FFAB250008D4255 /* Headers */ = {
@@ -545,7 +566,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB177901B1860F100B64C28 /* w_persons.png in Resources */,
+				ACB1778E1B1860F100B64C28 /* w_chart.png in Resources */,
+				ACB177911B1860F100B64C28 /* w_round.png in Resources */,
 				A19992E71B137F510090C27B /* interactor.cfg in Resources */,
+				ACB1778F1B1860F100B64C28 /* w_map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
