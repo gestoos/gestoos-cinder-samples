@@ -15,15 +15,9 @@
 
 //Make sure it is picked from the local project drive
 #include "DriverInteraction.hpp"
+#include "Cinderactor.h"
 
 using namespace ci;
-
-static int     GEST_EL          = 13;
-static int     GEST_VICTORY     = 14;
-static int     GEST_OPEN        = 15;
-static int     GEST_CLOSE       = 16;
-static int     GEST_GRAB        = 206;
-static int     GEST_RELEASE     = 207;
 
 /// \brief This class extends gestoos::nui::Interactor, adding new cool features for Cinder apps.
 class CinderDrive : public gestoos::nui::DriverInteraction

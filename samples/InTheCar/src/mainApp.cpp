@@ -17,8 +17,7 @@ using namespace std;
 //#include "fezoolib/NUI/Interactor.hpp"
 
 #include "Label.h"
-#include "Cinderactor.h"
-#include "DriverInteraction.hpp"
+#include "CinderDrive.h"
 
 typedef boost::shared_ptr<Label> LabelPtr;
 
@@ -47,7 +46,8 @@ public:
     
     
     
-    Cinderactor cinderactor;
+    //CinderDrive cinderactor;
+    CinderDrive cinderactor;
 
     
     shared_ptr<std::thread>		mThread;
@@ -126,21 +126,21 @@ void exampleApp::update()
     }
     
     // Detect hand strokes
-    Cinderactor::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
+    CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
     
     // Create labels if stroke detected
     LabelPtr label_ptr;
     switch (stroke) {
-        case Cinderactor::UP:
-            labels.push_back( LabelPtr( new Label("UP", 300, Cinderactor::UP) ) ) ;
+        case CinderDrive::UP:
+            labels.push_back( LabelPtr( new Label("UP", 300, CinderDrive::UP) ) ) ;
             break;
             
-        case Cinderactor::RIGHT:
-            labels.push_back( LabelPtr( new Label("RIGHT", 300, Cinderactor::RIGHT) ) ) ;
+        case CinderDrive::RIGHT:
+            labels.push_back( LabelPtr( new Label("RIGHT", 300, CinderDrive::RIGHT) ) ) ;
             break;
             
-        case Cinderactor::LEFT:
-            labels.push_back( LabelPtr( new Label("LEFT", 300, Cinderactor::LEFT) ) ) ;
+        case CinderDrive::LEFT:
+            labels.push_back( LabelPtr( new Label("LEFT", 300, CinderDrive::LEFT) ) ) ;
             break;
             
         default:
