@@ -93,78 +93,6 @@ MapTile::~MapTile()
 }
 
 
-
-//void MapTile::set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h )
-//{
-//    hands = h;
-////    std::cout<<"sh hand_g present "<<hand_g->is_present()<<std::endl;
-//
-//    if( hands.first.is_present() && !hands.second.is_present() && showing )
-//    {
-//        gestoos::nui::Hand & hand = hands.first;
-//        // Instant hand position scaled to screen
-//        Vec2f hand_pos_inst ;
-////        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
-////        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
-//
-//                hand_pos_inst.x = ( hand.get_unit_pos().x - 0.5 ) * cinder::app::getWindowWidth()*2.0 + cinder::app::getWindowWidth()/2.0;
-//                hand_pos_inst.y = (hand.get_unit_pos().y -0.5)    *   cinder::app::getWindowHeight()*2.0 + cinder::app::getWindowHeight()/2.0;
-//
-//        track_mode = MODE_CURSOR;
-//        
-//        // Filter hand
-//        hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.3 ;
-//        
-//        if(hand.get_gesture() == GEST_EL)
-//        {
-//            track_mode = MODE_PAN;
-//
-//            
-//             float mapW = cinder::app::getWindowWidth();
-//            float mapH = cinder::app::getWindowHeight();
-//            
-//            float panBorderx = 0.4;
-//            float panBordery = 0.45;
-//            
-//            float panStep   = 0.03;
-//            
-//            
-//            
-//            
-////            if( (hand_pos_f.x > mapW*(1.0-panBorderx))&& (hand_pos_f.x  < mapW*panBorderx) )
-////            {
-////                
-////            }
-//            
-//            
-//            if(hand_pos_f.x > mapW*(1.0-panBorderx)) 	maporigin.x -= 5.0;//( mapW * panStep - panx ) * 0.05 ;
-//            if(hand_pos_f.y  > (mapH*(1.0-panBordery))) 	maporigin.y -= 5.0;//( mapH * panStep - pany ) * 0.05 ;
-//            if(hand_pos_f.x  < mapW*panBorderx) 			maporigin.x += 5.0;//( (-mapW * panStep) - panx ) * 0.05 ;
-//            if(hand_pos_f.y  < (mapH*panBordery)) 			maporigin.y += 5.0;// ( (-mapH * panStep) - pany ) * 0.05 ;
-//            
-////            if( (currx < mapW*(1.0-panBorderx))&& (currx > mapW*panBorderx) )
-////            {
-////                panx = 0;
-////            }
-////            
-////            if( (curry < (mapH*(1.0-panBordery) - 300)) && (curry > (mapH*panBordery - 400)) )
-////            {
-////                pany = 0;
-////            }
-//
-//            
-//            
-//            
-//        }
-//    }
-////    std::cout<<"sh2 hand_g present "<<hand_g->is_present()<<std::endl;
-//
-//
-//    
-//}
-//
-
-
 void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h)
 {
  //   std::cout<<"1 hand_g present "<<hand_g->is_present()<<std::endl;
@@ -183,8 +111,6 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         gestoos::nui::Hand & hand = hands.first;
         // Instant hand position scaled to screen
         Vec2f hand_pos_inst ;
-        //        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
-        //        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
         
         hand_pos_inst.x = ( hand.get_unit_pos().x - 0.5 ) * cinder::app::getWindowWidth()*2.0 + cinder::app::getWindowWidth()/2.0;
         hand_pos_inst.y = (hand.get_unit_pos().y -0.5)    *   cinder::app::getWindowHeight()*2.0 + cinder::app::getWindowHeight()/2.0;
@@ -192,7 +118,7 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         track_mode = MODE_CURSOR;
         
         // Filter hand
-        hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.3 ;
+        hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.1 ;
         
         if(hand.get_gesture() == GEST_EL)
         {
@@ -218,17 +144,6 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
             
         }
     }
-    //    std::cout<<"sh2 hand_g present "<<hand_g->is_present()<<std::endl;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /// Manage ZOOM slider
     
     
@@ -280,14 +195,13 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         }
     }
     
-  //  std::cout<<"3.1 hand_g present "<<hand_g->is_present()<<std::endl;
 
     // exit slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
         
         if( it->is_showing() &&
-           it->get_trigger() > 10 && ( !hand1.is_present() || !hand2.is_present() ) )
+           it->get_trigger() > 10 && ( !hand1.is_present() || !hand2.is_present()  || hand_g->get_gesture()!=it->get_trigger() ) )
         {
             track_mode = MODE_IDLE;
 
@@ -299,7 +213,6 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         }
     }
     
-  // std::cout<<"4 hand_g present "<<hand_g->is_present()<<std::endl;
     // filter ref pos
     if( hand_g->is_present() )
         ref_pos += (hand_g->get_pos() - ref_pos) * 0.1;
@@ -357,15 +270,8 @@ void MapTile::hide_all_sliders()
 void MapTile::draw() const
 {
     //gl::color ( this->color );
-    //gl::drawSolidRoundedRect( rect, 4.0, 32 );
     
-    
-        
-    
-
-    
-   // Rectf mpos(0.0,0.0,image.getWidth() + zoom,image.getHeight() + zoom);
-     Rectf mpos(0.0,0.0,image.getWidth(),image.getHeight());
+    Rectf mpos(0.0,0.0,image.getWidth(),image.getHeight());
     mpos.offsetCenterTo(Vec2f(maporigin.x,maporigin.y));//,image.getWidth(),image.getHeight());
     
     
@@ -393,19 +299,6 @@ void MapTile::draw() const
             gl::drawSolidCircle( hpos, 20.0, 32 );
         }
         
-        
-//        if(hands.first.is_present() && hands.second.is_present())
-//        {
-//            if(track_mode == MODE_ZOOM)
-//            {
-//                gl::color( ColorA( 0.6,0.0,0.0,0.6));
-//                Rectf rpos(0.0,0.0, 200.0 , 200.0);
-//                rpos.offsetCenterTo(Vec2f(cinder::app::getWindowWidth()/2,cinder::app::getWindowHeight()/2));//,image.getWidth(),image.getHeight());
-//
-//                gl::drawStrokedRoundedRect	( rpos, 10.0, 32 );
-//
-//            }
-//        }
         
     }
     
