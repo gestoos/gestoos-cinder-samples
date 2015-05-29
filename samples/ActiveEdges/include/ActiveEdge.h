@@ -79,7 +79,7 @@ public:
 private:
     
     std::list< Widget *> widgets;
-    std::list< Widget *> canvas_widgets;
+    std::map< int, Widget > canvas_widgets;
 
     ColorA          color;
     float           alpha;

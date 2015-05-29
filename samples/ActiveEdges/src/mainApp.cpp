@@ -65,10 +65,10 @@ void exampleApp::setup()
     
     
     int pad = getWindowWidth()/5;
-    active_edge.add_widget( new Widget( loadResource(L_CHART),      active_edge.rect.getCenter()  + Vec2f(-1.5*pad,   0),  Vec2f(100,100) ) );
-    active_edge.add_widget( new Widget( loadResource(L_MAP) ,       active_edge.rect.getCenter()  + Vec2f(-0.5*pad,   0),  Vec2f(100,100) ) );
-    active_edge.add_widget( new Widget( loadResource(L_PERSONS),    active_edge.rect.getCenter()  + Vec2f( 0.5*pad,   0),  Vec2f(100,100) ) );
-    active_edge.add_widget( new Widget( loadResource(L_ROUND),      active_edge.rect.getCenter()  + Vec2f( 1.5*pad,   0),  Vec2f(100,100) ) );
+    active_edge.add_widget( new Widget( loadResource(L_CHART),      active_edge.rect.getCenter()  + Vec2f(-1.5*pad,   0),  Vec2f(100,100), 0 ) );
+    active_edge.add_widget( new Widget( loadResource(L_MAP) ,       active_edge.rect.getCenter()  + Vec2f(-0.5*pad,   0),  Vec2f(100,100), 1 ) );
+    active_edge.add_widget( new Widget( loadResource(L_PERSONS),    active_edge.rect.getCenter()  + Vec2f( 0.5*pad,   0),  Vec2f(100,100), 2 ) );
+    active_edge.add_widget( new Widget( loadResource(L_ROUND),      active_edge.rect.getCenter()  + Vec2f( 1.5*pad,   0),  Vec2f(100,100), 3 ) );
     
 
     

@@ -39,12 +39,12 @@ ActiveEdge::ActiveEdge(float _h)
     
     color = ColorA(0.2,0.3,0.4,0.7);
     
-//    int pad = getWindowWidth()/5;
-//    
-//    widgets.push_back( Widget( center + Vec2f(-1.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 0.3, 0.3, 1.0) ) );
-//    widgets.push_back( Widget( center + Vec2f(-0.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 1.0, 0.3, 1.0) ) );
-//    widgets.push_back( Widget( center + Vec2f( 0.5*pad,   0),  Vec2f(100,100), ColorA( 1.0, 0.3, 1.0, 1.0) ) );
-//    widgets.push_back( Widget( center + Vec2f( 1.5*pad,   0),  Vec2f(100,100), ColorA( 0.3, 1.0, 1.0, 1.0) ) );
+    //    int pad = getWindowWidth()/5;
+    //
+    //    widgets.push_back( Widget( center + Vec2f(-1.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 0.3, 0.3, 1.0) ) );
+    //    widgets.push_back( Widget( center + Vec2f(-0.5*pad,   0), Vec2f(100,100), ColorA( 1.0, 1.0, 0.3, 1.0) ) );
+    //    widgets.push_back( Widget( center + Vec2f( 0.5*pad,   0),  Vec2f(100,100), ColorA( 1.0, 0.3, 1.0, 1.0) ) );
+    //    widgets.push_back( Widget( center + Vec2f( 1.5*pad,   0),  Vec2f(100,100), ColorA( 0.3, 1.0, 1.0, 1.0) ) );
     
     // Set initial rect pos
     rect = Rectf( Vec2f(0,hide_y), Vec2f(getWindowWidth(),hide_y+_h) );
@@ -102,7 +102,7 @@ void ActiveEdge::clear_canvas()
     std::cout<<" ---> clear canvas"<<std::endl;
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        (*it)->set_offset( Vec2f( getWindowWidth()*1.1 - (*it)->get_pos().x, 0 ) );
+        it->second.set_offset( Vec2f( getWindowWidth()*1.1 - it->second.get_pos().x, 0 ) );
     }
     timer.start();
 }
@@ -121,9 +121,9 @@ void ActiveEdge::snap_on_closest(Vec2f & hand_pos_inst , const gestoos::nui::Han
     Widget *wcurr;
     
     std::vector<float> dists(widgets.size());
-
+    
     std::size_t minid=0;
-
+    
     std::size_t count=0;
     for (auto it=widgets.begin(); it!=widgets.end(); ++it)
     {
@@ -153,18 +153,18 @@ void ActiveEdge::snap_on_closest(Vec2f & hand_pos_inst , const gestoos::nui::Han
         }
         else
         {
-
-//            std::cout << " minid " << minid << " currW " << currW << " dmin " << dmin << " dists[currW] " << dists[currW] << std::endl;
-
+            
+            //            std::cout << " minid " << minid << " currW " << currW << " dmin " << dmin << " dists[currW] " << dists[currW] << std::endl;
+            
             if(dmin < (0.8*dists[currW]))
             {
-
+                
                 wmin->set_highlight(true);
                 currW = minid;
                 wcurr = wmin;
-
+                
                 //std::cout << "change " << minid << std::endl;
-
+                
                 
             }
         }
@@ -178,31 +178,41 @@ void ActiveEdge::snap_on_closest(Vec2f & hand_pos_inst , const gestoos::nui::Han
            h.get_gesture() == GEST_EL &&
            timer.getSeconds() > 1.5 )
         {
-            //remove older if full. Remove first, to leave empty space for next one.
-            if( canvas_widgets.size() > 4 )
-            {
-                delete canvas_widgets.front();
-                canvas_widgets.pop_front();
-            }
-
-            // Find an empty position (no overlap with other widgets)
-            Vec2f  new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
-            int ttl = 100;
-            Vec2f imsize = wcurr->orig_image.getSize();
-            while ( _overlaps_widgets( Rectf( new_pos - imsize/2.0, new_pos + imsize/2.0 )) || ttl <= 0  )
-            {
-                new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
-                ttl--;
-            }
-            std::cout<<" * New widget! "<<ttl<<" : "<<wcurr->orig_image.getSize()<<" at "<<new_pos<<std::endl;
             
-            canvas_widgets.push_back( new Widget( wcurr->orig_image, new_pos) );
-            canvas_widgets.back()->show();
-
-            
-            timer.start();
+            if( canvas_widgets.count( wcurr->num ))
+            {
+                std::cout<<" - exists "<<wcurr->num<<std::endl;
+                canvas_widgets[wcurr->num].heartbeat();
+            }
+            else
+            {
+//                //remove older if full. Remove first, to leave empty space for next one.
+//                if( canvas_widgets.size() > 4 )
+//                {
+//                    delete canvas_widgets.front();
+//                    canvas_widgets.pop_front();
+//                }
+                
+                // Find an empty position (no overlap with other widgets)
+                Vec2f  new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
+                int ttl = 100;
+                Vec2f imsize = wcurr->orig_image.getSize();
+                while ( _overlaps_widgets( Rectf( new_pos - imsize/2.0, new_pos + imsize/2.0 )) || ttl <= 0  )
+                {
+                    new_pos = Vec2f( Rand::randInt(200,getWindowWidth()-200), Rand::randInt(200,getWindowHeight()-300) );
+                    ttl--;
+                }
+                std::cout<<" * New widget! "<<ttl<<" : "<<wcurr->orig_image.getSize()<<" at "<<new_pos<<std::endl;
+                
+                canvas_widgets[wcurr->num] =   Widget( wcurr->orig_image, new_pos) ;
+                canvas_widgets[wcurr->num].show();
+                canvas_widgets[wcurr->num].fixed_alpha = true;
+                
+                
+                timer.start();
+            }
         }
-
+        
         
     }
     
@@ -213,7 +223,7 @@ void ActiveEdge::snap_on_closest(Vec2f & hand_pos_inst , const gestoos::nui::Han
 void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
 {
     hand = h;
-
+    
     if( hand.is_present() && showing )
     {
         // Instant hand position scaled to screen
@@ -227,7 +237,7 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
         if(snapmode)
         {
             snap_on_closest(hand_pos_f, h);
- 
+            
         }
         else
         {
@@ -243,20 +253,20 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
                     Vec2f new_pos = Vec2f( Rand::randInt(100,getWindowWidth()-100), Rand::randInt(100,getWindowHeight()-200) );
                     float new_side = Rand::randInt(80, 120);
                     
-//                    Widget new_widget( (*it)->orig_image,  Vec2f(new_side, new_side) );
-                    canvas_widgets.push_back( new Widget((*it)->orig_image, new_pos ) );
-                    canvas_widgets.back()->show();
-
-                    if( canvas_widgets.size() > 6 )
-                    {
-                        delete canvas_widgets.front();
-                        canvas_widgets.pop_front();
-                    }
+                    //                    Widget new_widget( (*it)->orig_image,  Vec2f(new_side, new_side) );
+                    canvas_widgets[(*it)->num] =  Widget( (*it)->orig_image, new_pos) ;
+                    canvas_widgets[(*it)->num].show();
+                    
+//                    if( canvas_widgets.size() > 6 )
+//                    {
+//                        delete canvas_widgets.front();
+//                        canvas_widgets.pop_front();
+//                    }
                     
                     timer.start();
                 }
             }
-
+            
             
             
         }
@@ -266,20 +276,20 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
     if( hand.is_present() && !showing )
     {
         if( hand.get_gesture() == GEST_RELEASE &&
-            timer.getSeconds() > 1.0 )
+           timer.getSeconds() > 1.0 )
         {
             _reorganize_canvas();
         }
-
+        
     }
-
+    
     
     // If no hands, hide active edge
     if( !hand.is_present() && showing )
     {
         hide();
     }
-   
+    
 }
 
 void ActiveEdge::change_mode()
@@ -309,15 +319,19 @@ void ActiveEdge::update()
         (*it)->update();
     }
     
-    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
+    for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); )
     {
-        (*it)->update();
+        it->second.update();
         
         //Kill out of view widgets
-        if( (*it)->get_pos().x > getWindowWidth() )
+        if( it->second.get_pos().x > getWindowWidth() && canvas_widgets.count(it->first) )
         {
-            delete  *it;
-            it = canvas_widgets.erase(it);
+            //delete  it->second;
+            canvas_widgets.erase(it++);
+        }
+        else
+        {
+            ++it;
         }
     }
     
@@ -335,7 +349,7 @@ void ActiveEdge::draw() const
     }
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        (*it)->draw();
+        it->second.draw();
     }
     
     if( showing && hand.is_present() && (!snapmode))
@@ -358,13 +372,13 @@ void ActiveEdge::_reorganize_canvas()
 {
     int cx = 1;
     int cy = 1;
-    int padx = getWindowWidth()/4;
+    int padx = getWindowWidth()/3;
     int pady = getWindowHeight()/3.5;
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-        (*it)->set_pos( Vec2f( cx * padx, cy * pady + 40) );
+        it->second.set_pos( Vec2f( cx * padx, cy * pady + 40) );
         cx++;
-        if( cx > 3 )
+        if( cx > 2 )
         {
             cx = 1;
             cy++;
@@ -376,8 +390,8 @@ bool ActiveEdge::_overlaps_widgets( const Rectf & r ) const
 {
     for (auto it=canvas_widgets.begin(); it!=canvas_widgets.end(); ++it)
     {
-//        std::cout<<"   --- "<<r<<"        "<<**it<<"  -> "<<(*it)->intersects( r )<<std::endl;
-        if( (*it)->intersects( r ) )
+        //        std::cout<<"   --- "<<r<<"        "<<**it<<"  -> "<<(*it)->intersects( r )<<std::endl;
+        if( it->second.intersects( r ) )
         {
             return true;
         }
