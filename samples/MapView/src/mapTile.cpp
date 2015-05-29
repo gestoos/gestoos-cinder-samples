@@ -64,7 +64,7 @@ void MapTile::init()
 
     
     
-    sliders.push_back( Slider( getWindowSize()/2 , Vec2f(30, 500),  ColorA(0.9,0.4,0.5,0.5), GEST_EL,  Slider::VERTICAL )  );
+    sliders.push_back( Slider( Vec2f(getWindowWidth()*0.1, getWindowHeight()/2) , Vec2f(30, 500),  ColorA(0.9,0.4,0.5,0.5), GEST_EL,  Slider::VERTICAL )  );
 
     
     hide_all_sliders();
@@ -156,41 +156,44 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
     // start slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
+        
+        if (!it->is_showing() &&
+            hand1.is_present() && hand2.is_present() &&
+            std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
         {
-            
-            
-            
-            track_mode = MODE_ZOOM;
-            hand_g =        &hand1;
-            hand_slider =   &hand2;
-            ref_pos =       hand_g->get_pos();
-            hide_all_sliders();
-            it->show();
-            std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
-            zoomtimer.start();
-            offset_zoom = zoom - 0.5;
-            it->set_pctg( zoom );
-//            std::cout<<"2 hand_g present "<<hand_g->is_present()<<std::endl;
+            if( hand1.get_gesture() == it->get_trigger()  )
+            {
+                
+                
+                
+                track_mode = MODE_ZOOM;
+                hand_g =        &hand1;
+                hand_slider =   &hand2;
+                ref_pos =       hand_g->get_pos();
+                hide_all_sliders();
+                it->show();
+                zoomtimer.start();
+                offset_zoom = zoom - 0.5;
+                it->set_pctg( zoom );
+    
+                break;
+            }
+            if(  hand2.get_gesture() == it->get_trigger() )
+            {
+                track_mode = MODE_ZOOM;
 
-            break;
-        }
-        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present()  && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4  )
-        {
-            track_mode = MODE_ZOOM;
-
-            hand_g =        &hand2;
-            hand_slider =   &hand1;
-            ref_pos =       hand_g->get_pos();
-            hide_all_sliders();
-            it->show();
-            std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
-            zoomtimer.start();
-            offset_zoom = zoom - 0.5;
-            it->set_pctg( zoom );
-//            std::cout<<"3 hand_g present "<<hand_g->is_present()<<std::endl;
-
-            break;
+                hand_g =        &hand2;
+                hand_slider =   &hand1;
+                ref_pos =       hand_g->get_pos();
+                hide_all_sliders();
+                it->show();
+                
+                zoomtimer.start();
+                offset_zoom = zoom - 0.5;
+                it->set_pctg( zoom );
+   
+                break;
+            }
             
         }
     }
@@ -224,22 +227,11 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         {
             float new_pctg = 0.0;
             
-            if( it->get_type() == Slider::HORIZONTAL )
+            if( it->get_type() == Slider::VERTICAL )
             {
-                if( hand_slider->get_pos().x > hand_g->get_pos().x )
-                    new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,    60,  120, 0.0, 1.0 );
-                else
-                    new_pctg = lmap<float>( hand_slider->get_pos().x - ref_pos.x,  -120,  -60, 0.0, 1.0 );
+                new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -20, 20, 1.0, 0.0 );
             }
-            else if( it->get_type() == Slider::VERTICAL )
-            {
-                new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -40, 40, 1.0, 0.0 );
-            }
-            else if( it->get_type() == Slider::CIRCULAR )
-            {
-                std::cout<<hand_slider->get_pos().y<<" - "<<ref_pos.y<<std::endl;
-                new_pctg = lmap<float>( ( hand_slider->get_pos().y - ref_pos.y ), -10, 60, 1.0, 0.0 );
-            }
+            
             
            
             it->set_pctg( (new_pctg + offset_zoom)  ) ;
@@ -253,7 +245,16 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         {
             //track_mode = MODE_ZOOM;
             //float step = 1.0 + std::abs( offset_zoom )*2.0 ;
+//            float scaling = 1.0 + (zoom - 0.5);
+//            Vec2f current_size(image.getWidth()*scaling,image.getHeight()*scaling);
             zoom =  it->get_pctg();
+            
+//            scaling = 1.0 + (zoom - 0.5);
+//            Vec2f predicted_size(image.getWidth()*scaling,image.getHeight()*scaling);
+//            
+//            maporigin.x += predicted_size.x-current_size.x;
+//            maporigin.y += predicted_size.y-current_size.y;
+            
         }
     }
 
@@ -272,10 +273,11 @@ void MapTile::draw() const
     //gl::color ( this->color );
     
     Rectf mpos(0.0,0.0,image.getWidth(),image.getHeight());
+    
+
     mpos.offsetCenterTo(Vec2f(maporigin.x,maporigin.y));//,image.getWidth(),image.getHeight());
-    
-    
-    mpos.scale(Vec2f(1.0 + (zoom - 0.5) , 1.0 + (zoom - 0.5)));
+    //mpos.scale(Vec2f(1.0 + (zoom - 0.5) , 1.0 + (zoom - 0.5)));
+    mpos.scaleCentered( Vec2f(1.0 + (zoom - 0.5) , 1.0 + (zoom - 0.5)));
     
     gl::draw(image,mpos );
     

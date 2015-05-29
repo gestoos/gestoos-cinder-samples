@@ -55,7 +55,7 @@ void exampleApp::setup()
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
 
-    setFullScreen(false);
+    setFullScreen(true);
     
 
     
