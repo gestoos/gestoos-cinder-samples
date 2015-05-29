@@ -26,6 +26,8 @@
 		A10B06CB1B0F167D00507C88 /* valcriClose.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BB1B0F165000507C88 /* valcriClose.dat */; };
 		A10B06CC1B0F167F00507C88 /* hand_detector.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BC1B0F165000507C88 /* hand_detector.dat */; };
 		A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BD1B0F165000507C88 /* whai.dat */; };
+		ACAE2AAB1B17052A00C61ACF /* DriverInteraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE2AAA1B17052A00C61ACF /* DriverInteraction.cpp */; };
+		ACAE2AAE1B17065C00C61ACF /* CinderDrive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE2AAD1B17065C00C61ACF /* CinderDrive.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +75,10 @@
 		A10B06BD1B0F165000507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../../data/whai.dat; sourceTree = "<group>"; };
 		A10B06C51B0F167200507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
+		ACAE2AA91B17052000C61ACF /* DriverInteraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DriverInteraction.hpp; path = ../include/DriverInteraction.hpp; sourceTree = "<group>"; };
+		ACAE2AAA1B17052A00C61ACF /* DriverInteraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DriverInteraction.cpp; path = ../src/DriverInteraction.cpp; sourceTree = "<group>"; };
+		ACAE2AAC1B17063700C61ACF /* CinderDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CinderDrive.h; sourceTree = "<group>"; };
+		ACAE2AAD1B17065C00C61ACF /* CinderDrive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CinderDrive.cpp; path = ../src/CinderDrive.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,10 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ACAE2AAA1B17052A00C61ACF /* DriverInteraction.cpp */,
 				A10B069D1B0E8F5700507C88 /* Label.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
+				ACAE2AAD1B17065C00C61ACF /* CinderDrive.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -222,7 +230,9 @@
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				ACAE2AA91B17052000C61ACF /* DriverInteraction.hpp */,
 				A10B069C1B0E8F4600507C88 /* Label.h */,
+				ACAE2AAC1B17063700C61ACF /* CinderDrive.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -294,6 +304,8 @@
 			files = (
 				A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */,
 				A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */,
+				ACAE2AAB1B17052A00C61ACF /* DriverInteraction.cpp in Sources */,
+				ACAE2AAE1B17065C00C61ACF /* CinderDrive.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +316,6 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -314,26 +325,22 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = InTheCar_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GESTOOS_SDK_LIB_PATH = "../../../../../gestoossdk-osx-dependencies/lib";
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(OPENNI2_PATH)/Include\"",
+					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
 					"\"$(FEZOOLIB_PATH)/include\"",
-					"\"$(OPENCV_PATH)/release/include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(OPENCV_PATH)/release/lib\"",
-					"\"$(BOOST_PATH)\"",
-					"\"$(OPENNI2_PATH)/Redist\"",
+					"\"$(GESTOOS_SDK_LIB_PATH)\"",
 					/opt/local/lib,
 					/usr/local/lib,
 					"$(PROJECT_DIR)",
 				);
-				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "../../../../../../OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
 					"-lOpenNI2",
@@ -366,7 +373,6 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BOOST_PATH = /Users/xaviersuaucuadros/Development/gestoossdk/lib;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -377,26 +383,22 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = InTheCar_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GESTOOS_SDK_LIB_PATH = "../../../../../gestoossdk-osx-dependencies/lib";
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(OPENNI2_PATH)/Include\"",
+					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
 					"\"$(FEZOOLIB_PATH)/include\"",
-					"\"$(OPENCV_PATH)/release/include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(OPENCV_PATH)/release/lib\"",
-					"\"$(BOOST_PATH)\"",
-					"\"$(OPENNI2_PATH)/Redist\"",
+					"\"$(GESTOOS_SDK_LIB_PATH)\"",
 					/opt/local/lib,
 					/usr/local/lib,
 					"$(PROJECT_DIR)",
 				);
-				OPENCV_PATH = "/Users/xaviersuaucuadros/Workspace/libs/opencv-3.0.0-rc1";
-				OPENNI2_PATH = "../../../../../../OpenNI-MacOSX-x64-2.2";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
 					"-lopencv_highgui",
