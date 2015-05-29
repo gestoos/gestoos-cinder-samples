@@ -251,7 +251,7 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
             hand_slider =   &hand2;
             ref_pos =       hand_g->get_pos();
             hide_all_sliders();
-
+            it->show();
             std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
             zoomtimer.start();
             offset_zoom = zoom - 0.5;
@@ -268,7 +268,7 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
             hand_slider =   &hand1;
             ref_pos =       hand_g->get_pos();
             hide_all_sliders();
-
+            it->show();
             std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
             zoomtimer.start();
             offset_zoom = zoom - 0.5;
