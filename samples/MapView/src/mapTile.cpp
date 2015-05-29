@@ -276,7 +276,7 @@ void MapTile::update()
     // start slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() &&no_widget_showing()&& std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
+        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
         {
             
             
@@ -286,7 +286,7 @@ void MapTile::update()
             hand_slider =   &hand2;
             ref_pos =       hand_g->get_pos();
             hide_all_sliders();
-            it->show();
+
             std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
             zoomtimer.start();
             offset_zoom = zoom - 0.5;
@@ -295,7 +295,7 @@ void MapTile::update()
 
             break;
         }
-        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present() && no_widget_showing() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4  )
+        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4  )
         {
             track_mode = MODE_ZOOM;
 
@@ -303,7 +303,7 @@ void MapTile::update()
             hand_slider =   &hand1;
             ref_pos =       hand_g->get_pos();
             hide_all_sliders();
-            it->show();
+
             std::cout<<"showing hand slider "<<it->get_trigger()<<std::endl;
             zoomtimer.start();
             offset_zoom = zoom - 0.5;

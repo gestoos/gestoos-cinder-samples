@@ -44,8 +44,6 @@ public:
     /// Default destructor
     virtual ~MapTile();
     
-    /// Signal the active edge to show
-    void show();
     
     /// Signal the active edge to hide
     void hide();
@@ -74,7 +72,6 @@ public:
     
     void hide_all_sliders();
     
-    bool no_widget_showing();
 
     
     
