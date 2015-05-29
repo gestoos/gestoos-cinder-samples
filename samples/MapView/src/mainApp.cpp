@@ -54,11 +54,13 @@ void exampleApp::setup()
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
-    map_tile = MapTile(150);
 
     setFullScreen(false);
     
+
     
+    map_tile.init();
+
 }
 
 void exampleApp::prepareSettings( Settings *settings )
@@ -114,39 +116,10 @@ void exampleApp::processThread()
 void exampleApp::update()
 {
     
-    std::cout<<"update\n"<<std::flush;
-    if ( !map_tile.is_showing() )
-        map_tile.show();
+    //std::cout<<"update\n"<<std::flush;
 
-    
-//    // Detect hand strokes
-//    Cinderactor::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
-//    
-//    // Activate active_edge if stroke detected
-//    switch (stroke) {
-//        case Cinderactor::UP:
-//            if ( !map_tile.is_showing() )
-//                map_tile.show();
-//            break;
-//            
-//        case Cinderactor::DOWN:
-//            if ( map_tile.is_showing() )
-//                map_tile.hide();
-//            break;
-//            
-//        case Cinderactor::RIGHT:
-//            if ( !map_tile.is_showing() )
-//                map_tile.clear_canvas();
-//            break;
-//            
-//            
-//        default:
-//            break;
-//    }
-//
-    
-    map_tile.set_hands( cinderactor.get_hands() );
-    map_tile.update();
+  
+    map_tile.update(cinderactor.get_hands());
 
     
     

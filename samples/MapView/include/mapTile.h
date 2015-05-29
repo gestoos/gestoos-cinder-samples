@@ -39,64 +39,43 @@ public:
     MapTile();
     
     /// Constructor with active edge height
-    MapTile(float _h);
+    //MapTile(float _h);
+    
+    void init();
+    
     
     /// Default destructor
     virtual ~MapTile();
     
-    /// Signal the active edge to show
-    void show();
     
-    /// Signal the active edge to hide
-    void hide();
-    
-    /// Clear the canvas removing all the widgets
-    void clear_canvas();
-    
-    /// Set the current hand detection
-    void set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & hands );
     
     /// NOT USED. Set the cursor position... for debug.
     void set_cursor_pos( const Vec2f & p );
     
-    /// Update the current active edge
-    void update();
+    /// Update
+    void update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h);
     
-    /// Draw the active edge
+    /// Draw
     void draw() const;
     
-    /// Is the active edge being shown or not?
-    bool is_showing() const;
     
-    /// change snap or cursor mode
-    void change_mode();
     
     
     void hide_all_sliders();
     
-    bool no_widget_showing();
 
     
     
 private:
     
-    std::list< Widget > widgets;
-    std::list< Widget > canvas_widgets;
     
     ColorA          color;
-    Rectf           rect;
     float           alpha;
     Cinderactor::StrokeType      sense;
     
     std::pair<gestoos::nui::Hand, gestoos::nui::Hand>  hands;
     Vec2f hand_pos_f;
     
-    bool showing ;
-    
-    float show_y, hide_y;
-    float show_a, hide_a;
-    
-    Vec2f show_c, hide_c, center;
     
     Vec2f maporigin;
     

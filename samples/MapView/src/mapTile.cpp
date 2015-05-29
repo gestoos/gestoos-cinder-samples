@@ -38,7 +38,7 @@ MapTile::MapTile()
     
 }
 
-MapTile::MapTile(float _h)
+void MapTile::init()
 {
     
     
@@ -49,20 +49,6 @@ MapTile::MapTile(float _h)
     maporigin.y = cinder::app::getWindowHeight()/2;
     
     //my vars
-    show_y = getWindowHeight() - _h  ;
-    hide_y = getWindowHeight() * 1.01  ;
-    
-    show_c = Vec2f( getWindowWidth()/2., show_y + _h/2  );
-    hide_c = Vec2f( getWindowWidth()/2., hide_y + _h/2  );
-    
-    center = hide_c; //hidden
-    
-    show_a = 0.7;
-    hide_a = 0.3;
-    alpha = hide_a;
-    
-    showing = false;
-    snapmode = true;
     
     track_mode = MODE_IDLE;
     
@@ -83,8 +69,6 @@ MapTile::MapTile(float _h)
     
     hide_all_sliders();
     
-    // Set initial rect pos
-    rect = Rectf( Vec2f(0,hide_y), Vec2f(getWindowWidth(),hide_y+_h) );
     
     timer.start();
     
@@ -98,7 +82,7 @@ MapTile::MapTile(float _h)
     hand_g = empty_hand;
     hand_slider = empty_hand2;
 
-    std::cout<<" hand_g present "<<hand_g->is_present()<<std::endl;
+    //std::cout<<" hand_g present "<<hand_g->is_present()<<std::endl;
     
 }
 
@@ -110,22 +94,101 @@ MapTile::~MapTile()
 
 
 
-void MapTile::set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h )
-{
-    hands = h;
-//    std::cout<<"sh hand_g present "<<hand_g->is_present()<<std::endl;
+//void MapTile::set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h )
+//{
+//    hands = h;
+////    std::cout<<"sh hand_g present "<<hand_g->is_present()<<std::endl;
+//
+//    if( hands.first.is_present() && !hands.second.is_present() && showing )
+//    {
+//        gestoos::nui::Hand & hand = hands.first;
+//        // Instant hand position scaled to screen
+//        Vec2f hand_pos_inst ;
+////        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
+////        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
+//
+//                hand_pos_inst.x = ( hand.get_unit_pos().x - 0.5 ) * cinder::app::getWindowWidth()*2.0 + cinder::app::getWindowWidth()/2.0;
+//                hand_pos_inst.y = (hand.get_unit_pos().y -0.5)    *   cinder::app::getWindowHeight()*2.0 + cinder::app::getWindowHeight()/2.0;
+//
+//        track_mode = MODE_CURSOR;
+//        
+//        // Filter hand
+//        hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.3 ;
+//        
+//        if(hand.get_gesture() == GEST_EL)
+//        {
+//            track_mode = MODE_PAN;
+//
+//            
+//             float mapW = cinder::app::getWindowWidth();
+//            float mapH = cinder::app::getWindowHeight();
+//            
+//            float panBorderx = 0.4;
+//            float panBordery = 0.45;
+//            
+//            float panStep   = 0.03;
+//            
+//            
+//            
+//            
+////            if( (hand_pos_f.x > mapW*(1.0-panBorderx))&& (hand_pos_f.x  < mapW*panBorderx) )
+////            {
+////                
+////            }
+//            
+//            
+//            if(hand_pos_f.x > mapW*(1.0-panBorderx)) 	maporigin.x -= 5.0;//( mapW * panStep - panx ) * 0.05 ;
+//            if(hand_pos_f.y  > (mapH*(1.0-panBordery))) 	maporigin.y -= 5.0;//( mapH * panStep - pany ) * 0.05 ;
+//            if(hand_pos_f.x  < mapW*panBorderx) 			maporigin.x += 5.0;//( (-mapW * panStep) - panx ) * 0.05 ;
+//            if(hand_pos_f.y  < (mapH*panBordery)) 			maporigin.y += 5.0;// ( (-mapH * panStep) - pany ) * 0.05 ;
+//            
+////            if( (currx < mapW*(1.0-panBorderx))&& (currx > mapW*panBorderx) )
+////            {
+////                panx = 0;
+////            }
+////            
+////            if( (curry < (mapH*(1.0-panBordery) - 300)) && (curry > (mapH*panBordery - 400)) )
+////            {
+////                pany = 0;
+////            }
+//
+//            
+//            
+//            
+//        }
+//    }
+////    std::cout<<"sh2 hand_g present "<<hand_g->is_present()<<std::endl;
+//
+//
+//    
+//}
+//
 
-    if( hands.first.is_present() && !hands.second.is_present() && showing )
+
+void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h)
+{
+ //   std::cout<<"1 hand_g present "<<hand_g->is_present()<<std::endl;
+ 
+    
+    
+    
+    hands = h;
+
+    
+    
+    // manage Cursor and Pan
+    
+    if( hands.first.is_present() && !hands.second.is_present())
     {
         gestoos::nui::Hand & hand = hands.first;
         // Instant hand position scaled to screen
         Vec2f hand_pos_inst ;
-//        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
-//        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
-
-                hand_pos_inst.x = ( hand.get_unit_pos().x - 0.5 ) * cinder::app::getWindowWidth()*2.0 + cinder::app::getWindowWidth()/2.0;
-                hand_pos_inst.y = (hand.get_unit_pos().y -0.5)    *   cinder::app::getWindowHeight()*2.0 + cinder::app::getWindowHeight()/2.0;
-
+        //        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
+        //        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
+        
+        hand_pos_inst.x = ( hand.get_unit_pos().x - 0.5 ) * cinder::app::getWindowWidth()*2.0 + cinder::app::getWindowWidth()/2.0;
+        hand_pos_inst.y = (hand.get_unit_pos().y -0.5)    *   cinder::app::getWindowHeight()*2.0 + cinder::app::getWindowHeight()/2.0;
+        
         track_mode = MODE_CURSOR;
         
         // Filter hand
@@ -134,139 +197,41 @@ void MapTile::set_hands( const std::pair<gestoos::nui::Hand, gestoos::nui::Hand>
         if(hand.get_gesture() == GEST_EL)
         {
             track_mode = MODE_PAN;
-
             
-             float mapW = cinder::app::getWindowWidth();
+            
+            float mapW = cinder::app::getWindowWidth();
             float mapH = cinder::app::getWindowHeight();
             
             float panBorderx = 0.4;
             float panBordery = 0.45;
             
-            float panStep   = 0.03;
-            
-            
-            
-            
-//            if( (hand_pos_f.x > mapW*(1.0-panBorderx))&& (hand_pos_f.x  < mapW*panBorderx) )
-//            {
-//                
-//            }
-            
+  //          float panStep   = 0.03;
             
             if(hand_pos_f.x > mapW*(1.0-panBorderx)) 	maporigin.x -= 5.0;//( mapW * panStep - panx ) * 0.05 ;
             if(hand_pos_f.y  > (mapH*(1.0-panBordery))) 	maporigin.y -= 5.0;//( mapH * panStep - pany ) * 0.05 ;
             if(hand_pos_f.x  < mapW*panBorderx) 			maporigin.x += 5.0;//( (-mapW * panStep) - panx ) * 0.05 ;
             if(hand_pos_f.y  < (mapH*panBordery)) 			maporigin.y += 5.0;// ( (-mapH * panStep) - pany ) * 0.05 ;
             
-//            if( (currx < mapW*(1.0-panBorderx))&& (currx > mapW*panBorderx) )
-//            {
-//                panx = 0;
-//            }
-//            
-//            if( (curry < (mapH*(1.0-panBordery) - 300)) && (curry > (mapH*panBordery - 400)) )
-//            {
-//                pany = 0;
-//            }
-
+            
             
             
             
         }
     }
-//    std::cout<<"sh2 hand_g present "<<hand_g->is_present()<<std::endl;
-
-//    else if (hands.first.is_present() && hands.second.is_present()
-//                 && hands.first.get_gesture()==GEST_EL && hands.second.get_gesture()==GEST_EL)
-//        {
-//            
-//            if (track_mode==MODE_ZOOM)
-//            {
-//                float v1 = hands.first.get_vel().x;
-//                float v2 = hands.second.get_vel().x;
-//                float move1 = hands.first.get_pos().x+hands.first.get_vel().x;
-//                float move2 =hands.second.get_pos().x+hands.second.get_vel().x;
-//                
-//                //std::cout << v1 << " " << v2 << std::endl;
-//                if ( fabs(v1-v2) > 6.0 && fabs(move1-move2) < fabs(hands.first.get_pos().x - hands.second.get_pos().x ) )
-//                {
-//                    //ZOOM OUT
-////                    float elapsed_zoom = (float)( clock()-zoom_timeout )/CLOCKS_PER_SEC;
-////                    if (elapsed_zoom > 0.5 )
-////                    {
-////                        myop->callzoomOut();
-////                        zoom_timeout = clock();
-////                    }
-//                    
-//                    
-//                    if(zoomtimer.getSeconds() > 0.5)
-//                    {
-//                        zoomtimer.start();
-//                        zoom -= 30.0;
-//                    }
-//                    
-//                    
-//                }
-//                else if ( fabs(v1-v2) > 6.0 && fabs(move1-move2) > fabs(hands.first.get_pos().x - hands.second.get_pos().x ) )
-//                {
-//                    //ZOOM IN
-////                    float elapsed_zoom = (float)( clock()-zoom_timeout )/CLOCKS_PER_SEC;
-////                    if (elapsed_zoom > 0.5 )
-////                    {
-////                        myop->callzoomIn();
-////                        zoom_timeout = clock();
-////                    }
-//                    if(zoomtimer.getSeconds() > 0.5)
-//                    {
-//                        zoomtimer.start();
-//                        zoom += 30.0;
-//                    }
-//
-//                    
-//                    
-//                }
-//                else
-//                {
-//                    //track_mode=MODE_IDLE;
-//                    
-//                    //zoom = 0;
-//                }
-//            }
-//            else
-//            {
-//                
-//                track_mode=MODE_ZOOM;
-//                //Set zoom pos
-//                
-//                //As first hand
-////                xpos = hands.first.get_unit_pos().x-0.5;
-////                ypos = hands.first.get_unit_pos().y-0.5;
-////                
-////                zoomAt = QPoint(xpos*resolutionX + resolutionX/2, ypos*resolutionY + resolutionY/2);
-//                
-////                zoom_timeout = clock();
-//                    zoomtimer.start();
-//
-//                //zoom = 0;
-//            
-//            }
-//        }
-//
+    //    std::cout<<"sh2 hand_g present "<<hand_g->is_present()<<std::endl;
 
     
-}
-
-void MapTile::change_mode()
-{
-    snapmode = !snapmode;
-}
-
-
-void MapTile::update()
-{
-    std::cout<<"1 hand_g present "<<hand_g->is_present()<<std::endl;
-   
-    //    slider_hor.update();
-    //    slider_ver.update();
+    
+    
+    
+    
+    
+    
+    
+    
+    /// Manage ZOOM slider
+    
+    
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
         it->update();
     
@@ -276,7 +241,7 @@ void MapTile::update()
     // start slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() &&no_widget_showing()&& std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
+        if(  hand1.is_present() && hand1.get_gesture() == it->get_trigger()  && hand2.is_present() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
         {
             
             
@@ -295,7 +260,7 @@ void MapTile::update()
 
             break;
         }
-        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present() && no_widget_showing() && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4  )
+        if(  hand2.is_present() && hand2.get_gesture() == it->get_trigger() && hand1.is_present()  && std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4  )
         {
             track_mode = MODE_ZOOM;
 
@@ -315,7 +280,7 @@ void MapTile::update()
         }
     }
     
-    std::cout<<"3.1 hand_g present "<<hand_g->is_present()<<std::endl;
+  //  std::cout<<"3.1 hand_g present "<<hand_g->is_present()<<std::endl;
 
     // exit slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
@@ -334,7 +299,7 @@ void MapTile::update()
         }
     }
     
-   std::cout<<"4 hand_g present "<<hand_g->is_present()<<std::endl;
+  // std::cout<<"4 hand_g present "<<hand_g->is_present()<<std::endl;
     // filter ref pos
     if( hand_g->is_present() )
         ref_pos += (hand_g->get_pos() - ref_pos) * 0.1;
@@ -374,8 +339,8 @@ void MapTile::update()
         if(track_mode == MODE_ZOOM  && it->is_showing())
         {
             //track_mode = MODE_ZOOM;
-            float step = 1.0 + std::abs( offset_zoom )*2.0 ;
-            zoom =  it->get_pctg() * step;
+            //float step = 1.0 + std::abs( offset_zoom )*2.0 ;
+            zoom =  it->get_pctg();
         }
     }
 
@@ -406,10 +371,10 @@ void MapTile::draw() const
     
     mpos.scale(Vec2f(1.0 + (zoom - 0.5) , 1.0 + (zoom - 0.5)));
     
-    	gl::draw(image,mpos );
+    gl::draw(image,mpos );
     
     
-    if( showing && hands.first.is_present())
+    if(  hands.first.is_present())
     {
         Vec2f hpos ;
         hpos.x = hand_pos_f.x;
@@ -452,8 +417,4 @@ void MapTile::draw() const
     
 }
 
-bool MapTile::is_showing() const
-{
-    return showing;
-}
 
