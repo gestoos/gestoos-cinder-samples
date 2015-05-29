@@ -243,17 +243,8 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
     {
         if(track_mode == MODE_ZOOM  && it->is_showing())
         {
-            //track_mode = MODE_ZOOM;
-            //float step = 1.0 + std::abs( offset_zoom )*2.0 ;
-//            float scaling = 1.0 + (zoom - 0.5);
-//            Vec2f current_size(image.getWidth()*scaling,image.getHeight()*scaling);
+
             zoom =  it->get_pctg();
-            
-//            scaling = 1.0 + (zoom - 0.5);
-//            Vec2f predicted_size(image.getWidth()*scaling,image.getHeight()*scaling);
-//            
-//            maporigin.x += predicted_size.x-current_size.x;
-//            maporigin.y += predicted_size.y-current_size.y;
             
         }
     }
