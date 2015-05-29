@@ -27,10 +27,10 @@ void CinderDrive::init(const std::string & ini_file )
 
 CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout )
 {
-    if( get_hands().first.is_present() )
+    if( get_hand().is_present() )
     {
-        int hand_gesture = get_hands().first.get_gesture();
-        Vec2f hand_vel = Vec2f( get_hands().first.get_vel().x , get_hands().first.get_vel().y );
+        int hand_gesture = get_hand().get_gesture();
+        Vec2f hand_vel = Vec2f( get_hand().get_vel().x , get_hand().get_vel().y );
         
         if( (hand_gesture == gest || hand_gesture == -1 ) && block_timer.getSeconds() >= timeout )
         {
@@ -70,8 +70,8 @@ void CinderDrive::draw() const
         return;
     }
     
-    draw_hand_representation( get_hands().first,   Vec2f(200, 70 ) );
-    draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
+    draw_hand_representation( get_hand(),   Vec2f(200, 70 ) );
+    //draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
     
 }
 
