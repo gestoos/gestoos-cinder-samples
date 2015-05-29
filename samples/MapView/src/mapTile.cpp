@@ -44,6 +44,7 @@ void MapTile::init()
     
     image = gl::Texture(loadImage(loadResource(MAP_IMG)));
     
+    std::cout << "Image size " << image.getSize() << std::endl;
     
     maporigin.x = cinder::app::getWindowWidth()/2;
     maporigin.y = cinder::app::getWindowHeight()/2;
@@ -243,8 +244,11 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
     {
         if(track_mode == MODE_ZOOM  && it->is_showing())
         {
-
+            float delta_zoom=zoom;
             zoom =  it->get_pctg();
+            delta_zoom = zoom-delta_zoom;
+            maporigin.x -=delta_zoom*5;
+            maporigin.y -=delta_zoom*5;
             
         }
     }
@@ -266,10 +270,11 @@ void MapTile::draw() const
     Rectf mpos(0.0,0.0,image.getWidth(),image.getHeight());
     
 
-    mpos.offsetCenterTo(Vec2f(maporigin.x,maporigin.y));//,image.getWidth(),image.getHeight());
-    //mpos.scale(Vec2f(1.0 + (zoom - 0.5) , 1.0 + (zoom - 0.5)));
-    mpos.scaleCentered( Vec2f(1.0 + (zoom - 0.5) , 1.0 + (zoom - 0.5)));
+
+    mpos.offsetCenterTo(Vec2f(maporigin.x,maporigin.y));
+    mpos.scale(1.0 + (zoom - 0.5));
     
+   
     gl::draw(image,mpos );
     
     
@@ -279,7 +284,7 @@ void MapTile::draw() const
         hpos.x = hand_pos_f.x;
         hpos.y = hand_pos_f.y; // horizontal
         
-        if(track_mode == MODE_PAN || track_mode == MODE_ZOOM)
+        if(track_mode == MODE_PAN)
         {
             gl::color( ColorA( 0.6,0.7,0.8,0.6));
 
@@ -290,6 +295,13 @@ void MapTile::draw() const
             gl::color( ColorA( 0.6,0.0,0.0,0.6));
 
             gl::drawSolidCircle( hpos, 20.0, 32 );
+        }
+        else if (track_mode == MODE_ZOOM)
+        {
+            gl::color( ColorA( 0.6,0.7,0.8,0.6));
+            Rectf rect(0, 0, 40, 40);
+            rect.offsetCenterTo(hpos);
+            gl::drawSolidRoundedRect(rect, 6);
         }
         
         

@@ -76,8 +76,12 @@ void Cinderactor::draw() const
     // Loading message
     if( !init_ok )
     {
-        gl::drawStringCentered(	"Loading models... please wait...", Vec2f( cinder::app::getWindowWidth()/2,cinder::app::getWindowHeight()*0.5 ) );
-        
+        gl::color( ColorA( 0.0,0.0,0.0,0.5));
+        Rectf rect(0, 0, 300, 100);
+        rect.offsetCenterTo(ci::app::getWindowCenter());
+        gl::drawSolidRoundedRect(rect, 10);
+        gl::drawStringCentered(	"Loading models... please wait...", ci::app::getWindowCenter() );
+        gl::color(1.0,1.0, 1.0, 1.0);
         return;
     }
 
