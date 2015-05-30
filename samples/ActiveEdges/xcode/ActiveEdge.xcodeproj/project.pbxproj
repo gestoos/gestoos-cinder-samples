@@ -264,6 +264,8 @@
 		ACB1778B1B1860F100B64C28 /* w_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_map.png; sourceTree = "<group>"; };
 		ACB1778C1B1860F100B64C28 /* w_persons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_persons.png; sourceTree = "<group>"; };
 		ACB1778D1B1860F100B64C28 /* w_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_round.png; sourceTree = "<group>"; };
+		ACC294811B18ABA90098936D /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
+		ACC294821B18ABA90098936D /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Widget.h; path = ../include/Widget.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +503,8 @@
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				ACC294811B18ABA90098936D /* resource.h */,
+				ACC294821B18ABA90098936D /* Widget.h */,
 				A10B069C1B0E8F4600507C88 /* ActiveEdge.h */,
 			);
 			name = Headers;

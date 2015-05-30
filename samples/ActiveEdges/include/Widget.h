@@ -113,9 +113,14 @@ public:
         else
         {
             if( hover || highlight )
-                gl::color(1.0, 1.0, 1.0, 0.9 * alpha );
+            {
+                gl::color(1.0, 1.0, 1.0, 1.0 * alpha );
+                Rectf border(0, 0, 120, 120);
+                border.offsetCenterTo(this->getCenter());
+                gl::drawSolidRoundedRect(border, 5);
+            }
             else
-                gl::color(1.0, 1.0, 1.0, 0.5 * alpha );
+                gl::color(1.0, 1.0, 1.0, 0.15 * alpha );
         }
         gl::draw(image, Vec2f( getX1(), getY1() ) );
         //cinder::gl::drawSolidRect( *this );

@@ -61,7 +61,7 @@ void exampleApp::setup()
     
     init_ok = false;
     
-    active_edge = ActiveEdge(150);
+    active_edge = ActiveEdge(200);
     
     
     int pad = getWindowWidth()/5;
