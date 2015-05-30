@@ -116,13 +116,22 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
         hand_pos_inst.x = ( hand.get_unit_pos().x - 0.5 ) * cinder::app::getWindowWidth()*2.0 + cinder::app::getWindowWidth()/2.0;
         hand_pos_inst.y = (hand.get_unit_pos().y -0.5)    *   cinder::app::getWindowHeight()*2.0 + cinder::app::getWindowHeight()/2.0;
         
-        track_mode = MODE_CURSOR;
         
         // Filter hand
         hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.1 ;
         
-        if(hand.get_gesture() == GEST_EL)
+        //Pan becomes a grab
+        if(hand.get_gesture() == GEST_CLOSE)
         {
+            if (track_mode!=MODE_PAN)
+            {
+                //Grab, record the current maporigin pos
+                // and the and pos
+                grab_reference = hand_pos_f;
+                screen_reference = maporigin;
+                std::cout << "Grabbed in " << grab_reference << std::endl;
+
+            }
             track_mode = MODE_PAN;
             
             
@@ -131,18 +140,23 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
             
             float panBorderx = 0.4;
             float panBordery = 0.45;
-            
-  //          float panStep   = 0.03;
-            
-            if(hand_pos_f.x > mapW*(1.0-panBorderx)) 	maporigin.x -= 5.0;//( mapW * panStep - panx ) * 0.05 ;
-            if(hand_pos_f.y  > (mapH*(1.0-panBordery))) 	maporigin.y -= 5.0;//( mapH * panStep - pany ) * 0.05 ;
-            if(hand_pos_f.x  < mapW*panBorderx) 			maporigin.x += 5.0;//( (-mapW * panStep) - panx ) * 0.05 ;
-            if(hand_pos_f.y  < (mapH*panBordery)) 			maporigin.y += 5.0;// ( (-mapH * panStep) - pany ) * 0.05 ;
+
+            maporigin = screen_reference + (hand_pos_f - grab_reference);
             
             
+//            if(hand_pos_f.x > mapW*(1.0-panBorderx)) 	maporigin.x -= 5.0;
+//            if(hand_pos_f.y  > (mapH*(1.0-panBordery))) 	maporigin.y -= 5.0;//( mapH * panStep - pany ) * 0.05 ;
+//            if(hand_pos_f.x  < mapW*panBorderx) 			maporigin.x += 5.0;//( (-mapW * panStep) - panx ) * 0.05 ;
+//            if(hand_pos_f.y  < (mapH*panBordery)) 			maporigin.y += 5.0;// ( (-mapH * panStep) - pany ) * 0.05 ;
+//            
             
             
             
+            
+        }
+        else{
+            track_mode = MODE_CURSOR;
+
         }
     }
     /// Manage ZOOM slider

@@ -77,6 +77,8 @@
 		AC6851891B18428A00F5310B /* libwebp.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC6851291B18421600F5310B /* libwebp.5.dylib */; };
 		AC68518A1B18428A00F5310B /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC68512A1B18421600F5310B /* libz.1.dylib */; };
 		AC68518B1B18428A00F5310B /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC68512B1B18421600F5310B /* OpenNI.ini */; };
+		ACC294841B19F0B70098936D /* valcriClose_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACC294831B19F0B70098936D /* valcriClose_light.dat */; };
+		ACC294851B19F0CC0098936D /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACC294831B19F0B70098936D /* valcriClose_light.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +90,7 @@
 			files = (
 				1FDB73691B1748770030589F /* valcriL.dat in CopyFiles */,
 				1FDB73671B17472D0030589F /* valcriVictory_light.dat in CopyFiles */,
+				ACC294851B19F0CC0098936D /* valcriClose_light.dat in CopyFiles */,
 				1FDB73641B1744BC0030589F /* valcriL_light.dat in CopyFiles */,
 				1FDB73651B1744BC0030589F /* hand_detector_light.dat in CopyFiles */,
 			);
@@ -233,6 +236,7 @@
 		AC6851291B18421600F5310B /* libwebp.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwebp.5.dylib; path = "../../../../../gestoosdk-osx-dependencies/libwebp.5.dylib"; sourceTree = "<group>"; };
 		AC68512A1B18421600F5310B /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = "../../../../../gestoosdk-osx-dependencies/libz.1.dylib"; sourceTree = "<group>"; };
 		AC68512B1B18421600F5310B /* OpenNI.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OpenNI.ini; path = "../../../../../gestoosdk-osx-dependencies/OpenNI.ini"; sourceTree = "<group>"; };
+		ACC294831B19F0B70098936D /* valcriClose_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose_light.dat; path = ../../../../../data/valcriClose_light.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,10 +363,6 @@
 				AC6851291B18421600F5310B /* libwebp.5.dylib */,
 				AC68512A1B18421600F5310B /* libz.1.dylib */,
 				AC68512B1B18421600F5310B /* OpenNI.ini */,
-				1FDB73681B1748770030589F /* valcriL.dat */,
-				1FDB73661B17472D0030589F /* valcriVictory_light.dat */,
-				1FDB73621B1744BC0030589F /* valcriL_light.dat */,
-				1FDB73631B1744BC0030589F /* hand_detector_light.dat */,
 				1FF8455B1B160A0800341D4E /* ohio-bike-map.jpg */,
 				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
@@ -406,6 +406,11 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1FDB73681B1748770030589F /* valcriL.dat */,
+				1FDB73661B17472D0030589F /* valcriVictory_light.dat */,
+				1FDB73621B1744BC0030589F /* valcriL_light.dat */,
+				1FDB73631B1744BC0030589F /* hand_detector_light.dat */,
+				ACC294831B19F0B70098936D /* valcriClose_light.dat */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 			files = (
 				1FF8455C1B160A0800341D4E /* ohio-bike-map.jpg in Resources */,
 				AC68515B1B18421600F5310B /* OpenNI.ini in Resources */,
+				ACC294841B19F0B70098936D /* valcriClose_light.dat in Resources */,
 				A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -78,6 +78,8 @@ private:
     
     
     Vec2f maporigin;
+    Vec2f grab_reference;
+    Vec2f screen_reference;
     
     
     Timer timer;
