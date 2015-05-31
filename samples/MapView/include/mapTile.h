@@ -81,6 +81,10 @@ private:
     Vec2f grab_reference;
     Vec2f screen_reference;
     
+    //Zoom reference, initial distance between hands
+    float zoom_ref;
+    float distance_ref;
+    
     
     Timer timer;
     

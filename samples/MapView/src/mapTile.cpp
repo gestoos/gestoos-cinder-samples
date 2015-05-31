@@ -171,65 +171,103 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
     // start slider
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
     {
-        
-        if (!it->is_showing() &&
-            hand1.is_present() && hand2.is_present() &&
-            std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
+        //Double grab approach
+        if   (hand1.is_present() && hand2.is_present() &&
+            std::abs(hand1.get_pos().y - hand2.get_pos().y) < 10)
         {
-            if( hand1.get_gesture() == it->get_trigger()  )
+            //For robustness, detect either one or the other
+            if ((hand1.get_gesture()==GEST_CLOSE || hand2.get_gesture()==GEST_CLOSE) )
             {
-                
-                
+                std::cout << "2 hands close " << track_mode << std::endl;
+                if (track_mode!=MODE_ZOOM)
+                {
+                    distance_ref =  std::abs(hand1.get_unit_pos().x - hand2.get_unit_pos().x);
+                    hide_all_sliders();
+                    if (!it->is_showing()) it->show();
+                    zoomtimer.start();
+                    zoom_ref = zoom;
+                    
+                }
+                else
+                {
+                    float delta = std::abs(hand1.get_unit_pos().x - hand2.get_unit_pos().x) - distance_ref;
+                    std::cout << "Delta " << delta << std::endl;
+                    zoom=zoom_ref + 3.*delta;
+                    if (zoom > 1 ) zoom=1;
+                    if (zoom < 0 ) zoom = 0 ;
+                    offset_zoom = zoom - 0.5;
+                    zoomtimer.start();
+                    it->set_pctg( zoom );
+                }
                 
                 track_mode = MODE_ZOOM;
-                hand_g =        &hand1;
-                hand_slider =   &hand2;
-                ref_pos =       hand_g->get_pos();
-                hide_all_sliders();
-                it->show();
-                zoomtimer.start();
-                offset_zoom = zoom - 0.5;
-                it->set_pctg( zoom );
-    
-                break;
             }
-            if(  hand2.get_gesture() == it->get_trigger() )
+            else if (track_mode==MODE_ZOOM && hand1.get_gesture()!=GEST_CLOSE)
             {
-                track_mode = MODE_ZOOM;
-
-                hand_g =        &hand2;
-                hand_slider =   &hand1;
-                ref_pos =       hand_g->get_pos();
                 hide_all_sliders();
-                it->show();
-                
-                zoomtimer.start();
-                offset_zoom = zoom - 0.5;
-                it->set_pctg( zoom );
-   
-                break;
+                 track_mode = MODE_IDLE;
             }
-            
         }
     }
     
+//        if (!it->is_showing() && 
+//            hand1.is_present() && hand2.is_present() &&
+//            std::abs(hand1.get_pos().y - hand2.get_pos().y) < 4 )
+//        {
+//            if( hand1.get_gesture() == it->get_trigger()  )
+//            {
+//                
+//                
+//                
+//                track_mode = MODE_ZOOM;
+//                hand_g =        &hand1;
+//                hand_slider =   &hand2;
+//                ref_pos =       hand_g->get_pos();
+//                hide_all_sliders();
+//                it->show();
+//                zoomtimer.start();
+//                offset_zoom = zoom - 0.5;
+//                it->set_pctg( zoom );
+//    
+//                break;
+//            }
+//            if(  hand2.get_gesture() == it->get_trigger() )
+//            {
+//                track_mode = MODE_ZOOM;
+//
+//                hand_g =        &hand2;
+//                hand_slider =   &hand1;
+//                ref_pos =       hand_g->get_pos();
+//                hide_all_sliders();
+//                it->show();
+//                
+//                zoomtimer.start();
+//                offset_zoom = zoom - 0.5;
+//                it->set_pctg( zoom );
+//   
+//                break;
+//            }
+//            
+//        }
+//    }
+    
 
-    // exit slider
-    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
-    {
-        
-        if( it->is_showing() &&
-           it->get_trigger() > 10 && ( !hand1.is_present() || !hand2.is_present()  || hand_g->get_gesture()!=it->get_trigger() ) )
-        {
-            track_mode = MODE_IDLE;
-
-            hide_all_sliders();
-            hand_g =empty_hand;
-            hand_slider = empty_hand2;
-            std::cout<<"quitting "<<it->get_trigger()<<std::endl;
-            break;
-        }
-    }
+//    // exit slider
+//    for( auto it=sliders.begin(); it!=sliders.end(); ++it )
+//    {
+//        
+//        if( it->is_showing() &&
+//           it->get_trigger() > 10 && ( !hand1.is_present() || !hand2.is_present()  || hand_g->get_gesture()!=it->get_trigger() ) )
+//        {
+//            track_mode = MODE_IDLE;
+//
+//            hide_all_sliders();
+//            hand_g =empty_hand;
+//            hand_slider = empty_hand2;
+//            std::cout<<"quitting "<<it->get_trigger()<<std::endl;
+//            break;
+//        }
+//    }
     
     // filter ref pos
     if( hand_g->is_present() )
