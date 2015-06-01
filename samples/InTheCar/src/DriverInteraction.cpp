@@ -241,6 +241,12 @@ void gestoos::nui::DriverInteraction::stop()
 	_hand_detector.stop();
 }
 
+void gestoos::nui::DriverInteraction::set_resources_path(const std::string& resources)
+{
+	_config.set_resources_path(resources);
+}
+
+
 const  gestoos::nui::Config& gestoos::nui::DriverInteraction::get_config() const {
 	return _config;
 }
