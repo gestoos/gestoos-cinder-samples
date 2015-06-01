@@ -18,6 +18,7 @@ using namespace ci;
 
 static int     GEST_AUDIO       = 4;
 
+static int     GEST_INDEX       = 12;
 static int     GEST_EL          = 13;
 static int     GEST_VICTORY     = 14;
 static int     GEST_OPEN        = 15;

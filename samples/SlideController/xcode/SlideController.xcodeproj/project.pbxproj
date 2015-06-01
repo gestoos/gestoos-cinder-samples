@@ -22,6 +22,8 @@
 		A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B069D1B0E8F5700507C88 /* Label.cpp */; };
 		A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06C71B0F167200507C88 /* Cinderactor.cpp */; };
 		A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BD1B0F165000507C88 /* whai.dat */; };
+		ACA531C91B1CA780008186BD /* valcriL.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACA531C81B1CA780008186BD /* valcriL.dat */; };
+		ACA531CA1B1CA788008186BD /* valcriL.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA531C81B1CA780008186BD /* valcriL.dat */; };
 		ACB177181B18574600B64C28 /* libboost_date_time-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB176E51B18574600B64C28 /* libboost_date_time-mt.dylib */; };
 		ACB177191B18574600B64C28 /* libboost_filesystem-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB176E61B18574600B64C28 /* libboost_filesystem-mt.dylib */; };
 		ACB1771A1B18574600B64C28 /* libboost_program_options-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB176E71B18574600B64C28 /* libboost_program_options-mt.dylib */; };
@@ -125,6 +127,10 @@
 		ACB1777F1B18595000B64C28 /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */; };
 		ACB177801B18595300B64C28 /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
 		ACE0A7D51B1C680900136406 /* AppControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE0A7D31B1C680900136406 /* AppControl.mm */; };
+		ACE0A7D81B1CA05D00136406 /* valcriClose_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACE0A7D61B1CA05D00136406 /* valcriClose_light.dat */; };
+		ACE0A7D91B1CA05D00136406 /* valcriIndex_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACE0A7D71B1CA05D00136406 /* valcriIndex_light.dat */; };
+		ACE0A7DA1B1CA07600136406 /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACE0A7D61B1CA05D00136406 /* valcriClose_light.dat */; };
+		ACE0A7DB1B1CA07A00136406 /* valcriIndex_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACE0A7D71B1CA05D00136406 /* valcriIndex_light.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -135,7 +141,10 @@
 			dstSubfolderSpec = 7;
 			files = (
 				A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */,
+				ACA531CA1B1CA788008186BD /* valcriL.dat in CopyFiles */,
+				ACE0A7DB1B1CA07A00136406 /* valcriIndex_light.dat in CopyFiles */,
 				ACB1777F1B18595000B64C28 /* hand_detector_light.dat in CopyFiles */,
+				ACE0A7DA1B1CA07600136406 /* valcriClose_light.dat in CopyFiles */,
 				ACB177801B18595300B64C28 /* valcriVictory_light.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +232,7 @@
 		A10B06BD1B0F165000507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../../data/whai.dat; sourceTree = "<group>"; };
 		A10B06C51B0F167200507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
+		ACA531C81B1CA780008186BD /* valcriL.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL.dat; path = ../../../../../data/valcriL.dat; sourceTree = "<group>"; };
 		ACB176E51B18574600B64C28 /* libboost_date_time-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_date_time-mt.dylib"; sourceTree = "<group>"; };
 		ACB176E61B18574600B64C28 /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
 		ACB176E71B18574600B64C28 /* libboost_program_options-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_program_options-mt.dylib"; sourceTree = "<group>"; };
@@ -277,6 +287,8 @@
 		ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
 		ACE0A7D31B1C680900136406 /* AppControl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppControl.mm; sourceTree = "<group>"; };
 		ACE0A7D41B1C680900136406 /* AppControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppControl.h; sourceTree = "<group>"; };
+		ACE0A7D61B1CA05D00136406 /* valcriClose_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose_light.dat; path = ../../../../../data/valcriClose_light.dat; sourceTree = "<group>"; };
+		ACE0A7D71B1CA05D00136406 /* valcriIndex_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriIndex_light.dat; path = ../../../../../data/valcriIndex_light.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +449,9 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACA531C81B1CA780008186BD /* valcriL.dat */,
+				ACE0A7D61B1CA05D00136406 /* valcriClose_light.dat */,
+				ACE0A7D71B1CA05D00136406 /* valcriIndex_light.dat */,
 				ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */,
 				ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */,
 				A10B06BD1B0F165000507C88 /* whai.dat */,
@@ -609,8 +624,11 @@
 				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
 				ACB1777D1B1858D000B64C28 /* hand_detector_light.dat in Resources */,
 				ACB177471B18574600B64C28 /* OpenNI.ini in Resources */,
+				ACE0A7D91B1CA05D00136406 /* valcriIndex_light.dat in Resources */,
 				ACB1777E1B1858D000B64C28 /* valcriVictory_light.dat in Resources */,
+				ACE0A7D81B1CA05D00136406 /* valcriClose_light.dat in Resources */,
 				ACB177491B18574600B64C28 /* fixOpenCVDeps.sh in Resources */,
+				ACA531C91B1CA780008186BD /* valcriL.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

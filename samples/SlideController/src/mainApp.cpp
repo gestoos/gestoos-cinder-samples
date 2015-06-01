@@ -51,6 +51,8 @@ public:
     AppControl appControl;
     cinder::Timer stroke_timer;
     std::deque< cv::Point2f > pos_queue;
+    cv::Point2f filtered_pos;
+    bool mouse_hidden;
 
     
     shared_ptr<std::thread>		mThread;
@@ -64,10 +66,11 @@ void exampleApp::setup()
 {
     init_ok = false;
     stroke_timer.start();
+    mouse_hidden = true;
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
- 
+    
     
 }
 
@@ -134,7 +137,12 @@ void exampleApp::update()
     if (cinderactor.get_hands().first.is_present())
     {
         pos_queue.push_back(cinderactor.get_hands().first.get_unit_pos());
-        if (pos_queue.size() > 5) pos_queue.pop_front();
+        if (pos_queue.size()==1) filtered_pos=pos_queue.back();
+        else
+        {
+            if (pos_queue.size() > 5) pos_queue.pop_front();
+            filtered_pos = 0.3*pos_queue.back() + 0.7*filtered_pos;
+        }
      }
     else
     {
@@ -152,20 +160,43 @@ void exampleApp::update()
     }
     
     // std::cout << "Velocity (unit) " << velocity << " timer " << stroke_timer.getSeconds() << std::endl;
-    if ( (float)stroke_timer.getSeconds() > 0.5 && cinderactor.get_hands().first.get_gesture() == GEST_VICTORY )
+    if ( cinderactor.get_hands().first.get_gesture() ==  GEST_EL)
     {
+
+        int x = getWindowWidth()*filtered_pos.x;
+        int y = getWindowHeight()*filtered_pos.y;
+        if (mouse_hidden) mouse_hidden=false;
+        appControl.simulate_mouse(x, y);
+    }
+//    else if ( (float)stroke_timer.getSeconds() > 0.5 && cinderactor.get_hands().first.get_gesture() == GEST_RELEASE )
+//    {
+//        int x = getWindowWidth()*pos_queue.back().x;
+//        int y = getWindowHeight()*pos_queue.back().y;
+//        appControl.simulate_mouse(x, y, 1, true);
+//    }
+    else if ( (float)stroke_timer.getSeconds() > 0.5 && cinderactor.get_hands().first.get_gesture() == GEST_VICTORY )
+    {
+        
        
-        if (velocity.x > 0.025 && std::abs(velocity.y) < 0.05)
+        if (velocity.x > 0.02 && std::abs(velocity.y) < 0.05)
         {
             appControl.simulate_key(AppControl::RIGHT_ARROW);
             stroke_timer.start();
         }
-        else if (velocity.x < -0.025 && std::abs(velocity.y) < 0.05)
+        else if (velocity.x < -0.02 && std::abs(velocity.y) < 0.05)
         {
             appControl.simulate_key(AppControl::LEFT_ARROW);
             stroke_timer.start();
         }
     }
+    else
+    {
+        //Hide mouse
+        if (!mouse_hidden)
+            appControl.simulate_mouse(2000, 3000);
+        mouse_hidden=true;
+    }
+    
     
 //    Cinderactor::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
     
