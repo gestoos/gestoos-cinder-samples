@@ -143,6 +143,22 @@ void MapTile::update(const std::pair<gestoos::nui::Hand, gestoos::nui::Hand> & h
 
             maporigin = screen_reference + (hand_pos_f - grab_reference);
             
+            //Hack: limit the pannning to X times the window size
+            float min_x = -2.5*cinder::app::getWindowWidth();
+            float max_x = 2.5*cinder::app::getWindowWidth();
+            float min_y = -2.0*cinder::app::getWindowHeight();
+            float max_y = 2.0*cinder::app::getWindowHeight();
+            //Limit map origin to effectively limit the panning
+            if (maporigin.x < min_x)
+                maporigin.x = min_x;
+            if (maporigin.x > max_x)
+                maporigin.x = max_x;
+      
+            if (maporigin.y < min_y)
+                maporigin.y = min_y;
+            if (maporigin.y > max_y)
+                maporigin.y = max_y;
+            
             
 //            if(hand_pos_f.x > mapW*(1.0-panBorderx)) 	maporigin.x -= 5.0;
 //            if(hand_pos_f.y  > (mapH*(1.0-panBordery))) 	maporigin.y -= 5.0;//( mapH * panStep - pany ) * 0.05 ;
