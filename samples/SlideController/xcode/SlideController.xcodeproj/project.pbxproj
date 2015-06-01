@@ -124,6 +124,7 @@
 		ACB1777E1B1858D000B64C28 /* valcriVictory_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
 		ACB1777F1B18595000B64C28 /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */; };
 		ACB177801B18595300B64C28 /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
+		ACE0A7D51B1C680900136406 /* AppControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE0A7D31B1C680900136406 /* AppControl.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -274,6 +275,8 @@
 		ACB177171B18574600B64C28 /* fixOpenCVDeps.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fixOpenCVDeps.sh; sourceTree = "<group>"; };
 		ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
 		ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
+		ACE0A7D31B1C680900136406 /* AppControl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppControl.mm; sourceTree = "<group>"; };
+		ACE0A7D41B1C680900136406 /* AppControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppControl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +350,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ACE0A7D31B1C680900136406 /* AppControl.mm */,
 				A10B069D1B0E8F5700507C88 /* Label.cpp */,
 				00C07B8D0FFDB748004801EA /* mainApp.cpp */,
 			);
@@ -536,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				A10B069C1B0E8F4600507C88 /* Label.h */,
+				ACE0A7D41B1C680900136406 /* AppControl.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */,
+				ACE0A7D51B1C680900136406 /* AppControl.mm in Sources */,
 				A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */,
 				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
 			);

@@ -17,6 +17,7 @@ using namespace std;
 //#include "fezoolib/NUI/Interactor.hpp"
 
 #include "Label.h"
+#include "AppControl.h"
 
 typedef boost::shared_ptr<Label> LabelPtr;
 
@@ -47,6 +48,9 @@ public:
     
     //Cinderactor cinderactor;
     Cinderactor cinderactor;
+    AppControl appControl;
+    cinder::Timer stroke_timer;
+    std::deque< cv::Point2f > pos_queue;
 
     
     shared_ptr<std::thread>		mThread;
@@ -59,7 +63,7 @@ public:
 void exampleApp::setup()
 {
     init_ok = false;
-    
+    stroke_timer.start();
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
@@ -124,27 +128,73 @@ void exampleApp::update()
         }
     }
     
+
+        
     // Detect hand strokes
-    Cinderactor::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
-    
-    // Create labels if stroke detected
-    LabelPtr label_ptr;
-    switch (stroke) {
-        case Cinderactor::UP:
-            labels.push_back( LabelPtr( new Label("UP", 300, Cinderactor::UP) ) ) ;
-            break;
-            
-        case Cinderactor::RIGHT:
-            labels.push_back( LabelPtr( new Label("RIGHT", 300, Cinderactor::RIGHT) ) ) ;
-            break;
-            
-        case Cinderactor::LEFT:
-            labels.push_back( LabelPtr( new Label("LEFT", 300, Cinderactor::LEFT) ) ) ;
-            break;
-            
-        default:
-            break;
+    if (cinderactor.get_hands().first.is_present())
+    {
+        pos_queue.push_back(cinderactor.get_hands().first.get_unit_pos());
+        if (pos_queue.size() > 5) pos_queue.pop_front();
+     }
+    else
+    {
+        pos_queue.clear();
     }
+    
+    cv::Point2f velocity(0., 0);
+    if (pos_queue.size() >= 2)
+    {
+        for (std::size_t i=0; i< pos_queue.size() -1; ++i)
+        {
+            velocity = velocity + (pos_queue[i+1]-pos_queue[i]);
+        }
+        velocity=1./(float)(pos_queue.size()-1)*velocity;
+    }
+    
+    // std::cout << "Velocity (unit) " << velocity << " timer " << stroke_timer.getSeconds() << std::endl;
+    if ( (float)stroke_timer.getSeconds() > 0.5 && cinderactor.get_hands().first.get_gesture() == GEST_VICTORY )
+    {
+       
+        if (velocity.x > 0.025 && std::abs(velocity.y) < 0.05)
+        {
+            appControl.simulate_key(AppControl::RIGHT_ARROW);
+            stroke_timer.start();
+        }
+        else if (velocity.x < -0.025 && std::abs(velocity.y) < 0.05)
+        {
+            appControl.simulate_key(AppControl::LEFT_ARROW);
+            stroke_timer.start();
+        }
+    }
+    
+//    Cinderactor::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
+    
+
+    // Create labels if stroke detected
+//    LabelPtr label_ptr;
+//    switch (stroke) {
+//            
+//        case Cinderactor::RIGHT:
+//            if (stroke_timer.getSeconds() > 0.5)
+//            {
+//                labels.push_back( LabelPtr( new Label("RIGHT", 300, Cinderactor::RIGHT) ) ) ;
+//                appControl.simulate_key(AppControl::RIGHT_ARROW);
+//                stroke_timer.start();
+//            }
+//            break;
+//            
+//        case Cinderactor::LEFT:
+//            if (stroke_timer.getSeconds() > 0.5)
+//            {
+//                labels.push_back( LabelPtr( new Label("LEFT", 300, Cinderactor::LEFT) ) ) ;
+//                appControl.simulate_key(AppControl::LEFT_ARROW);
+//                stroke_timer.start();
+//            }
+//            break;
+//            
+//        default:
+//            break;
+//    }
 }
 
 void exampleApp::draw()
@@ -175,6 +225,7 @@ void exampleApp::shutdown()
 {
     can_process_thread = false;
 	mThread->join();
+    cinderactor.stop();
 }
 
 CINDER_APP_NATIVE( exampleApp, RendererGl )
