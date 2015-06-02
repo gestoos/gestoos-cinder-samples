@@ -85,6 +85,8 @@ void exampleApp::processThread()
     cinderactor.set_draw_window(false);
     init_ok = true;
     
+    
+    
     // inifinite processing loop
     while(can_process_thread)
     {
@@ -111,6 +113,27 @@ void exampleApp::run()
     cinderactor.init( bundle_path + "/interactor.cfg" );
     cinderactor.set_draw_window(false);
     init_ok = true;
+    
+    CFOptionFlags cfRes;
+    CFStringRef strTest = CFSTR("Test Button");
+    
+    CFUserNotificationDisplayAlert(0,
+                                   kCFUserNotificationNoteAlertLevel,
+                                   NULL,
+                                   NULL,
+                                   NULL,
+                                   CFSTR("SlideController: Finished loading resources"),
+                                   CFSTR("Click Ok and then open your slide show!"),
+                                   CFSTR("OK"),
+                                   CFSTR("Quit"),
+                                   NULL,
+                                   &cfRes);
+	
+    if (cfRes != kCFUserNotificationDefaultResponse)
+    {
+           exit(-1);
+    }
+
     
     // inifinite processing loop
     while(can_process_thread)
