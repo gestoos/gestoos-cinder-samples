@@ -20,6 +20,9 @@ Cinderactor::~Cinderactor(){}
 void Cinderactor::init(const std::string & ini_file )
 {
     // Get a reference to the main bundle
+#ifdef _WIN32
+	std::string bundle_path("..\\resources\\");
+#else
     CFBundleRef mainBundle = CFBundleGetMainBundle();
     CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);
 	CFStringRef str = CFURLCopyFileSystemPath( resourcesURL, kCFURLPOSIXPathStyle );
@@ -30,6 +33,7 @@ void Cinderactor::init(const std::string & ini_file )
 	CFRelease(str);
     std::string bundle_path(path);
     bundle_path= bundle_path+"/Contents/Resources/";
+#endif
     std::cout << ">>>>>>>>>>>> BUNDLE : bundle_path " << bundle_path << std::endl;
     gestoos::nui::Interactor::set_resources_path(bundle_path);
     gestoos::nui::Interactor::init( ini_file );

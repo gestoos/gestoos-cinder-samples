@@ -32,6 +32,8 @@ public:
     
     Widget( const cinder::DataSourceRef & _image , const Vec2f & _o,  Vec2f _s = Vec2f(0,0), int _i = 0 ) : MovingRect( _o, _s, ColorA(1.0,1.0,1.0,1.0) )
     {
+		fade = 1;
+
         fixed_alpha = false;
         
         orig_image = Surface( loadImage(_image) );
@@ -63,6 +65,8 @@ public:
     
     Widget( const Surface & _image , const Vec2f & _o,  Vec2f _s = Vec2f(0,0), int _i = 0 ) : MovingRect( _o, _s, ColorA(1.0,1.0,1.0,1.0) )
     {
+		fade = 1;
+
         fixed_alpha = false;
         orig_image = _image.clone();
         orig_size = Vec2f(orig_image.getWidth(), orig_image.getHeight() );
