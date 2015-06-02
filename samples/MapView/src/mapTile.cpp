@@ -41,7 +41,6 @@ MapTile::MapTile()
 void MapTile::init()
 {
     
-    
     image = gl::Texture(loadImage(loadResource(MAP_IMG)));
     
     std::cout << "Image size " << image.getSize() << std::endl;
