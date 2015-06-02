@@ -24,29 +24,17 @@ typedef boost::shared_ptr<Label> LabelPtr;
 float MIN_Z_VEL         = 30.0;
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
-class exampleApp : public AppNative {
+class exampleApp {
 public:
-	void	prepareSettings( Settings *settings );
-    
-	void	mouseDown( MouseEvent event );
-	void	mouseDrag( MouseEvent event );
-    
-	void	touchesBegan( TouchEvent event );
-	void	touchesMoved( TouchEvent event );
-	void	touchesEnded( TouchEvent event );
     
 	void	setup();
     void    update();
-	void    draw();
+    void    run();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
     
     void processThread();
 
     
-    
-    
-    //Cinderactor cinderactor;
     Cinderactor cinderactor;
     AppControl appControl;
     cinder::Timer stroke_timer;
@@ -69,48 +57,31 @@ void exampleApp::setup()
     mouse_hidden = true;
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
-    mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
+    //mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
     
 }
 
-void exampleApp::prepareSettings( Settings *settings )
-{
-	settings->enableMultiTouch();
-    settings->setWindowSize( 800, 600 );
-}
-
-void exampleApp::touchesBegan( TouchEvent event )
-{
-    //console() << "Began: " << event << std::endl;
-}
-
-void exampleApp::touchesMoved( TouchEvent event )
-{
-    //console() << "Moved: " << event << std::endl;
-}
-
-void exampleApp::touchesEnded( TouchEvent event )
-{
-    //console() << "Ended: " << event << std::endl;
-}
-
-void exampleApp::mouseDown( MouseEvent event )
-{
-    //	console() << "Mouse down: " << event.isRight() << " & " << event.isControlDown() << std::endl;
-}
-
-void exampleApp::mouseDrag( MouseEvent event )
-{
-    //	console() << "Mouse drag: " << std::endl;
-}
 
 void exampleApp::processThread()
 {
    	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
    
+    // Get a reference to the main bundle
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);
+	CFStringRef str = CFURLCopyFileSystemPath( resourcesURL, kCFURLPOSIXPathStyle );
+	CFRelease(resourcesURL);
+	char path[PATH_MAX];
+	
+	CFStringGetCString( str, path, FILENAME_MAX, kCFStringEncodingASCII );
+	CFRelease(str);
+    std::string bundle_path(path);
+    bundle_path= bundle_path+"/Contents/Resources/";
+    std::cout << ">>>>>>>>>>>> BUNDLE : bundle_path " << bundle_path << std::endl;
+    
     //Configure the cinderactor
-    cinderactor.init( getResourcePath("interactor.cfg").string() );
+    cinderactor.init( bundle_path + "/interactor.cfg" );
     cinderactor.set_draw_window(false);
     init_ok = true;
     
@@ -120,6 +91,35 @@ void exampleApp::processThread()
         cinderactor.process();
     }
 }
+
+void exampleApp::run()
+{
+    // Get a reference to the main bundle
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);
+	CFStringRef str = CFURLCopyFileSystemPath( resourcesURL, kCFURLPOSIXPathStyle );
+	CFRelease(resourcesURL);
+	char path[PATH_MAX];
+	
+	CFStringGetCString( str, path, FILENAME_MAX, kCFStringEncodingASCII );
+	CFRelease(str);
+    std::string bundle_path(path);
+    bundle_path= bundle_path+"/Contents/Resources/";
+    std::cout << ">>>>>>>>>>>> BUNDLE : bundle_path " << bundle_path << std::endl;
+    
+    //Configure the cinderactor
+    cinderactor.init( bundle_path + "/interactor.cfg" );
+    cinderactor.set_draw_window(false);
+    init_ok = true;
+    
+    // inifinite processing loop
+    while(can_process_thread)
+    {
+        cinderactor.process();
+        this->update();
+    }
+}
+
 
 void exampleApp::update()
 {
@@ -163,8 +163,8 @@ void exampleApp::update()
     if ( cinderactor.get_hands().first.get_gesture() ==  GEST_EL)
     {
 
-        int x = getWindowWidth()*filtered_pos.x;
-        int y = getWindowHeight()*filtered_pos.y;
+        int x =1920*filtered_pos.x;
+        int y =1080*filtered_pos.y;
         if (mouse_hidden) mouse_hidden=false;
         appControl.simulate_mouse(x, y);
     }
@@ -180,11 +180,13 @@ void exampleApp::update()
        
         if (velocity.x > 0.02 && std::abs(velocity.y) < 0.05)
         {
+            std::cout << "RIGHT!" << std::endl;
             appControl.simulate_key(AppControl::RIGHT_ARROW);
             stroke_timer.start();
         }
         else if (velocity.x < -0.02 && std::abs(velocity.y) < 0.05)
         {
+            std::cout << "LEFT!" << std::endl;
             appControl.simulate_key(AppControl::LEFT_ARROW);
             stroke_timer.start();
         }
@@ -228,29 +230,6 @@ void exampleApp::update()
 //    }
 }
 
-void exampleApp::draw()
-{
-	gl::enableAlphaBlending();
-	gl::setMatricesWindow( getWindowSize() );
-	gl::clear( Color( 0.1f, 0.13f, 0.16f ) );
-    
-    // Loading message
-    if( !init_ok )
-    {
-        gl::drawStringCentered(	"Loading models...please wait...", Vec2f( getWindowWidth()/2,getWindowHeight()/2 ) );
-        return;
-        
-    }
-
-    // Draw labels
-    for (auto it=labels.begin(); it!=labels.end(); ++it) {
-        (*it)->draw();
-    }
-    
-    // Draw cinderactor representation
-    cinderactor.draw();
-    
-}
 
 void exampleApp::shutdown()
 {
@@ -259,4 +238,25 @@ void exampleApp::shutdown()
     cinderactor.stop();
 }
 
-CINDER_APP_NATIVE( exampleApp, RendererGl )
+bool interrupt=false;
+
+exampleApp appl;
+
+void catch_signal(int signum)
+{
+    interrupt=true;
+    appl.can_process_thread=false;
+}
+
+int main(int argc, char * argv[])
+{
+
+    appl.setup();
+    
+    // Interrupt
+    signal(SIGINT, catch_signal);
+    
+    appl.run();
+
+    appl.shutdown();
+}
