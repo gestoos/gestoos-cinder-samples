@@ -14,7 +14,7 @@
 #pragma once
 #include "cinder/CinderResources.h"
 
-#define	MAP_IMG			CINDER_RESOURCE( ./, ohio-bike-map.jpg, 128, IMAGE )
+#define	MAP_IMG			CINDER_RESOURCE( ../resources/, ohio-bike-map.jpg, 128, IMAGE )
 
 
 // Next default values for new objects

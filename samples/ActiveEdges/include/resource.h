@@ -1,11 +1,6 @@
 #pragma once
 #include "cinder/CinderResources.h"
 
-#define	W_CHART			CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_chart.png, 128, PNG )
-#define	W_MAP			CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_map.png, 129, PNG )
-#define	W_PERSONS       CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_persons.png, 130, PNG )
-#define	W_ROUND			CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_round.png, 131, PNG )
-
 #define	L_CHART			CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_chart.png, 128, PNG )
 #define	L_MAP			CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_map.png, 129, PNG )
 #define	L_PERSONS       CINDER_RESOURCE( ../resources/VALCRI_widgets/, w_persons.png, 130, PNG )

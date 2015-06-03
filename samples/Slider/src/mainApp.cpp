@@ -123,7 +123,11 @@ void exampleApp::processThread()
    	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
     
     //Configure the cinderactor
+#ifdef _WIN32
+	cinderactor.init("..\\resources\\interactor.cfg");
+#else
     cinderactor.init( getResourcePath("interactor.cfg").string() );
+#endif
     cinderactor.set_draw_window(false);
     
     // inifinite processing loop

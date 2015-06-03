@@ -132,6 +132,9 @@
       <AdditionalLibraryDirectories>..\..\..\..\..\lib\release;$(BOOST_LIB)\stage\lib;$(OPENCV_LIB)\$(PlatformTarget)\vc12\lib;$(CINDER_LIB)\lib\msw\$(PlatformTarget);$(GESTOOS_DIR)\external\curl\x64\lib;$(OPENNI_LIB64)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;cinder-$(PlatformToolset).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\include;$(CINDER_LIB)\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\cindergestooslib\src\Cinderactor.cpp" />
@@ -143,6 +146,11 @@
     <ClInclude Include="..\..\..\cindergestooslib\include\Cinderactor.h" />
     <ClInclude Include="..\..\..\cindergestooslib\include\MovingRect.h" />
     <ClInclude Include="..\include\ActiveEdge.h" />
+    <ClInclude Include="..\include\resource.h" />
+    <ClInclude Include="..\include\Widget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

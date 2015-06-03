@@ -15,6 +15,7 @@
 #include "cinder/Text.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/ImageIo.h"
 
 #include "Cinderactor.h"
 #include "MovingRect.h"
