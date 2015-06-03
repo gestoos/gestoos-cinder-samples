@@ -69,7 +69,7 @@ float gesture_probability_at_i(int gesture, const std::deque<int> & q, int i)
 }
 
 
-float right_stroke_negative_log_probability_at_i(std::deque<cv::Point2f> & v, int i)
+float right_stroke_negative_log_probability_at_i(const std::deque<cv::Point2f> & v, int i)
 {
 
     float lambda_stroke=1.0;
@@ -78,17 +78,17 @@ float right_stroke_negative_log_probability_at_i(std::deque<cv::Point2f> & v, in
     
     float logp_stroke = lambda_stroke*v[i].x;
     logp_stroke -= lambda_ortho*v[i].y;
-    std::cout << "Log p stroke at " << i << " " << logp_stroke << std::endl;
+    std::cout << "Log p stroke at " << i << " " << logp_stroke << " = " <<  lambda_stroke*v[i].x <<  " - " << lambda_ortho*v[i].y << std::endl;
     return logp_stroke;
 }
 
-float right_stroke_log_p(int gesture, const std::deque<int> & q, std::deque<cv::Point2f> & v)
+float right_stroke_log_p(int gesture, const std::deque<int> & q, const std::deque<cv::Point2f> & v)
 {
     float logp=0;
     float pg=1.0;
     for (int i=v.size()-1; i>=0; --i)
     {
-        if ((pg=gesture_probability_at_i(gesture, q, i) > 0))
+        if ((pg=gesture_probability_at_i(gesture, q, i)) > 0)
         {
             logp+=pg*right_stroke_negative_log_probability_at_i(v, i);
         }
@@ -126,16 +126,17 @@ CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout
                 velocity = velocity + (_pos_queue[i+1]-_pos_queue[i]);
             }
             velocity=1./(float)(_pos_queue.size()-1)*velocity;
-            vel_queue.push_back(_pos_queue.back() - _pos_queue[_pos_queue.size()-1]);
+            vel_queue.push_back(_pos_queue.back() - _pos_queue[_pos_queue.size()-2]);
         }
         
-        if (vel_queue.size() > 5) vel_queue.pop_back();
+        if (vel_queue.size() > 5) vel_queue.pop_front();
        
 
             
         int hand_gesture = get_hand().get_gesture();
         
         gesture_queue.push_back(hand_gesture);
+        if (gesture_queue.size() > 5) gesture_queue.pop_front();
         
         
         float right_stroke = 0;
@@ -143,10 +144,11 @@ CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout
         {
             right_stroke=right_stroke_log_p(GEST_VICTORY, gesture_queue, vel_queue);
 
-            std::cout << "Right stroke log p " << right_stroke << std::endl;
+            //std::cout << "Right stroke log p " << right_stroke << std::endl;
             if (right_stroke > 0 && block_timer.getSeconds() >= timeout)
             {
                 block_timer.start();
+                std::cout << "RIGHT STROKE !!!!!!!!!!!!!!!!!!!!! " << std::endl;
                 return RIGHT;
             }
         }
