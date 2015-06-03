@@ -681,9 +681,9 @@
 				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
-					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
 					"\"$(FEZOOLIB_PATH)/include\"",
+					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
+					/usr/local/include,
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -691,33 +691,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(GESTOOS_SDK_LIB_PATH)",
-					/opt/local/lib,
-					/usr/local/lib,
 					"$(PROJECT_DIR)",
-					"/Users/alopez/workspace/fezoolib/gestoosdk-osx-dependencies",
 				);
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
-					"-lOpenNI2",
 					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
-					"-lopencv_highgui",
-					"-lopencv_objdetect",
-					"-lopencv_imgproc",
-					"-lopencv_imgcodecs",
-					"-lopencv_core",
-					"-lopencv_calib3d",
-					"-lopencv_video",
-					"-lopencv_flann",
-					"-lopencv_features2d",
-					"-lopencv_ml",
-					"-lboost_program_options-mt",
-					"-lboost_date_time-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_system-mt",
-					"-lboost_thread-mt",
-					"-lboost_serialization-mt",
-					"-lcurl.4",
 				);
 				PRODUCT_NAME = InTheCar;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
@@ -743,9 +722,9 @@
 				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
-					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
 					"\"$(FEZOOLIB_PATH)/include\"",
+					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
+					/usr/local/include,
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -753,33 +732,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(GESTOOS_SDK_LIB_PATH)",
-					/opt/local/lib,
-					/usr/local/lib,
 					"$(PROJECT_DIR)",
-					"/Users/alopez/workspace/fezoolib/gestoosdk-osx-dependencies",
 				);
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = (
-					"$(CINDER_PATH)/lib/libcinder.a",
-					"-lopencv_highgui",
-					"-lopencv_objdetect",
-					"-lopencv_imgproc",
-					"-lopencv_imgcodecs",
-					"-lopencv_core",
-					"-lopencv_calib3d",
-					"-lopencv_video",
-					"-lopencv_flann",
-					"-lopencv_features2d",
-					"-lopencv_ml",
-					"-lboost_program_options-mt",
-					"-lboost_date_time-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_system-mt",
-					"-lboost_thread-mt",
-					"-lboost_serialization-mt",
-					"-lOpenNI2",
 					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
-					"-lcurl.4",
+					"$(CINDER_PATH)/lib/libcinder.a",
 				);
 				PRODUCT_NAME = InTheCar;
 				STRIP_INSTALLED_PRODUCT = YES;
