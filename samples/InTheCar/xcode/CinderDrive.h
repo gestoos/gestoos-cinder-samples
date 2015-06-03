@@ -16,6 +16,7 @@
 //Make sure it is picked from the local project drive
 #include "DriverInteraction.hpp"
 #include "Cinderactor.h"
+#include <deque>
 
 using namespace ci;
 
@@ -50,10 +51,12 @@ public:
     ///
     static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
     
+    
+    
 private:
     cinder::Timer block_timer;
     bool init_ok;
-    
+    cv::Point2f filtered_hand_pos;
 };
 
 #endif

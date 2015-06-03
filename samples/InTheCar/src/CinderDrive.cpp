@@ -10,6 +10,9 @@
 
 #include "CinderDrive.h"
 
+std::deque< cv::Point2f > _pos_queue;
+std::deque< cv::Point2f > vel_queue;
+std::deque<int> gesture_queue;
 
 CinderDrive::CinderDrive()
 {
@@ -39,41 +42,151 @@ void CinderDrive::init(const std::string & ini_file )
     
     
     //Load mask resources
-    //gestoos::nui::DriverInteraction::set_scene_mask(bundle_path +"/InteractionMask.png");
+    gestoos::nui::DriverInteraction::set_scene_mask(bundle_path +"/InteractionMask.png");
     init_ok = true;
+}
+
+float gesture_probability_at_i(int gesture, const std::deque<int> & q, int i)
+{
+    float p=0;
+    float alpha=0.2;
+    if (q[i]==gesture)
+    {
+        p=1.;
+        return p;
+    }
+
+    if (i > 0)
+    {
+        if (q[i-1]==gesture) return alpha;
+    }
+    
+    if (i < q.size()-1)
+    {
+        if (q[i+1]==gesture) return alpha;
+    }
+    return p;
+}
+
+
+float right_stroke_negative_log_probability_at_i(std::deque<cv::Point2f> & v, int i)
+{
+
+    float lambda_stroke=1.0;
+    float lambda_ortho=1.5;
+    float eps=1e-6;
+    
+    float logp_stroke = lambda_stroke*v[i].x;
+    logp_stroke -= lambda_ortho*v[i].y;
+    std::cout << "Log p stroke at " << i << " " << logp_stroke << std::endl;
+    return logp_stroke;
+}
+
+float right_stroke_log_p(int gesture, const std::deque<int> & q, std::deque<cv::Point2f> & v)
+{
+    float logp=0;
+    float pg=1.0;
+    for (int i=v.size()-1; i>=0; --i)
+    {
+        if ((pg=gesture_probability_at_i(gesture, q, i) > 0))
+        {
+            logp+=pg*right_stroke_negative_log_probability_at_i(v, i);
+        }
+    }
+    
+    return logp;
 }
 
 CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout )
 {
     if( get_hand().is_present() )
     {
-        int hand_gesture = get_hand().get_gesture();
-        Vec2f hand_vel = Vec2f( get_hand().get_vel().x , get_hand().get_vel().y );
-    
-        //std::cout << "Get vel " << get_hand().get_vel() << std::endl;
-        
-        if( (hand_gesture == gest || hand_gesture == -1 ) && block_timer.getSeconds() >= timeout )
+        const gestoos::nui::Hand & hand = this->get_hand();
+        //Update positions, velocities and gestures
+        cv::Point2f this_pos= hand.get_unit_pos();
+        _pos_queue.push_back( this_pos );
+        if (_pos_queue.size()==1)
         {
-            if( hand_vel.y < -6.0 && std::fabs( hand_vel.x ) < 4.0  )
+            filtered_hand_pos=this_pos;
+        }
+        else if (_pos_queue.size() > 1)
+        {
+            filtered_hand_pos=0.9*filtered_hand_pos + 0.1*get_hand().get_unit_pos();
+        }
+        
+       
+        if (_pos_queue.size() > 5) _pos_queue.pop_front();
+        
+        //Average velocity
+        cv::Point2f velocity(0., 0);
+        if (_pos_queue.size() >= 2)
+        {
+            for (std::size_t i=0; i< _pos_queue.size() -1; ++i)
             {
-                block_timer.start();
-                return UP;
+                velocity = velocity + (_pos_queue[i+1]-_pos_queue[i]);
             }
-            else if( hand_vel.y > 6.0 && std::fabs( hand_vel.x ) < 4.0  )
-            {
-                block_timer.start();
-                return DOWN;
-            }
-            else if( hand_vel.x > 6.0 && std::fabs( hand_vel.y ) < 4.0)
+            velocity=1./(float)(_pos_queue.size()-1)*velocity;
+            vel_queue.push_back(_pos_queue.back() - _pos_queue[_pos_queue.size()-1]);
+        }
+        
+        if (vel_queue.size() > 5) vel_queue.pop_back();
+       
+
+            
+        int hand_gesture = get_hand().get_gesture();
+        
+        gesture_queue.push_back(hand_gesture);
+        
+        
+        float right_stroke = 0;
+        if (vel_queue.size() >=2)
+        {
+            right_stroke=right_stroke_log_p(GEST_VICTORY, gesture_queue, vel_queue);
+
+            std::cout << "Right stroke log p " << right_stroke << std::endl;
+            if (right_stroke > 0 && block_timer.getSeconds() >= timeout)
             {
                 block_timer.start();
                 return RIGHT;
             }
-            else if( hand_vel.x < -6.0 && std::fabs( hand_vel.y ) < 4.0 )
-            {
-                block_timer.start();
-                return LEFT;
-            }
+        }
+        
+            
+            
+//        Vec2f hand_vel = Vec2f( get_hand().get_vel().x , get_hand().get_vel().y );
+//    
+//        //std::cout << "Get vel " << get_hand().get_vel() << std::endl;
+//        
+//        if( (hand_gesture == gest || hand_gesture == -1 ) && block_timer.getSeconds() >= timeout )
+//        {
+//            if( hand_vel.y < -6.0 && std::fabs( hand_vel.x ) < 4.0  )
+//            {
+//                block_timer.start();
+//                return UP;
+//            }
+//            else if( hand_vel.y > 6.0 && std::fabs( hand_vel.x ) < 4.0  )
+//            {
+//                block_timer.start();
+//                return DOWN;
+//            }
+//            else if( hand_vel.x > 6.0 && std::fabs( hand_vel.y ) < 4.0)
+//            {
+//                block_timer.start();
+//                return RIGHT;
+//            }
+//            else if( hand_vel.x < -6.0 && std::fabs( hand_vel.y ) < 4.0 )
+//            {
+//                block_timer.start();
+//                return LEFT;
+//            }
+//        }
+    }
+    else{
+        if (_pos_queue.size())
+        {
+            _pos_queue.clear();
+            vel_queue.clear();
+            gesture_queue.clear();
         }
     }
     

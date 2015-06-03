@@ -48,6 +48,7 @@ public:
     
     //CinderDrive cinderactor;
     CinderDrive cinderactor;
+    CinderDrive::StrokeType _stroke;
 
     
     shared_ptr<std::thread>		mThread;
@@ -60,7 +61,7 @@ public:
 void exampleApp::setup()
 {
     init_ok = false;
-    
+    _stroke=CinderDrive::NONE;
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
@@ -112,6 +113,7 @@ void exampleApp::processThread()
     while(can_process_thread)
     {
         cinderactor.process();
+        _stroke=cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
     }
 }
 
@@ -126,11 +128,11 @@ void exampleApp::update()
     }
     
     // Detect hand strokes
-    CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
+   // CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
     
     // Create labels if stroke detected
     LabelPtr label_ptr;
-    switch (stroke) {
+    switch (_stroke) {
         case CinderDrive::UP:
             labels.push_back( LabelPtr( new Label("UP", 300, CinderDrive::UP) ) ) ;
             break;
