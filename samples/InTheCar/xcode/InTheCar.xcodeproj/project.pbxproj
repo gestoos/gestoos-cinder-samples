@@ -595,6 +595,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = 4G4QF6D5PN;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "InTheCar" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -652,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -712,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FEZOOLIB_PATH = ../../../../..;
