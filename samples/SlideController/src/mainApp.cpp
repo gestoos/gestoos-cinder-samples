@@ -12,6 +12,7 @@ using namespace ci::app;
 #include <vector>
 #include <map>
 #include <list>
+#include <thread>
 using namespace std;
 
 //#include "fezoolib/NUI/Interactor.hpp"
@@ -28,11 +29,10 @@ class exampleApp {
 public:
     
 	void	setup();
+    void    threaded_init();
     void    update();
     void    run();
     void    shutdown();
-    
-    void processThread();
 
     
     Cinderactor cinderactor;
@@ -62,11 +62,8 @@ void exampleApp::setup()
     
 }
 
-
-void exampleApp::processThread()
+void exampleApp::threaded_init()
 {
-   	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
-   
     // Get a reference to the main bundle
     CFBundleRef mainBundle = CFBundleGetMainBundle();
     CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);
@@ -84,38 +81,34 @@ void exampleApp::processThread()
     cinderactor.init( bundle_path + "/interactor.cfg" );
     cinderactor.set_draw_window(false);
     init_ok = true;
-    
-    
-    
-    // inifinite processing loop
-    while(can_process_thread)
-    {
-        cinderactor.process();
-    }
+
 }
 
 void exampleApp::run()
 {
-    // Get a reference to the main bundle
-    CFBundleRef mainBundle = CFBundleGetMainBundle();
-    CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);
-	CFStringRef str = CFURLCopyFileSystemPath( resourcesURL, kCFURLPOSIXPathStyle );
-	CFRelease(resourcesURL);
-	char path[PATH_MAX];
-	
-	CFStringGetCString( str, path, FILENAME_MAX, kCFStringEncodingASCII );
-	CFRelease(str);
-    std::string bundle_path(path);
-    bundle_path= bundle_path+"/Contents/Resources/";
-    std::cout << ">>>>>>>>>>>> BUNDLE : bundle_path " << bundle_path << std::endl;
+    std::thread ti( &exampleApp::threaded_init, this );
     
-    //Configure the cinderactor
-    cinderactor.init( bundle_path + "/interactor.cfg" );
-    cinderactor.set_draw_window(false);
-    init_ok = true;
+    while (!init_ok)
+    {
+        std::cout << "\rWait ..." << std::endl;
+        int identifier =
+        CFUserNotificationDisplayNotice(
+         2,
+         kCFUserNotificationNoteAlertLevel,
+         NULL,
+         NULL,
+         NULL,
+         CFSTR("SlideController"),
+         CFSTR("Loading resources. Wait ..."),
+         NULL);
+        sleep(2);
+    }
+
+    ti.join();
+    
+
     
     CFOptionFlags cfRes;
-    CFStringRef strTest = CFSTR("Test Button");
     
     CFUserNotificationDisplayAlert(0,
                                    kCFUserNotificationNoteAlertLevel,
