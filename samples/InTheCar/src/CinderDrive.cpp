@@ -73,12 +73,10 @@ float right_stroke_negative_log_probability_at_i(const std::deque<cv::Point2f> &
 {
 
     float lambda_stroke=1.0;
-    float lambda_ortho=1.5;
-    float eps=1e-6;
+    float lambda_ortho=2.0;
     
     float logp_stroke = lambda_stroke*v[i].x;
     logp_stroke -= lambda_ortho*v[i].y;
-    std::cout << "Log p stroke at " << i << " " << logp_stroke << " = " <<  lambda_stroke*v[i].x <<  " - " << lambda_ortho*v[i].y << std::endl;
     return logp_stroke;
 }
 
@@ -147,6 +145,7 @@ CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout
             //std::cout << "Right stroke log p " << right_stroke << std::endl;
             if (right_stroke > 0 && block_timer.getSeconds() >= timeout)
             {
+                std::cout << "Right stroke log p " << right_stroke << std::endl;
                 block_timer.start();
                 std::cout << "RIGHT STROKE !!!!!!!!!!!!!!!!!!!!! " << std::endl;
                 return RIGHT;
