@@ -45,6 +45,9 @@ namespace gestoos{
 
 			/// \brief Stop method, to be called before exiting an application, making sure the sensors are properly shut down
             void stop();
+            
+            /// \brief Set the resources path
+            void set_resources_path(const std::string& resources);
 
             /// Accessors
 			const Config& get_config() const;

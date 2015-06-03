@@ -126,6 +126,8 @@
 		ACB1777E1B1858D000B64C28 /* valcriVictory_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
 		ACB1777F1B18595000B64C28 /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */; };
 		ACB177801B18595300B64C28 /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
+		ACC294871B1C3E060098936D /* InteractionMask.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC294861B1C3E060098936D /* InteractionMask.png */; };
+		ACC294891B1C3EE00098936D /* InteractionMask.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACC294861B1C3E060098936D /* InteractionMask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -195,6 +197,16 @@
 				ACB177781B18580E00B64C28 /* libwebp.5.dylib in CopyFiles */,
 				ACB177791B18580E00B64C28 /* libz.1.dylib in CopyFiles */,
 				ACB1777A1B18580E00B64C28 /* OpenNI.ini in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC294881B1C3ED50098936D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				ACC294891B1C3EE00098936D /* InteractionMask.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +292,7 @@
 		ACB177171B18574600B64C28 /* fixOpenCVDeps.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fixOpenCVDeps.sh; sourceTree = "<group>"; };
 		ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
 		ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
+		ACC294861B1C3E060098936D /* InteractionMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = InteractionMask.png; path = ../../../../../../../data/CarData/InteractionMask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +435,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACC294861B1C3E060098936D /* InteractionMask.png */,
 				A10B06751B0CE9B400507C88 /* interactor.cfg */,
 				A10B06371B0B79A400507C88 /* Models */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -562,6 +576,7 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				A10B06501B0B7EB000507C88 /* CopyFiles */,
 				ACB1774A1B1857D700B64C28 /* CopyFiles */,
+				ACC294881B1C3ED50098936D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -607,6 +622,7 @@
 			files = (
 				ACB177481B18574600B64C28 /* README.md in Resources */,
 				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
+				ACC294871B1C3E060098936D /* InteractionMask.png in Resources */,
 				ACB1777D1B1858D000B64C28 /* hand_detector_light.dat in Resources */,
 				ACB177471B18574600B64C28 /* OpenNI.ini in Resources */,
 				ACB1777E1B1858D000B64C28 /* valcriVictory_light.dat in Resources */,
