@@ -178,41 +178,57 @@ void gestoos::nui::DriverInteraction::process()
 			}
 			else //Hand appearing
 			{
+                std::cout << "Hand Appearing ... " << std::endl;
 				_hand.clear();
 				//Note: interaction space is automatically set with set_pos
+                _hand_id = idx;
 				_hand.set_pos(objects[i]->get_position());
+                
 			}
 		}
 
 		//From tracker outputs, process gestures
-		_mask=cv::Scalar(0);
-		cv::Point p(_hand.get_pos().x,_hand.get_pos().y);
-		double depth = gestoos::get_reference_depth(_depth_map, p, 5);
-		cv::Rect roi = gestoos::generate_bounding_box_depth_scaled(p,  depth, cv::Size(31, 31));
-		_mask(gestoos::crop_to_image(roi, _mask))=cv::Scalar(255);
+        _mask=cv::Scalar(0);
+        if (_hand.is_present())
+        {
 
-		//Bitwise and with the scene mask, if any
-		if (!_scene_mask.empty())
-		{
-			if (_scene_mask.size()==_mask.size())
-			{
-				cv::bitwise_and(_scene_mask, _mask, _mask);
-			}
-			else
-			{
-				throw std::runtime_error("[Driver Interaction] Scene mask and inner mask are not of the same size");
-			}
-		}
+            cv::Point p(_hand.get_pos().x,_hand.get_pos().y);
+            double depth = gestoos::get_reference_depth(_depth_map, p, 5);
+            cv::Rect roi = gestoos::generate_bounding_box_depth_scaled(p,  depth, cv::Size(31, 31));
+            _mask(gestoos::crop_to_image(roi, _mask))=cv::Scalar(255);
 
-		/*
-		 * Gesture detection after tracking
-		 */
-		_hand_detector.process(_depth_map, _mask);
+            //Bitwise and with the scene mask, if any
+            if (!_scene_mask.empty())
+            {
+                if (_scene_mask.size()==_mask.size())
+                {
+                    cv::bitwise_and(_scene_mask, _mask, _mask);
+                }
+                else
+                {
+                    throw std::runtime_error("[Driver Interaction] Scene mask and inner mask are not of the same size");
+                }
+            }
+
+
+        }
+        /*
+         * Gesture detection after tracking
+         */
+        _hand_detector.process(_depth_map, _mask);
+        
+        _hand.process(_depth_map, _hand_detector);
 
 #ifndef AVOID_QT
 			if( _draw_window )
 			{
 
+                //Visualize tracking detection
+                gestoos::scoreHeatMap(_whai.get_detector_map(), _color_img, 0, 5);
+                cv::imshow("HandScore", _color_img);
+                //Visualize tracking detection
+                gestoos::scoreHeatMap(_hand_detector.get_probability_map(1), _color_img, 0, 5);
+                cv::imshow("HandGestureScore", _color_img);
 				//DBG: generating visualization of tracking
 				gestoos::falseColorMap(_depth_map, _color_img, cv::COLORMAP_BONE);
 				if (_hand.get_interaction_space().area() > 0)
@@ -277,7 +293,7 @@ void gestoos::nui::DriverInteraction::set_scene_mask(const cv::Mat& sceneMask) {
 
 void gestoos::nui::DriverInteraction::set_scene_mask(const std::string& frame)
 {
-	_scene_mask=cv::imread(frame);
+	_scene_mask=cv::imread(frame, CV_LOAD_IMAGE_GRAYSCALE);
 	//TODO: Assert 8 bit and 320x240
 }
 

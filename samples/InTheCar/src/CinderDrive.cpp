@@ -49,6 +49,8 @@ CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout
     {
         int hand_gesture = get_hand().get_gesture();
         Vec2f hand_vel = Vec2f( get_hand().get_vel().x , get_hand().get_vel().y );
+    
+        //std::cout << "Get vel " << get_hand().get_vel() << std::endl;
         
         if( (hand_gesture == gest || hand_gesture == -1 ) && block_timer.getSeconds() >= timeout )
         {
@@ -89,7 +91,6 @@ void CinderDrive::draw() const
     }
     
     draw_hand_representation( get_hand(),   Vec2f(200, 70 ) );
-    //draw_hand_representation( get_hands().second,  Vec2f(70,  70 ) );
     
 }
 

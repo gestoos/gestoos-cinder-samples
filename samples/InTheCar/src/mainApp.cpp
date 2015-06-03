@@ -105,7 +105,7 @@ void exampleApp::processThread()
    
     //Configure the cinderactor
     cinderactor.init( getResourcePath("interactor.cfg").string() );
-    cinderactor.set_draw_window(false);
+    cinderactor.set_draw_window(true);
     init_ok = true;
     
     // inifinite processing loop
@@ -126,7 +126,7 @@ void exampleApp::update()
     }
     
     // Detect hand strokes
-    CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
+    CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
     
     // Create labels if stroke detected
     LabelPtr label_ptr;
