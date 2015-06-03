@@ -39,7 +39,7 @@ void CinderDrive::init(const std::string & ini_file )
     
     
     //Load mask resources
-    gestoos::nui::DriverInteraction::set_scene_mask(bundle_path +"/InteractionMask.png");
+    //gestoos::nui::DriverInteraction::set_scene_mask(bundle_path +"/InteractionMask.png");
     init_ok = true;
 }
 
