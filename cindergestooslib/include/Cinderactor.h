@@ -16,16 +16,16 @@
 
 using namespace ci;
 
-static int     GEST_AUDIO       = 4;
+static const int     GEST_AUDIO       = 4;
 
-static int     GEST_INDEX       = 12;
-static int     GEST_EL          = 13;
-static int     GEST_VICTORY     = 14;
-static int     GEST_OPEN        = 15;
-static int     GEST_CLOSE       = 16;
+static const int     GEST_INDEX       = 12;
+static const int     GEST_EL          = 13;
+static const int     GEST_VICTORY     = 14;
+static const int     GEST_OPEN        = 15;
+static const int     GEST_CLOSE       = 16;
 
-static int     GEST_GRAB        = 206;
-static int     GEST_RELEASE     = 207;
+static const int     GEST_GRAB        = 206;
+static const int     GEST_RELEASE     = 207;
 
 /// \brief This class extends gestoos::nui::Interactor, adding new cool features for Cinder apps.
 class Cinderactor : public gestoos::nui::Interactor

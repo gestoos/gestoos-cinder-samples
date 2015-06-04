@@ -95,6 +95,22 @@ float right_stroke_log_p(int gesture, const std::deque<int> & q, const std::dequ
     return logp;
 }
 
+int CinderDrive::detect_hand_gesture( float timeout )
+{
+    if( get_hand().is_present() )
+    {
+        int hand_gesture = get_hand().get_gesture();
+        if( hand_gesture > 0  && block_timer.getSeconds() >= timeout )
+        {
+            block_timer.start();
+            return hand_gesture;
+            
+        }
+    }
+    
+    return 0;
+}
+
 CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout )
 {
     if( get_hand().is_present() )
@@ -161,12 +177,12 @@ CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout
         
         if( hand_gesture == gest  && block_timer.getSeconds() >= timeout )
         {
-            if( hand_vel.x > 0.0 && std::fabs( hand_vel.y ) < 10.0)
+            if( hand_vel.x > 6.0 && std::fabs( hand_vel.y ) < 4.0)
             {
                 block_timer.start();
                 return RIGHT;
             }
-            else if( hand_vel.x < -0.0 && std::fabs( hand_vel.y ) < 8.0 )
+            else if( hand_vel.x < -6.0 && std::fabs( hand_vel.y ) < 4.0 )
             {
                 block_timer.start();
                 return LEFT;

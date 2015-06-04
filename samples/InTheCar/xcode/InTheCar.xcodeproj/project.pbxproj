@@ -248,9 +248,9 @@
 		AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carVictory.dat; path = ../../../../../data/carVictory.dat; sourceTree = "<group>"; };
 		AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carHand_light.dat; path = ../../../../../data/carHand_light.dat; sourceTree = "<group>"; };
 		ACA57C271B20984A00C0638F /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../resources/correct.wav; sourceTree = "<group>"; };
+		ACA57C2A1B20AB6000C0638F /* CinderDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinderDrive.h; path = ../include/CinderDrive.h; sourceTree = "<group>"; };
 		ACAE2AA91B17052000C61ACF /* DriverInteraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DriverInteraction.hpp; path = ../include/DriverInteraction.hpp; sourceTree = "<group>"; };
 		ACAE2AAA1B17052A00C61ACF /* DriverInteraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DriverInteraction.cpp; path = ../src/DriverInteraction.cpp; sourceTree = "<group>"; };
-		ACAE2AAC1B17063700C61ACF /* CinderDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CinderDrive.h; sourceTree = "<group>"; };
 		ACAE2AAD1B17065C00C61ACF /* CinderDrive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CinderDrive.cpp; path = ../src/CinderDrive.cpp; sourceTree = "<group>"; };
 		ACB176E51B18574600B64C28 /* libboost_date_time-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_date_time-mt.dylib"; sourceTree = "<group>"; };
 		ACB176E61B18574600B64C28 /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
@@ -572,9 +572,9 @@
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				ACA57C2A1B20AB6000C0638F /* CinderDrive.h */,
 				ACAE2AA91B17052000C61ACF /* DriverInteraction.hpp */,
 				A10B069C1B0E8F4600507C88 /* Label.h */,
-				ACAE2AAC1B17063700C61ACF /* CinderDrive.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";

@@ -37,6 +37,9 @@ public:
     
     void init(const std::string & ini_file );
     
+    /// Detects any positive hand gesture and throws a timeout afterwards
+    int detect_hand_gesture(float timeout = 1.0);
+    
     /// Detect hand strokes restricted to a given hand gest.
     /// If gest == -1, strokes are detected for any gesture.
     StrokeType detect_hand_stroke( int gest = -1, float timeout = 0.0 );

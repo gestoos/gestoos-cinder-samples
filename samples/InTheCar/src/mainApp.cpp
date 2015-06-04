@@ -19,6 +19,7 @@ using namespace std;
 
 #include "Label.h"
 #include "CinderDrive.h"
+#include "Cinderactor.h"
 
 typedef boost::shared_ptr<Label> LabelPtr;
 
@@ -49,7 +50,6 @@ public:
     
     //CinderDrive cinderactor;
     CinderDrive cinderactor;
-    CinderDrive::StrokeType _stroke;
 
     
     shared_ptr<std::thread>		mThread;
@@ -65,7 +65,6 @@ public:
 void exampleApp::setup()
 {
     init_ok = false;
-    _stroke=CinderDrive::NONE;
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
@@ -121,7 +120,6 @@ void exampleApp::processThread()
     while(can_process_thread)
     {
         cinderactor.process();
-        //_stroke=cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
     }
 }
 
@@ -135,34 +133,22 @@ void exampleApp::update()
         }
     }
     
-    // Detect hand strokes
-   CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
+    int gesture = cinderactor.detect_hand_gesture(1.0);
     
-    _stroke=stroke;
-    // Create labels if stroke detected
-    LabelPtr label_ptr;
-    switch (_stroke) {
-        case CinderDrive::UP:
-            labels.push_back( LabelPtr( new Label("UP", 300, CinderDrive::UP) ) ) ;
-            break;
-            
-        case CinderDrive::RIGHT:
-            labels.push_back( LabelPtr( new Label("RIGHT", 300, CinderDrive::RIGHT) ) ) ;
-
+    switch (gesture)
+    {
+        case GEST_VICTORY:
+        {
             if (mVoice->isPlaying()) mVoice->stop();
             mVoice->start();
             break;
-            
-        case CinderDrive::LEFT:
-            labels.push_back( LabelPtr( new Label("LEFT", 300, CinderDrive::LEFT) ) ) ;
-
-            if (mVoice->isPlaying()) mVoice->stop();
-            mVoice->start();
-            break;
-            
+        }
         default:
+        {
             break;
+        }
     }
+
 }
 
 void exampleApp::draw()
