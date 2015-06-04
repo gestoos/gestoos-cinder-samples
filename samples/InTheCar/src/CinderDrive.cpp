@@ -75,8 +75,8 @@ float right_stroke_negative_log_probability_at_i(const std::deque<cv::Point2f> &
     float lambda_stroke=1.0;
     float lambda_ortho=2.0;
     
-    float logp_stroke = lambda_stroke*v[i].x;
-    logp_stroke -= lambda_ortho*v[i].y;
+    float logp_stroke = lambda_stroke*v[i].x-0.005;
+    logp_stroke -= std::abs(lambda_ortho*v[i].y);
     return logp_stroke;
 }
 
@@ -99,88 +99,79 @@ CinderDrive::StrokeType CinderDrive::detect_hand_stroke( int gest, float timeout
 {
     if( get_hand().is_present() )
     {
-        const gestoos::nui::Hand & hand = this->get_hand();
-        //Update positions, velocities and gestures
-        cv::Point2f this_pos= hand.get_unit_pos();
-        _pos_queue.push_back( this_pos );
-        if (_pos_queue.size()==1)
-        {
-            filtered_hand_pos=this_pos;
-        }
-        else if (_pos_queue.size() > 1)
-        {
-            filtered_hand_pos=0.9*filtered_hand_pos + 0.1*get_hand().get_unit_pos();
-        }
-        
-       
-        if (_pos_queue.size() > 5) _pos_queue.pop_front();
-        
-        //Average velocity
-        cv::Point2f velocity(0., 0);
-        if (_pos_queue.size() >= 2)
-        {
-            for (std::size_t i=0; i< _pos_queue.size() -1; ++i)
-            {
-                velocity = velocity + (_pos_queue[i+1]-_pos_queue[i]);
-            }
-            velocity=1./(float)(_pos_queue.size()-1)*velocity;
-            vel_queue.push_back(_pos_queue.back() - _pos_queue[_pos_queue.size()-2]);
-        }
-        
-        if (vel_queue.size() > 5) vel_queue.pop_front();
-       
-
-            
-        int hand_gesture = get_hand().get_gesture();
-        
-        gesture_queue.push_back(hand_gesture);
-        if (gesture_queue.size() > 5) gesture_queue.pop_front();
-        
-        
-        float right_stroke = 0;
-        if (vel_queue.size() >=2)
-        {
-            right_stroke=right_stroke_log_p(GEST_VICTORY, gesture_queue, vel_queue);
-
-            //std::cout << "Right stroke log p " << right_stroke << std::endl;
-            if (right_stroke > 0 && block_timer.getSeconds() >= timeout)
-            {
-                std::cout << "Right stroke log p " << right_stroke << std::endl;
-                block_timer.start();
-                std::cout << "RIGHT STROKE !!!!!!!!!!!!!!!!!!!!! " << std::endl;
-                return RIGHT;
-            }
-        }
-        
-            
-            
-//        Vec2f hand_vel = Vec2f( get_hand().get_vel().x , get_hand().get_vel().y );
-//    
-//        //std::cout << "Get vel " << get_hand().get_vel() << std::endl;
-//        
-//        if( (hand_gesture == gest || hand_gesture == -1 ) && block_timer.getSeconds() >= timeout )
+//        const gestoos::nui::Hand & hand = this->get_hand();
+//        //Update positions, velocities and gestures
+//        cv::Point2f this_pos= hand.get_unit_pos();
+//        _pos_queue.push_back( this_pos );
+//        if (_pos_queue.size()==1)
 //        {
-//            if( hand_vel.y < -6.0 && std::fabs( hand_vel.x ) < 4.0  )
+//            filtered_hand_pos=this_pos;
+//        }
+//        else if (_pos_queue.size() > 1)
+//        {
+//            filtered_hand_pos=0.9*filtered_hand_pos + 0.1*get_hand().get_unit_pos();
+//        }
+//        
+//       
+//        if (_pos_queue.size() > 5) _pos_queue.pop_front();
+//        
+//        //Average velocity
+//        cv::Point2f velocity(0., 0);
+//        if (_pos_queue.size() >= 2)
+//        {
+//            for (std::size_t i=0; i< _pos_queue.size() -1; ++i)
 //            {
-//                block_timer.start();
-//                return UP;
+//                velocity = velocity + (_pos_queue[i+1]-_pos_queue[i]);
 //            }
-//            else if( hand_vel.y > 6.0 && std::fabs( hand_vel.x ) < 4.0  )
+//            velocity=1./(float)(_pos_queue.size()-1)*velocity;
+//            vel_queue.push_back(_pos_queue.back() - _pos_queue[_pos_queue.size()-2]);
+//        }
+//        
+//        if (vel_queue.size() > 5) vel_queue.pop_front();
+//       
+//
+//            
+//        int hand_gesture = get_hand().get_gesture();
+//        
+//        gesture_queue.push_back(hand_gesture);
+//        if (gesture_queue.size() > 5) gesture_queue.pop_front();
+//        
+//        
+//        float right_stroke = 0;
+//        if (vel_queue.size() >=2)
+//        {
+//            right_stroke=right_stroke_log_p(GEST_VICTORY, gesture_queue, vel_queue);
+//
+//            //std::cout << "Right stroke log p " << right_stroke << std::endl;
+//            if (right_stroke > 0 && block_timer.getSeconds() >= timeout)
 //            {
+//                std::cout << "Right stroke log p " << right_stroke << std::endl;
 //                block_timer.start();
-//                return DOWN;
-//            }
-//            else if( hand_vel.x > 6.0 && std::fabs( hand_vel.y ) < 4.0)
-//            {
-//                block_timer.start();
+//                std::cout << "RIGHT STROKE !!!!!!!!!!!!!!!!!!!!! " << std::endl;
 //                return RIGHT;
 //            }
-//            else if( hand_vel.x < -6.0 && std::fabs( hand_vel.y ) < 4.0 )
-//            {
-//                block_timer.start();
-//                return LEFT;
-//            }
 //        }
+//        
+        
+        
+        int hand_gesture = get_hand().get_gesture();
+        Vec2f hand_vel = Vec2f( get_hand().get_vel().x , get_hand().get_vel().y );
+    
+        //std::cout << "Get vel " << get_hand().get_vel() << std::endl;
+        
+        if( hand_gesture == gest  && block_timer.getSeconds() >= timeout )
+        {
+            if( hand_vel.x > 0.0 && std::fabs( hand_vel.y ) < 10.0)
+            {
+                block_timer.start();
+                return RIGHT;
+            }
+            else if( hand_vel.x < -0.0 && std::fabs( hand_vel.y ) < 8.0 )
+            {
+                block_timer.start();
+                return LEFT;
+            }
+        }
     }
     else{
         if (_pos_queue.size())

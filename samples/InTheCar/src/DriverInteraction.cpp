@@ -25,8 +25,8 @@ gestoos::nui::DriverInteraction::~DriverInteraction()
 void gestoos::nui::DriverInteraction::init(const std::string& ini_file)
 {
 	//Configure camera
-	//_capture.init("",  0,  gestoos::CaptureRGBD::QVGA_30FPS);
-    _capture.init("/Users/alopez/workspace/fezoolib/CarScenario3.oni", 0, gestoos::CaptureRGBD::QVGA_30FPS);
+	_capture.init("",  0,  gestoos::CaptureRGBD::QVGA_30FPS);
+    //_capture.init("/Users/alopez/workspace/fezoolib/CarScenario4.oni", 0, gestoos::CaptureRGBD::QVGA_30FPS);
 
 	//Load gestures and trackers
 	_config.load(ini_file);
@@ -195,7 +195,7 @@ void gestoos::nui::DriverInteraction::process()
 
             cv::Point p(_hand.get_pos().x,_hand.get_pos().y);
             double depth = gestoos::get_reference_depth(_depth_map, p, 5);
-            cv::Rect roi = gestoos::generate_bounding_box_depth_scaled(p,  depth, cv::Size(31, 31));
+            cv::Rect roi = gestoos::generate_bounding_box_depth_scaled(p,  depth, cv::Size(61, 61));
             _mask(gestoos::crop_to_image(roi, _mask))=cv::Scalar(255);
 
             //Bitwise and with the scene mask, if any
@@ -216,6 +216,11 @@ void gestoos::nui::DriverInteraction::process()
         /*
          * Gesture detection after tracking
          */
+        
+        //Filter the scene mask
+        _depth_map=_capture.depth_frame(); //Re-copy the depth frame
+        _fmm.set_alpha(0.1);
+        _fmm.filter(_depth_map, _scene_mask);
         _hand_detector.process(_depth_map, _mask);
         
         _hand.process(_depth_map, _hand_detector);
@@ -225,13 +230,23 @@ void gestoos::nui::DriverInteraction::process()
 			{
 
                 //Visualize tracking detection
-                gestoos::scoreHeatMap(_whai.get_detector_map(), _color_img, 0, 5);
+                gestoos::scoreHeatMap(_whai.get_detector_map(), _color_img, 0, 10);
                 cv::imshow("HandScore", _color_img);
                 //Visualize tracking detection
-                gestoos::scoreHeatMap(_hand_detector.get_probability_map(1), _color_img, 0, 5);
+                gestoos::scoreHeatMap(_hand_detector.get_probability_map(1), _color_img, 0, 10);
                 cv::imshow("HandGestureScore", _color_img);
 				//DBG: generating visualization of tracking
-				gestoos::falseColorMap(_depth_map, _color_img, cv::COLORMAP_BONE);
+				gestoos::falseColorMap(_depth_map, _color_img, cv::COLORMAP_HOT);
+
+                cv::Mat aux;
+                gestoos::falseColorMap(_depth_map, aux, cv::COLORMAP_BONE);
+                if (!_scene_mask.empty())
+                    aux.copyTo(_color_img, _scene_mask);
+                else{
+                    _color_img=aux.clone();
+                }
+                
+                
 				if (_hand.get_interaction_space().area() > 0)
 				{
 					cv::rectangle(_color_img, _hand.get_interaction_space(), cv::Scalar(255, 255, 255), 3);

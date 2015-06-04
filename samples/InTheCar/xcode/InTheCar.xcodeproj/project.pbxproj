@@ -26,6 +26,8 @@
 		AC98C15D1B1EDC0F00D9D3E0 /* carVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */; };
 		AC98C15F1B1F006200D9D3E0 /* carHand_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */; };
 		AC98C1601B1F006B00D9D3E0 /* carHand_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */; };
+		ACA57C281B20984B00C0638F /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
+		ACA57C291B20986700C0638F /* correct.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACAE2AAB1B17052A00C61ACF /* DriverInteraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE2AAA1B17052A00C61ACF /* DriverInteraction.cpp */; };
 		ACAE2AAE1B17065C00C61ACF /* CinderDrive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE2AAD1B17065C00C61ACF /* CinderDrive.cpp */; };
 		ACB177181B18574600B64C28 /* libboost_date_time-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB176E51B18574600B64C28 /* libboost_date_time-mt.dylib */; };
@@ -213,6 +215,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				ACC294891B1C3EE00098936D /* InteractionMask.png in CopyFiles */,
+				ACA57C291B20986700C0638F /* correct.wav in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +247,7 @@
 		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
 		AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carVictory.dat; path = ../../../../../data/carVictory.dat; sourceTree = "<group>"; };
 		AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carHand_light.dat; path = ../../../../../data/carHand_light.dat; sourceTree = "<group>"; };
+		ACA57C271B20984A00C0638F /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../resources/correct.wav; sourceTree = "<group>"; };
 		ACAE2AA91B17052000C61ACF /* DriverInteraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DriverInteraction.hpp; path = ../include/DriverInteraction.hpp; sourceTree = "<group>"; };
 		ACAE2AAA1B17052A00C61ACF /* DriverInteraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DriverInteraction.cpp; path = ../src/DriverInteraction.cpp; sourceTree = "<group>"; };
 		ACAE2AAC1B17063700C61ACF /* CinderDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CinderDrive.h; sourceTree = "<group>"; };
@@ -443,6 +447,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACA57C271B20984A00C0638F /* correct.wav */,
 				ACC294861B1C3E060098936D /* InteractionMask.png */,
 				A10B06751B0CE9B400507C88 /* interactor.cfg */,
 				A10B06371B0B79A400507C88 /* Models */,
@@ -638,6 +643,7 @@
 				ACB177481B18574600B64C28 /* README.md in Resources */,
 				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
 				ACC294871B1C3E060098936D /* InteractionMask.png in Resources */,
+				ACA57C281B20984B00C0638F /* correct.wav in Resources */,
 				AC98C15C1B1EDBFD00D9D3E0 /* carVictory.dat in Resources */,
 				ACB1777D1B1858D000B64C28 /* hand_detector_light.dat in Resources */,
 				ACB177471B18574600B64C28 /* OpenNI.ini in Resources */,

@@ -103,7 +103,9 @@ namespace gestoos{
 			bool _draw_window;
 			bool _use_tracker;
 			bool _use_hand_gestures;
-
+            
+            //Filtering
+            ApproximateDepthErrorFill _fmm;
 			void _add_hand_gesture_on_transition(int label, int from, int to);
 
 		};

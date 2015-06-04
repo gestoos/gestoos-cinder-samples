@@ -3,6 +3,7 @@
 #include "cinder/System.h"
 #include "cinder/Rand.h"
 #include "cinder/Thread.h"
+#include "cinder/audio/Voice.h"
 //#include "cinder/Text.h"
 //#include "cinder/gl/gl.h"
 //#include "cinder/gl/Texture.h"
@@ -39,7 +40,7 @@ public:
     void    update();
 	void    draw();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
+	void	keyDown( KeyEvent event ) {  }
     
     void processThread();
 
@@ -56,6 +57,9 @@ public:
     bool init_ok;
 
     std::list< LabelPtr > labels;
+    //Audio feedback
+    audio::VoiceRef mVoice;
+    
 };
 
 void exampleApp::setup()
@@ -65,6 +69,10 @@ void exampleApp::setup()
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
+    
+    //Audio setup
+   mVoice = audio::Voice::create( audio::load( loadResource( "correct.wav" ) ) );
+
  
     
 }
@@ -113,7 +121,7 @@ void exampleApp::processThread()
     while(can_process_thread)
     {
         cinderactor.process();
-        _stroke=cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
+        //_stroke=cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
     }
 }
 
@@ -128,8 +136,9 @@ void exampleApp::update()
     }
     
     // Detect hand strokes
-   // CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
+   CinderDrive::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY, 1.0 );
     
+    _stroke=stroke;
     // Create labels if stroke detected
     LabelPtr label_ptr;
     switch (_stroke) {
@@ -139,10 +148,16 @@ void exampleApp::update()
             
         case CinderDrive::RIGHT:
             labels.push_back( LabelPtr( new Label("RIGHT", 300, CinderDrive::RIGHT) ) ) ;
+
+            if (mVoice->isPlaying()) mVoice->stop();
+            mVoice->start();
             break;
             
         case CinderDrive::LEFT:
             labels.push_back( LabelPtr( new Label("LEFT", 300, CinderDrive::LEFT) ) ) ;
+
+            if (mVoice->isPlaying()) mVoice->stop();
+            mVoice->start();
             break;
             
         default:
