@@ -21,7 +21,6 @@
 		A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A10B06751B0CE9B400507C88 /* interactor.cfg */; };
 		A10B069E1B0E8F5700507C88 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B069D1B0E8F5700507C88 /* Label.cpp */; };
 		A10B06C81B0F167200507C88 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10B06C71B0F167200507C88 /* Cinderactor.cpp */; };
-		A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A10B06BD1B0F165000507C88 /* whai.dat */; };
 		AC98C15C1B1EDBFD00D9D3E0 /* carVictory.dat in Resources */ = {isa = PBXBuildFile; fileRef = AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */; };
 		AC98C15D1B1EDC0F00D9D3E0 /* carVictory.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */; };
 		AC98C15F1B1F006200D9D3E0 /* carHand_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */; };
@@ -33,6 +32,14 @@
 		ACA416711B219D83003152A6 /* CruiseControl.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA4166F1B219D72003152A6 /* CruiseControl.jpg */; };
 		ACA416731B259E4B003152A6 /* carHand.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACA416721B259E4B003152A6 /* carHand.dat */; };
 		ACA416751B259E7B003152A6 /* carHand.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416721B259E4B003152A6 /* carHand.dat */; };
+		ACA416771B25A0FA003152A6 /* CruiseControl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACA416761B25A0FA003152A6 /* CruiseControl.mp3 */; };
+		ACA4167A1B25A2E8003152A6 /* Mute.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACA416781B25A2E8003152A6 /* Mute.mp3 */; };
+		ACA4167B1B25A2E8003152A6 /* Warnings.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACA416791B25A2E8003152A6 /* Warnings.mp3 */; };
+		ACA4167C1B25A2F8003152A6 /* Mute.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416781B25A2E8003152A6 /* Mute.mp3 */; };
+		ACA4167D1B25A2FB003152A6 /* CruiseControl.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416761B25A0FA003152A6 /* CruiseControl.mp3 */; };
+		ACA4167E1B25A300003152A6 /* Warnings.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416791B25A2E8003152A6 /* Warnings.mp3 */; };
+		ACA416801B25A7EB003152A6 /* carThumbLeft.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */; };
+		ACA416811B25A80B003152A6 /* carThumbLeft.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */; };
 		ACA57C281B20984B00C0638F /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACA57C291B20986700C0638F /* correct.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACA57C2D1B20B04200C0638F /* Dashboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACA57C2B1B20B04200C0638F /* Dashboard.cpp */; };
@@ -136,10 +143,6 @@
 		ACB177781B18580E00B64C28 /* libwebp.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB177121B18574600B64C28 /* libwebp.5.dylib */; };
 		ACB177791B18580E00B64C28 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB177131B18574600B64C28 /* libz.1.dylib */; };
 		ACB1777A1B18580E00B64C28 /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB177141B18574600B64C28 /* OpenNI.ini */; };
-		ACB1777D1B1858D000B64C28 /* hand_detector_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */; };
-		ACB1777E1B1858D000B64C28 /* valcriVictory_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
-		ACB1777F1B18595000B64C28 /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */; };
-		ACB177801B18595300B64C28 /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */; };
 		ACC294871B1C3E060098936D /* InteractionMask.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC294861B1C3E060098936D /* InteractionMask.png */; };
 		ACC294891B1C3EE00098936D /* InteractionMask.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACC294861B1C3E060098936D /* InteractionMask.png */; };
 /* End PBXBuildFile section */
@@ -151,12 +154,10 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				A10B06CD1B0F168100507C88 /* whai.dat in CopyFiles */,
 				ACA416751B259E7B003152A6 /* carHand.dat in CopyFiles */,
+				ACA416811B25A80B003152A6 /* carThumbLeft.dat in CopyFiles */,
 				AC98C1601B1F006B00D9D3E0 /* carHand_light.dat in CopyFiles */,
 				AC98C15D1B1EDC0F00D9D3E0 /* carVictory.dat in CopyFiles */,
-				ACB1777F1B18595000B64C28 /* hand_detector_light.dat in CopyFiles */,
-				ACB177801B18595300B64C28 /* valcriVictory_light.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +237,9 @@
 			files = (
 				ACC294891B1C3EE00098936D /* InteractionMask.png in CopyFiles */,
 				ACA57C291B20986700C0638F /* correct.wav in CopyFiles */,
+				ACA4167D1B25A2FB003152A6 /* CruiseControl.mp3 in CopyFiles */,
+				ACA4167E1B25A300003152A6 /* Warnings.mp3 in CopyFiles */,
+				ACA4167C1B25A2F8003152A6 /* Mute.mp3 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +266,6 @@
 		A10B06751B0CE9B400507C88 /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
 		A10B069C1B0E8F4600507C88 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Label.h; path = ../include/Label.h; sourceTree = "<group>"; };
 		A10B069D1B0E8F5700507C88 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Label.cpp; path = ../src/Label.cpp; sourceTree = "<group>"; };
-		A10B06BD1B0F165000507C88 /* whai.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = whai.dat; path = ../../../../../data/whai.dat; sourceTree = "<group>"; };
 		A10B06C51B0F167200507C88 /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A10B06C71B0F167200507C88 /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
 		AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carVictory.dat; path = ../../../../../data/carVictory.dat; sourceTree = "<group>"; };
@@ -271,6 +274,10 @@
 		ACA4166A1B2197C1003152A6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ACA4166F1B219D72003152A6 /* CruiseControl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CruiseControl.jpg; sourceTree = "<group>"; };
 		ACA416721B259E4B003152A6 /* carHand.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carHand.dat; path = ../../../../../data/carHand.dat; sourceTree = "<group>"; };
+		ACA416761B25A0FA003152A6 /* CruiseControl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CruiseControl.mp3; path = ../resources/CruiseControl.mp3; sourceTree = "<group>"; };
+		ACA416781B25A2E8003152A6 /* Mute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mute.mp3; path = ../resources/Mute.mp3; sourceTree = "<group>"; };
+		ACA416791B25A2E8003152A6 /* Warnings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Warnings.mp3; path = ../resources/Warnings.mp3; sourceTree = "<group>"; };
+		ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carThumbLeft.dat; path = ../../../../../data/carThumbLeft.dat; sourceTree = "<group>"; };
 		ACA57C271B20984A00C0638F /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../resources/correct.wav; sourceTree = "<group>"; };
 		ACA57C2A1B20AB6000C0638F /* CinderDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinderDrive.h; path = ../include/CinderDrive.h; sourceTree = "<group>"; };
 		ACA57C2B1B20B04200C0638F /* Dashboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dashboard.cpp; path = ../src/Dashboard.cpp; sourceTree = "<group>"; };
@@ -328,8 +335,6 @@
 		ACB177141B18574600B64C28 /* OpenNI.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenNI.ini; sourceTree = "<group>"; };
 		ACB177151B18574600B64C28 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		ACB177171B18574600B64C28 /* fixOpenCVDeps.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fixOpenCVDeps.sh; sourceTree = "<group>"; };
-		ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
-		ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
 		ACC294861B1C3E060098936D /* InteractionMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = InteractionMask.png; path = ../../../../../../../data/CarData/InteractionMask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -474,6 +479,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACA416781B25A2E8003152A6 /* Mute.mp3 */,
+				ACA416791B25A2E8003152A6 /* Warnings.mp3 */,
+				ACA416761B25A0FA003152A6 /* CruiseControl.mp3 */,
 				ACA416681B2197C1003152A6 /* Dashboard */,
 				ACA57C271B20984A00C0638F /* correct.wav */,
 				ACC294861B1C3E060098936D /* InteractionMask.png */,
@@ -496,12 +504,10 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */,
 				ACA416721B259E4B003152A6 /* carHand.dat */,
 				AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */,
 				AC98C15B1B1EDBFD00D9D3E0 /* carVictory.dat */,
-				ACB1777B1B1858D000B64C28 /* hand_detector_light.dat */,
-				ACB1777C1B1858D000B64C28 /* valcriVictory_light.dat */,
-				A10B06BD1B0F165000507C88 /* whai.dat */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -683,18 +689,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB177481B18574600B64C28 /* README.md in Resources */,
+				ACA4167A1B25A2E8003152A6 /* Mute.mp3 in Resources */,
 				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
+				ACA416771B25A0FA003152A6 /* CruiseControl.mp3 in Resources */,
 				ACC294871B1C3E060098936D /* InteractionMask.png in Resources */,
 				ACA57C281B20984B00C0638F /* correct.wav in Resources */,
 				ACA416701B219D72003152A6 /* CruiseControl.jpg in Resources */,
 				AC98C15C1B1EDBFD00D9D3E0 /* carVictory.dat in Resources */,
-				ACB1777D1B1858D000B64C28 /* hand_detector_light.dat in Resources */,
 				ACB177471B18574600B64C28 /* OpenNI.ini in Resources */,
 				ACA4166C1B2197C1003152A6 /* Default.png in Resources */,
-				ACB1777E1B1858D000B64C28 /* valcriVictory_light.dat in Resources */,
+				ACA416801B25A7EB003152A6 /* carThumbLeft.dat in Resources */,
 				AC98C15F1B1F006200D9D3E0 /* carHand_light.dat in Resources */,
 				ACB177491B18574600B64C28 /* fixOpenCVDeps.sh in Resources */,
 				ACA4166B1B2197C1003152A6 /* Default.jpg in Resources */,
+				ACA4167B1B25A2E8003152A6 /* Warnings.mp3 in Resources */,
 				ACA416731B259E4B003152A6 /* carHand.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

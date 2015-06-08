@@ -237,7 +237,7 @@ void gestoos::nui::DriverInteraction::process()
                 gestoos::scoreHeatMap(_whai.get_detector_map(), _color_img, 0, 10);
                 cv::imshow("HandScore", _color_img);
                 //Visualize tracking detection
-                gestoos::scoreHeatMap(_hand_detector.get_probability_map(1), _color_img, 0, 10);
+                gestoos::scoreHeatMap(_hand_detector.get_probability_map(2), _color_img, 0, 10);
                 cv::imshow("HandGestureScore", _color_img);
 				//DBG: generating visualization of tracking
 				gestoos::falseColorMap(_depth_map, _color_img, cv::COLORMAP_HOT);
@@ -275,14 +275,28 @@ int gestoos::nui::DriverInteraction::get_hand_gesture() const
 {
     double maxVal;
     cv::Point maxLoc;
-    const cv::Mat & scores = _hand_detector.get_probability_map(1);
-    cv::minMaxLoc(scores , NULL, &maxVal, NULL, &maxLoc);
-    double threshold = _hand_detector.get_thresholds()[0];
+    double best_meta=1.;
+    int best_gesture=-1;
+    for (int i =0; i < _hand_detector.get_labels().size(); ++i)
+    {
+        const cv::Mat & scores = _hand_detector.get_probability_map(i+1);
+        if (!scores.empty())
+        {
+            cv::minMaxLoc(scores , NULL, &maxVal, NULL, &maxLoc);
+            double threshold = _hand_detector.get_thresholds()[i];
+            
+            //if (maxVal > threshold)
+            //    return _hand_detector.get_labels()[0];
+            
+            if (maxVal/threshold > best_meta )
+            {
+                best_meta=maxVal/threshold;
+                best_gesture=_hand_detector.get_labels()[i];
+            }
+        }
+    }
     
-    if (maxVal > threshold)
-        return _hand_detector.get_labels()[0];
-    
-    return -1;
+    return best_gesture;
 }
 
 void gestoos::nui::DriverInteraction::stop()

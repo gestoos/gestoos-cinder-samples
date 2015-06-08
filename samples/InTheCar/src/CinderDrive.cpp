@@ -98,6 +98,7 @@ float right_stroke_log_p(int gesture, const std::deque<int> & q, const std::dequ
 int CinderDrive::detect_hand_gesture( float timeout )
 {
     //if( get_hand().is_present() )
+    if (init_ok)
     {
         int hand_gesture = get_hand_gesture(); //get_hand().get_gesture();
         

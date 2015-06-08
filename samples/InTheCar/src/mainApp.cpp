@@ -63,24 +63,29 @@ public:
     std::list< LabelPtr > labels;
     //Audio feedback
     audio::VoiceRef mVoice;
+    std::deque< audio::VoiceRef > voices;
     
 };
 
 void exampleApp::setup()
 {
+    //Audio setup
+    //mVoice = audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "Warnings.mp3" ) ) ) );
+    
     init_ok = false;
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
-    //Audio setup
-   mVoice = audio::Voice::create( audio::load( loadResource( "correct.wav" ) ) );
+
+                     
     
     //Dashboard setup
-    dashboard.init(ci::Vec2f(0, 0));
-    // cinder::DataSourceRef img = loadResource("Dashboard/Default.jpg");
-    dashboard.add_screen(loadResource("Dashboard/Default.jpg"));
-    dashboard.add_screen(loadResource("Dashboard/CruiseControl.jpg"));
+    //dashboard.init(ci::Vec2f(0, 0));
+   // dashboard.add_screen(loadResource("Dashboard/Default.jpg"));
+   // dashboard.add_screen(loadResource("Dashboard/CruiseControl.jpg"));
     
 
     
@@ -150,9 +155,29 @@ void exampleApp::update()
     {
         case GEST_VICTORY:
         {
-            if (mVoice->isPlaying()) mVoice->stop();
-            mVoice->start();
-            dashboard.next();
+//            if (mVoice->isPlaying()) mVoice->stop();
+//            mVoice->start();
+            for (auto it = voices.begin(); it !=voices.end(); ++it)
+            {
+                if ( (*it)->isPlaying())
+                {
+                    (*it)->stop();
+                }
+            }
+            voices[1]->start();
+            //dashboard.next();
+            break;
+        }
+        case GEST_EL:
+        {
+            for (auto it = voices.begin(); it !=voices.end(); ++it)
+            {
+                if ( (*it)->isPlaying())
+                {
+                    (*it)->stop();
+                }
+            }
+            voices[0]->start();
             break;
         }
         default:
@@ -183,8 +208,8 @@ void exampleApp::draw()
     }
     
     // Draw cinderactor representation
-    dashboard.draw();
-    //cinderactor.draw();
+    //dashboard.draw();
+    cinderactor.draw();
 
     
 }
@@ -193,6 +218,7 @@ void exampleApp::shutdown()
 {
     can_process_thread = false;
 	mThread->join();
+    //TODO: Relase voices
 }
 
 CINDER_APP_NATIVE( exampleApp, RendererGl )
