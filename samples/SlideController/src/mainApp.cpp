@@ -23,6 +23,7 @@ using namespace std;
 typedef boost::shared_ptr<Label> LabelPtr;
 
 float MIN_Z_VEL         = 30.0;
+bool interrupt=false;
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
 class exampleApp {
@@ -88,7 +89,7 @@ void exampleApp::run()
 {
     std::thread ti( &exampleApp::threaded_init, this );
     
-    while (!init_ok)
+    while (!init_ok && !interrupt)
     {
         std::cout << "\rWait ..." << std::endl;
         int identifier =
@@ -250,11 +251,9 @@ void exampleApp::update()
 void exampleApp::shutdown()
 {
     can_process_thread = false;
-	mThread->join();
+	//mThread->join();
     cinderactor.stop();
 }
-
-bool interrupt=false;
 
 exampleApp appl;
 
@@ -266,13 +265,20 @@ void catch_signal(int signum)
 
 int main(int argc, char * argv[])
 {
-
-    appl.setup();
     
     // Interrupt
     signal(SIGINT, catch_signal);
+    signal(SIGKILL, catch_signal);
+    signal(SIGTERM, catch_signal);
+    signal(SIGQUIT, catch_signal);
     
-    appl.run();
+    appl.setup();
 
+    if (!interrupt)
+        appl.run();
+
+    //TODO: Clean exit
     appl.shutdown();
+    
+    return 0;
 }
