@@ -40,6 +40,8 @@
 		ACA4167E1B25A300003152A6 /* Warnings.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416791B25A2E8003152A6 /* Warnings.mp3 */; };
 		ACA416801B25A7EB003152A6 /* carThumbLeft.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */; };
 		ACA416811B25A80B003152A6 /* carThumbLeft.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */; };
+		ACA416831B25ABC0003152A6 /* WarningsOff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */; };
+		ACA416841B25ABF0003152A6 /* WarningsOff.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */; };
 		ACA57C281B20984B00C0638F /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACA57C291B20986700C0638F /* correct.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACA57C2D1B20B04200C0638F /* Dashboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACA57C2B1B20B04200C0638F /* Dashboard.cpp */; };
@@ -237,6 +239,7 @@
 			files = (
 				ACC294891B1C3EE00098936D /* InteractionMask.png in CopyFiles */,
 				ACA57C291B20986700C0638F /* correct.wav in CopyFiles */,
+				ACA416841B25ABF0003152A6 /* WarningsOff.mp3 in CopyFiles */,
 				ACA4167D1B25A2FB003152A6 /* CruiseControl.mp3 in CopyFiles */,
 				ACA4167E1B25A300003152A6 /* Warnings.mp3 in CopyFiles */,
 				ACA4167C1B25A2F8003152A6 /* Mute.mp3 in CopyFiles */,
@@ -278,6 +281,7 @@
 		ACA416781B25A2E8003152A6 /* Mute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mute.mp3; path = ../resources/Mute.mp3; sourceTree = "<group>"; };
 		ACA416791B25A2E8003152A6 /* Warnings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Warnings.mp3; path = ../resources/Warnings.mp3; sourceTree = "<group>"; };
 		ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carThumbLeft.dat; path = ../../../../../data/carThumbLeft.dat; sourceTree = "<group>"; };
+		ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WarningsOff.mp3; path = ../resources/WarningsOff.mp3; sourceTree = "<group>"; };
 		ACA57C271B20984A00C0638F /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../resources/correct.wav; sourceTree = "<group>"; };
 		ACA57C2A1B20AB6000C0638F /* CinderDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinderDrive.h; path = ../include/CinderDrive.h; sourceTree = "<group>"; };
 		ACA57C2B1B20B04200C0638F /* Dashboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dashboard.cpp; path = ../src/Dashboard.cpp; sourceTree = "<group>"; };
@@ -479,6 +483,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */,
 				ACA416781B25A2E8003152A6 /* Mute.mp3 */,
 				ACA416791B25A2E8003152A6 /* Warnings.mp3 */,
 				ACA416761B25A0FA003152A6 /* CruiseControl.mp3 */,
@@ -689,6 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB177481B18574600B64C28 /* README.md in Resources */,
+				ACA416831B25ABC0003152A6 /* WarningsOff.mp3 in Resources */,
 				ACA4167A1B25A2E8003152A6 /* Mute.mp3 in Resources */,
 				A10B068B1B0E262E00507C88 /* interactor.cfg in Resources */,
 				ACA416771B25A0FA003152A6 /* CruiseControl.mp3 in Resources */,

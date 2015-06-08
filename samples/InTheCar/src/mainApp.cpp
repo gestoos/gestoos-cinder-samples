@@ -27,6 +27,7 @@ using namespace std;
 typedef boost::shared_ptr<Label> LabelPtr;
 
 float MIN_Z_VEL         = 30.0;
+bool WARNINGS_ON = false;
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
 class exampleApp : public AppNative {
@@ -73,6 +74,7 @@ void exampleApp::setup()
     //mVoice = audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) );
     voices.push_back(audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) ) );
     voices.push_back(audio::Voice::create( audio::load( loadResource( "Warnings.mp3" ) ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "WarningsOff.mp3" ) ) ) );
     
     init_ok = false;
     //Start cinderactor processing in a separate thread
@@ -164,7 +166,11 @@ void exampleApp::update()
                     (*it)->stop();
                 }
             }
-            voices[1]->start();
+            if (!WARNINGS_ON)
+                voices[1]->start();
+            else voices[2]->start();
+         
+            WARNINGS_ON=!WARNINGS_ON;
             //dashboard.next();
             break;
         }
