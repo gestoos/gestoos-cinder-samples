@@ -18,8 +18,11 @@ using namespace std;
 //#include "fezoolib/NUI/Interactor.hpp"
 
 #include "Label.h"
+#include "Dashboard.h"
 #include "CinderDrive.h"
 #include "Cinderactor.h"
+
+
 
 typedef boost::shared_ptr<Label> LabelPtr;
 
@@ -50,6 +53,7 @@ public:
     
     //CinderDrive cinderactor;
     CinderDrive cinderactor;
+    Dashboard dashboard;
 
     
     shared_ptr<std::thread>		mThread;
@@ -71,8 +75,14 @@ void exampleApp::setup()
     
     //Audio setup
    mVoice = audio::Voice::create( audio::load( loadResource( "correct.wav" ) ) );
+    
+    //Dashboard setup
+    dashboard.init(ci::Vec2f(0, 0));
+    // cinder::DataSourceRef img = loadResource("Dashboard/Default.jpg");
+    dashboard.add_screen(loadResource("Dashboard/Default.jpg"));
+    dashboard.add_screen(loadResource("Dashboard/CruiseControl.jpg"));
+    
 
- 
     
 }
 
@@ -80,6 +90,7 @@ void exampleApp::prepareSettings( Settings *settings )
 {
 	settings->enableMultiTouch();
     settings->setWindowSize( 800, 600 );
+
 }
 
 void exampleApp::touchesBegan( TouchEvent event )
@@ -141,6 +152,7 @@ void exampleApp::update()
         {
             if (mVoice->isPlaying()) mVoice->stop();
             mVoice->start();
+            dashboard.next();
             break;
         }
         default:
@@ -171,7 +183,9 @@ void exampleApp::draw()
     }
     
     // Draw cinderactor representation
-    cinderactor.draw();
+    dashboard.draw();
+    //cinderactor.draw();
+
     
 }
 

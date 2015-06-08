@@ -48,6 +48,7 @@ namespace gestoos{
             
             /// \brief Set the resources path
             void set_resources_path(const std::string& resources);
+            
 
             /// Accessors
 			const Config& get_config() const;
@@ -57,6 +58,8 @@ namespace gestoos{
 			void set_draw_window(bool drawWindow);
 
 			const Hand& get_hand() const;
+            
+            int get_hand_gesture() const;
 
 			const cv::Mat& get_scene_mask() const;
 			/// Set a 320x240, 8 bit, single channel binary mask delimiting the 2D scenario (i.e., the ROI where gestures can be performed)
