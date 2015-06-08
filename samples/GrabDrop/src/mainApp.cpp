@@ -116,15 +116,17 @@ void exampleApp::update()
     if( hand.is_present() )
     {
         Vec2f hand_pos_inst ;
-        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
-        hand_pos_inst.y = ( hand.get_pos().y / 240 - 0.5 ) * cinder::app::getWindowHeight() *2.0 +   cinder::app::getWindowHeight()/2.0 ;
+        hand_pos_inst.x = hand.get_unit_pos().x * cinder::app::getWindowWidth() ;
+        // ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
+        hand_pos_inst.y = hand.get_unit_pos().y * cinder::app::getWindowHeight() ;
+        //( hand.get_pos().y / 240 - 0.5 ) * cinder::app::getWindowHeight() *2.0 +   cinder::app::getWindowHeight()/2.0 ;
         
-        hand_pos_f += (hand_pos_inst - hand_pos_f) * 0.3;
+        hand_pos_f += (hand_pos_inst - hand_pos_f) * 0.2;
         
         //std::pair<int,int> gr = cinderactor.detect_hand_grabrelease();
 
         if( hand.get_gesture() == GEST_GRAB &&
-           timer.getSeconds() > 0.2 &&
+           timer.getSeconds() > 1.0 &&
            !grabbing )
         {
             if( box.contains( hand_pos_f ) )
