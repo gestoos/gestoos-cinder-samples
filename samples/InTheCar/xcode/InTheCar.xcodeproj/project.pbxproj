@@ -42,6 +42,8 @@
 		ACA416811B25A80B003152A6 /* carThumbLeft.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */; };
 		ACA416831B25ABC0003152A6 /* WarningsOff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */; };
 		ACA416841B25ABF0003152A6 /* WarningsOff.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */; };
+		ACA416861B25B035003152A6 /* carThumbsUp.dat in Resources */ = {isa = PBXBuildFile; fileRef = ACA416851B25B035003152A6 /* carThumbsUp.dat */; };
+		ACA416881B25B06B003152A6 /* carThumbsUp.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA416851B25B035003152A6 /* carThumbsUp.dat */; };
 		ACA57C281B20984B00C0638F /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACA57C291B20986700C0638F /* correct.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA57C271B20984A00C0638F /* correct.wav */; };
 		ACA57C2D1B20B04200C0638F /* Dashboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACA57C2B1B20B04200C0638F /* Dashboard.cpp */; };
@@ -157,6 +159,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				ACA416751B259E7B003152A6 /* carHand.dat in CopyFiles */,
+				ACA416881B25B06B003152A6 /* carThumbsUp.dat in CopyFiles */,
 				ACA416811B25A80B003152A6 /* carThumbLeft.dat in CopyFiles */,
 				AC98C1601B1F006B00D9D3E0 /* carHand_light.dat in CopyFiles */,
 				AC98C15D1B1EDC0F00D9D3E0 /* carVictory.dat in CopyFiles */,
@@ -282,6 +285,7 @@
 		ACA416791B25A2E8003152A6 /* Warnings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Warnings.mp3; path = ../resources/Warnings.mp3; sourceTree = "<group>"; };
 		ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carThumbLeft.dat; path = ../../../../../data/carThumbLeft.dat; sourceTree = "<group>"; };
 		ACA416821B25ABC0003152A6 /* WarningsOff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WarningsOff.mp3; path = ../resources/WarningsOff.mp3; sourceTree = "<group>"; };
+		ACA416851B25B035003152A6 /* carThumbsUp.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = carThumbsUp.dat; path = ../../../../../data/carThumbsUp.dat; sourceTree = "<group>"; };
 		ACA57C271B20984A00C0638F /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = correct.wav; path = ../resources/correct.wav; sourceTree = "<group>"; };
 		ACA57C2A1B20AB6000C0638F /* CinderDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinderDrive.h; path = ../include/CinderDrive.h; sourceTree = "<group>"; };
 		ACA57C2B1B20B04200C0638F /* Dashboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dashboard.cpp; path = ../src/Dashboard.cpp; sourceTree = "<group>"; };
@@ -509,6 +513,7 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACA416851B25B035003152A6 /* carThumbsUp.dat */,
 				ACA4167F1B25A7EB003152A6 /* carThumbLeft.dat */,
 				ACA416721B259E4B003152A6 /* carHand.dat */,
 				AC98C15E1B1F006200D9D3E0 /* carHand_light.dat */,
@@ -707,6 +712,7 @@
 				ACA416801B25A7EB003152A6 /* carThumbLeft.dat in Resources */,
 				AC98C15F1B1F006200D9D3E0 /* carHand_light.dat in Resources */,
 				ACB177491B18574600B64C28 /* fixOpenCVDeps.sh in Resources */,
+				ACA416861B25B035003152A6 /* carThumbsUp.dat in Resources */,
 				ACA4166B1B2197C1003152A6 /* Default.jpg in Resources */,
 				ACA4167B1B25A2E8003152A6 /* Warnings.mp3 in Resources */,
 				ACA416731B259E4B003152A6 /* carHand.dat in Resources */,

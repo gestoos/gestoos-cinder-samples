@@ -75,6 +75,7 @@ void exampleApp::setup()
     voices.push_back(audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) ) );
     voices.push_back(audio::Voice::create( audio::load( loadResource( "Warnings.mp3" ) ) ) );
     voices.push_back(audio::Voice::create( audio::load( loadResource( "WarningsOff.mp3" ) ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "Mute.mp3" ) ) ) );
     
     init_ok = false;
     //Start cinderactor processing in a separate thread
@@ -184,6 +185,18 @@ void exampleApp::update()
                 }
             }
             voices[0]->start();
+            break;
+        }
+        case GEST_INDEX:
+        {
+            for (auto it = voices.begin(); it !=voices.end(); ++it)
+            {
+                if ( (*it)->isPlaying())
+                {
+                    (*it)->stop();
+                }
+            }
+            voices[3]->start();
             break;
         }
         default:
