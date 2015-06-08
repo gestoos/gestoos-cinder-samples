@@ -26,8 +26,8 @@ gestoos::nui::DriverInteraction::~DriverInteraction()
 void gestoos::nui::DriverInteraction::init(const std::string& ini_file)
 {
 	//Configure camera
-	//_capture.init("",  0,  gestoos::CaptureRGBD::QVGA_30FPS);
-    _capture.init("/Users/alopez/workspace/fezoolib/CarScenario4.oni", 0, gestoos::CaptureRGBD::QVGA_30FPS);
+	_capture.init("",  0,  gestoos::CaptureRGBD::QVGA_30FPS);
+    //_capture.init("/Users/alopez/workspace/fezoolib/CarScenario4.oni", 0, gestoos::CaptureRGBD::QVGA_30FPS);
 
 	//Load gestures and trackers
 	_config.load(ini_file);
