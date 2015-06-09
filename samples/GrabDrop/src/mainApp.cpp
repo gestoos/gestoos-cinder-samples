@@ -11,6 +11,8 @@ using namespace std;
 #include "Cinderactor.h"
 #include "MovingRect.h"
 
+#include "Help.h"
+#include "resource.h"
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
 class exampleApp : public AppNative {
@@ -28,7 +30,7 @@ public:
     void    update();
 	void    draw();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
+	void	keyDown( KeyEvent event ) { }
     
     void processThread();
     
@@ -44,6 +46,9 @@ public:
     Timer timer;
     
     bool grabbing;
+    
+    GestoosHelp *help;
+
 };
 
 void exampleApp::setup()
@@ -59,7 +64,15 @@ void exampleApp::setup()
     
     timer.start();
     
+    // This installs a Help image with a listener listener which intercepts key-down events
+    help = new GestoosHelp( getWindow(), loadResource(IMG_HELP) );
+    
     grabbing = false;
+    
+    // This installs a Help image with a listener listener which intercepts key-down events
+    help = new GestoosHelp( getWindow(), loadResource(IMG_HELP) );
+    
+
 }
 
 void exampleApp::prepareSettings( Settings *settings )
@@ -114,6 +127,9 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
+    
+    help->update();
+    
     hand = cinderactor.get_hands().first;
     
     
@@ -191,6 +207,7 @@ void exampleApp::draw()
     
     cinderactor.draw();
 
+    help->draw();
 }
 
 void exampleApp::shutdown()

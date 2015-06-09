@@ -72,6 +72,8 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A1055A8E1B26F8F80053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A8D1B26F8F80053CE48 /* Images.xcassets */; };
 		A1055A8F1B26F9070053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A8D1B26F8F80053CE48 /* Images.xcassets */; };
+		A1055AAE1B27302C0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AAD1B27302C0053CE48 /* help.png */; };
+		A1055AAF1B27302C0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AAD1B27302C0053CE48 /* help.png */; };
 		A1325B151B162BE1005E013C /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B091B162BBA005E013C /* valcriClose_light.dat */; };
 		A1325B171B162BE1005E013C /* valcriL_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0B1B162BBA005E013C /* valcriL_light.dat */; };
 		A1325B181B162BE1005E013C /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0C1B162BBA005E013C /* hand_detector_light.dat */; };
@@ -207,6 +209,9 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* GrabDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrabDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1055A8D1B26F8F80053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GrabDrop_10_8/Images.xcassets; sourceTree = "<group>"; };
+		A1055AAD1B27302C0053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
+		A1055AB01B2730350053CE48 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
+		A1055AB21B2730750053CE48 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
 		A1325B091B162BBA005E013C /* valcriClose_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose_light.dat; path = ../../../../../data/valcriClose_light.dat; sourceTree = "<group>"; };
 		A1325B0B1B162BBA005E013C /* valcriL_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL_light.dat; path = ../../../../../data/valcriL_light.dat; sourceTree = "<group>"; };
 		A1325B0C1B162BBA005E013C /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
@@ -326,6 +331,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AAD1B27302C0053CE48 /* help.png */,
 				A1055A8D1B26F8F80053CE48 /* Images.xcassets */,
 				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
 				A10B06371B0B79A400507C88 /* Models */,
@@ -408,6 +414,7 @@
 		A1E08DB81B147715003ED9FF /* include */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AB01B2730350053CE48 /* Help.h */,
 				A1E08DB91B147715003ED9FF /* Cinderactor.h */,
 				A1E08DBA1B147715003ED9FF /* MovingRect.h */,
 			);
@@ -426,6 +433,7 @@
 		E104C53C0FFAB250008D4255 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AB21B2730750053CE48 /* resource.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -507,6 +515,7 @@
 			files = (
 				1FEE89721B1DCB5E0064AEA5 /* interactor.cfg in Resources */,
 				A1055A8F1B26F9070053CE48 /* Images.xcassets in Resources */,
+				A1055AAF1B27302C0053CE48 /* help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +525,7 @@
 			files = (
 				A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */,
 				A1055A8E1B26F8F80053CE48 /* Images.xcassets in Resources */,
+				A1055AAE1B27302C0053CE48 /* help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

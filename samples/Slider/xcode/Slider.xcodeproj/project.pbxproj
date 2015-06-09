@@ -123,6 +123,10 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A1055AA61B2709DC0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA51B2709DC0053CE48 /* Images.xcassets */; };
+		A1055AA71B2709ED0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA51B2709DC0053CE48 /* Images.xcassets */; };
+		A1055AAA1B2725230053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA91B2725230053CE48 /* help.png */; };
+		A1055AAB1B27258A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA91B2725230053CE48 /* help.png */; };
 		A1325AEE1B161CF6005E013C /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE41B161BE2003ED9FF /* valcriVictory_light.dat */; };
 		A1325AEF1B161CFA005E013C /* valcriL_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE71B161BE2003ED9FF /* valcriL_light.dat */; };
 		A1325AF01B161EE6005E013C /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E08DE51B161BE2003ED9FF /* valcriClose_light.dat */; };
@@ -375,6 +379,10 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Slider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1055AA51B2709DC0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Slider/Images.xcassets; sourceTree = "<group>"; };
+		A1055AA81B270A510053CE48 /* Help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
+		A1055AA91B2725230053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
+		A1055AAC1B27272B0053CE48 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
 		A1325AF21B161FAE005E013C /* valcriIndex_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriIndex_light.dat; path = ../../../../../data/valcriIndex_light.dat; sourceTree = "<group>"; };
 		A1E08DB91B147715003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DBA1B147715003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
@@ -477,6 +485,51 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AA41B2709C70053CE48 /* libs */,
+				A1E08DB71B147715003ED9FF /* cindergestooslib */,
+				E104C53C0FFAB250008D4255 /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				1FEE88C71B1DC83E0064AEA5 /* Slider_10_8-Info.plist */,
+			);
+			name = Earthquake;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Slider_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1055AA91B2725230053CE48 /* help.png */,
+				A1055AA51B2709DC0053CE48 /* Images.xcassets */,
+				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
+				A10B06371B0B79A400507C88 /* Models */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1055AA41B2709C70053CE48 /* libs */ = {
+			isa = PBXGroup;
+			children = (
 				1FEE89101B1DC94C0064AEA5 /* libopencv_objdetect.3.0.dylib */,
 				1FEE89111B1DC94C0064AEA5 /* libopencv_video.3.0.dylib */,
 				1FEE89121B1DC94C0064AEA5 /* libopencv_videoio.3.0.dylib */,
@@ -560,43 +613,8 @@
 				1FEE88E91B1DC9230064AEA5 /* libPS1080.dylib */,
 				1FEE88EA1B1DC9230064AEA5 /* libPSLink.dylib */,
 				1FEE88EB1B1DC9230064AEA5 /* OpenNI.ini */,
-				A1E08DB71B147715003ED9FF /* cindergestooslib */,
-				E104C53C0FFAB250008D4255 /* Headers */,
-				080E96DDFE201D6D7F000001 /* Source */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
-				1FEE88C71B1DC83E0064AEA5 /* Slider_10_8-Info.plist */,
 			);
-			name = Earthquake;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32CA4F630368D1EE00C91783 /* Slider_Prefix.pch */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
-				A10B06371B0B79A400507C88 /* Models */,
-				8D1107310486CEB800E47090 /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-			);
-			name = Frameworks;
+			name = libs;
 			sourceTree = "<group>";
 		};
 		A10B06371B0B79A400507C88 /* Models */ = {
@@ -628,6 +646,7 @@
 			children = (
 				A1E08DB91B147715003ED9FF /* Cinderactor.h */,
 				A1E08DBA1B147715003ED9FF /* MovingRect.h */,
+				A1055AA81B270A510053CE48 /* Help.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -645,6 +664,7 @@
 			isa = PBXGroup;
 			children = (
 				A1E08DD71B14CB04003ED9FF /* Slider.h */,
+				A1055AAC1B27272B0053CE48 /* resource.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -726,6 +746,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEE88AA1B1DC83E0064AEA5 /* interactor.cfg in Resources */,
+				A1055AA71B2709ED0053CE48 /* Images.xcassets in Resources */,
+				A1055AAB1B27258A0053CE48 /* help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +756,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */,
+				A1055AA61B2709DC0053CE48 /* Images.xcassets in Resources */,
+				A1055AAA1B2725230053CE48 /* help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +792,7 @@
 		1FEE88C41B1DC83E0064AEA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -824,6 +849,7 @@
 		1FEE88C51B1DC83E0064AEA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -881,6 +907,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -937,6 +964,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

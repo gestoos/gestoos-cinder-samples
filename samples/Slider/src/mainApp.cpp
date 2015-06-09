@@ -12,8 +12,10 @@ using namespace std;
 #include <list>
 
 #include "Cinderactor.h"
+#include "Help.h"
 #include "Slider.h"
 
+#include "resource.h"
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
 class exampleApp : public AppNative {
@@ -32,7 +34,7 @@ public:
     void    update();
 	void    draw();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
+	void	keyDown( KeyEvent event ) {}
     
     void processThread();
     
@@ -57,6 +59,8 @@ public:
     
     Timer timer;
     
+    GestoosHelp *help;
+    
 };
 
 void exampleApp::setup()
@@ -75,6 +79,8 @@ void exampleApp::setup()
     
     timer.start();
     
+    // This installs a Help image with a listener listener which intercepts key-down events
+    help = new GestoosHelp( getWindow(), loadResource(IMG_HELP) );
     
     //Start interactor processing in a separate thread
     can_process_thread = true;
@@ -139,6 +145,7 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
+    help->update();
     //    slider_hor.update();
     //    slider_ver.update();
     for( auto it=sliders.begin(); it!=sliders.end(); ++it )
@@ -296,6 +303,8 @@ void exampleApp::draw()
     //    slider_hor.draw(0);
     
     cinderactor.draw();
+    
+    help->draw();
 }
 
 void exampleApp::shutdown()
