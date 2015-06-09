@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{602F724E-0C9D-4F91-A6F4-076739A6A5E7}</ProjectGuid>
+    <ProjectGuid>{B1A2F4C4-B598-43A8-8E5F-4E9E58A29824}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -130,24 +130,15 @@
       <AdditionalLibraryDirectories>..\..\..\lib\win64\cinder_0.8.6_win\lib\msw\x64;$(GESTOOS_DIR)\lib\x64\vc12\release;$(GESTOOS_DIR)\external\opencv\lib64\Release\;$(GESTOOS_DIR)\external\boost\lib64\;$(OPENNI_LIB64);$(GESTOOS_DIR)\external\curl\x64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>cinder-v120.lib;libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <ResourceCompile>
-      <AdditionalIncludeDirectories>..\include;$(CINDER_LIB)\include</AdditionalIncludeDirectories>
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\cindergestooslib\src\Cinderactor.cpp" />
+    <ClCompile Include="..\..\..\cindergestooslib\src\MovingRect.cpp" />
     <ClCompile Include="..\src\mainApp.cpp" />
-    <ClCompile Include="..\src\mapTile.cpp" />
-    <ClCompile Include="..\src\Slider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\cindergestooslib\include\Cinderactor.h" />
-    <ClInclude Include="..\include\mapTile.h" />
-    <ClInclude Include="..\include\Resources.h" />
-    <ClInclude Include="..\include\Slider.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Resource.rc" />
+    <ClInclude Include="..\..\..\cindergestooslib\include\MovingRect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

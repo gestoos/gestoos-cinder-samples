@@ -57,7 +57,7 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="EnvironmentVariables.props" />
+    <Import Project="GestoosSDKProp.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -127,8 +127,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\..\..\lib\release;$(BOOST_LIB)\stage\lib;$(OPENCV_LIB)\$(PlatformTarget)\vc12\lib;$(CINDER_LIB)\lib\msw\$(PlatformTarget);$(GESTOOS_DIR)\external\curl\x64\lib;$(OPENNI_LIB64)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;cinder-$(PlatformToolset).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib\win64\cinder_0.8.6_win\lib\msw\x64;$(GESTOOS_DIR)\lib\x64\vc12\release;$(GESTOOS_DIR)\external\opencv\lib64\Release\;$(GESTOOS_DIR)\external\boost\lib64\;$(OPENNI_LIB64);$(GESTOOS_DIR)\external\curl\x64\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cinder-v120.lib;libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
