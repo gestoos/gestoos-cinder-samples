@@ -28,10 +28,7 @@
 		1FEE897F1B1DCB5E0064AEA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		1FEE89801B1DCB5E0064AEA5 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		1FEE89811B1DCB5E0064AEA5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		1FEE89831B1DCB5E0064AEA5 /* valcriIndex_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B071B162BBA005E013C /* valcriIndex_light.dat */; };
-		1FEE89841B1DCB5E0064AEA5 /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B081B162BBA005E013C /* valcriVictory_light.dat */; };
 		1FEE89851B1DCB5E0064AEA5 /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B091B162BBA005E013C /* valcriClose_light.dat */; };
-		1FEE89861B1DCB5E0064AEA5 /* valcriOpen_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0A1B162BBA005E013C /* valcriOpen_light.dat */; };
 		1FEE89871B1DCB5E0064AEA5 /* valcriL_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0B1B162BBA005E013C /* valcriL_light.dat */; };
 		1FEE89881B1DCB5E0064AEA5 /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0C1B162BBA005E013C /* hand_detector_light.dat */; };
 		1FEE89B21B1DCCF60064AEA5 /* libopencv_videoio.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FEE898F1B1DCCF60064AEA5 /* libopencv_videoio.3.0.dylib */; };
@@ -73,10 +70,9 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A1325B131B162BE1005E013C /* valcriIndex_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B071B162BBA005E013C /* valcriIndex_light.dat */; };
-		A1325B141B162BE1005E013C /* valcriVictory_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B081B162BBA005E013C /* valcriVictory_light.dat */; };
+		A1055A8E1B26F8F80053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A8D1B26F8F80053CE48 /* Images.xcassets */; };
+		A1055A8F1B26F9070053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A8D1B26F8F80053CE48 /* Images.xcassets */; };
 		A1325B151B162BE1005E013C /* valcriClose_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B091B162BBA005E013C /* valcriClose_light.dat */; };
-		A1325B161B162BE1005E013C /* valcriOpen_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0A1B162BBA005E013C /* valcriOpen_light.dat */; };
 		A1325B171B162BE1005E013C /* valcriL_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0B1B162BBA005E013C /* valcriL_light.dat */; };
 		A1325B181B162BE1005E013C /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B0C1B162BBA005E013C /* hand_detector_light.dat */; };
 		A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
@@ -91,10 +87,7 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				1FEE89831B1DCB5E0064AEA5 /* valcriIndex_light.dat in CopyFiles */,
-				1FEE89841B1DCB5E0064AEA5 /* valcriVictory_light.dat in CopyFiles */,
 				1FEE89851B1DCB5E0064AEA5 /* valcriClose_light.dat in CopyFiles */,
-				1FEE89861B1DCB5E0064AEA5 /* valcriOpen_light.dat in CopyFiles */,
 				1FEE89871B1DCB5E0064AEA5 /* valcriL_light.dat in CopyFiles */,
 				1FEE89881B1DCB5E0064AEA5 /* hand_detector_light.dat in CopyFiles */,
 			);
@@ -150,10 +143,7 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				A1325B131B162BE1005E013C /* valcriIndex_light.dat in CopyFiles */,
-				A1325B141B162BE1005E013C /* valcriVictory_light.dat in CopyFiles */,
 				A1325B151B162BE1005E013C /* valcriClose_light.dat in CopyFiles */,
-				A1325B161B162BE1005E013C /* valcriOpen_light.dat in CopyFiles */,
 				A1325B171B162BE1005E013C /* valcriL_light.dat in CopyFiles */,
 				A1325B181B162BE1005E013C /* hand_detector_light.dat in CopyFiles */,
 			);
@@ -216,10 +206,8 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* GrabDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrabDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1325B071B162BBA005E013C /* valcriIndex_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriIndex_light.dat; path = ../../../../../data/valcriIndex_light.dat; sourceTree = "<group>"; };
-		A1325B081B162BBA005E013C /* valcriVictory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriVictory_light.dat; path = ../../../../../data/valcriVictory_light.dat; sourceTree = "<group>"; };
+		A1055A8D1B26F8F80053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GrabDrop_10_8/Images.xcassets; sourceTree = "<group>"; };
 		A1325B091B162BBA005E013C /* valcriClose_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriClose_light.dat; path = ../../../../../data/valcriClose_light.dat; sourceTree = "<group>"; };
-		A1325B0A1B162BBA005E013C /* valcriOpen_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriOpen_light.dat; path = ../../../../../data/valcriOpen_light.dat; sourceTree = "<group>"; };
 		A1325B0B1B162BBA005E013C /* valcriL_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = valcriL_light.dat; path = ../../../../../data/valcriL_light.dat; sourceTree = "<group>"; };
 		A1325B0C1B162BBA005E013C /* hand_detector_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
 		A1E08DB91B147715003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
@@ -314,6 +302,50 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A1055A881B26F8A40053CE48 /* libs */,
+				A1E08DB71B147715003ED9FF /* cindergestooslib */,
+				E104C53C0FFAB250008D4255 /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				1FEE898D1B1DCB5E0064AEA5 /* GrabDrop_10_8-Info.plist */,
+			);
+			name = Earthquake;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* GrabDrop_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1055A8D1B26F8F80053CE48 /* Images.xcassets */,
+				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
+				A10B06371B0B79A400507C88 /* Models */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1055A881B26F8A40053CE48 /* libs */ = {
+			isa = PBXGroup;
+			children = (
 				1FEE898F1B1DCCF60064AEA5 /* libopencv_videoio.3.0.dylib */,
 				1FEE89901B1DCCF60064AEA5 /* libpng15.15.dylib */,
 				1FEE89911B1DCCF60064AEA5 /* libssl.1.0.0.dylib */,
@@ -349,52 +381,14 @@
 				1FEE89AF1B1DCCF60064AEA5 /* libPS1080.dylib */,
 				1FEE89B01B1DCCF60064AEA5 /* libPSLink.dylib */,
 				1FEE89B11B1DCCF60064AEA5 /* OpenNI.ini */,
-				A1E08DB71B147715003ED9FF /* cindergestooslib */,
-				E104C53C0FFAB250008D4255 /* Headers */,
-				080E96DDFE201D6D7F000001 /* Source */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
-				1FEE898D1B1DCB5E0064AEA5 /* GrabDrop_10_8-Info.plist */,
 			);
-			name = Earthquake;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32CA4F630368D1EE00C91783 /* GrabDrop_Prefix.pch */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
-				A10B06371B0B79A400507C88 /* Models */,
-				8D1107310486CEB800E47090 /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-			);
-			name = Frameworks;
+			name = libs;
 			sourceTree = "<group>";
 		};
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A1325B071B162BBA005E013C /* valcriIndex_light.dat */,
-				A1325B081B162BBA005E013C /* valcriVictory_light.dat */,
 				A1325B091B162BBA005E013C /* valcriClose_light.dat */,
-				A1325B0A1B162BBA005E013C /* valcriOpen_light.dat */,
 				A1325B0B1B162BBA005E013C /* valcriL_light.dat */,
 				A1325B0C1B162BBA005E013C /* hand_detector_light.dat */,
 			);
@@ -512,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEE89721B1DCB5E0064AEA5 /* interactor.cfg in Resources */,
+				A1055A8F1B26F9070053CE48 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */,
+				A1055A8E1B26F8F80053CE48 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +548,7 @@
 		1FEE898A1B1DCB5E0064AEA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -608,6 +605,7 @@
 		1FEE898B1B1DCB5E0064AEA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -665,6 +663,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -721,6 +720,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

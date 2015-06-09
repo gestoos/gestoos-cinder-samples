@@ -112,11 +112,15 @@
 		1F9BFAA51B1DD1BF0021271F /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9BFA821B1DD1BF0021271F /* libPSLink.dylib */; };
 		1F9BFAA61B1DD1BF0021271F /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9BFA831B1DD1BF0021271F /* OpenNI.ini */; };
 		1F9BFAA81B1DD1DB0021271F /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9BFAA71B1DD1DB0021271F /* hand_detector_light.dat */; };
-		1F9BFAAA1B1DD1EF0021271F /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9BFAA91B1DD1EF0021271F /* hand_detector_light.dat */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A1055A7E1B26F5FC0053CE48 /* hand_detector_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F9BFAA71B1DD1DB0021271F /* hand_detector_light.dat */; };
+		A1055A801B26F6590053CE48 /* gestoos_sample_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055A7F1B26F6590053CE48 /* gestoos_sample_logo.png */; };
+		A1055A841B26F71B0053CE48 /* gestoos_sample_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055A7F1B26F6590053CE48 /* gestoos_sample_logo.png */; };
+		A1055A851B26F8190053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A811B26F66D0053CE48 /* Images.xcassets */; };
+		A1055A871B26F81C0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A811B26F66D0053CE48 /* Images.xcassets */; };
 		A1E08DC91B147AD2003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */; };
 		A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */; };
 		A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DCB1B147B19003ED9FF /* interactor.cfg */; };
@@ -240,7 +244,7 @@
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				1F9BFAAA1B1DD1EF0021271F /* hand_detector_light.dat in CopyFiles */,
+				A1055A7E1B26F5FC0053CE48 /* hand_detector_light.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +346,6 @@
 		1F9BFA821B1DD1BF0021271F /* libPSLink.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPSLink.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libPSLink.dylib"; sourceTree = "<group>"; };
 		1F9BFA831B1DD1BF0021271F /* OpenNI.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = OpenNI.ini; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/OpenNI.ini"; sourceTree = "<group>"; };
 		1F9BFAA71B1DD1DB0021271F /* hand_detector_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
-		1F9BFAA91B1DD1EF0021271F /* hand_detector_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = hand_detector_light.dat; path = ../../../../../data/hand_detector_light.dat; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emptyExample_Prefix.pch; sourceTree = "<group>"; };
@@ -351,7 +354,8 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* emptyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emptyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10B06B01B0F14B200507C88 /* hand_detector.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hand_detector.dat; path = ../../../../../data/hand_detector.dat; sourceTree = "<group>"; };
+		A1055A7F1B26F6590053CE48 /* gestoos_sample_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gestoos_sample_logo.png; sourceTree = "<group>"; };
+		A1055A811B26F66D0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = emptyExample/Images.xcassets; sourceTree = "<group>"; };
 		A1E08DC41B147AD2003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DC51B147AD2003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
@@ -444,8 +448,51 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
-				1F9BFAA91B1DD1EF0021271F /* hand_detector_light.dat */,
-				1F9BFAA71B1DD1DB0021271F /* hand_detector_light.dat */,
+				A1055A7F1B26F6590053CE48 /* gestoos_sample_logo.png */,
+				A1055A7D1B26F5640053CE48 /* libs */,
+				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
+				E104C53C0FFAB250008D4255 /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				1F9BFA601B1DD1550021271F /* emptyExample_10_8-Info.plist */,
+			);
+			name = Earthquake;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1055A811B26F66D0053CE48 /* Images.xcassets */,
+				A1E08DCB1B147B19003ED9FF /* interactor.cfg */,
+				A10B06371B0B79A400507C88 /* Models */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1055A7D1B26F5640053CE48 /* libs */ = {
+			isa = PBXGroup;
+			children = (
 				1F9BFA611B1DD1BE0021271F /* libopencv_videoio.3.0.dylib */,
 				1F9BFA621B1DD1BE0021271F /* libpng15.15.dylib */,
 				1F9BFA631B1DD1BE0021271F /* libssl.1.0.0.dylib */,
@@ -529,49 +576,14 @@
 				1F9BF9E41B1DD14A0021271F /* libOpenNI2.dylib */,
 				1F9BF9E51B1DD14A0021271F /* libPS1080.dylib */,
 				1F9BF9E61B1DD14A0021271F /* libPSLink.dylib */,
-				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
-				E104C53C0FFAB250008D4255 /* Headers */,
-				080E96DDFE201D6D7F000001 /* Source */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
-				1F9BFA601B1DD1550021271F /* emptyExample_10_8-Info.plist */,
 			);
-			name = Earthquake;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32CA4F630368D1EE00C91783 /* emptyExample_Prefix.pch */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A1E08DCB1B147B19003ED9FF /* interactor.cfg */,
-				A10B06371B0B79A400507C88 /* Models */,
-				8D1107310486CEB800E47090 /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-			);
-			name = Frameworks;
+			name = libs;
 			sourceTree = "<group>";
 		};
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A10B06B01B0F14B200507C88 /* hand_detector.dat */,
+				1F9BFAA71B1DD1DB0021271F /* hand_detector_light.dat */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -687,6 +699,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1055A851B26F8190053CE48 /* Images.xcassets in Resources */,
+				A1055A841B26F71B0053CE48 /* gestoos_sample_logo.png in Resources */,
 				1F9BFA191B1DD1550021271F /* interactor.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,7 +709,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1055A871B26F81C0053CE48 /* Images.xcassets in Resources */,
 				A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */,
+				A1055A801B26F6590053CE48 /* gestoos_sample_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +744,7 @@
 		1F9BFA5D1B1DD1550021271F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -784,6 +801,7 @@
 		1F9BFA5E1B1DD1550021271F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -841,6 +859,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
 				FEZOOLIB_PATH = ../../../../..;
@@ -897,6 +916,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
