@@ -13,9 +13,9 @@ using namespace std;
 #include "GestureSwitch.h"
 #include "Cinderactor.h"
 
-//#ifdef _WIN32
+
+#include "Help.h"
 #include "resource.h"
-//#endif
 
 #define GESTURE_TEE 1
 #define GESTURE_PAUSE 2
@@ -43,7 +43,7 @@ public:
     void    update();
 	void    draw();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
+	void	keyDown( KeyEvent event ) {  }
     
     void processThread();
     
@@ -57,6 +57,9 @@ public:
 	double elapsed = 0;
 	int gesture_pos;
 	std::vector<GestureSwitch> switches;
+    
+    GestoosHelp *help;
+
     
 };
 
@@ -85,6 +88,8 @@ void exampleApp::setup()
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
+    // This installs a Help image with a listener listener which intercepts key-down events
+    help = new GestoosHelp( getWindow(), loadResource(IMG_HELP) );
 }
 
 void exampleApp::prepareSettings( Settings *settings )
@@ -145,6 +150,8 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
+    help->update();
+
 	detected_gesture = cinderactor.get_gesture();
 	
 	switch (detected_gesture.id) {
@@ -187,6 +194,8 @@ void exampleApp::draw()
 	}
 
     cinderactor.draw();
+    
+    help->draw();
 }
 
 void exampleApp::shutdown()

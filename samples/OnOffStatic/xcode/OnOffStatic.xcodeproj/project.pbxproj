@@ -130,6 +130,8 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A1055AA21B2706EE0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA11B2706EE0053CE48 /* Images.xcassets */; };
 		A1055AA31B2706FC0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA11B2706EE0053CE48 /* Images.xcassets */; };
+		A1055AB41B27346A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB31B27346A0053CE48 /* help.png */; };
+		A1055AB51B27346A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB31B27346A0053CE48 /* help.png */; };
 		A1325B1A1B170E01005E013C /* GestureSwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1325B191B170E01005E013C /* GestureSwitch.cpp */; };
 		A1325B1D1B170E44005E013C /* interactor_macos.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1325B1C1B170E44005E013C /* interactor_macos.cfg */; };
 		A1325B241B170E54005E013C /* gest_ffwd_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B1E1B170E54005E013C /* gest_ffwd_big.png */; };
@@ -384,6 +386,8 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* OnOffStatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnOffStatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1055AA11B2706EE0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OnOffStatic/Images.xcassets; sourceTree = "<group>"; };
+		A1055AB31B27346A0053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
+		A1055AB61B2734920053CE48 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		A1325B191B170E01005E013C /* GestureSwitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GestureSwitch.cpp; path = ../src/GestureSwitch.cpp; sourceTree = "<group>"; };
 		A1325B1B1B170E12005E013C /* GestureSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureSwitch.h; path = ../include/GestureSwitch.h; sourceTree = "<group>"; };
 		A1325B1C1B170E44005E013C /* interactor_macos.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor_macos.cfg; path = ../resources/interactor_macos.cfg; sourceTree = "<group>"; };
@@ -516,6 +520,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AB31B27346A0053CE48 /* help.png */,
 				A1055AA11B2706EE0053CE48 /* Images.xcassets */,
 				A1325B1E1B170E54005E013C /* gest_ffwd_big.png */,
 				A1325B1F1B170E54005E013C /* gest_pause_big.png */,
@@ -655,6 +660,7 @@
 		A1E08DC31B147AD2003ED9FF /* include */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AB61B2734920053CE48 /* Help.h */,
 				A1E08DC41B147AD2003ED9FF /* Cinderactor.h */,
 				A1E08DC51B147AD2003ED9FF /* MovingRect.h */,
 			);
@@ -761,6 +767,7 @@
 				1FA853471B1DBC8300687554 /* gest_tee_big.png in Resources */,
 				1FA853481B1DBC8300687554 /* gest_voldown_big.png in Resources */,
 				1FA853491B1DBC8300687554 /* gest_ffwd_big.png in Resources */,
+				A1055AB51B27346A0053CE48 /* help.png in Resources */,
 				1FA8534A1B1DBC8300687554 /* gest_pause_big.png in Resources */,
 				1FA8534B1B1DBC8300687554 /* gest_volup_big.png in Resources */,
 				1FA8534C1B1DBC8300687554 /* interactor_macos.cfg in Resources */,
@@ -777,6 +784,7 @@
 				A1325B271B170E54005E013C /* gest_tee_big.png in Resources */,
 				A1325B281B170E54005E013C /* gest_voldown_big.png in Resources */,
 				A1325B241B170E54005E013C /* gest_ffwd_big.png in Resources */,
+				A1055AB41B27346A0053CE48 /* help.png in Resources */,
 				A1325B251B170E54005E013C /* gest_pause_big.png in Resources */,
 				A1325B291B170E54005E013C /* gest_volup_big.png in Resources */,
 				A1325B1D1B170E44005E013C /* interactor_macos.cfg in Resources */,

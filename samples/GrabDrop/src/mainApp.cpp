@@ -146,7 +146,7 @@ void exampleApp::update()
         //std::pair<int,int> gr = cinderactor.detect_hand_grabrelease();
 
         if( hand.get_gesture() == GEST_GRAB &&
-           timer.getSeconds() > 1.0 &&
+           timer.getSeconds() > 0.5 &&
            !grabbing )
         {
             if( box.contains( hand_pos_f ) )

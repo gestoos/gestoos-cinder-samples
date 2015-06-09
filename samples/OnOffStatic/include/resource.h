@@ -8,6 +8,8 @@
 #define	FWD_LOGO			CINDER_RESOURCE( ../resources/, gest_ffwd_big.png, 132, PNG )
 #define	RWD_LOGO			CINDER_RESOURCE( ../resources/, gest_rwd_big.png, 133, PNG )
 
+#define	IMG_HELP			CINDER_RESOURCE( ../resources/, help.png, 134, PNG )
+
 
 // Next default values for new objects
 //
