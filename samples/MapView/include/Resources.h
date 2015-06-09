@@ -16,6 +16,7 @@
 
 #define	MAP_IMG			CINDER_RESOURCE( ../resources/, ohio-bike-map.jpg, 128, IMAGE )
 
+#define	IMG_HELP			CINDER_RESOURCE( ../resources/, help.png, 129, PNG )
 
 // Next default values for new objects
 //

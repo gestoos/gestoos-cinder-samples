@@ -13,6 +13,8 @@ using namespace std;
 #include "mapTile.h"
 
 
+#include "Help.h"
+#include "Resources.h"
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
 class exampleApp : public AppNative {
@@ -30,7 +32,7 @@ public:
     void    update();
 	void    draw();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
+	void	keyDown( KeyEvent event ) { }
     
     void processThread();
     
@@ -43,24 +45,22 @@ public:
     
     MapTile map_tile;
 
-    
+    GestoosHelp *help;
+
 };
 
 void exampleApp::setup()
 {
-    std::cout<<"setup\n"<<std::flush;
- 
+    setFullScreen(true);
+
     //Start interactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
     
-
-    setFullScreen(false);
-    
-
-    
     map_tile.init();
-
+    
+    // This installs a Help image with a listener listener which intercepts key-down events
+    help = new GestoosHelp( getWindow(), loadResource(IMG_HELP) );
 }
 
 void exampleApp::prepareSettings( Settings *settings )
@@ -115,15 +115,9 @@ void exampleApp::processThread()
 
 void exampleApp::update()
 {
-    
-    //std::cout<<"update\n"<<std::flush;
-
+    help->update();
   
     map_tile.update(cinderactor.get_hands());
-
-    
-    
-    
 }
 
 void exampleApp::draw()
@@ -138,6 +132,8 @@ void exampleApp::draw()
 
     
     cinderactor.draw();
+    
+    help->draw();
 }
 
 void exampleApp::shutdown()

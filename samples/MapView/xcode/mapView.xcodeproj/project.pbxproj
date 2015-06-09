@@ -128,6 +128,8 @@
 		A1055A981B26FEBF0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A971B26FEBF0053CE48 /* Images.xcassets */; };
 		A1055A9C1B26FEE10053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A971B26FEBF0053CE48 /* Images.xcassets */; };
 		A1055A9D1B2703710053CE48 /* ohio-bike-map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1055A951B26FE840053CE48 /* ohio-bike-map.jpg */; };
+		A1055AB81B273DC40053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB71B273DC40053CE48 /* help.png */; };
+		A1055AB91B273DC40053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB71B273DC40053CE48 /* help.png */; };
 		A1E08DC91B147AD2003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */; };
 		A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */; };
 		A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DCB1B147B19003ED9FF /* interactor.cfg */; };
@@ -374,6 +376,8 @@
 		8D1107320486CEB800E47090 /* mapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1055A951B26FE840053CE48 /* ohio-bike-map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ohio-bike-map.jpg"; path = "../resources/ohio-bike-map.jpg"; sourceTree = "<group>"; };
 		A1055A971B26FEBF0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mapView/Images.xcassets; sourceTree = "<group>"; };
+		A1055AB71B273DC40053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
+		A1055ABA1B273E290053CE48 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		A1E08DC41B147AD2003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DC51B147AD2003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
@@ -493,6 +497,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A1055AB71B273DC40053CE48 /* help.png */,
 				A1055A951B26FE840053CE48 /* ohio-bike-map.jpg */,
 				A1055A971B26FEBF0053CE48 /* Images.xcassets */,
 				A1E08DCB1B147B19003ED9FF /* interactor.cfg */,
@@ -624,6 +629,7 @@
 		A1E08DC31B147AD2003ED9FF /* include */ = {
 			isa = PBXGroup;
 			children = (
+				A1055ABA1B273E290053CE48 /* Help.h */,
 				A1E08DC41B147AD2003ED9FF /* Cinderactor.h */,
 				A1E08DC51B147AD2003ED9FF /* MovingRect.h */,
 			);
@@ -730,6 +736,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1055AB91B273DC40053CE48 /* help.png in Resources */,
 				A1055A9C1B26FEE10053CE48 /* Images.xcassets in Resources */,
 				A1055A9D1B2703710053CE48 /* ohio-bike-map.jpg in Resources */,
 				1FA851A81B1DAB6400687554 /* interactor.cfg in Resources */,
@@ -740,6 +747,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1055AB81B273DC40053CE48 /* help.png in Resources */,
 				A1055A981B26FEBF0053CE48 /* Images.xcassets in Resources */,
 				A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */,
 				A1055A961B26FE840053CE48 /* ohio-bike-map.jpg in Resources */,
