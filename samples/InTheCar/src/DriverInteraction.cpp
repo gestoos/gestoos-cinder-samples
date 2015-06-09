@@ -6,7 +6,7 @@
 ///     Author: alopez
 ///
 
-#include <fezoolib/NUI/DriverInteraction.hpp>
+#include "DriverInteraction.hpp"
 #include <exception>
 
 gestoos::nui::DriverInteraction::DriverInteraction()
@@ -20,12 +20,14 @@ gestoos::nui::DriverInteraction::DriverInteraction()
 
 gestoos::nui::DriverInteraction::~DriverInteraction()
 {
+    
 }
 
 void gestoos::nui::DriverInteraction::init(const std::string& ini_file)
 {
 	//Configure camera
 	_capture.init("",  0,  gestoos::CaptureRGBD::QVGA_30FPS);
+    //_capture.init("/Users/alopez/workspace/fezoolib/CarScenario4.oni", 0, gestoos::CaptureRGBD::QVGA_30FPS);
 
 	//Load gestures and trackers
 	_config.load(ini_file);
@@ -178,43 +180,77 @@ void gestoos::nui::DriverInteraction::process()
 			}
 			else //Hand appearing
 			{
+                std::cout << "Hand Appearing ... " << std::endl;
 				_hand.clear();
 				//Note: interaction space is automatically set with set_pos
+                _hand_id = idx;
 				_hand.set_pos(objects[i]->get_position());
+                
 			}
 		}
 
-		//From tracker outputs, process gestures
-		_mask=cv::Scalar(0);
-		cv::Point p(_hand.get_pos().x,_hand.get_pos().y);
-		double depth = gestoos::get_reference_depth(_depth_map, p, 5);
-		cv::Rect roi = gestoos::generate_bounding_box_depth_scaled(p,  depth, cv::Size(31, 31));
-		_mask(gestoos::crop_to_image(roi, _mask))=cv::Scalar(255);
+//		//From tracker outputs, process gestures
+//        _mask=cv::Scalar(0);
+//        if (_hand.is_present())
+//        {
+//
+//            cv::Point p(_hand.get_pos().x,_hand.get_pos().y);
+//            double depth = gestoos::get_reference_depth(_depth_map, p, 5);
+//            cv::Rect roi = gestoos::generate_bounding_box_depth_scaled(p,  depth, cv::Size(61, 61));
+//            _mask(gestoos::crop_to_image(roi, _mask))=cv::Scalar(255);
+//
+//            //Bitwise and with the scene mask, if any
+//            if (!_scene_mask.empty())
+//            {
+//                if (_scene_mask.size()==_mask.size())
+//                {
+//                    cv::bitwise_and(_scene_mask, _mask, _mask);
+//                                    }
+//                else
+//                {
+//                    throw std::runtime_error("[Driver Interaction] Scene mask and inner mask are not of the same size");
+//                }
+//            }
+//
+//
+//        }
+        _mask=_scene_mask.clone();
 
-		//Bitwise and with the scene mask, if any
-		if (!_scene_mask.empty())
-		{
-			if (_scene_mask.size()==_mask.size())
-			{
-				cv::bitwise_and(_scene_mask, _mask, _mask);
-			}
-			else
-			{
-				throw std::runtime_error("[Driver Interaction] Scene mask and inner mask are not of the same size");
-			}
-		}
-
-		/*
-		 * Gesture detection after tracking
-		 */
-		_hand_detector.process(_depth_map, _mask);
+        /*
+         * Gesture detection after tracking
+         */
+        
+        //Filter the scene mask
+        _depth_map=_capture.depth_frame(); //Re-copy the depth frame
+        _fmm.set_alpha(0.1);
+        _fmm.filter(_depth_map, _scene_mask);
+        _hand_detector.process(_depth_map, _mask);
+        
+        //This transfers the gesture to the hand
+        _hand.process(_depth_map, _hand_detector);
 
 #ifndef AVOID_QT
 			if( _draw_window )
 			{
 
+                //Visualize tracking detection
+                gestoos::scoreHeatMap(_whai.get_detector_map(), _color_img, 0, 10);
+                cv::imshow("HandScore", _color_img);
+                //Visualize tracking detection
+                gestoos::scoreHeatMap(_hand_detector.get_probability_map(2), _color_img, 0, 10);
+                cv::imshow("HandGestureScore", _color_img);
 				//DBG: generating visualization of tracking
-				gestoos::falseColorMap(_depth_map, _color_img, cv::COLORMAP_BONE);
+				gestoos::falseColorMap(_depth_map, _color_img, cv::COLORMAP_HOT);
+
+                cv::Mat aux;
+                gestoos::falseColorMap(_depth_map, aux, cv::COLORMAP_BONE);
+                if (!_scene_mask.empty())
+                    aux.copyTo(_color_img, _scene_mask);
+                else{
+                    _color_img=aux.clone();
+                }
+                
+                
 				if (_hand.get_interaction_space().area() > 0)
 				{
 					cv::rectangle(_color_img, _hand.get_interaction_space(), cv::Scalar(255, 255, 255), 3);
@@ -235,11 +271,45 @@ void gestoos::nui::DriverInteraction::process()
 
 }
 
+int gestoos::nui::DriverInteraction::get_hand_gesture() const
+{
+    double maxVal;
+    cv::Point maxLoc;
+    double best_meta=1.;
+    int best_gesture=-1;
+    for (int i =0; i < _hand_detector.get_labels().size(); ++i)
+    {
+        const cv::Mat & scores = _hand_detector.get_probability_map(i+1);
+        if (!scores.empty())
+        {
+            cv::minMaxLoc(scores , NULL, &maxVal, NULL, &maxLoc);
+            double threshold = _hand_detector.get_thresholds()[i];
+            
+            //if (maxVal > threshold)
+            //    return _hand_detector.get_labels()[0];
+            
+            if (maxVal/threshold > best_meta )
+            {
+                best_meta=maxVal/threshold;
+                best_gesture=_hand_detector.get_labels()[i];
+            }
+        }
+    }
+    
+    return best_gesture;
+}
+
 void gestoos::nui::DriverInteraction::stop()
 {
 	_capture.stop();
 	_hand_detector.stop();
 }
+
+void gestoos::nui::DriverInteraction::set_resources_path(const std::string& resources)
+{
+	_config.set_resources_path(resources);
+}
+
 
 const  gestoos::nui::Config& gestoos::nui::DriverInteraction::get_config() const {
 	return _config;
@@ -271,7 +341,7 @@ void gestoos::nui::DriverInteraction::set_scene_mask(const cv::Mat& sceneMask) {
 
 void gestoos::nui::DriverInteraction::set_scene_mask(const std::string& frame)
 {
-	_scene_mask=cv::imread(frame);
+	_scene_mask=cv::imread(frame, CV_LOAD_IMAGE_GRAYSCALE);
 	//TODO: Assert 8 bit and 320x240
 }
 

@@ -61,7 +61,7 @@ void exampleApp::setup()
     
     init_ok = false;
     
-    active_edge = ActiveEdge(150);
+    active_edge = ActiveEdge(200);
     
     
     int pad = getWindowWidth()/5;
@@ -149,7 +149,11 @@ void exampleApp::processThread()
    	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
    
     //Configure the cinderactor
+#ifdef _WIN32
+	cinderactor.init("..\\resources\\interactor.cfg");
+#else
     cinderactor.init( getResourcePath("interactor.cfg").string() );
+#endif
     cinderactor.set_draw_window(false);
     init_ok = true;
     

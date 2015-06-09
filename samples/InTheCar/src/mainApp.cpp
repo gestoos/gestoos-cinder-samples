@@ -3,6 +3,7 @@
 #include "cinder/System.h"
 #include "cinder/Rand.h"
 #include "cinder/Thread.h"
+#include "cinder/audio/Voice.h"
 //#include "cinder/Text.h"
 //#include "cinder/gl/gl.h"
 //#include "cinder/gl/Texture.h"
@@ -17,12 +18,16 @@ using namespace std;
 //#include "fezoolib/NUI/Interactor.hpp"
 
 #include "Label.h"
+#include "Dashboard.h"
+#include "CinderDrive.h"
 #include "Cinderactor.h"
-#include "DriverInteraction.hpp"
+
+
 
 typedef boost::shared_ptr<Label> LabelPtr;
 
 float MIN_Z_VEL         = 30.0;
+bool WARNINGS_ON = false;
 
 // We'll create a new Cinder Application by deriving from the BasicApp class
 class exampleApp : public AppNative {
@@ -40,14 +45,16 @@ public:
     void    update();
 	void    draw();
     void    shutdown();
-	void	keyDown( KeyEvent event ) { setFullScreen( ! isFullScreen() ); }
+	void	keyDown( KeyEvent event ) {  }
     
     void processThread();
 
     
     
     
-    Cinderactor cinderactor;
+    //CinderDrive cinderactor;
+    CinderDrive cinderactor;
+    Dashboard dashboard;
 
     
     shared_ptr<std::thread>		mThread;
@@ -55,16 +62,35 @@ public:
     bool init_ok;
 
     std::list< LabelPtr > labels;
+    //Audio feedback
+    audio::VoiceRef mVoice;
+    std::deque< audio::VoiceRef > voices;
+    
 };
 
 void exampleApp::setup()
 {
-    init_ok = false;
+    //Audio setup
+    //mVoice = audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "CruiseControl.mp3" ) ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "Warnings.mp3" ) ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "WarningsOff.mp3" ) ) ) );
+    voices.push_back(audio::Voice::create( audio::load( loadResource( "Mute.mp3" ) ) ) );
     
+    init_ok = false;
     //Start cinderactor processing in a separate thread
     can_process_thread = true;
     mThread = shared_ptr<thread>( new thread( bind( &exampleApp::processThread, this ) ) );
- 
+    
+
+                     
+    
+    //Dashboard setup
+    //dashboard.init(ci::Vec2f(0, 0));
+   // dashboard.add_screen(loadResource("Dashboard/Default.jpg"));
+   // dashboard.add_screen(loadResource("Dashboard/CruiseControl.jpg"));
+    
+
     
 }
 
@@ -72,6 +98,7 @@ void exampleApp::prepareSettings( Settings *settings )
 {
 	settings->enableMultiTouch();
     settings->setWindowSize( 800, 600 );
+
 }
 
 void exampleApp::touchesBegan( TouchEvent event )
@@ -105,7 +132,7 @@ void exampleApp::processThread()
    
     //Configure the cinderactor
     cinderactor.init( getResourcePath("interactor.cfg").string() );
-    cinderactor.set_draw_window(false);
+    cinderactor.set_draw_window(true);
     init_ok = true;
     
     // inifinite processing loop
@@ -125,27 +152,59 @@ void exampleApp::update()
         }
     }
     
-    // Detect hand strokes
-    Cinderactor::StrokeType stroke = cinderactor.detect_hand_stroke( GEST_VICTORY );
+    int gesture = cinderactor.detect_hand_gesture(1.0);
     
-    // Create labels if stroke detected
-    LabelPtr label_ptr;
-    switch (stroke) {
-        case Cinderactor::UP:
-            labels.push_back( LabelPtr( new Label("UP", 300, Cinderactor::UP) ) ) ;
+    switch (gesture)
+    {
+        case GEST_VICTORY:
+        {
+//            if (mVoice->isPlaying()) mVoice->stop();
+//            mVoice->start();
+            for (auto it = voices.begin(); it !=voices.end(); ++it)
+            {
+                if ( (*it)->isPlaying())
+                {
+                    (*it)->stop();
+                }
+            }
+            if (!WARNINGS_ON)
+                voices[1]->start();
+            else voices[2]->start();
+         
+            WARNINGS_ON=!WARNINGS_ON;
+            //dashboard.next();
             break;
-            
-        case Cinderactor::RIGHT:
-            labels.push_back( LabelPtr( new Label("RIGHT", 300, Cinderactor::RIGHT) ) ) ;
+        }
+        case GEST_EL:
+        {
+            for (auto it = voices.begin(); it !=voices.end(); ++it)
+            {
+                if ( (*it)->isPlaying())
+                {
+                    (*it)->stop();
+                }
+            }
+            voices[0]->start();
             break;
-            
-        case Cinderactor::LEFT:
-            labels.push_back( LabelPtr( new Label("LEFT", 300, Cinderactor::LEFT) ) ) ;
+        }
+        case GEST_INDEX:
+        {
+            for (auto it = voices.begin(); it !=voices.end(); ++it)
+            {
+                if ( (*it)->isPlaying())
+                {
+                    (*it)->stop();
+                }
+            }
+            voices[3]->start();
             break;
-            
+        }
         default:
+        {
             break;
+        }
     }
+
 }
 
 void exampleApp::draw()
@@ -168,7 +227,9 @@ void exampleApp::draw()
     }
     
     // Draw cinderactor representation
+    //dashboard.draw();
     cinderactor.draw();
+
     
 }
 
@@ -176,6 +237,7 @@ void exampleApp::shutdown()
 {
     can_process_thread = false;
 	mThread->join();
+    //TODO: Relase voices
 }
 
 CINDER_APP_NATIVE( exampleApp, RendererGl )

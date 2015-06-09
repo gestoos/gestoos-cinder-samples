@@ -228,8 +228,10 @@ void ActiveEdge::set_hand( const gestoos::nui::Hand & h )
     {
         // Instant hand position scaled to screen
         Vec2f hand_pos_inst ;
-        hand_pos_inst.x = ( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *2.0 +   cinder::app::getWindowWidth()/2.0 ;
-        hand_pos_inst.y = hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
+        hand_pos_inst.x = hand.get_unit_pos().x*cinder::app::getWindowWidth();
+        //( hand.get_pos().x / 320.0 - 0.5 ) * cinder::app::getWindowWidth() *3.0 +   3*cinder::app::getWindowWidth()/2.0 ;
+        hand_pos_inst.y = hand.get_unit_pos().y*cinder::app::getWindowHeight();
+        //hand.get_pos().y     *   cinder::app::getWindowHeight()    / 240.0;
         
         // Filter hand
         hand_pos_f += ( hand_pos_inst - hand_pos_f ) * 0.3 ;

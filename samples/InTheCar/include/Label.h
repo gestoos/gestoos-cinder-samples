@@ -17,7 +17,8 @@
 #include "cinder/gl/Texture.h"
 
 #include "Cinderactor.h"
-
+#include "CinderDrive.h"
+	
 using namespace ci;
 using namespace ci::app;
 
@@ -32,11 +33,11 @@ public:
     
     Label();
     
-    Label(const std::string & _t, float _w = 200, Cinderactor::StrokeType _sense = Cinderactor::RIGHT);
+    Label(const std::string & _t, float _w = 200, CinderDrive::StrokeType _sense = CinderDrive::RIGHT);
        
     virtual ~Label();
     
-    void set_sense( Cinderactor::StrokeType _s );
+    void set_sense( CinderDrive::StrokeType _s );
     
     void signal_kill();
     
@@ -55,7 +56,7 @@ private:
     float           alpha;
     bool            dead;
     int             idnum;
-    Cinderactor::StrokeType      sense;
+    CinderDrive::StrokeType      sense;
 
     float X_TARGET_RIGHT ;
     float X_TARGET_LEFT ;

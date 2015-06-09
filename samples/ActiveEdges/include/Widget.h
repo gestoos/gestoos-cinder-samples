@@ -32,6 +32,8 @@ public:
     
     Widget( const cinder::DataSourceRef & _image , const Vec2f & _o,  Vec2f _s = Vec2f(0,0), int _i = 0 ) : MovingRect( _o, _s, ColorA(1.0,1.0,1.0,1.0) )
     {
+		fade = 1;
+
         fixed_alpha = false;
         
         orig_image = Surface( loadImage(_image) );
@@ -63,6 +65,8 @@ public:
     
     Widget( const Surface & _image , const Vec2f & _o,  Vec2f _s = Vec2f(0,0), int _i = 0 ) : MovingRect( _o, _s, ColorA(1.0,1.0,1.0,1.0) )
     {
+		fade = 1;
+
         fixed_alpha = false;
         orig_image = _image.clone();
         orig_size = Vec2f(orig_image.getWidth(), orig_image.getHeight() );
@@ -113,9 +117,14 @@ public:
         else
         {
             if( hover || highlight )
-                gl::color(1.0, 1.0, 1.0, 0.9 * alpha );
+            {
+                gl::color(1.0, 1.0, 1.0, 1.0 * alpha );
+                Rectf border(0, 0, 120, 120);
+                border.offsetCenterTo(this->getCenter());
+                gl::drawSolidRoundedRect(border, 5);
+            }
             else
-                gl::color(1.0, 1.0, 1.0, 0.5 * alpha );
+                gl::color(1.0, 1.0, 1.0, 0.15 * alpha );
         }
         gl::draw(image, Vec2f( getX1(), getY1() ) );
         //cinder::gl::drawSolidRect( *this );

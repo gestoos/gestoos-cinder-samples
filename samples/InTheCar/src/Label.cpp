@@ -12,7 +12,7 @@ static int label_count = 0;
 
 Label::Label(){}
 
-Label::Label(const std::string & _t, float _w , Cinderactor::StrokeType _sense)
+Label::Label(const std::string & _t, float _w , CinderDrive::StrokeType _sense)
 {
     
     //inherited methods
@@ -49,7 +49,7 @@ Label::~Label()
 }
 
 
-void Label::set_sense( Cinderactor::StrokeType _s )
+void Label::set_sense( CinderDrive::StrokeType _s )
 {
     sense = _s;
 }
