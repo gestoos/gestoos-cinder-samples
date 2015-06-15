@@ -65,6 +65,13 @@ public:
         {
             gl::draw(image, Rectf( 0, _y, getWindowWidth(), _y+getWindowHeight() ) );
         }
+
+        gl::drawStringCentered(	"Press 'h' to hide/show help", Vec2f( getWindowWidth() - 150, getWindowHeight() - 60), Color(0.7, 0.8, 0.9) );
+        gl::drawStringCentered(	"Alt+F4 to quit (Windows)", Vec2f( getWindowWidth() - 150, getWindowHeight() - 45), Color(0.7, 0.8, 0.9) );
+        gl::drawStringCentered(	"Cmd+Q to quit (MacOS)", Vec2f( getWindowWidth() - 150, getWindowHeight() - 30), Color(0.7, 0.8, 0.9) );
+
+        gl::drawString(	"Gestoos (c) 2015. All Rights Reserved to Fezoo Labs S.L.", Vec2f( 30, getWindowHeight() - 30), Color(0.7, 0.8, 0.9) );
+
     }
     
     
