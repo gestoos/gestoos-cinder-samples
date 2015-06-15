@@ -8,7 +8,7 @@ A set of examples that show how to use Gestoos SDK interactive power with Cinder
 2- Clone this repository into gestoos_path/applications, for example:
 
     cd gestoos_path/applications
-    git clone https://github.com/gestoos/gestoos-cinder-samples 
+    git clone https://github.com/gestoos/gestoos-cinder-samples.git 
 
 ## How to run the samples
 
