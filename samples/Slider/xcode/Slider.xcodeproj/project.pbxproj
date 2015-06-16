@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
-		0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097E3E40F3E9819005A4392 /* QuickTime.framework */; };
-		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
-		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
-		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
-		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		00C07B910FFDB748004801EA /* mainApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C07B8D0FFDB748004801EA /* mainApp.cpp */; };
 		1FEE88AA1B1DC83E0064AEA5 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
 		1FEE88AC1B1DC83E0064AEA5 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
 		1FEE88AD1B1DC83E0064AEA5 /* mainApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C07B8D0FFDB748004801EA /* mainApp.cpp */; };
@@ -29,97 +22,49 @@
 		1FEE88B81B1DC83E0064AEA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		1FEE88B91B1DC83E0064AEA5 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		1FEE88BA1B1DC83E0064AEA5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
-		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A1055AA61B2709DC0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA51B2709DC0053CE48 /* Images.xcassets */; };
 		A1055AA71B2709ED0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA51B2709DC0053CE48 /* Images.xcassets */; };
-		A1055AAA1B2725230053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA91B2725230053CE48 /* help.png */; };
 		A1055AAB1B27258A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA91B2725230053CE48 /* help.png */; };
-		A151C5111B30869300351F2C /* Hand_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50A1B30869300351F2C /* Hand_light.dat */; };
 		A151C5121B30869300351F2C /* Hand_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50A1B30869300351F2C /* Hand_light.dat */; };
-		A151C5131B30869300351F2C /* G_Hand_L_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50B1B30869300351F2C /* G_Hand_L_light.dat */; };
 		A151C5141B30869300351F2C /* G_Hand_L_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50B1B30869300351F2C /* G_Hand_L_light.dat */; };
-		A151C5151B30869300351F2C /* G_Hand_Open_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50C1B30869300351F2C /* G_Hand_Open_light.dat */; };
 		A151C5161B30869300351F2C /* G_Hand_Open_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50C1B30869300351F2C /* G_Hand_Open_light.dat */; };
-		A151C5171B30869300351F2C /* G_Hand_Victory_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50D1B30869300351F2C /* G_Hand_Victory_light.dat */; };
 		A151C5181B30869300351F2C /* G_Hand_Victory_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50D1B30869300351F2C /* G_Hand_Victory_light.dat */; };
-		A151C5191B30869300351F2C /* G_Hand_Index_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50E1B30869300351F2C /* G_Hand_Index_light.dat */; };
 		A151C51A1B30869300351F2C /* G_Hand_Index_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50E1B30869300351F2C /* G_Hand_Index_light.dat */; };
-		A151C51B1B30869300351F2C /* G_Hand_Close_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50F1B30869300351F2C /* G_Hand_Close_light.dat */; };
 		A151C51C1B30869300351F2C /* G_Hand_Close_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50F1B30869300351F2C /* G_Hand_Close_light.dat */; };
-		A151C51D1B30869300351F2C /* G_Static_Audio.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C5101B30869300351F2C /* G_Static_Audio.dat */; };
 		A151C51E1B30869300351F2C /* G_Static_Audio.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C5101B30869300351F2C /* G_Static_Audio.dat */; };
-		A151C5421B30879100351F2C /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C51F1B30879100351F2C /* libz.1.dylib */; };
 		A151C5431B30879100351F2C /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C51F1B30879100351F2C /* libz.1.dylib */; };
-		A151C5441B30879100351F2C /* libopencv_highgui.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5201B30879100351F2C /* libopencv_highgui.3.0.dylib */; };
 		A151C5451B30879100351F2C /* libopencv_highgui.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5201B30879100351F2C /* libopencv_highgui.3.0.dylib */; };
-		A151C5461B30879100351F2C /* libopencv_imgcodecs.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5211B30879100351F2C /* libopencv_imgcodecs.3.0.dylib */; };
 		A151C5471B30879100351F2C /* libopencv_imgcodecs.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5211B30879100351F2C /* libopencv_imgcodecs.3.0.dylib */; };
-		A151C5481B30879100351F2C /* libopencv_imgproc.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5221B30879100351F2C /* libopencv_imgproc.3.0.dylib */; };
 		A151C5491B30879100351F2C /* libopencv_imgproc.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5221B30879100351F2C /* libopencv_imgproc.3.0.dylib */; };
-		A151C54A1B30879100351F2C /* libopencv_ml.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5231B30879100351F2C /* libopencv_ml.3.0.dylib */; };
 		A151C54B1B30879100351F2C /* libopencv_ml.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5231B30879100351F2C /* libopencv_ml.3.0.dylib */; };
-		A151C54C1B30879100351F2C /* libopencv_objdetect.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5241B30879100351F2C /* libopencv_objdetect.3.0.dylib */; };
 		A151C54D1B30879100351F2C /* libopencv_objdetect.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5241B30879100351F2C /* libopencv_objdetect.3.0.dylib */; };
-		A151C54E1B30879100351F2C /* libopencv_video.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5251B30879100351F2C /* libopencv_video.3.0.dylib */; };
 		A151C54F1B30879100351F2C /* libopencv_video.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5251B30879100351F2C /* libopencv_video.3.0.dylib */; };
-		A151C5501B30879100351F2C /* libopencv_videoio.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5261B30879100351F2C /* libopencv_videoio.3.0.dylib */; };
 		A151C5511B30879100351F2C /* libopencv_videoio.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5261B30879100351F2C /* libopencv_videoio.3.0.dylib */; };
-		A151C5521B30879100351F2C /* libpng15.15.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5271B30879100351F2C /* libpng15.15.dylib */; };
 		A151C5531B30879100351F2C /* libpng15.15.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5271B30879100351F2C /* libpng15.15.dylib */; };
-		A151C5541B30879100351F2C /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5281B30879100351F2C /* libssl.1.0.0.dylib */; };
 		A151C5551B30879100351F2C /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5281B30879100351F2C /* libssl.1.0.0.dylib */; };
-		A151C5561B30879100351F2C /* libtiff.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5291B30879100351F2C /* libtiff.5.dylib */; };
 		A151C5571B30879100351F2C /* libtiff.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5291B30879100351F2C /* libtiff.5.dylib */; };
-		A151C5581B30879100351F2C /* libusb-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52A1B30879100351F2C /* libusb-1.0.0.dylib */; };
 		A151C5591B30879100351F2C /* libusb-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52A1B30879100351F2C /* libusb-1.0.0.dylib */; };
-		A151C55A1B30879100351F2C /* libwebp.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52B1B30879100351F2C /* libwebp.4.dylib */; };
 		A151C55B1B30879100351F2C /* libwebp.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52B1B30879100351F2C /* libwebp.4.dylib */; };
-		A151C55C1B30879100351F2C /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52C1B30879100351F2C /* libboost_thread-mt.dylib */; };
 		A151C55D1B30879100351F2C /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52C1B30879100351F2C /* libboost_thread-mt.dylib */; };
-		A151C55E1B30879100351F2C /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52D1B30879100351F2C /* libcrypto.1.0.0.dylib */; };
 		A151C55F1B30879100351F2C /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52D1B30879100351F2C /* libcrypto.1.0.0.dylib */; };
-		A151C5601B30879100351F2C /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52E1B30879100351F2C /* libcurl.4.dylib */; };
 		A151C5611B30879100351F2C /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52E1B30879100351F2C /* libcurl.4.dylib */; };
-		A151C5621B30879100351F2C /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52F1B30879100351F2C /* libiconv.2.dylib */; };
 		A151C5631B30879100351F2C /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C52F1B30879100351F2C /* libiconv.2.dylib */; };
-		A151C5641B30879100351F2C /* libidn.11.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5301B30879100351F2C /* libidn.11.dylib */; };
 		A151C5651B30879100351F2C /* libidn.11.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5301B30879100351F2C /* libidn.11.dylib */; };
-		A151C5661B30879100351F2C /* libintl.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5311B30879100351F2C /* libintl.8.dylib */; };
 		A151C5671B30879100351F2C /* libintl.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5311B30879100351F2C /* libintl.8.dylib */; };
-		A151C5681B30879100351F2C /* libjpeg.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5321B30879100351F2C /* libjpeg.9.dylib */; };
 		A151C5691B30879100351F2C /* libjpeg.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5321B30879100351F2C /* libjpeg.9.dylib */; };
-		A151C56A1B30879100351F2C /* liblzma.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5331B30879100351F2C /* liblzma.5.dylib */; };
 		A151C56B1B30879100351F2C /* liblzma.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5331B30879100351F2C /* liblzma.5.dylib */; };
-		A151C56C1B30879100351F2C /* libopencv_calib3d.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5341B30879100351F2C /* libopencv_calib3d.3.0.dylib */; };
 		A151C56D1B30879100351F2C /* libopencv_calib3d.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5341B30879100351F2C /* libopencv_calib3d.3.0.dylib */; };
-		A151C56E1B30879100351F2C /* libopencv_core.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5351B30879100351F2C /* libopencv_core.3.0.dylib */; };
 		A151C56F1B30879100351F2C /* libopencv_core.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5351B30879100351F2C /* libopencv_core.3.0.dylib */; };
-		A151C5701B30879100351F2C /* libopencv_features2d.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5361B30879100351F2C /* libopencv_features2d.3.0.dylib */; };
 		A151C5711B30879100351F2C /* libopencv_features2d.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5361B30879100351F2C /* libopencv_features2d.3.0.dylib */; };
-		A151C5721B30879100351F2C /* libopencv_flann.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5371B30879100351F2C /* libopencv_flann.3.0.dylib */; };
 		A151C5731B30879100351F2C /* libopencv_flann.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5371B30879100351F2C /* libopencv_flann.3.0.dylib */; };
-		A151C5741B30879100351F2C /* libboost_date_time-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5381B30879100351F2C /* libboost_date_time-mt.dylib */; };
 		A151C5751B30879200351F2C /* libboost_date_time-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5381B30879100351F2C /* libboost_date_time-mt.dylib */; };
-		A151C5761B30879200351F2C /* libboost_filesystem-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5391B30879100351F2C /* libboost_filesystem-mt.dylib */; };
 		A151C5771B30879200351F2C /* libboost_filesystem-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5391B30879100351F2C /* libboost_filesystem-mt.dylib */; };
-		A151C5781B30879200351F2C /* libboost_program_options-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53A1B30879100351F2C /* libboost_program_options-mt.dylib */; };
 		A151C5791B30879200351F2C /* libboost_program_options-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53A1B30879100351F2C /* libboost_program_options-mt.dylib */; };
-		A151C57A1B30879200351F2C /* libboost_serialization-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53B1B30879100351F2C /* libboost_serialization-mt.dylib */; };
 		A151C57B1B30879200351F2C /* libboost_serialization-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53B1B30879100351F2C /* libboost_serialization-mt.dylib */; };
-		A151C57C1B30879200351F2C /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53C1B30879100351F2C /* libboost_system-mt.dylib */; };
 		A151C57D1B30879200351F2C /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53C1B30879100351F2C /* libboost_system-mt.dylib */; };
-		A151C57E1B30879200351F2C /* libOniFile.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53D1B30879100351F2C /* libOniFile.dylib */; };
 		A151C57F1B30879200351F2C /* libOniFile.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53D1B30879100351F2C /* libOniFile.dylib */; };
-		A151C5801B30879200351F2C /* libOpenNI2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53E1B30879100351F2C /* libOpenNI2.dylib */; };
 		A151C5811B30879200351F2C /* libOpenNI2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53E1B30879100351F2C /* libOpenNI2.dylib */; };
-		A151C5821B30879200351F2C /* libPS1080.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53F1B30879100351F2C /* libPS1080.dylib */; };
 		A151C5831B30879200351F2C /* libPS1080.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C53F1B30879100351F2C /* libPS1080.dylib */; };
-		A151C5841B30879200351F2C /* libPSLink.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5401B30879100351F2C /* libPSLink.dylib */; };
 		A151C5851B30879200351F2C /* libPSLink.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A151C5401B30879100351F2C /* libPSLink.dylib */; };
-		A151C5861B30879200351F2C /* OpenNI.ini in Resources */ = {isa = PBXBuildFile; fileRef = A151C5411B30879100351F2C /* OpenNI.ini */; };
 		A151C5871B30879200351F2C /* OpenNI.ini in Resources */ = {isa = PBXBuildFile; fileRef = A151C5411B30879100351F2C /* OpenNI.ini */; };
 		A151C5881B3087A700351F2C /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A151C51F1B30879100351F2C /* libz.1.dylib */; };
 		A151C5891B3087A700351F2C /* libopencv_highgui.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A151C5201B30879100351F2C /* libopencv_highgui.3.0.dylib */; };
@@ -156,10 +101,6 @@
 		A151C5A81B3087A700351F2C /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A151C53F1B30879100351F2C /* libPS1080.dylib */; };
 		A151C5A91B3087A700351F2C /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A151C5401B30879100351F2C /* libPSLink.dylib */; };
 		A151C5AA1B3087A700351F2C /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = A151C5411B30879100351F2C /* OpenNI.ini */; };
-		A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
-		A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBD1B147715003ED9FF /* MovingRect.cpp */; };
-		A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
-		A1E08DDA1B14CB11003ED9FF /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DD81B14CB11003ED9FF /* Slider.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -207,24 +148,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FEE890F1B1DC9320064AEA5 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A10B06501B0B7EB000507C88 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Models;
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -246,7 +169,6 @@
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Slider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1055AA51B2709DC0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Slider/Images.xcassets; sourceTree = "<group>"; };
 		A1055AA81B270A510053CE48 /* Help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		A1055AA91B2725230053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
@@ -354,57 +276,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D11072E0486CEB800E47090 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A151C5541B30879100351F2C /* libssl.1.0.0.dylib in Frameworks */,
-				A151C5501B30879100351F2C /* libopencv_videoio.3.0.dylib in Frameworks */,
-				A151C54E1B30879100351F2C /* libopencv_video.3.0.dylib in Frameworks */,
-				A151C5581B30879100351F2C /* libusb-1.0.0.dylib in Frameworks */,
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				A151C55C1B30879100351F2C /* libboost_thread-mt.dylib in Frameworks */,
-				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
-				A151C5641B30879100351F2C /* libidn.11.dylib in Frameworks */,
-				A151C5741B30879100351F2C /* libboost_date_time-mt.dylib in Frameworks */,
-				A151C5841B30879200351F2C /* libPSLink.dylib in Frameworks */,
-				A151C5441B30879100351F2C /* libopencv_highgui.3.0.dylib in Frameworks */,
-				A151C54C1B30879100351F2C /* libopencv_objdetect.3.0.dylib in Frameworks */,
-				A151C5561B30879100351F2C /* libtiff.5.dylib in Frameworks */,
-				A151C57E1B30879200351F2C /* libOniFile.dylib in Frameworks */,
-				53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */,
-				A151C5521B30879100351F2C /* libpng15.15.dylib in Frameworks */,
-				A151C5661B30879100351F2C /* libintl.8.dylib in Frameworks */,
-				A151C5421B30879100351F2C /* libz.1.dylib in Frameworks */,
-				A151C56E1B30879100351F2C /* libopencv_core.3.0.dylib in Frameworks */,
-				A151C5781B30879200351F2C /* libboost_program_options-mt.dylib in Frameworks */,
-				A151C56C1B30879100351F2C /* libopencv_calib3d.3.0.dylib in Frameworks */,
-				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
-				A151C5721B30879100351F2C /* libopencv_flann.3.0.dylib in Frameworks */,
-				A151C56A1B30879100351F2C /* liblzma.5.dylib in Frameworks */,
-				A151C5481B30879100351F2C /* libopencv_imgproc.3.0.dylib in Frameworks */,
-				A151C5761B30879200351F2C /* libboost_filesystem-mt.dylib in Frameworks */,
-				A151C54A1B30879100351F2C /* libopencv_ml.3.0.dylib in Frameworks */,
-				A151C5601B30879100351F2C /* libcurl.4.dylib in Frameworks */,
-				A151C57C1B30879200351F2C /* libboost_system-mt.dylib in Frameworks */,
-				5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */,
-				0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */,
-				A151C57A1B30879200351F2C /* libboost_serialization-mt.dylib in Frameworks */,
-				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
-				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
-				A151C5461B30879100351F2C /* libopencv_imgcodecs.3.0.dylib in Frameworks */,
-				A151C5801B30879200351F2C /* libOpenNI2.dylib in Frameworks */,
-				A151C5621B30879100351F2C /* libiconv.2.dylib in Frameworks */,
-				A151C5681B30879100351F2C /* libjpeg.9.dylib in Frameworks */,
-				A151C55A1B30879100351F2C /* libwebp.4.dylib in Frameworks */,
-				A151C5821B30879200351F2C /* libPS1080.dylib in Frameworks */,
-				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
-				A151C5701B30879100351F2C /* libopencv_features2d.3.0.dylib in Frameworks */,
-				A151C55E1B30879100351F2C /* libcrypto.1.0.0.dylib in Frameworks */,
-				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -447,7 +318,6 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Slider.app */,
 				1FEE88C61B1DC83E0064AEA5 /* Slider.app */,
 			);
 			name = Products;
@@ -595,9 +465,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FEE88A81B1DC83E0064AEA5 /* Slider_10_8 */ = {
+		1FEE88A81B1DC83E0064AEA5 /* Slider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FEE88C31B1DC83E0064AEA5 /* Build configuration list for PBXNativeTarget "Slider_10_8" */;
+			buildConfigurationList = 1FEE88C31B1DC83E0064AEA5 /* Build configuration list for PBXNativeTarget "Slider" */;
 			buildPhases = (
 				1FEE88A91B1DC83E0064AEA5 /* Resources */,
 				1FEE88AB1B1DC83E0064AEA5 /* Sources */,
@@ -608,30 +478,10 @@
 			);
 			dependencies = (
 			);
-			name = Slider_10_8;
-			productInstallPath = "$(HOME)/Applications";
-			productName = Earthquake;
-			productReference = 1FEE88C61B1DC83E0064AEA5 /* Slider.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8D1107260486CEB800E47090 /* Slider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Slider" */;
-			buildPhases = (
-				8D1107290486CEB800E47090 /* Resources */,
-				8D11072C0486CEB800E47090 /* Sources */,
-				8D11072E0486CEB800E47090 /* Frameworks */,
-				A10B06501B0B7EB000507C88 /* CopyFiles */,
-				1FEE890F1B1DC9320064AEA5 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
 			name = Slider;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Earthquake;
-			productReference = 8D1107320486CEB800E47090 /* Slider.app */;
+			productReference = 1FEE88C61B1DC83E0064AEA5 /* Slider.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -656,8 +506,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Slider */,
-				1FEE88A81B1DC83E0064AEA5 /* Slider_10_8 */,
+				1FEE88A81B1DC83E0064AEA5 /* Slider */,
 			);
 		};
 /* End PBXProject section */
@@ -681,24 +530,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D1107290486CEB800E47090 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1E08DC11B14780B003ED9FF /* interactor.cfg in Resources */,
-				A151C51B1B30869300351F2C /* G_Hand_Close_light.dat in Resources */,
-				A151C51D1B30869300351F2C /* G_Static_Audio.dat in Resources */,
-				A1055AA61B2709DC0053CE48 /* Images.xcassets in Resources */,
-				A1055AAA1B2725230053CE48 /* help.png in Resources */,
-				A151C5171B30869300351F2C /* G_Hand_Victory_light.dat in Resources */,
-				A151C5191B30869300351F2C /* G_Hand_Index_light.dat in Resources */,
-				A151C5151B30869300351F2C /* G_Hand_Open_light.dat in Resources */,
-				A151C5111B30869300351F2C /* Hand_light.dat in Resources */,
-				A151C5131B30869300351F2C /* G_Hand_L_light.dat in Resources */,
-				A151C5861B30879200351F2C /* OpenNI.ini in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -710,17 +541,6 @@
 				1FEE88AD1B1DC83E0064AEA5 /* mainApp.cpp in Sources */,
 				1FEE88AE1B1DC83E0064AEA5 /* Slider.cpp in Sources */,
 				1FEE88AF1B1DC83E0064AEA5 /* MovingRect.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D11072C0486CEB800E47090 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1E08DBE1B147715003ED9FF /* Cinderactor.cpp in Sources */,
-				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
-				A1E08DDA1B14CB11003ED9FF /* Slider.cpp in Sources */,
-				A1E08DBF1B147715003ED9FF /* MovingRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,123 +670,6 @@
 			};
 			name = Release;
 		};
-		C01FCF4B08A954540054247B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
-				COPY_PHASE_STRIP = NO;
-				FEZOOLIB_PATH = ../../../../..;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Slider_Prefix.pch;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
-				HEADER_SEARCH_PATHS = (
-					"$(CINDER_PATH)/boost",
-					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
-					"\"$(FEZOOLIB_PATH)/include\"",
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(GESTOOS_SDK_LIB_PATH)",
-					"$(PROJECT_DIR)",
-					/Users/xaviersuaucuadros/Development/GestoosSDK_v0.6/lib,
-				);
-				OTHER_LDFLAGS = (
-					"$(CINDER_PATH)/lib/libcinder_d.a",
-					"-lOpenNI2",
-					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
-					"-lopencv_highgui.3.0",
-					"-lopencv_objdetect.3.0",
-					"-lopencv_imgproc.3.0",
-					"-lopencv_imgcodecs.3.0",
-					"-lopencv_core.3.0",
-					"-lopencv_calib3d.3.0",
-					"-lopencv_video.3.0",
-					"-lopencv_flann.3.0",
-					"-lopencv_features2d.3.0",
-					"-lopencv_ml.3.0",
-					"-lboost_program_options-mt",
-					"-lboost_date_time-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_system-mt",
-					"-lboost_thread-mt",
-					"-lboost_serialization-mt",
-					"-lcurl.4",
-				);
-				PRODUCT_NAME = Slider;
-				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		C01FCF4C08A954540054247B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
-				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FEZOOLIB_PATH = ../../../../..;
-				GCC_FAST_MATH = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Slider_Prefix.pch;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
-				HEADER_SEARCH_PATHS = (
-					"$(CINDER_PATH)/boost",
-					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
-					"\"$(FEZOOLIB_PATH)/include\"",
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(GESTOOS_SDK_LIB_PATH)",
-					"$(PROJECT_DIR)",
-					/Users/xaviersuaucuadros/Development/GestoosSDK_v0.6/lib,
-				);
-				OTHER_LDFLAGS = (
-					"$(CINDER_PATH)/lib/libcinder.a",
-					"-lOpenNI2",
-					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
-					"-lopencv_highgui.3.0",
-					"-lopencv_objdetect.3.0",
-					"-lopencv_imgproc.3.0",
-					"-lopencv_imgcodecs.3.0",
-					"-lopencv_core.3.0",
-					"-lopencv_calib3d.3.0",
-					"-lopencv_video.3.0",
-					"-lopencv_flann.3.0",
-					"-lopencv_features2d.3.0",
-					"-lopencv_ml.3.0",
-					"-lboost_program_options-mt",
-					"-lboost_date_time-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_system-mt",
-					"-lboost_thread-mt",
-					"-lboost_serialization-mt",
-					"-lcurl.4",
-				);
-				PRODUCT_NAME = Slider;
-				STRIP_INSTALLED_PRODUCT = YES;
-				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1014,20 +717,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FEE88C31B1DC83E0064AEA5 /* Build configuration list for PBXNativeTarget "Slider_10_8" */ = {
+		1FEE88C31B1DC83E0064AEA5 /* Build configuration list for PBXNativeTarget "Slider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FEE88C41B1DC83E0064AEA5 /* Debug */,
 				1FEE88C51B1DC83E0064AEA5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Slider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C01FCF4B08A954540054247B /* Debug */,
-				C01FCF4C08A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
