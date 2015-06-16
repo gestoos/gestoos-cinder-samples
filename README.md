@@ -1,4 +1,6 @@
-# gestoos-cinder-samples [NOT WORKING, WAIT FOR GESTOOS SDK v0.6 TO BE PUBLISHED, END OF JUNE 2015]
+# gestoos-cinder-samples 
+
+# [STILL NOT WORKING, WAIT FOR GESTOOS SDK v0.6 TO BE PUBLISHED, END OF JUNE 2015]
 
 A set of examples that show how to use Gestoos SDK interactive power with Cinder.
 
