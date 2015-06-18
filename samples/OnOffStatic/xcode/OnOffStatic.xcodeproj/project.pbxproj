@@ -7,61 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
-		0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097E3E40F3E9819005A4392 /* QuickTime.framework */; };
-		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
-		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
-		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
-		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		00C07B910FFDB748004801EA /* mainApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C07B8D0FFDB748004801EA /* mainApp.cpp */; };
-		1FA853131B1DBC6900687554 /* libopencv_objdetect.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E31B1DBC6800687554 /* libopencv_objdetect.3.0.dylib */; };
-		1FA853141B1DBC6900687554 /* libopencv_video.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E41B1DBC6800687554 /* libopencv_video.3.0.dylib */; };
-		1FA853151B1DBC6900687554 /* libopencv_videoio.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E51B1DBC6800687554 /* libopencv_videoio.3.0.dylib */; };
-		1FA853161B1DBC6900687554 /* liborc-0.4.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E61B1DBC6800687554 /* liborc-0.4.0.dylib */; };
-		1FA853171B1DBC6900687554 /* libpng16.16.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E71B1DBC6900687554 /* libpng16.16.dylib */; };
-		1FA853181B1DBC6900687554 /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E81B1DBC6900687554 /* libssl.1.0.0.dylib */; };
-		1FA853191B1DBC6900687554 /* libtiff.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852E91B1DBC6900687554 /* libtiff.5.dylib */; };
-		1FA8531A1B1DBC6900687554 /* libusb-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852EA1B1DBC6900687554 /* libusb-1.0.0.dylib */; };
-		1FA8531B1B1DBC6900687554 /* libwebp.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852EB1B1DBC6900687554 /* libwebp.5.dylib */; };
-		1FA8531C1B1DBC6900687554 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852EC1B1DBC6900687554 /* libz.1.dylib */; };
-		1FA8531D1B1DBC6900687554 /* libopencv_features2d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852ED1B1DBC6900687554 /* libopencv_features2d.3.0.dylib */; };
-		1FA8531E1B1DBC6900687554 /* libopencv_flann.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852EE1B1DBC6900687554 /* libopencv_flann.3.0.dylib */; };
-		1FA8531F1B1DBC6900687554 /* libopencv_highgui.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852EF1B1DBC6900687554 /* libopencv_highgui.3.0.dylib */; };
-		1FA853201B1DBC6900687554 /* libopencv_imgcodecs.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F01B1DBC6900687554 /* libopencv_imgcodecs.3.0.dylib */; };
-		1FA853211B1DBC6900687554 /* libopencv_imgproc.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F11B1DBC6900687554 /* libopencv_imgproc.3.0.dylib */; };
-		1FA853221B1DBC6900687554 /* libopencv_ml.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F21B1DBC6900687554 /* libopencv_ml.3.0.dylib */; };
-		1FA853231B1DBC6900687554 /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F31B1DBC6900687554 /* OpenNI.ini */; };
-		1FA853241B1DBC6900687554 /* libboost_date_time-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F41B1DBC6900687554 /* libboost_date_time-mt.dylib */; };
-		1FA853251B1DBC6900687554 /* libboost_filesystem-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F51B1DBC6900687554 /* libboost_filesystem-mt.dylib */; };
-		1FA853261B1DBC6900687554 /* libboost_program_options-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F61B1DBC6900687554 /* libboost_program_options-mt.dylib */; };
-		1FA853271B1DBC6900687554 /* libboost_serialization-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F71B1DBC6900687554 /* libboost_serialization-mt.dylib */; };
-		1FA853281B1DBC6900687554 /* libboost_system-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F81B1DBC6900687554 /* libboost_system-mt.dylib */; };
-		1FA853291B1DBC6900687554 /* libboost_thread-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852F91B1DBC6900687554 /* libboost_thread-mt.dylib */; };
-		1FA8532A1B1DBC6900687554 /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852FA1B1DBC6900687554 /* libcrypto.1.0.0.dylib */; };
-		1FA8532B1B1DBC6900687554 /* libcurl.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852FB1B1DBC6900687554 /* libcurl.4.dylib */; };
-		1FA8532C1B1DBC6900687554 /* libffi.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852FC1B1DBC6900687554 /* libffi.6.dylib */; };
-		1FA8532D1B1DBC6900687554 /* libglib-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852FD1B1DBC6900687554 /* libglib-2.0.0.dylib */; };
-		1FA8532E1B1DBC6900687554 /* libgmodule-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852FE1B1DBC6900687554 /* libgmodule-2.0.0.dylib */; };
-		1FA8532F1B1DBC6900687554 /* libgobject-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA852FF1B1DBC6900687554 /* libgobject-2.0.0.dylib */; };
-		1FA853301B1DBC6900687554 /* libgstapp-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853001B1DBC6900687554 /* libgstapp-1.0.0.dylib */; };
-		1FA853311B1DBC6900687554 /* libgstaudio-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853011B1DBC6900687554 /* libgstaudio-1.0.0.dylib */; };
-		1FA853321B1DBC6900687554 /* libgstbase-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853021B1DBC6900687554 /* libgstbase-1.0.0.dylib */; };
-		1FA853331B1DBC6900687554 /* libgstpbutils-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853031B1DBC6900687554 /* libgstpbutils-1.0.0.dylib */; };
-		1FA853341B1DBC6900687554 /* libgstreamer-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853041B1DBC6900687554 /* libgstreamer-1.0.0.dylib */; };
-		1FA853351B1DBC6900687554 /* libgstriff-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853051B1DBC6900687554 /* libgstriff-1.0.0.dylib */; };
-		1FA853361B1DBC6900687554 /* libgsttag-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853061B1DBC6900687554 /* libgsttag-1.0.0.dylib */; };
-		1FA853371B1DBC6900687554 /* libgstvideo-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853071B1DBC6900687554 /* libgstvideo-1.0.0.dylib */; };
-		1FA853381B1DBC6900687554 /* libiconv.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853081B1DBC6900687554 /* libiconv.2.dylib */; };
-		1FA853391B1DBC6900687554 /* libidn.11.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853091B1DBC6900687554 /* libidn.11.dylib */; };
-		1FA8533A1B1DBC6900687554 /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8530A1B1DBC6900687554 /* libintl.8.dylib */; };
-		1FA8533B1B1DBC6900687554 /* libjpeg.9.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8530B1B1DBC6900687554 /* libjpeg.9.dylib */; };
-		1FA8533C1B1DBC6900687554 /* liblzma.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8530C1B1DBC6900687554 /* liblzma.5.dylib */; };
-		1FA8533D1B1DBC6900687554 /* libOniFile.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8530D1B1DBC6900687554 /* libOniFile.dylib */; };
-		1FA8533E1B1DBC6900687554 /* libopencv_calib3d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8530E1B1DBC6900687554 /* libopencv_calib3d.3.0.dylib */; };
-		1FA8533F1B1DBC6900687554 /* libopencv_core.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8530F1B1DBC6900687554 /* libopencv_core.3.0.dylib */; };
-		1FA853401B1DBC6900687554 /* libOpenNI2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853101B1DBC6900687554 /* libOpenNI2.dylib */; };
-		1FA853411B1DBC6900687554 /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853111B1DBC6900687554 /* libPS1080.dylib */; };
-		1FA853421B1DBC6900687554 /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853121B1DBC6900687554 /* libPSLink.dylib */; };
+		1F2DBA8E1B32C9410097CF9D /* G_Static_Audio.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA891B32C9410097CF9D /* G_Static_Audio.dat */; };
+		1F2DBA8F1B32C9410097CF9D /* G_Static_Fwd.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA8A1B32C9410097CF9D /* G_Static_Fwd.dat */; };
+		1F2DBA901B32C9410097CF9D /* G_Static_Pause.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA8B1B32C9410097CF9D /* G_Static_Pause.dat */; };
+		1F2DBA911B32C9410097CF9D /* G_Static_Silence.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA8C1B32C9410097CF9D /* G_Static_Silence.dat */; };
+		1F2DBA921B32C9410097CF9D /* G_Static_Tee.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA8D1B32C9410097CF9D /* G_Static_Tee.dat */; };
+		1F2DBAB61B32CAB20097CF9D /* libboost_date_time-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA931B32CAB10097CF9D /* libboost_date_time-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAB71B32CAB20097CF9D /* libboost_filesystem-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA941B32CAB10097CF9D /* libboost_filesystem-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAB81B32CAB20097CF9D /* libboost_program_options-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA951B32CAB10097CF9D /* libboost_program_options-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAB91B32CAB20097CF9D /* libboost_serialization-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA961B32CAB10097CF9D /* libboost_serialization-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBABA1B32CAB20097CF9D /* libboost_system-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA971B32CAB10097CF9D /* libboost_system-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBABB1B32CAB20097CF9D /* libboost_thread-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA981B32CAB10097CF9D /* libboost_thread-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBABC1B32CAB20097CF9D /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA991B32CAB20097CF9D /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBABD1B32CAB20097CF9D /* libcurl.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA9A1B32CAB20097CF9D /* libcurl.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBABE1B32CAB20097CF9D /* libiconv.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA9B1B32CAB20097CF9D /* libiconv.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBABF1B32CAB20097CF9D /* libidn.11.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA9C1B32CAB20097CF9D /* libidn.11.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC01B32CAB20097CF9D /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA9D1B32CAB20097CF9D /* libintl.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC11B32CAB20097CF9D /* libjpeg.9.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA9E1B32CAB20097CF9D /* libjpeg.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC21B32CAB20097CF9D /* liblzma.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBA9F1B32CAB20097CF9D /* liblzma.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC31B32CAB20097CF9D /* libOniFile.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA01B32CAB20097CF9D /* libOniFile.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC41B32CAB20097CF9D /* libopencv_calib3d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA11B32CAB20097CF9D /* libopencv_calib3d.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC51B32CAB20097CF9D /* libopencv_core.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA21B32CAB20097CF9D /* libopencv_core.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC61B32CAB20097CF9D /* libopencv_features2d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA31B32CAB20097CF9D /* libopencv_features2d.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC71B32CAB20097CF9D /* libopencv_flann.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA41B32CAB20097CF9D /* libopencv_flann.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC81B32CAB20097CF9D /* libopencv_highgui.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA51B32CAB20097CF9D /* libopencv_highgui.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAC91B32CAB20097CF9D /* libopencv_imgcodecs.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA61B32CAB20097CF9D /* libopencv_imgcodecs.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBACA1B32CAB20097CF9D /* libopencv_imgproc.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA71B32CAB20097CF9D /* libopencv_imgproc.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBACB1B32CAB20097CF9D /* libopencv_ml.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA81B32CAB20097CF9D /* libopencv_ml.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBACC1B32CAB20097CF9D /* libopencv_objdetect.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAA91B32CAB20097CF9D /* libopencv_objdetect.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBACD1B32CAB20097CF9D /* libopencv_video.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAAA1B32CAB20097CF9D /* libopencv_video.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBACE1B32CAB20097CF9D /* libopencv_videoio.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAAB1B32CAB20097CF9D /* libopencv_videoio.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBACF1B32CAB20097CF9D /* libOpenNI2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAAC1B32CAB20097CF9D /* libOpenNI2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD01B32CAB20097CF9D /* libpng15.15.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAAD1B32CAB20097CF9D /* libpng15.15.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD11B32CAB20097CF9D /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAAE1B32CAB20097CF9D /* libPS1080.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD21B32CAB20097CF9D /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAAF1B32CAB20097CF9D /* libPSLink.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD31B32CAB20097CF9D /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAB01B32CAB20097CF9D /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD41B32CAB20097CF9D /* libtiff.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAB11B32CAB20097CF9D /* libtiff.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD51B32CAB20097CF9D /* libusb-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAB21B32CAB20097CF9D /* libusb-1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD61B32CAB20097CF9D /* libwebp.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAB31B32CAB20097CF9D /* libwebp.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD71B32CAB20097CF9D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAB41B32CAB20097CF9D /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2DBAD81B32CAB20097CF9D /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBAB51B32CAB20097CF9D /* OpenNI.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1FA853451B1DBC8300687554 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DCB1B147B19003ED9FF /* interactor.cfg */; };
 		1FA853461B1DBC8300687554 /* gest_rwd_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B201B170E54005E013C /* gest_rwd_big.png */; };
 		1FA853471B1DBC8300687554 /* gest_tee_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B211B170E54005E013C /* gest_tee_big.png */; };
@@ -84,141 +69,22 @@
 		1FA8535A1B1DBC8300687554 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		1FA8535B1B1DBC8300687554 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		1FA8535C1B1DBC8300687554 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		1FA8535E1B1DBC8300687554 /* GestooAudio_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2A1B170EA8005E013C /* GestooAudio_320.dat */; };
-		1FA8535F1B1DBC8300687554 /* GestooFwd_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2B1B170EA8005E013C /* GestooFwd_320.dat */; };
-		1FA853601B1DBC8300687554 /* GestooPause_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2C1B170EA8005E013C /* GestooPause_320.dat */; };
-		1FA853611B1DBC8300687554 /* GestooSilence_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2D1B170EA8005E013C /* GestooSilence_320.dat */; };
-		1FA853621B1DBC8300687554 /* GestooTee_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2E1B170EA8005E013C /* GestooTee_320.dat */; };
-		1FA853BC1B1DBD1C00687554 /* libopencv_videoio.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853991B1DBD1B00687554 /* libopencv_videoio.3.0.dylib */; };
-		1FA853BD1B1DBD1C00687554 /* libpng15.15.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8539A1B1DBD1B00687554 /* libpng15.15.dylib */; };
-		1FA853BE1B1DBD1C00687554 /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8539B1B1DBD1B00687554 /* libssl.1.0.0.dylib */; };
-		1FA853BF1B1DBD1C00687554 /* libtiff.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8539C1B1DBD1B00687554 /* libtiff.5.dylib */; };
-		1FA853C01B1DBD1C00687554 /* libusb-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8539D1B1DBD1B00687554 /* libusb-1.0.0.dylib */; };
-		1FA853C11B1DBD1C00687554 /* libwebp.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8539E1B1DBD1C00687554 /* libwebp.4.dylib */; };
-		1FA853C21B1DBD1C00687554 /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA8539F1B1DBD1C00687554 /* libz.1.dylib */; };
-		1FA853C31B1DBD1C00687554 /* libopencv_features2d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A01B1DBD1C00687554 /* libopencv_features2d.3.0.dylib */; };
-		1FA853C41B1DBD1C00687554 /* libopencv_flann.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A11B1DBD1C00687554 /* libopencv_flann.3.0.dylib */; };
-		1FA853C51B1DBD1C00687554 /* libopencv_highgui.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A21B1DBD1C00687554 /* libopencv_highgui.3.0.dylib */; };
-		1FA853C61B1DBD1C00687554 /* libopencv_imgcodecs.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A31B1DBD1C00687554 /* libopencv_imgcodecs.3.0.dylib */; };
-		1FA853C71B1DBD1C00687554 /* libopencv_imgproc.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A41B1DBD1C00687554 /* libopencv_imgproc.3.0.dylib */; };
-		1FA853C81B1DBD1C00687554 /* libopencv_ml.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A51B1DBD1C00687554 /* libopencv_ml.3.0.dylib */; };
-		1FA853C91B1DBD1C00687554 /* libopencv_objdetect.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A61B1DBD1C00687554 /* libopencv_objdetect.3.0.dylib */; };
-		1FA853CA1B1DBD1C00687554 /* libopencv_video.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A71B1DBD1C00687554 /* libopencv_video.3.0.dylib */; };
-		1FA853CB1B1DBD1C00687554 /* libiconv.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A81B1DBD1C00687554 /* libiconv.2.dylib */; };
-		1FA853CC1B1DBD1C00687554 /* libidn.11.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853A91B1DBD1C00687554 /* libidn.11.dylib */; };
-		1FA853CD1B1DBD1C00687554 /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853AA1B1DBD1C00687554 /* libintl.8.dylib */; };
-		1FA853CE1B1DBD1C00687554 /* libjpeg.9.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853AB1B1DBD1C00687554 /* libjpeg.9.dylib */; };
-		1FA853CF1B1DBD1C00687554 /* liblzma.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853AC1B1DBD1C00687554 /* liblzma.5.dylib */; };
-		1FA853D01B1DBD1C00687554 /* libopencv_calib3d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853AD1B1DBD1C00687554 /* libopencv_calib3d.3.0.dylib */; };
-		1FA853D11B1DBD1C00687554 /* libopencv_core.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853AE1B1DBD1C00687554 /* libopencv_core.3.0.dylib */; };
-		1FA853D21B1DBD1C00687554 /* libboost_date_time-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853AF1B1DBD1C00687554 /* libboost_date_time-mt.dylib */; };
-		1FA853D31B1DBD1C00687554 /* libboost_filesystem-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B01B1DBD1C00687554 /* libboost_filesystem-mt.dylib */; };
-		1FA853D41B1DBD1C00687554 /* libboost_program_options-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B11B1DBD1C00687554 /* libboost_program_options-mt.dylib */; };
-		1FA853D51B1DBD1C00687554 /* libboost_serialization-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B21B1DBD1C00687554 /* libboost_serialization-mt.dylib */; };
-		1FA853D61B1DBD1C00687554 /* libboost_system-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B31B1DBD1C00687554 /* libboost_system-mt.dylib */; };
-		1FA853D71B1DBD1C00687554 /* libboost_thread-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B41B1DBD1C00687554 /* libboost_thread-mt.dylib */; };
-		1FA853D81B1DBD1C00687554 /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B51B1DBD1C00687554 /* libcrypto.1.0.0.dylib */; };
-		1FA853D91B1DBD1C00687554 /* libcurl.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B61B1DBD1C00687554 /* libcurl.4.dylib */; };
-		1FA853DA1B1DBD1C00687554 /* libOniFile.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B71B1DBD1C00687554 /* libOniFile.dylib */; };
-		1FA853DB1B1DBD1C00687554 /* libOpenNI2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B81B1DBD1C00687554 /* libOpenNI2.dylib */; };
-		1FA853DC1B1DBD1C00687554 /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853B91B1DBD1C00687554 /* libPS1080.dylib */; };
-		1FA853DD1B1DBD1C00687554 /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853BA1B1DBD1C00687554 /* libPSLink.dylib */; };
-		1FA853DE1B1DBD1C00687554 /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FA853BB1B1DBD1C00687554 /* OpenNI.ini */; };
-		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
-		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A1055AA21B2706EE0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA11B2706EE0053CE48 /* Images.xcassets */; };
 		A1055AA31B2706FC0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA11B2706EE0053CE48 /* Images.xcassets */; };
-		A1055AB41B27346A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB31B27346A0053CE48 /* help.png */; };
 		A1055AB51B27346A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB31B27346A0053CE48 /* help.png */; };
-		A1325B1A1B170E01005E013C /* GestureSwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1325B191B170E01005E013C /* GestureSwitch.cpp */; };
-		A1325B1D1B170E44005E013C /* interactor_macos.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1325B1C1B170E44005E013C /* interactor_macos.cfg */; };
-		A1325B241B170E54005E013C /* gest_ffwd_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B1E1B170E54005E013C /* gest_ffwd_big.png */; };
-		A1325B251B170E54005E013C /* gest_pause_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B1F1B170E54005E013C /* gest_pause_big.png */; };
-		A1325B261B170E54005E013C /* gest_rwd_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B201B170E54005E013C /* gest_rwd_big.png */; };
-		A1325B271B170E54005E013C /* gest_tee_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B211B170E54005E013C /* gest_tee_big.png */; };
-		A1325B281B170E54005E013C /* gest_voldown_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B221B170E54005E013C /* gest_voldown_big.png */; };
-		A1325B291B170E54005E013C /* gest_volup_big.png in Resources */ = {isa = PBXBuildFile; fileRef = A1325B231B170E54005E013C /* gest_volup_big.png */; };
-		A1325B391B170F4C005E013C /* GestooAudio_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2A1B170EA8005E013C /* GestooAudio_320.dat */; };
-		A1325B3A1B170F4C005E013C /* GestooFwd_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2B1B170EA8005E013C /* GestooFwd_320.dat */; };
-		A1325B3B1B170F4C005E013C /* GestooPause_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2C1B170EA8005E013C /* GestooPause_320.dat */; };
-		A1325B3C1B170F4C005E013C /* GestooSilence_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2D1B170EA8005E013C /* GestooSilence_320.dat */; };
-		A1325B3D1B170F4C005E013C /* GestooTee_320.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1325B2E1B170EA8005E013C /* GestooTee_320.dat */; };
-		A1325B3E1B170F75005E013C /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */; };
-		A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */; };
-		A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DCB1B147B19003ED9FF /* interactor.cfg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1FA852E21B1DBC3E00687554 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				1FA853131B1DBC6900687554 /* libopencv_objdetect.3.0.dylib in CopyFiles */,
-				1FA853141B1DBC6900687554 /* libopencv_video.3.0.dylib in CopyFiles */,
-				1FA853151B1DBC6900687554 /* libopencv_videoio.3.0.dylib in CopyFiles */,
-				1FA853161B1DBC6900687554 /* liborc-0.4.0.dylib in CopyFiles */,
-				1FA853171B1DBC6900687554 /* libpng16.16.dylib in CopyFiles */,
-				1FA853181B1DBC6900687554 /* libssl.1.0.0.dylib in CopyFiles */,
-				1FA853191B1DBC6900687554 /* libtiff.5.dylib in CopyFiles */,
-				1FA8531A1B1DBC6900687554 /* libusb-1.0.0.dylib in CopyFiles */,
-				1FA8531B1B1DBC6900687554 /* libwebp.5.dylib in CopyFiles */,
-				1FA8531C1B1DBC6900687554 /* libz.1.dylib in CopyFiles */,
-				1FA8531D1B1DBC6900687554 /* libopencv_features2d.3.0.dylib in CopyFiles */,
-				1FA8531E1B1DBC6900687554 /* libopencv_flann.3.0.dylib in CopyFiles */,
-				1FA8531F1B1DBC6900687554 /* libopencv_highgui.3.0.dylib in CopyFiles */,
-				1FA853201B1DBC6900687554 /* libopencv_imgcodecs.3.0.dylib in CopyFiles */,
-				1FA853211B1DBC6900687554 /* libopencv_imgproc.3.0.dylib in CopyFiles */,
-				1FA853221B1DBC6900687554 /* libopencv_ml.3.0.dylib in CopyFiles */,
-				1FA853231B1DBC6900687554 /* OpenNI.ini in CopyFiles */,
-				1FA853241B1DBC6900687554 /* libboost_date_time-mt.dylib in CopyFiles */,
-				1FA853251B1DBC6900687554 /* libboost_filesystem-mt.dylib in CopyFiles */,
-				1FA853261B1DBC6900687554 /* libboost_program_options-mt.dylib in CopyFiles */,
-				1FA853271B1DBC6900687554 /* libboost_serialization-mt.dylib in CopyFiles */,
-				1FA853281B1DBC6900687554 /* libboost_system-mt.dylib in CopyFiles */,
-				1FA853291B1DBC6900687554 /* libboost_thread-mt.dylib in CopyFiles */,
-				1FA8532A1B1DBC6900687554 /* libcrypto.1.0.0.dylib in CopyFiles */,
-				1FA8532B1B1DBC6900687554 /* libcurl.4.dylib in CopyFiles */,
-				1FA8532C1B1DBC6900687554 /* libffi.6.dylib in CopyFiles */,
-				1FA8532D1B1DBC6900687554 /* libglib-2.0.0.dylib in CopyFiles */,
-				1FA8532E1B1DBC6900687554 /* libgmodule-2.0.0.dylib in CopyFiles */,
-				1FA8532F1B1DBC6900687554 /* libgobject-2.0.0.dylib in CopyFiles */,
-				1FA853301B1DBC6900687554 /* libgstapp-1.0.0.dylib in CopyFiles */,
-				1FA853311B1DBC6900687554 /* libgstaudio-1.0.0.dylib in CopyFiles */,
-				1FA853321B1DBC6900687554 /* libgstbase-1.0.0.dylib in CopyFiles */,
-				1FA853331B1DBC6900687554 /* libgstpbutils-1.0.0.dylib in CopyFiles */,
-				1FA853341B1DBC6900687554 /* libgstreamer-1.0.0.dylib in CopyFiles */,
-				1FA853351B1DBC6900687554 /* libgstriff-1.0.0.dylib in CopyFiles */,
-				1FA853361B1DBC6900687554 /* libgsttag-1.0.0.dylib in CopyFiles */,
-				1FA853371B1DBC6900687554 /* libgstvideo-1.0.0.dylib in CopyFiles */,
-				1FA853381B1DBC6900687554 /* libiconv.2.dylib in CopyFiles */,
-				1FA853391B1DBC6900687554 /* libidn.11.dylib in CopyFiles */,
-				1FA8533A1B1DBC6900687554 /* libintl.8.dylib in CopyFiles */,
-				1FA8533B1B1DBC6900687554 /* libjpeg.9.dylib in CopyFiles */,
-				1FA8533C1B1DBC6900687554 /* liblzma.5.dylib in CopyFiles */,
-				1FA8533D1B1DBC6900687554 /* libOniFile.dylib in CopyFiles */,
-				1FA8533E1B1DBC6900687554 /* libopencv_calib3d.3.0.dylib in CopyFiles */,
-				1FA8533F1B1DBC6900687554 /* libopencv_core.3.0.dylib in CopyFiles */,
-				1FA853401B1DBC6900687554 /* libOpenNI2.dylib in CopyFiles */,
-				1FA853411B1DBC6900687554 /* libPS1080.dylib in CopyFiles */,
-				1FA853421B1DBC6900687554 /* libPSLink.dylib in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1FA8535D1B1DBC8300687554 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Models;
 			dstSubfolderSpec = 7;
 			files = (
-				1FA8535E1B1DBC8300687554 /* GestooAudio_320.dat in CopyFiles */,
-				1FA8535F1B1DBC8300687554 /* GestooFwd_320.dat in CopyFiles */,
-				1FA853601B1DBC8300687554 /* GestooPause_320.dat in CopyFiles */,
-				1FA853611B1DBC8300687554 /* GestooSilence_320.dat in CopyFiles */,
-				1FA853621B1DBC8300687554 /* GestooTee_320.dat in CopyFiles */,
+				1F2DBA8E1B32C9410097CF9D /* G_Static_Audio.dat in CopyFiles */,
+				1F2DBA8F1B32C9410097CF9D /* G_Static_Fwd.dat in CopyFiles */,
+				1F2DBA901B32C9410097CF9D /* G_Static_Pause.dat in CopyFiles */,
+				1F2DBA911B32C9410097CF9D /* G_Static_Silence.dat in CopyFiles */,
+				1F2DBA921B32C9410097CF9D /* G_Static_Tee.dat in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,55 +94,41 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				1FA853BC1B1DBD1C00687554 /* libopencv_videoio.3.0.dylib in CopyFiles */,
-				1FA853BD1B1DBD1C00687554 /* libpng15.15.dylib in CopyFiles */,
-				1FA853BE1B1DBD1C00687554 /* libssl.1.0.0.dylib in CopyFiles */,
-				1FA853BF1B1DBD1C00687554 /* libtiff.5.dylib in CopyFiles */,
-				1FA853C01B1DBD1C00687554 /* libusb-1.0.0.dylib in CopyFiles */,
-				1FA853C11B1DBD1C00687554 /* libwebp.4.dylib in CopyFiles */,
-				1FA853C21B1DBD1C00687554 /* libz.1.dylib in CopyFiles */,
-				1FA853C31B1DBD1C00687554 /* libopencv_features2d.3.0.dylib in CopyFiles */,
-				1FA853C41B1DBD1C00687554 /* libopencv_flann.3.0.dylib in CopyFiles */,
-				1FA853C51B1DBD1C00687554 /* libopencv_highgui.3.0.dylib in CopyFiles */,
-				1FA853C61B1DBD1C00687554 /* libopencv_imgcodecs.3.0.dylib in CopyFiles */,
-				1FA853C71B1DBD1C00687554 /* libopencv_imgproc.3.0.dylib in CopyFiles */,
-				1FA853C81B1DBD1C00687554 /* libopencv_ml.3.0.dylib in CopyFiles */,
-				1FA853C91B1DBD1C00687554 /* libopencv_objdetect.3.0.dylib in CopyFiles */,
-				1FA853CA1B1DBD1C00687554 /* libopencv_video.3.0.dylib in CopyFiles */,
-				1FA853CB1B1DBD1C00687554 /* libiconv.2.dylib in CopyFiles */,
-				1FA853CC1B1DBD1C00687554 /* libidn.11.dylib in CopyFiles */,
-				1FA853CD1B1DBD1C00687554 /* libintl.8.dylib in CopyFiles */,
-				1FA853CE1B1DBD1C00687554 /* libjpeg.9.dylib in CopyFiles */,
-				1FA853CF1B1DBD1C00687554 /* liblzma.5.dylib in CopyFiles */,
-				1FA853D01B1DBD1C00687554 /* libopencv_calib3d.3.0.dylib in CopyFiles */,
-				1FA853D11B1DBD1C00687554 /* libopencv_core.3.0.dylib in CopyFiles */,
-				1FA853D21B1DBD1C00687554 /* libboost_date_time-mt.dylib in CopyFiles */,
-				1FA853D31B1DBD1C00687554 /* libboost_filesystem-mt.dylib in CopyFiles */,
-				1FA853D41B1DBD1C00687554 /* libboost_program_options-mt.dylib in CopyFiles */,
-				1FA853D51B1DBD1C00687554 /* libboost_serialization-mt.dylib in CopyFiles */,
-				1FA853D61B1DBD1C00687554 /* libboost_system-mt.dylib in CopyFiles */,
-				1FA853D71B1DBD1C00687554 /* libboost_thread-mt.dylib in CopyFiles */,
-				1FA853D81B1DBD1C00687554 /* libcrypto.1.0.0.dylib in CopyFiles */,
-				1FA853D91B1DBD1C00687554 /* libcurl.4.dylib in CopyFiles */,
-				1FA853DA1B1DBD1C00687554 /* libOniFile.dylib in CopyFiles */,
-				1FA853DB1B1DBD1C00687554 /* libOpenNI2.dylib in CopyFiles */,
-				1FA853DC1B1DBD1C00687554 /* libPS1080.dylib in CopyFiles */,
-				1FA853DD1B1DBD1C00687554 /* libPSLink.dylib in CopyFiles */,
-				1FA853DE1B1DBD1C00687554 /* OpenNI.ini in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A10B06501B0B7EB000507C88 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Models;
-			dstSubfolderSpec = 7;
-			files = (
-				A1325B391B170F4C005E013C /* GestooAudio_320.dat in CopyFiles */,
-				A1325B3A1B170F4C005E013C /* GestooFwd_320.dat in CopyFiles */,
-				A1325B3B1B170F4C005E013C /* GestooPause_320.dat in CopyFiles */,
-				A1325B3C1B170F4C005E013C /* GestooSilence_320.dat in CopyFiles */,
-				A1325B3D1B170F4C005E013C /* GestooTee_320.dat in CopyFiles */,
+				1F2DBAB61B32CAB20097CF9D /* libboost_date_time-mt.dylib in CopyFiles */,
+				1F2DBAB71B32CAB20097CF9D /* libboost_filesystem-mt.dylib in CopyFiles */,
+				1F2DBAB81B32CAB20097CF9D /* libboost_program_options-mt.dylib in CopyFiles */,
+				1F2DBAB91B32CAB20097CF9D /* libboost_serialization-mt.dylib in CopyFiles */,
+				1F2DBABA1B32CAB20097CF9D /* libboost_system-mt.dylib in CopyFiles */,
+				1F2DBABB1B32CAB20097CF9D /* libboost_thread-mt.dylib in CopyFiles */,
+				1F2DBABC1B32CAB20097CF9D /* libcrypto.1.0.0.dylib in CopyFiles */,
+				1F2DBABD1B32CAB20097CF9D /* libcurl.4.dylib in CopyFiles */,
+				1F2DBABE1B32CAB20097CF9D /* libiconv.2.dylib in CopyFiles */,
+				1F2DBABF1B32CAB20097CF9D /* libidn.11.dylib in CopyFiles */,
+				1F2DBAC01B32CAB20097CF9D /* libintl.8.dylib in CopyFiles */,
+				1F2DBAC11B32CAB20097CF9D /* libjpeg.9.dylib in CopyFiles */,
+				1F2DBAC21B32CAB20097CF9D /* liblzma.5.dylib in CopyFiles */,
+				1F2DBAC31B32CAB20097CF9D /* libOniFile.dylib in CopyFiles */,
+				1F2DBAC41B32CAB20097CF9D /* libopencv_calib3d.3.0.dylib in CopyFiles */,
+				1F2DBAC51B32CAB20097CF9D /* libopencv_core.3.0.dylib in CopyFiles */,
+				1F2DBAC61B32CAB20097CF9D /* libopencv_features2d.3.0.dylib in CopyFiles */,
+				1F2DBAC71B32CAB20097CF9D /* libopencv_flann.3.0.dylib in CopyFiles */,
+				1F2DBAC81B32CAB20097CF9D /* libopencv_highgui.3.0.dylib in CopyFiles */,
+				1F2DBAC91B32CAB20097CF9D /* libopencv_imgcodecs.3.0.dylib in CopyFiles */,
+				1F2DBACA1B32CAB20097CF9D /* libopencv_imgproc.3.0.dylib in CopyFiles */,
+				1F2DBACB1B32CAB20097CF9D /* libopencv_ml.3.0.dylib in CopyFiles */,
+				1F2DBACC1B32CAB20097CF9D /* libopencv_objdetect.3.0.dylib in CopyFiles */,
+				1F2DBACD1B32CAB20097CF9D /* libopencv_video.3.0.dylib in CopyFiles */,
+				1F2DBACE1B32CAB20097CF9D /* libopencv_videoio.3.0.dylib in CopyFiles */,
+				1F2DBACF1B32CAB20097CF9D /* libOpenNI2.dylib in CopyFiles */,
+				1F2DBAD01B32CAB20097CF9D /* libpng15.15.dylib in CopyFiles */,
+				1F2DBAD11B32CAB20097CF9D /* libPS1080.dylib in CopyFiles */,
+				1F2DBAD21B32CAB20097CF9D /* libPSLink.dylib in CopyFiles */,
+				1F2DBAD31B32CAB20097CF9D /* libssl.1.0.0.dylib in CopyFiles */,
+				1F2DBAD41B32CAB20097CF9D /* libtiff.5.dylib in CopyFiles */,
+				1F2DBAD51B32CAB20097CF9D /* libusb-1.0.0.dylib in CopyFiles */,
+				1F2DBAD61B32CAB20097CF9D /* libwebp.4.dylib in CopyFiles */,
+				1F2DBAD71B32CAB20097CF9D /* libz.1.dylib in CopyFiles */,
+				1F2DBAD81B32CAB20097CF9D /* OpenNI.ini in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,91 +144,48 @@
 		00C07B8D0FFDB748004801EA /* mainApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mainApp.cpp; path = ../src/mainApp.cpp; sourceTree = SOURCE_ROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		1FA852E31B1DBC6800687554 /* libopencv_objdetect.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_objdetect.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852E41B1DBC6800687554 /* libopencv_video.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_video.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852E51B1DBC6800687554 /* libopencv_videoio.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_videoio.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852E61B1DBC6800687554 /* liborc-0.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "liborc-0.4.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/liborc-0.4.0.dylib"; sourceTree = "<group>"; };
-		1FA852E71B1DBC6900687554 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = "../../../../../gestoosdk-osx-dependencies/libpng16.16.dylib"; sourceTree = "<group>"; };
-		1FA852E81B1DBC6900687554 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libssl.1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA852E91B1DBC6900687554 /* libtiff.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtiff.5.dylib; path = "../../../../../gestoosdk-osx-dependencies/libtiff.5.dylib"; sourceTree = "<group>"; };
-		1FA852EA1B1DBC6900687554 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libusb-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libusb-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA852EB1B1DBC6900687554 /* libwebp.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwebp.5.dylib; path = "../../../../../gestoosdk-osx-dependencies/libwebp.5.dylib"; sourceTree = "<group>"; };
-		1FA852EC1B1DBC6900687554 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = "../../../../../gestoosdk-osx-dependencies/libz.1.dylib"; sourceTree = "<group>"; };
-		1FA852ED1B1DBC6900687554 /* libopencv_features2d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_features2d.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852EE1B1DBC6900687554 /* libopencv_flann.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_flann.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852EF1B1DBC6900687554 /* libopencv_highgui.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_highgui.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852F01B1DBC6900687554 /* libopencv_imgcodecs.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_imgcodecs.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852F11B1DBC6900687554 /* libopencv_imgproc.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_imgproc.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852F21B1DBC6900687554 /* libopencv_ml.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_ml.3.0.dylib"; sourceTree = "<group>"; };
-		1FA852F31B1DBC6900687554 /* OpenNI.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = OpenNI.ini; path = "../../../../../gestoosdk-osx-dependencies/OpenNI.ini"; sourceTree = "<group>"; };
-		1FA852F41B1DBC6900687554 /* libboost_date_time-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_date_time-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libboost_date_time-mt.dylib"; sourceTree = "<group>"; };
-		1FA852F51B1DBC6900687554 /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_filesystem-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
-		1FA852F61B1DBC6900687554 /* libboost_program_options-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_program_options-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libboost_program_options-mt.dylib"; sourceTree = "<group>"; };
-		1FA852F71B1DBC6900687554 /* libboost_serialization-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_serialization-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libboost_serialization-mt.dylib"; sourceTree = "<group>"; };
-		1FA852F81B1DBC6900687554 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libboost_system-mt.dylib"; sourceTree = "<group>"; };
-		1FA852F91B1DBC6900687554 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
-		1FA852FA1B1DBC6900687554 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libcrypto.1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA852FB1B1DBC6900687554 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = "../../../../../gestoosdk-osx-dependencies/libcurl.4.dylib"; sourceTree = "<group>"; };
-		1FA852FC1B1DBC6900687554 /* libffi.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.6.dylib; path = "../../../../../gestoosdk-osx-dependencies/libffi.6.dylib"; sourceTree = "<group>"; };
-		1FA852FD1B1DBC6900687554 /* libglib-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libglib-2.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libglib-2.0.0.dylib"; sourceTree = "<group>"; };
-		1FA852FE1B1DBC6900687554 /* libgmodule-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgmodule-2.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgmodule-2.0.0.dylib"; sourceTree = "<group>"; };
-		1FA852FF1B1DBC6900687554 /* libgobject-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgobject-2.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgobject-2.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853001B1DBC6900687554 /* libgstapp-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstapp-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstapp-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853011B1DBC6900687554 /* libgstaudio-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstaudio-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstaudio-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853021B1DBC6900687554 /* libgstbase-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstbase-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstbase-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853031B1DBC6900687554 /* libgstpbutils-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstpbutils-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstpbutils-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853041B1DBC6900687554 /* libgstreamer-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstreamer-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstreamer-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853051B1DBC6900687554 /* libgstriff-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstriff-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstriff-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853061B1DBC6900687554 /* libgsttag-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgsttag-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgsttag-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853071B1DBC6900687554 /* libgstvideo-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstvideo-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/libgstvideo-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853081B1DBC6900687554 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = "../../../../../gestoosdk-osx-dependencies/libiconv.2.dylib"; sourceTree = "<group>"; };
-		1FA853091B1DBC6900687554 /* libidn.11.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.11.dylib; path = "../../../../../gestoosdk-osx-dependencies/libidn.11.dylib"; sourceTree = "<group>"; };
-		1FA8530A1B1DBC6900687554 /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libintl.8.dylib; path = "../../../../../gestoosdk-osx-dependencies/libintl.8.dylib"; sourceTree = "<group>"; };
-		1FA8530B1B1DBC6900687554 /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.9.dylib; path = "../../../../../gestoosdk-osx-dependencies/libjpeg.9.dylib"; sourceTree = "<group>"; };
-		1FA8530C1B1DBC6900687554 /* liblzma.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblzma.5.dylib; path = "../../../../../gestoosdk-osx-dependencies/liblzma.5.dylib"; sourceTree = "<group>"; };
-		1FA8530D1B1DBC6900687554 /* libOniFile.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOniFile.dylib; path = "../../../../../gestoosdk-osx-dependencies/libOniFile.dylib"; sourceTree = "<group>"; };
-		1FA8530E1B1DBC6900687554 /* libopencv_calib3d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_calib3d.3.0.dylib"; sourceTree = "<group>"; };
-		1FA8530F1B1DBC6900687554 /* libopencv_core.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/libopencv_core.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853101B1DBC6900687554 /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI2.dylib; path = "../../../../../gestoosdk-osx-dependencies/libOpenNI2.dylib"; sourceTree = "<group>"; };
-		1FA853111B1DBC6900687554 /* libPS1080.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPS1080.dylib; path = "../../../../../gestoosdk-osx-dependencies/libPS1080.dylib"; sourceTree = "<group>"; };
-		1FA853121B1DBC6900687554 /* libPSLink.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPSLink.dylib; path = "../../../../../gestoosdk-osx-dependencies/libPSLink.dylib"; sourceTree = "<group>"; };
+		1F2DBA891B32C9410097CF9D /* G_Static_Audio.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Audio.dat; path = ../../../../../data/G_Static_Audio.dat; sourceTree = "<group>"; };
+		1F2DBA8A1B32C9410097CF9D /* G_Static_Fwd.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Fwd.dat; path = ../../../../../data/G_Static_Fwd.dat; sourceTree = "<group>"; };
+		1F2DBA8B1B32C9410097CF9D /* G_Static_Pause.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Pause.dat; path = ../../../../../data/G_Static_Pause.dat; sourceTree = "<group>"; };
+		1F2DBA8C1B32C9410097CF9D /* G_Static_Silence.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Silence.dat; path = ../../../../../data/G_Static_Silence.dat; sourceTree = "<group>"; };
+		1F2DBA8D1B32C9410097CF9D /* G_Static_Tee.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Tee.dat; path = ../../../../../data/G_Static_Tee.dat; sourceTree = "<group>"; };
+		1F2DBA931B32CAB10097CF9D /* libboost_date_time-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_date_time-mt.dylib"; path = "../../../../../lib/libboost_date_time-mt.dylib"; sourceTree = "<group>"; };
+		1F2DBA941B32CAB10097CF9D /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_filesystem-mt.dylib"; path = "../../../../../lib/libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
+		1F2DBA951B32CAB10097CF9D /* libboost_program_options-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_program_options-mt.dylib"; path = "../../../../../lib/libboost_program_options-mt.dylib"; sourceTree = "<group>"; };
+		1F2DBA961B32CAB10097CF9D /* libboost_serialization-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_serialization-mt.dylib"; path = "../../../../../lib/libboost_serialization-mt.dylib"; sourceTree = "<group>"; };
+		1F2DBA971B32CAB10097CF9D /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../../lib/libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		1F2DBA981B32CAB10097CF9D /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../../lib/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
+		1F2DBA991B32CAB20097CF9D /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = ../../../../../lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
+		1F2DBA9A1B32CAB20097CF9D /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = ../../../../../lib/libcurl.4.dylib; sourceTree = "<group>"; };
+		1F2DBA9B1B32CAB20097CF9D /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../../../../../lib/libiconv.2.dylib; sourceTree = "<group>"; };
+		1F2DBA9C1B32CAB20097CF9D /* libidn.11.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.11.dylib; path = ../../../../../lib/libidn.11.dylib; sourceTree = "<group>"; };
+		1F2DBA9D1B32CAB20097CF9D /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libintl.8.dylib; path = ../../../../../lib/libintl.8.dylib; sourceTree = "<group>"; };
+		1F2DBA9E1B32CAB20097CF9D /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.9.dylib; path = ../../../../../lib/libjpeg.9.dylib; sourceTree = "<group>"; };
+		1F2DBA9F1B32CAB20097CF9D /* liblzma.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblzma.5.dylib; path = ../../../../../lib/liblzma.5.dylib; sourceTree = "<group>"; };
+		1F2DBAA01B32CAB20097CF9D /* libOniFile.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOniFile.dylib; path = ../../../../../lib/libOniFile.dylib; sourceTree = "<group>"; };
+		1F2DBAA11B32CAB20097CF9D /* libopencv_calib3d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.0.dylib; path = ../../../../../lib/libopencv_calib3d.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA21B32CAB20097CF9D /* libopencv_core.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.0.dylib; path = ../../../../../lib/libopencv_core.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA31B32CAB20097CF9D /* libopencv_features2d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.3.0.dylib; path = ../../../../../lib/libopencv_features2d.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA41B32CAB20097CF9D /* libopencv_flann.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.3.0.dylib; path = ../../../../../lib/libopencv_flann.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA51B32CAB20097CF9D /* libopencv_highgui.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.0.dylib; path = ../../../../../lib/libopencv_highgui.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA61B32CAB20097CF9D /* libopencv_imgcodecs.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.0.dylib; path = ../../../../../lib/libopencv_imgcodecs.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA71B32CAB20097CF9D /* libopencv_imgproc.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.0.dylib; path = ../../../../../lib/libopencv_imgproc.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA81B32CAB20097CF9D /* libopencv_ml.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.0.dylib; path = ../../../../../lib/libopencv_ml.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAA91B32CAB20097CF9D /* libopencv_objdetect.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.3.0.dylib; path = ../../../../../lib/libopencv_objdetect.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAAA1B32CAB20097CF9D /* libopencv_video.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.3.0.dylib; path = ../../../../../lib/libopencv_video.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAAB1B32CAB20097CF9D /* libopencv_videoio.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.0.dylib; path = ../../../../../lib/libopencv_videoio.3.0.dylib; sourceTree = "<group>"; };
+		1F2DBAAC1B32CAB20097CF9D /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI2.dylib; path = ../../../../../lib/libOpenNI2.dylib; sourceTree = "<group>"; };
+		1F2DBAAD1B32CAB20097CF9D /* libpng15.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.15.dylib; path = ../../../../../lib/libpng15.15.dylib; sourceTree = "<group>"; };
+		1F2DBAAE1B32CAB20097CF9D /* libPS1080.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPS1080.dylib; path = ../../../../../lib/libPS1080.dylib; sourceTree = "<group>"; };
+		1F2DBAAF1B32CAB20097CF9D /* libPSLink.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPSLink.dylib; path = ../../../../../lib/libPSLink.dylib; sourceTree = "<group>"; };
+		1F2DBAB01B32CAB20097CF9D /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = ../../../../../lib/libssl.1.0.0.dylib; sourceTree = "<group>"; };
+		1F2DBAB11B32CAB20097CF9D /* libtiff.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtiff.5.dylib; path = ../../../../../lib/libtiff.5.dylib; sourceTree = "<group>"; };
+		1F2DBAB21B32CAB20097CF9D /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libusb-1.0.0.dylib"; path = "../../../../../lib/libusb-1.0.0.dylib"; sourceTree = "<group>"; };
+		1F2DBAB31B32CAB20097CF9D /* libwebp.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwebp.4.dylib; path = ../../../../../lib/libwebp.4.dylib; sourceTree = "<group>"; };
+		1F2DBAB41B32CAB20097CF9D /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../lib/libz.1.dylib; sourceTree = "<group>"; };
+		1F2DBAB51B32CAB20097CF9D /* OpenNI.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = OpenNI.ini; path = ../../../../../lib/OpenNI.ini; sourceTree = "<group>"; };
 		1FA853971B1DBC8300687554 /* OnOffStatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnOffStatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA853981B1DBC8300687554 /* OnOffStatic_10_8-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "OnOffStatic_10_8-Info.plist"; path = "/Users/marcel/Development/bitbucket_fezoo/fezoolib/applications/cindersamples/samples/OnOffStatic/xcode/OnOffStatic_10_8-Info.plist"; sourceTree = "<absolute>"; };
-		1FA853991B1DBD1B00687554 /* libopencv_videoio.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_videoio.3.0.dylib"; sourceTree = "<group>"; };
-		1FA8539A1B1DBD1B00687554 /* libpng15.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.15.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libpng15.15.dylib"; sourceTree = "<group>"; };
-		1FA8539B1B1DBD1B00687554 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libssl.1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA8539C1B1DBD1B00687554 /* libtiff.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtiff.5.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libtiff.5.dylib"; sourceTree = "<group>"; };
-		1FA8539D1B1DBD1B00687554 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libusb-1.0.0.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libusb-1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA8539E1B1DBD1C00687554 /* libwebp.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwebp.4.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libwebp.4.dylib"; sourceTree = "<group>"; };
-		1FA8539F1B1DBD1C00687554 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libz.1.dylib"; sourceTree = "<group>"; };
-		1FA853A01B1DBD1C00687554 /* libopencv_features2d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_features2d.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A11B1DBD1C00687554 /* libopencv_flann.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_flann.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A21B1DBD1C00687554 /* libopencv_highgui.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_highgui.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A31B1DBD1C00687554 /* libopencv_imgcodecs.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_imgcodecs.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A41B1DBD1C00687554 /* libopencv_imgproc.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_imgproc.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A51B1DBD1C00687554 /* libopencv_ml.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_ml.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A61B1DBD1C00687554 /* libopencv_objdetect.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_objdetect.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A71B1DBD1C00687554 /* libopencv_video.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_video.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853A81B1DBD1C00687554 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libiconv.2.dylib"; sourceTree = "<group>"; };
-		1FA853A91B1DBD1C00687554 /* libidn.11.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.11.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libidn.11.dylib"; sourceTree = "<group>"; };
-		1FA853AA1B1DBD1C00687554 /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libintl.8.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libintl.8.dylib"; sourceTree = "<group>"; };
-		1FA853AB1B1DBD1C00687554 /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.9.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libjpeg.9.dylib"; sourceTree = "<group>"; };
-		1FA853AC1B1DBD1C00687554 /* liblzma.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblzma.5.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/liblzma.5.dylib"; sourceTree = "<group>"; };
-		1FA853AD1B1DBD1C00687554 /* libopencv_calib3d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_calib3d.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853AE1B1DBD1C00687554 /* libopencv_core.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libopencv_core.3.0.dylib"; sourceTree = "<group>"; };
-		1FA853AF1B1DBD1C00687554 /* libboost_date_time-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_date_time-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libboost_date_time-mt.dylib"; sourceTree = "<group>"; };
-		1FA853B01B1DBD1C00687554 /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_filesystem-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
-		1FA853B11B1DBD1C00687554 /* libboost_program_options-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_program_options-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libboost_program_options-mt.dylib"; sourceTree = "<group>"; };
-		1FA853B21B1DBD1C00687554 /* libboost_serialization-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_serialization-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libboost_serialization-mt.dylib"; sourceTree = "<group>"; };
-		1FA853B31B1DBD1C00687554 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libboost_system-mt.dylib"; sourceTree = "<group>"; };
-		1FA853B41B1DBD1C00687554 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
-		1FA853B51B1DBD1C00687554 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libcrypto.1.0.0.dylib"; sourceTree = "<group>"; };
-		1FA853B61B1DBD1C00687554 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libcurl.4.dylib"; sourceTree = "<group>"; };
-		1FA853B71B1DBD1C00687554 /* libOniFile.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOniFile.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libOniFile.dylib"; sourceTree = "<group>"; };
-		1FA853B81B1DBD1C00687554 /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI2.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libOpenNI2.dylib"; sourceTree = "<group>"; };
-		1FA853B91B1DBD1C00687554 /* libPS1080.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPS1080.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libPS1080.dylib"; sourceTree = "<group>"; };
-		1FA853BA1B1DBD1C00687554 /* libPSLink.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPSLink.dylib; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/libPSLink.dylib"; sourceTree = "<group>"; };
-		1FA853BB1B1DBD1C00687554 /* OpenNI.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = OpenNI.ini; path = "../../../../../gestoosdk-osx-dependencies/osx_10_8/OpenNI.ini"; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* OnOffStatic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnOffStatic_Prefix.pch; sourceTree = "<group>"; };
@@ -384,7 +193,6 @@
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* OnOffStatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnOffStatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1055AA11B2706EE0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OnOffStatic/Images.xcassets; sourceTree = "<group>"; };
 		A1055AB31B27346A0053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
 		A1055AB61B2734920053CE48 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
@@ -397,11 +205,6 @@
 		A1325B211B170E54005E013C /* gest_tee_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gest_tee_big.png; path = ../resources/gest_tee_big.png; sourceTree = "<group>"; };
 		A1325B221B170E54005E013C /* gest_voldown_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gest_voldown_big.png; path = ../resources/gest_voldown_big.png; sourceTree = "<group>"; };
 		A1325B231B170E54005E013C /* gest_volup_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gest_volup_big.png; path = ../resources/gest_volup_big.png; sourceTree = "<group>"; };
-		A1325B2A1B170EA8005E013C /* GestooAudio_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooAudio_320.dat; path = ../../../../../data/GestooAudio_320.dat; sourceTree = "<group>"; };
-		A1325B2B1B170EA8005E013C /* GestooFwd_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooFwd_320.dat; path = ../../../../../data/GestooFwd_320.dat; sourceTree = "<group>"; };
-		A1325B2C1B170EA8005E013C /* GestooPause_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooPause_320.dat; path = ../../../../../data/GestooPause_320.dat; sourceTree = "<group>"; };
-		A1325B2D1B170EA8005E013C /* GestooSilence_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooSilence_320.dat; path = ../../../../../data/GestooSilence_320.dat; sourceTree = "<group>"; };
-		A1325B2E1B170EA8005E013C /* GestooTee_320.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GestooTee_320.dat; path = ../../../../../data/GestooTee_320.dat; sourceTree = "<group>"; };
 		A1325B3F1B170FD2005E013C /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
 		A1E08DC41B147AD2003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DC51B147AD2003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
@@ -425,23 +228,6 @@
 				1FA8535A1B1DBC8300687554 /* AudioToolbox.framework in Frameworks */,
 				1FA8535B1B1DBC8300687554 /* AudioUnit.framework in Frameworks */,
 				1FA8535C1B1DBC8300687554 /* CoreAudio.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D11072E0486CEB800E47090 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
-				53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */,
-				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
-				5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */,
-				0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */,
-				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
-				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
-				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
-				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +273,6 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* OnOffStatic.app */,
 				1FA853971B1DBC8300687554 /* OnOffStatic.app */,
 			);
 			name = Products;
@@ -548,89 +333,41 @@
 		A1055AA01B2706D70053CE48 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				1FA853991B1DBD1B00687554 /* libopencv_videoio.3.0.dylib */,
-				1FA8539A1B1DBD1B00687554 /* libpng15.15.dylib */,
-				1FA8539B1B1DBD1B00687554 /* libssl.1.0.0.dylib */,
-				1FA8539C1B1DBD1B00687554 /* libtiff.5.dylib */,
-				1FA8539D1B1DBD1B00687554 /* libusb-1.0.0.dylib */,
-				1FA8539E1B1DBD1C00687554 /* libwebp.4.dylib */,
-				1FA8539F1B1DBD1C00687554 /* libz.1.dylib */,
-				1FA853A01B1DBD1C00687554 /* libopencv_features2d.3.0.dylib */,
-				1FA853A11B1DBD1C00687554 /* libopencv_flann.3.0.dylib */,
-				1FA853A21B1DBD1C00687554 /* libopencv_highgui.3.0.dylib */,
-				1FA853A31B1DBD1C00687554 /* libopencv_imgcodecs.3.0.dylib */,
-				1FA853A41B1DBD1C00687554 /* libopencv_imgproc.3.0.dylib */,
-				1FA853A51B1DBD1C00687554 /* libopencv_ml.3.0.dylib */,
-				1FA853A61B1DBD1C00687554 /* libopencv_objdetect.3.0.dylib */,
-				1FA853A71B1DBD1C00687554 /* libopencv_video.3.0.dylib */,
-				1FA853A81B1DBD1C00687554 /* libiconv.2.dylib */,
-				1FA853A91B1DBD1C00687554 /* libidn.11.dylib */,
-				1FA853AA1B1DBD1C00687554 /* libintl.8.dylib */,
-				1FA853AB1B1DBD1C00687554 /* libjpeg.9.dylib */,
-				1FA853AC1B1DBD1C00687554 /* liblzma.5.dylib */,
-				1FA853AD1B1DBD1C00687554 /* libopencv_calib3d.3.0.dylib */,
-				1FA853AE1B1DBD1C00687554 /* libopencv_core.3.0.dylib */,
-				1FA853AF1B1DBD1C00687554 /* libboost_date_time-mt.dylib */,
-				1FA853B01B1DBD1C00687554 /* libboost_filesystem-mt.dylib */,
-				1FA853B11B1DBD1C00687554 /* libboost_program_options-mt.dylib */,
-				1FA853B21B1DBD1C00687554 /* libboost_serialization-mt.dylib */,
-				1FA853B31B1DBD1C00687554 /* libboost_system-mt.dylib */,
-				1FA853B41B1DBD1C00687554 /* libboost_thread-mt.dylib */,
-				1FA853B51B1DBD1C00687554 /* libcrypto.1.0.0.dylib */,
-				1FA853B61B1DBD1C00687554 /* libcurl.4.dylib */,
-				1FA853B71B1DBD1C00687554 /* libOniFile.dylib */,
-				1FA853B81B1DBD1C00687554 /* libOpenNI2.dylib */,
-				1FA853B91B1DBD1C00687554 /* libPS1080.dylib */,
-				1FA853BA1B1DBD1C00687554 /* libPSLink.dylib */,
-				1FA853BB1B1DBD1C00687554 /* OpenNI.ini */,
-				1FA852E31B1DBC6800687554 /* libopencv_objdetect.3.0.dylib */,
-				1FA852E41B1DBC6800687554 /* libopencv_video.3.0.dylib */,
-				1FA852E51B1DBC6800687554 /* libopencv_videoio.3.0.dylib */,
-				1FA852E61B1DBC6800687554 /* liborc-0.4.0.dylib */,
-				1FA852E71B1DBC6900687554 /* libpng16.16.dylib */,
-				1FA852E81B1DBC6900687554 /* libssl.1.0.0.dylib */,
-				1FA852E91B1DBC6900687554 /* libtiff.5.dylib */,
-				1FA852EA1B1DBC6900687554 /* libusb-1.0.0.dylib */,
-				1FA852EB1B1DBC6900687554 /* libwebp.5.dylib */,
-				1FA852EC1B1DBC6900687554 /* libz.1.dylib */,
-				1FA852ED1B1DBC6900687554 /* libopencv_features2d.3.0.dylib */,
-				1FA852EE1B1DBC6900687554 /* libopencv_flann.3.0.dylib */,
-				1FA852EF1B1DBC6900687554 /* libopencv_highgui.3.0.dylib */,
-				1FA852F01B1DBC6900687554 /* libopencv_imgcodecs.3.0.dylib */,
-				1FA852F11B1DBC6900687554 /* libopencv_imgproc.3.0.dylib */,
-				1FA852F21B1DBC6900687554 /* libopencv_ml.3.0.dylib */,
-				1FA852F31B1DBC6900687554 /* OpenNI.ini */,
-				1FA852F41B1DBC6900687554 /* libboost_date_time-mt.dylib */,
-				1FA852F51B1DBC6900687554 /* libboost_filesystem-mt.dylib */,
-				1FA852F61B1DBC6900687554 /* libboost_program_options-mt.dylib */,
-				1FA852F71B1DBC6900687554 /* libboost_serialization-mt.dylib */,
-				1FA852F81B1DBC6900687554 /* libboost_system-mt.dylib */,
-				1FA852F91B1DBC6900687554 /* libboost_thread-mt.dylib */,
-				1FA852FA1B1DBC6900687554 /* libcrypto.1.0.0.dylib */,
-				1FA852FB1B1DBC6900687554 /* libcurl.4.dylib */,
-				1FA852FC1B1DBC6900687554 /* libffi.6.dylib */,
-				1FA852FD1B1DBC6900687554 /* libglib-2.0.0.dylib */,
-				1FA852FE1B1DBC6900687554 /* libgmodule-2.0.0.dylib */,
-				1FA852FF1B1DBC6900687554 /* libgobject-2.0.0.dylib */,
-				1FA853001B1DBC6900687554 /* libgstapp-1.0.0.dylib */,
-				1FA853011B1DBC6900687554 /* libgstaudio-1.0.0.dylib */,
-				1FA853021B1DBC6900687554 /* libgstbase-1.0.0.dylib */,
-				1FA853031B1DBC6900687554 /* libgstpbutils-1.0.0.dylib */,
-				1FA853041B1DBC6900687554 /* libgstreamer-1.0.0.dylib */,
-				1FA853051B1DBC6900687554 /* libgstriff-1.0.0.dylib */,
-				1FA853061B1DBC6900687554 /* libgsttag-1.0.0.dylib */,
-				1FA853071B1DBC6900687554 /* libgstvideo-1.0.0.dylib */,
-				1FA853081B1DBC6900687554 /* libiconv.2.dylib */,
-				1FA853091B1DBC6900687554 /* libidn.11.dylib */,
-				1FA8530A1B1DBC6900687554 /* libintl.8.dylib */,
-				1FA8530B1B1DBC6900687554 /* libjpeg.9.dylib */,
-				1FA8530C1B1DBC6900687554 /* liblzma.5.dylib */,
-				1FA8530D1B1DBC6900687554 /* libOniFile.dylib */,
-				1FA8530E1B1DBC6900687554 /* libopencv_calib3d.3.0.dylib */,
-				1FA8530F1B1DBC6900687554 /* libopencv_core.3.0.dylib */,
-				1FA853101B1DBC6900687554 /* libOpenNI2.dylib */,
-				1FA853111B1DBC6900687554 /* libPS1080.dylib */,
-				1FA853121B1DBC6900687554 /* libPSLink.dylib */,
+				1F2DBA931B32CAB10097CF9D /* libboost_date_time-mt.dylib */,
+				1F2DBA941B32CAB10097CF9D /* libboost_filesystem-mt.dylib */,
+				1F2DBA951B32CAB10097CF9D /* libboost_program_options-mt.dylib */,
+				1F2DBA961B32CAB10097CF9D /* libboost_serialization-mt.dylib */,
+				1F2DBA971B32CAB10097CF9D /* libboost_system-mt.dylib */,
+				1F2DBA981B32CAB10097CF9D /* libboost_thread-mt.dylib */,
+				1F2DBA991B32CAB20097CF9D /* libcrypto.1.0.0.dylib */,
+				1F2DBA9A1B32CAB20097CF9D /* libcurl.4.dylib */,
+				1F2DBA9B1B32CAB20097CF9D /* libiconv.2.dylib */,
+				1F2DBA9C1B32CAB20097CF9D /* libidn.11.dylib */,
+				1F2DBA9D1B32CAB20097CF9D /* libintl.8.dylib */,
+				1F2DBA9E1B32CAB20097CF9D /* libjpeg.9.dylib */,
+				1F2DBA9F1B32CAB20097CF9D /* liblzma.5.dylib */,
+				1F2DBAA01B32CAB20097CF9D /* libOniFile.dylib */,
+				1F2DBAA11B32CAB20097CF9D /* libopencv_calib3d.3.0.dylib */,
+				1F2DBAA21B32CAB20097CF9D /* libopencv_core.3.0.dylib */,
+				1F2DBAA31B32CAB20097CF9D /* libopencv_features2d.3.0.dylib */,
+				1F2DBAA41B32CAB20097CF9D /* libopencv_flann.3.0.dylib */,
+				1F2DBAA51B32CAB20097CF9D /* libopencv_highgui.3.0.dylib */,
+				1F2DBAA61B32CAB20097CF9D /* libopencv_imgcodecs.3.0.dylib */,
+				1F2DBAA71B32CAB20097CF9D /* libopencv_imgproc.3.0.dylib */,
+				1F2DBAA81B32CAB20097CF9D /* libopencv_ml.3.0.dylib */,
+				1F2DBAA91B32CAB20097CF9D /* libopencv_objdetect.3.0.dylib */,
+				1F2DBAAA1B32CAB20097CF9D /* libopencv_video.3.0.dylib */,
+				1F2DBAAB1B32CAB20097CF9D /* libopencv_videoio.3.0.dylib */,
+				1F2DBAAC1B32CAB20097CF9D /* libOpenNI2.dylib */,
+				1F2DBAAD1B32CAB20097CF9D /* libpng15.15.dylib */,
+				1F2DBAAE1B32CAB20097CF9D /* libPS1080.dylib */,
+				1F2DBAAF1B32CAB20097CF9D /* libPSLink.dylib */,
+				1F2DBAB01B32CAB20097CF9D /* libssl.1.0.0.dylib */,
+				1F2DBAB11B32CAB20097CF9D /* libtiff.5.dylib */,
+				1F2DBAB21B32CAB20097CF9D /* libusb-1.0.0.dylib */,
+				1F2DBAB31B32CAB20097CF9D /* libwebp.4.dylib */,
+				1F2DBAB41B32CAB20097CF9D /* libz.1.dylib */,
+				1F2DBAB51B32CAB20097CF9D /* OpenNI.ini */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -638,11 +375,11 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A1325B2A1B170EA8005E013C /* GestooAudio_320.dat */,
-				A1325B2B1B170EA8005E013C /* GestooFwd_320.dat */,
-				A1325B2C1B170EA8005E013C /* GestooPause_320.dat */,
-				A1325B2D1B170EA8005E013C /* GestooSilence_320.dat */,
-				A1325B2E1B170EA8005E013C /* GestooTee_320.dat */,
+				1F2DBA891B32C9410097CF9D /* G_Static_Audio.dat */,
+				1F2DBA8A1B32C9410097CF9D /* G_Static_Fwd.dat */,
+				1F2DBA8B1B32C9410097CF9D /* G_Static_Pause.dat */,
+				1F2DBA8C1B32C9410097CF9D /* G_Static_Silence.dat */,
+				1F2DBA8D1B32C9410097CF9D /* G_Static_Tee.dat */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -708,26 +445,6 @@
 			productReference = 1FA853971B1DBC8300687554 /* OnOffStatic.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D1107260486CEB800E47090 /* OnOffStatic */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "OnOffStatic" */;
-			buildPhases = (
-				8D1107290486CEB800E47090 /* Resources */,
-				8D11072C0486CEB800E47090 /* Sources */,
-				8D11072E0486CEB800E47090 /* Frameworks */,
-				A10B06501B0B7EB000507C88 /* CopyFiles */,
-				1FA852E21B1DBC3E00687554 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OnOffStatic;
-			productInstallPath = "$(HOME)/Applications";
-			productName = Earthquake;
-			productReference = 8D1107320486CEB800E47090 /* OnOffStatic.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -750,7 +467,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* OnOffStatic */,
 				1FA853431B1DBC8300687554 /* OnOffStatic_10_8 */,
 			);
 		};
@@ -774,23 +490,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D1107290486CEB800E47090 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1055AA21B2706EE0053CE48 /* Images.xcassets in Resources */,
-				A1E08DCC1B147B19003ED9FF /* interactor.cfg in Resources */,
-				A1325B261B170E54005E013C /* gest_rwd_big.png in Resources */,
-				A1325B271B170E54005E013C /* gest_tee_big.png in Resources */,
-				A1325B281B170E54005E013C /* gest_voldown_big.png in Resources */,
-				A1325B241B170E54005E013C /* gest_ffwd_big.png in Resources */,
-				A1055AB41B27346A0053CE48 /* help.png in Resources */,
-				A1325B251B170E54005E013C /* gest_pause_big.png in Resources */,
-				A1325B291B170E54005E013C /* gest_volup_big.png in Resources */,
-				A1325B1D1B170E44005E013C /* interactor_macos.cfg in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -805,17 +504,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D11072C0486CEB800E47090 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00C07B910FFDB748004801EA /* mainApp.cpp in Sources */,
-				A1325B3E1B170F75005E013C /* Cinderactor.cpp in Sources */,
-				A1E08DCA1B147AD2003ED9FF /* MovingRect.cpp in Sources */,
-				A1325B1A1B170E01005E013C /* GestureSwitch.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -825,32 +513,34 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
-				FEZOOLIB_PATH = ../../../../..;
+				FEZOOLIB_PATH = ../../../../../lib/release/;
+				FEZOOLIB_PATH_DEV = ../../../../..;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OnOffStatic_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
+				GESTOOS_SDK_LIB_PATH_DEV = "../../../../../gestoosdk-osx-dependencies/osx_10_8";
+				GESTOOS_SDK_PATH = ../../../../..;
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
-					"\"$(FEZOOLIB_PATH)/include\"",
+					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
+					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
 				INFOPLIST_FILE = "OnOffStatic_10_8-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(GESTOOS_SDK_LIB_PATH)\"",
+					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
 					"-lOpenNI2",
-					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
+					"$(GESTOOS_SDK_PATH)/lib/release/libfezoolib.a",
 					"-lopencv_highgui.3.0",
 					"-lopencv_objdetect.3.0",
 					"-lopencv_imgproc.3.0",
@@ -883,32 +573,34 @@
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FEZOOLIB_PATH = ../../../../..;
+				FEZOOLIB_PATH = ../../../../../lib/release/;
+				FEZOOLIB_PATH_DEV = ../../../../..;
 				GCC_FAST_MATH = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OnOffStatic_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
+				GESTOOS_SDK_LIB_PATH_DEV = "../../../../../gestoosdk-osx-dependencies/osx_10_8";
+				GESTOOS_SDK_PATH = ../../../../..;
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
-					"\"$(FEZOOLIB_PATH)/include\"",
+					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
+					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
 				INFOPLIST_FILE = "OnOffStatic_10_8-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(GESTOOS_SDK_LIB_PATH)\"",
+					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
 					"-lOpenNI2",
-					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
+					"$(GESTOOS_SDK_PATH)/lib/release/libfezoolib.a",
 					"-lopencv_highgui.3.0",
 					"-lopencv_objdetect.3.0",
 					"-lopencv_imgproc.3.0",
@@ -925,121 +617,6 @@
 					"-lboost_system-mt",
 					"-lboost_thread-mt",
 					"-lboost_serialization-mt",
-					"-lcurl.4",
-				);
-				PRODUCT_NAME = OnOffStatic;
-				STRIP_INSTALLED_PRODUCT = YES;
-				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		C01FCF4B08A954540054247B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
-				COPY_PHASE_STRIP = NO;
-				FEZOOLIB_PATH = ../../../../..;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = OnOffStatic_Prefix.pch;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
-				HEADER_SEARCH_PATHS = (
-					"$(CINDER_PATH)/boost",
-					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
-					"\"$(FEZOOLIB_PATH)/include\"",
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(GESTOOS_SDK_LIB_PATH)\"",
-					"$(PROJECT_DIR)",
-				);
-				OTHER_LDFLAGS = (
-					"$(CINDER_PATH)/lib/libcinder_d.a",
-					"-lOpenNI2",
-					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
-					"-lopencv_highgui",
-					"-lopencv_objdetect",
-					"-lopencv_imgproc",
-					"-lopencv_imgcodecs",
-					"-lopencv_core",
-					"-lopencv_calib3d",
-					"-lopencv_video",
-					"-lopencv_flann",
-					"-lopencv_features2d",
-					"-lopencv_ml",
-					"-lboost_program_options-mt",
-					"-lboost_date_time-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_system-mt",
-					"-lboost_thread-mt",
-					"-lboost_serialization-mt",
-					"-lcurl.4",
-				);
-				PRODUCT_NAME = OnOffStatic;
-				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		C01FCF4C08A954540054247B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
-				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FEZOOLIB_PATH = ../../../../..;
-				GCC_FAST_MATH = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = OnOffStatic_Prefix.pch;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GESTOOS_SDK_LIB_PATH = "../../../../../gestoosdk-osx-dependencies/";
-				HEADER_SEARCH_PATHS = (
-					"$(CINDER_PATH)/boost",
-					/usr/local/include,
-					"\"$(FEZOOLIB_PATH)/OpenNI2/Include\"",
-					"\"$(FEZOOLIB_PATH)/include\"",
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(GESTOOS_SDK_LIB_PATH)\"",
-					"$(PROJECT_DIR)",
-				);
-				OTHER_LDFLAGS = (
-					"$(CINDER_PATH)/lib/libcinder.a",
-					"-lopencv_highgui",
-					"-lopencv_objdetect",
-					"-lopencv_imgproc",
-					"-lopencv_imgcodecs",
-					"-lopencv_core",
-					"-lopencv_calib3d",
-					"-lopencv_video",
-					"-lopencv_flann",
-					"-lopencv_features2d",
-					"-lopencv_ml",
-					"-lboost_program_options-mt",
-					"-lboost_date_time-mt",
-					"-lboost_filesystem-mt",
-					"-lboost_system-mt",
-					"-lboost_thread-mt",
-					"-lboost_serialization-mt",
-					"-lOpenNI2",
-					"$(FEZOOLIB_PATH)/lib/release/libfezoolib.a",
 					"-lcurl.4",
 				);
 				PRODUCT_NAME = OnOffStatic;
@@ -1101,15 +678,6 @@
 			buildConfigurations = (
 				1FA853951B1DBC8300687554 /* Debug */,
 				1FA853961B1DBC8300687554 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "OnOffStatic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C01FCF4B08A954540054247B /* Debug */,
-				C01FCF4C08A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

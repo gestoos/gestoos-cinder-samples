@@ -577,7 +577,6 @@
 					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(GESTOOS_SDK_LIB_PATH_DEV)",
 					"$(PROJECT_DIR)",
-					/Users/xaviersuaucuadros/Development/GestoosSDK_v0.6/lib,
 				);
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
@@ -639,7 +638,6 @@
 					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(GESTOOS_SDK_LIB_PATH_DEV)",
 					"$(PROJECT_DIR)",
-					/Users/xaviersuaucuadros/Development/GestoosSDK_v0.6/lib,
 				);
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
