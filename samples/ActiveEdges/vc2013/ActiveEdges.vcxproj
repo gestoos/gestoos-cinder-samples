@@ -122,7 +122,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\cindergestooslib\include;..\..\..\lib\win64\cinder_0.8.6_win\include;..\..\..\lib\win64\cinder_0.8.6_win\boost;$(GESTOOS_DIR)\external\opencv\include;$(GESTOOS_DIR)\external\opencv\include\opencv;$(OPENNI_INCLUDE64);$(GESTOOS_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -133,7 +133,7 @@
       <AdditionalDependencies>cinder-v120.lib;libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\include;$(CINDER_LIB)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\lib\win64\cinder_0.8.6_win\include</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -148,9 +148,17 @@
     <ClInclude Include="..\include\ActiveEdge.h" />
     <ClInclude Include="..\include\resource.h" />
     <ClInclude Include="..\include\Widget.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resources\VALCRI_widgets\w_chart.png" />
+    <Image Include="..\resources\VALCRI_widgets\w_map.png" />
+    <Image Include="..\resources\VALCRI_widgets\w_persons.png" />
+    <Image Include="..\resources\VALCRI_widgets\w_round.png" />
+    <Image Include="gestoos_sample_logo_256.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

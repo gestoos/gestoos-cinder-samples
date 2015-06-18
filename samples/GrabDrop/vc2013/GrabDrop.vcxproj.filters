@@ -32,5 +32,21 @@
     <ClInclude Include="..\..\..\cindergestooslib\include\MovingRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="gestoos_sample_logo_256.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\help.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

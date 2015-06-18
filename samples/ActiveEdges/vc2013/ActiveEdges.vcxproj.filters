@@ -44,10 +44,30 @@
     <ClInclude Include="..\include\Widget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="gestoos_sample_logo_256.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\VALCRI_widgets\w_chart.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\VALCRI_widgets\w_map.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\VALCRI_widgets\w_persons.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\VALCRI_widgets\w_round.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
