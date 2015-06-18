@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2DBA861B32C2550097CF9D /* Hand_huge.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1F2DBA851B32C2550097CF9D /* Hand_huge.dat */; };
+		1F2DBA881B32C29B0097CF9D /* G_Hand_L.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1F2DBA871B32C29B0097CF9D /* G_Hand_L.dat */; };
 		1FEE88AA1B1DC83E0064AEA5 /* interactor.cfg in Resources */ = {isa = PBXBuildFile; fileRef = A1E08DC01B14780B003ED9FF /* interactor.cfg */; };
 		1FEE88AC1B1DC83E0064AEA5 /* Cinderactor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */; };
 		1FEE88AD1B1DC83E0064AEA5 /* mainApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C07B8D0FFDB748004801EA /* mainApp.cpp */; };
@@ -24,8 +26,6 @@
 		1FEE88BA1B1DC83E0064AEA5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		A1055AA71B2709ED0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA51B2709DC0053CE48 /* Images.xcassets */; };
 		A1055AAB1B27258A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA91B2725230053CE48 /* help.png */; };
-		A151C5121B30869300351F2C /* Hand_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50A1B30869300351F2C /* Hand_light.dat */; };
-		A151C5141B30869300351F2C /* G_Hand_L_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50B1B30869300351F2C /* G_Hand_L_light.dat */; };
 		A151C5161B30869300351F2C /* G_Hand_Open_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50C1B30869300351F2C /* G_Hand_Open_light.dat */; };
 		A151C5181B30869300351F2C /* G_Hand_Victory_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50D1B30869300351F2C /* G_Hand_Victory_light.dat */; };
 		A151C51A1B30869300351F2C /* G_Hand_Index_light.dat in Resources */ = {isa = PBXBuildFile; fileRef = A151C50E1B30869300351F2C /* G_Hand_Index_light.dat */; };
@@ -160,6 +160,8 @@
 		00C07B8D0FFDB748004801EA /* mainApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mainApp.cpp; path = ../src/mainApp.cpp; sourceTree = SOURCE_ROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1F2DBA851B32C2550097CF9D /* Hand_huge.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = Hand_huge.dat; path = ../../../../../data/Hand_huge.dat; sourceTree = "<group>"; };
+		1F2DBA871B32C29B0097CF9D /* G_Hand_L.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Hand_L.dat; path = ../../../../../data/G_Hand_L.dat; sourceTree = "<group>"; };
 		1FEE88C61B1DC83E0064AEA5 /* Slider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEE88C71B1DC83E0064AEA5 /* Slider_10_8-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Slider_10_8-Info.plist"; path = "/Users/marcel/Development/bitbucket_fezoo/fezoolib/applications/cindersamples/samples/Slider/xcode/Slider_10_8-Info.plist"; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -173,8 +175,6 @@
 		A1055AA81B270A510053CE48 /* Help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		A1055AA91B2725230053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
 		A1055AAC1B27272B0053CE48 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
-		A151C50A1B30869300351F2C /* Hand_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Hand_light.dat; path = ../../../../../data/Hand_light.dat; sourceTree = "<group>"; };
-		A151C50B1B30869300351F2C /* G_Hand_L_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = G_Hand_L_light.dat; path = ../../../../../data/G_Hand_L_light.dat; sourceTree = "<group>"; };
 		A151C50C1B30869300351F2C /* G_Hand_Open_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = G_Hand_Open_light.dat; path = ../../../../../data/G_Hand_Open_light.dat; sourceTree = "<group>"; };
 		A151C50D1B30869300351F2C /* G_Hand_Victory_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = G_Hand_Victory_light.dat; path = ../../../../../data/G_Hand_Victory_light.dat; sourceTree = "<group>"; };
 		A151C50E1B30869300351F2C /* G_Hand_Index_light.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = G_Hand_Index_light.dat; path = ../../../../../data/G_Hand_Index_light.dat; sourceTree = "<group>"; };
@@ -413,8 +413,8 @@
 		A10B06371B0B79A400507C88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A151C50A1B30869300351F2C /* Hand_light.dat */,
-				A151C50B1B30869300351F2C /* G_Hand_L_light.dat */,
+				1F2DBA871B32C29B0097CF9D /* G_Hand_L.dat */,
+				1F2DBA851B32C2550097CF9D /* Hand_huge.dat */,
 				A151C50C1B30869300351F2C /* G_Hand_Open_light.dat */,
 				A151C50D1B30869300351F2C /* G_Hand_Victory_light.dat */,
 				A151C50E1B30869300351F2C /* G_Hand_Index_light.dat */,
@@ -516,6 +516,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2DBA881B32C29B0097CF9D /* G_Hand_L.dat in Resources */,
+				1F2DBA861B32C2550097CF9D /* Hand_huge.dat in Resources */,
 				1FEE88AA1B1DC83E0064AEA5 /* interactor.cfg in Resources */,
 				A151C51C1B30869300351F2C /* G_Hand_Close_light.dat in Resources */,
 				A151C51E1B30869300351F2C /* G_Static_Audio.dat in Resources */,
@@ -524,8 +526,6 @@
 				A151C5181B30869300351F2C /* G_Hand_Victory_light.dat in Resources */,
 				A151C51A1B30869300351F2C /* G_Hand_Index_light.dat in Resources */,
 				A151C5161B30869300351F2C /* G_Hand_Open_light.dat in Resources */,
-				A151C5121B30869300351F2C /* Hand_light.dat in Resources */,
-				A151C5141B30869300351F2C /* G_Hand_L_light.dat in Resources */,
 				A151C5871B30879200351F2C /* OpenNI.ini in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,7 +577,6 @@
 					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(GESTOOS_SDK_LIB_PATH_DEV)",
 					"$(PROJECT_DIR)",
-					/Users/xaviersuaucuadros/Development/GestoosSDK_v0.6/lib,
 				);
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder_d.a",
@@ -639,7 +638,6 @@
 					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(GESTOOS_SDK_LIB_PATH_DEV)",
 					"$(PROJECT_DIR)",
-					/Users/xaviersuaucuadros/Development/GestoosSDK_v0.6/lib,
 				);
 				OTHER_LDFLAGS = (
 					"$(CINDER_PATH)/lib/libcinder.a",
