@@ -129,9 +129,9 @@ void exampleApp::processThread()
     
     //Configure the cinderactor
 #ifdef _WIN32 // this flag is always defined in Windows 32/64
-	cinderactor.init("..\\resources\\interactor.cfg");
+	cinderactor.init(".\\resources\\interactor.cfg");
 #else
-    cinderactor.init( getResourcePath("interactor_macos.cfg").string() );
+    cinderactor.init( getResourcePath("interactor.cfg").string() );
 #endif
     cinderactor.set_draw_window(false);
     
