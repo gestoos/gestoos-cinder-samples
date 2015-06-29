@@ -34,14 +34,14 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FA851A31B1DAB6400687554"
             BuildableName = "mapView.app"
-            BlueprintName = "mapView_10_8"
+            BlueprintName = "mapView"
             ReferencedContainer = "container:mapView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
    <LaunchAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
@@ -53,7 +53,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FA851A31B1DAB6400687554"
             BuildableName = "mapView.app"
-            BlueprintName = "mapView_10_8"
+            BlueprintName = "mapView"
             ReferencedContainer = "container:mapView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

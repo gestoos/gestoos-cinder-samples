@@ -71,6 +71,7 @@
 		1FA8535C1B1DBC8300687554 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		A1055AA31B2706FC0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA11B2706EE0053CE48 /* Images.xcassets */; };
 		A1055AB51B27346A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB31B27346A0053CE48 /* help.png */; };
+		A1C2F85E1B413555001CFA33 /* OnOffStatic-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C2F85D1B413555001CFA33 /* OnOffStatic-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,7 +186,6 @@
 		1F2DBB781B32FD890097CF9D /* G_Static_Silence.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Silence.dat; path = ../../../../data/G_Static_Silence.dat; sourceTree = "<group>"; };
 		1F2DBB791B32FD890097CF9D /* G_Static_Tee.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Tee.dat; path = ../../../../data/G_Static_Tee.dat; sourceTree = "<group>"; };
 		1FA853971B1DBC8300687554 /* OnOffStatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnOffStatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FA853981B1DBC8300687554 /* OnOffStatic_10_8-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "OnOffStatic_10_8-Info.plist"; path = "/Users/marcel/Development/bitbucket_fezoo/fezoolib/applications/cindersamples/samples/OnOffStatic/xcode/OnOffStatic_10_8-Info.plist"; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* OnOffStatic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnOffStatic_Prefix.pch; sourceTree = "<group>"; };
@@ -206,6 +206,7 @@
 		A1325B221B170E54005E013C /* gest_voldown_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gest_voldown_big.png; path = ../resources/gest_voldown_big.png; sourceTree = "<group>"; };
 		A1325B231B170E54005E013C /* gest_volup_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gest_volup_big.png; path = ../resources/gest_volup_big.png; sourceTree = "<group>"; };
 		A1325B3F1B170FD2005E013C /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
+		A1C2F85D1B413555001CFA33 /* OnOffStatic-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OnOffStatic-Info.plist"; sourceTree = "<group>"; };
 		A1E08DC41B147AD2003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DC51B147AD2003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
@@ -335,6 +336,7 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A1C2F85D1B413555001CFA33 /* OnOffStatic-Info.plist */,
 				1F2DBB741B32FD520097CF9D /* libs */,
 				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
@@ -343,7 +345,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1FA853981B1DBC8300687554 /* OnOffStatic_10_8-Info.plist */,
 			);
 			name = Earthquake;
 			sourceTree = "<group>";
@@ -425,9 +426,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FA853431B1DBC8300687554 /* OnOffStatic_10_8 */ = {
+		1FA853431B1DBC8300687554 /* OnOffStatic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA853941B1DBC8300687554 /* Build configuration list for PBXNativeTarget "OnOffStatic_10_8" */;
+			buildConfigurationList = 1FA853941B1DBC8300687554 /* Build configuration list for PBXNativeTarget "OnOffStatic" */;
 			buildPhases = (
 				1FA853441B1DBC8300687554 /* Resources */,
 				1FA8534D1B1DBC8300687554 /* Sources */,
@@ -439,7 +440,7 @@
 			);
 			dependencies = (
 			);
-			name = OnOffStatic_10_8;
+			name = OnOffStatic;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Earthquake;
 			productReference = 1FA853971B1DBC8300687554 /* OnOffStatic.app */;
@@ -467,7 +468,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FA853431B1DBC8300687554 /* OnOffStatic_10_8 */,
+				1FA853431B1DBC8300687554 /* OnOffStatic */,
 			);
 		};
 /* End PBXProject section */
@@ -485,6 +486,7 @@
 				1FA853491B1DBC8300687554 /* gest_ffwd_big.png in Resources */,
 				A1055AB51B27346A0053CE48 /* help.png in Resources */,
 				1FA8534A1B1DBC8300687554 /* gest_pause_big.png in Resources */,
+				A1C2F85E1B413555001CFA33 /* OnOffStatic-Info.plist in Resources */,
 				1FA8534B1B1DBC8300687554 /* gest_volup_big.png in Resources */,
 				1FA8534C1B1DBC8300687554 /* interactor_macos.cfg in Resources */,
 			);
@@ -529,7 +531,7 @@
 					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
-				INFOPLIST_FILE = "OnOffStatic_10_8-Info.plist";
+				INFOPLIST_FILE = "OnOffStatic-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -589,7 +591,7 @@
 					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
-				INFOPLIST_FILE = "OnOffStatic_10_8-Info.plist";
+				INFOPLIST_FILE = "OnOffStatic-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -673,7 +675,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FA853941B1DBC8300687554 /* Build configuration list for PBXNativeTarget "OnOffStatic_10_8" */ = {
+		1FA853941B1DBC8300687554 /* Build configuration list for PBXNativeTarget "OnOffStatic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FA853951B1DBC8300687554 /* Debug */,
