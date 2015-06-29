@@ -14,6 +14,17 @@
       <AdditionalLibraryDirectories>..\..\..\lib\win64\cinder_0.8.6_win\lib\msw\x64;$(GESTOOS_DIR)\lib\x64\vc12\release;$(GESTOOS_DIR)\external\opencv\lib64\Release\;$(GESTOOS_DIR)\external\boost\lib64\;$(OPENNI_LIB64);$(GESTOOS_DIR)\external\curl\x64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>cinder-v120.lib;libcurl.lib;Advapi32.lib;opencv_world300.lib;opencv_ts300.lib;fezoolib.lib;libboost_filesystem-vc120-mt-1_55.lib;libboost_date_time-vc120-mt-1_55.lib;libboost_program_options-vc120-mt-1_55.lib;libboost_system-vc120-mt-1_55.lib;libboost_thread-vc120-mt-1_55.lib;libboost_serialization-vc120-mt-1_55.lib;OpenNI2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>mkdir "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\resources\interactor.cfg" "$(OutDir)\resources\"
+copy "$(SolutionDir)\..\..\..\..\data\G_Static_Audio.dat" "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\..\..\..\data\G_Hand_L.dat" "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\..\..\..\data\G_Hand_Index_light.dat" "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\..\..\..\data\G_Hand_Victory_light.dat" "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\..\..\..\data\G_Hand_Open_light.dat" "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\..\..\..\data\G_Hand_Close_light.dat" "$(OutDir)\resources\Models\"
+copy "$(SolutionDir)\..\..\..\..\data\Hand_huge.dat" "$(OutDir)\resources\Models\"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

@@ -112,7 +112,7 @@ void exampleApp::processThread()
     
     //Configure the cinderactor
 #ifdef _WIN32
-	cinderactor.init("..\\resources\\interactor.cfg");
+	cinderactor.init(".\\resources\\interactor.cfg");
 #else
     cinderactor.init( getResourcePath("interactor.cfg").string() );
 #endif

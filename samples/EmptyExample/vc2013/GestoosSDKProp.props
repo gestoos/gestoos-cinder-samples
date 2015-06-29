@@ -17,11 +17,7 @@
     <PreBuildEvent>
       <Command>mkdir "$(OutDir)\resources\Models\"
 copy "$(SolutionDir)\..\resources\interactor.cfg" "$(OutDir)\resources\"
-copy "$(SolutionDir)\..\..\..\..\data\G_Static_Tee.dat" "$(OutDir)\resources\Models\"
-copy "$(SolutionDir)\..\..\..\..\data\G_Static_Pause.dat" "$(OutDir)\resources\Models\"
-copy "$(SolutionDir)\..\..\..\..\data\G_Static_Silence.dat" "$(OutDir)\resources\Models\"
-copy "$(SolutionDir)\..\..\..\..\data\G_Static_Audio.dat" "$(OutDir)\resources\Models\"
-copy "$(SolutionDir)\..\..\..\..\data\G_Static_Fwd.dat" "$(OutDir)\resources\Models\"</Command>
+copy "$(SolutionDir)\..\..\..\..\data\hand_detector_light.dat" "$(OutDir)\resources\Models\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />

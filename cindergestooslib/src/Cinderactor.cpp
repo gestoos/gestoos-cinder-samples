@@ -21,7 +21,7 @@ void Cinderactor::init(const std::string & ini_file )
 {
     // Get a reference to the main bundle
 #ifdef _WIN32
-	std::string bundle_path("..\\resources\\");
+	std::string bundle_path(".\\resources\\");
 #else
     CFBundleRef mainBundle = CFBundleGetMainBundle();
     CFURLRef resourcesURL = CFBundleCopyBundleURL(mainBundle);

@@ -7,14 +7,14 @@ A set of examples that show how to use Gestoos SDK interactive power with Cinder
 ## Installation
 
 1. Download Gestoos SDK from www.gestoos.com for your Windows or MacOS. Gestoos is free for research and non commercial purposes.
-2. Clone this repository into gestoos_path/applications, for example:
+2. Clone this repository into your root gestoos path, for example:
 
-        cd gestoos_path/samples
+        cd <your gestoos path>
         git clone https://github.com/gestoos/gestoos-cinder-samples.git 
 
 ## How to run the samples
 
-Make sure you cloned this repository in the applications folder of your Gestoos SDK copy.
+Make sure you cloned this repository in the root folder of your Gestoos SDK copy.
 
 For MacOS, open the XCode project included in the sample, then just clicl play.
 For Windows, open the Visual Studio 2013 project included in the sample, then just run.

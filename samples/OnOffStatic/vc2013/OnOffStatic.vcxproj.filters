@@ -40,10 +40,16 @@
     <ClInclude Include="..\..\..\cindergestooslib\include\MovingRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="..\include\GestureSwitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\GestureSwitch.h">
+    <ClInclude Include="..\include\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cindergestooslib\include\Help.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -64,6 +70,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\resources\gest_volup_big.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="gestoos_sample_logo_256.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\resources\help.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
