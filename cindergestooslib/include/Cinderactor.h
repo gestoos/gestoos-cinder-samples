@@ -52,13 +52,13 @@ public:
     /// Draw a cool representation of the interaction data.
     void draw() const;
     
-    ///
+    /// Draw a circle representing the hand movement
     void draw_hand_circle( const gestoos::nui::Hand & hand ) const;
 
-    ///
+    /// Draw a static circle representing the hand, but not the hand movement
     static void draw_hand_representation( const gestoos::nui::Hand & hand, const Vec2f & where = Vec2f(70,70)  ) ;
 
-	///
+	/// Check whether the initialization was succesful
 	bool get_init_ok();
     
 private:

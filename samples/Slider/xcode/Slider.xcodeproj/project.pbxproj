@@ -66,6 +66,7 @@
 		1FEE88BA1B1DC83E0064AEA5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		A1055AA71B2709ED0053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA51B2709DC0053CE48 /* Images.xcassets */; };
 		A1055AAB1B27258A0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AA91B2725230053CE48 /* help.png */; };
+		AC3E08151B4287760085D5AF /* interactor_osx.cfg in Resources */ = {isa = PBXBuildFile; fileRef = AC3E08141B4287760085D5AF /* interactor_osx.cfg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -187,6 +188,7 @@
 		A1E08DC01B14780B003ED9FF /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
 		A1E08DD71B14CB04003ED9FF /* Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Slider.h; path = ../include/Slider.h; sourceTree = "<group>"; };
 		A1E08DD81B14CB11003ED9FF /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = ../src/Slider.cpp; sourceTree = "<group>"; };
+		AC3E08141B4287760085D5AF /* interactor_osx.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor_osx.cfg; path = ../resources/interactor_osx.cfg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC3E08141B4287760085D5AF /* interactor_osx.cfg */,
 				A1055AA91B2725230053CE48 /* help.png */,
 				A1055AA51B2709DC0053CE48 /* Images.xcassets */,
 				A1E08DC01B14780B003ED9FF /* interactor.cfg */,
@@ -452,6 +455,7 @@
 				1F2DBB281B32F9DD0097CF9D /* G_Hand_L.dat in Resources */,
 				1F2DBB291B32F9DD0097CF9D /* G_Hand_Open_light.dat in Resources */,
 				1F2DBB2A1B32F9DD0097CF9D /* G_Hand_Victory_light.dat in Resources */,
+				AC3E08151B4287760085D5AF /* interactor_osx.cfg in Resources */,
 				1F2DBB2B1B32F9DD0097CF9D /* G_Static_Audio.dat in Resources */,
 				1F2DBB2C1B32F9DD0097CF9D /* Hand_huge.dat in Resources */,
 				1FEE88AA1B1DC83E0064AEA5 /* interactor.cfg in Resources */,
