@@ -61,6 +61,7 @@
 		1FEE89811B1DCB5E0064AEA5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		A1055A8F1B26F9070053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A8D1B26F8F80053CE48 /* Images.xcassets */; };
 		A1055AAF1B27302C0053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AAD1B27302C0053CE48 /* help.png */; };
+		A1C2F8621B413B2C001CFA33 /* GrabDrop-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C2F8611B413B2C001CFA33 /* GrabDrop-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -171,7 +172,6 @@
 		1F2DBBC81B3300970097CF9D /* G_Hand_L.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Hand_L.dat; path = ../../../../data/G_Hand_L.dat; sourceTree = "<group>"; };
 		1F2DBBC91B3300970097CF9D /* Hand_huge.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = Hand_huge.dat; path = ../../../../data/Hand_huge.dat; sourceTree = "<group>"; };
 		1FEE898C1B1DCB5E0064AEA5 /* GrabDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrabDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FEE898D1B1DCB5E0064AEA5 /* GrabDrop_10_8-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GrabDrop_10_8-Info.plist"; path = "/Users/marcel/Development/bitbucket_fezoo/fezoolib/applications/cindersamples/samples/GrabDrop/xcode/GrabDrop_10_8-Info.plist"; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* GrabDrop_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrabDrop_Prefix.pch; sourceTree = "<group>"; };
@@ -183,6 +183,7 @@
 		A1055AAD1B27302C0053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
 		A1055AB01B2730350053CE48 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		A1055AB21B2730750053CE48 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../include/resource.h; sourceTree = "<group>"; };
+		A1C2F8611B413B2C001CFA33 /* GrabDrop-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GrabDrop-Info.plist"; sourceTree = "<group>"; };
 		A1E08DB91B147715003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DBA1B147715003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A1E08DBC1B147715003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
@@ -309,6 +310,7 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A1C2F8611B413B2C001CFA33 /* GrabDrop-Info.plist */,
 				1F2DBBC61B3300220097CF9D /* libs */,
 				A1E08DB71B147715003ED9FF /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
@@ -317,7 +319,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1FEE898D1B1DCB5E0064AEA5 /* GrabDrop_10_8-Info.plist */,
 			);
 			name = Earthquake;
 			sourceTree = "<group>";
@@ -391,9 +392,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FEE89701B1DCB5E0064AEA5 /* GrabDrop_10_8 */ = {
+		1FEE89701B1DCB5E0064AEA5 /* GrabDrop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FEE89891B1DCB5E0064AEA5 /* Build configuration list for PBXNativeTarget "GrabDrop_10_8" */;
+			buildConfigurationList = 1FEE89891B1DCB5E0064AEA5 /* Build configuration list for PBXNativeTarget "GrabDrop" */;
 			buildPhases = (
 				1FEE89711B1DCB5E0064AEA5 /* Resources */,
 				1FEE89731B1DCB5E0064AEA5 /* Sources */,
@@ -405,7 +406,7 @@
 			);
 			dependencies = (
 			);
-			name = GrabDrop_10_8;
+			name = GrabDrop;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Earthquake;
 			productReference = 1FEE898C1B1DCB5E0064AEA5 /* GrabDrop.app */;
@@ -433,7 +434,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FEE89701B1DCB5E0064AEA5 /* GrabDrop_10_8 */,
+				1FEE89701B1DCB5E0064AEA5 /* GrabDrop */,
 			);
 		};
 /* End PBXProject section */
@@ -446,6 +447,7 @@
 				1FEE89721B1DCB5E0064AEA5 /* interactor.cfg in Resources */,
 				A1055A8F1B26F9070053CE48 /* Images.xcassets in Resources */,
 				A1055AAF1B27302C0053CE48 /* help.png in Resources */,
+				A1C2F8621B413B2C001CFA33 /* GrabDrop-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +489,7 @@
 					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
-				INFOPLIST_FILE = "GrabDrop_10_8-Info.plist";
+				INFOPLIST_FILE = "GrabDrop-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -547,7 +549,7 @@
 					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
-				INFOPLIST_FILE = "GrabDrop_10_8-Info.plist";
+				INFOPLIST_FILE = "GrabDrop-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -631,7 +633,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FEE89891B1DCB5E0064AEA5 /* Build configuration list for PBXNativeTarget "GrabDrop_10_8" */ = {
+		1FEE89891B1DCB5E0064AEA5 /* Build configuration list for PBXNativeTarget "GrabDrop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FEE898A1B1DCB5E0064AEA5 /* Debug */,

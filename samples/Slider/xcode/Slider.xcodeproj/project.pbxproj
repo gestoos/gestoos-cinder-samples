@@ -169,7 +169,7 @@
 		1F2DBB241B32F9DD0097CF9D /* G_Static_Audio.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Static_Audio.dat; path = ../../../../data/G_Static_Audio.dat; sourceTree = "<group>"; };
 		1F2DBB251B32F9DD0097CF9D /* Hand_huge.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = Hand_huge.dat; path = ../../../../data/Hand_huge.dat; sourceTree = "<group>"; };
 		1FEE88C61B1DC83E0064AEA5 /* Slider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slider.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FEE88C71B1DC83E0064AEA5 /* Slider_10_8-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Slider_10_8-Info.plist"; path = "/Users/marcel/Development/bitbucket_fezoo/fezoolib/applications/cindersamples/samples/Slider/xcode/Slider_10_8-Info.plist"; sourceTree = "<absolute>"; };
+		1FEE88C71B1DC83E0064AEA5 /* Slider-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Slider-Info.plist"; path = "/Users/marcel/Development/bitbucket_fezoo/fezoolib/applications/cindersamples/samples/Slider/xcode/Slider-Info.plist"; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Slider_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider_Prefix.pch; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1FEE88C71B1DC83E0064AEA5 /* Slider_10_8-Info.plist */,
+				1FEE88C71B1DC83E0064AEA5 /* Slider-Info.plist */,
 			);
 			name = Earthquake;
 			sourceTree = "<group>";
