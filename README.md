@@ -14,7 +14,7 @@ A set of examples that show how to use Gestoos SDK interactive power with Cinder
 
 Make sure you cloned this repository in the root folder of your Gestoos SDK copy.
 
-For MacOS, open the XCode project included in the sample, then just clicl play.
+For MacOS, open the XCode project included in the sample, then just click and play.
 For Windows, open the Visual Studio 2013 project included in the sample, then just run.
 
 ## Creating your project
@@ -25,4 +25,5 @@ Take a look at the Cinderactor class, which is a wrapper of the gestoos::nui::In
 
 ## Advanced interaction
 
-For further information on Gestoos SDK API, please refer to www.gestoos.com or contact us at info@gestoos.com
+For further information on Gestoos SDK API, please refer to www.gestoos.com or contact us at info@gestoos.com.
+The SDK documentation also contains information about the classes being used in the cinder samples.
