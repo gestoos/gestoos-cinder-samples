@@ -132,7 +132,7 @@ void exampleApp::processThread()
 #ifdef _WIN32
 	cinderactor.init(".\\resources\\interactor.cfg");
 #else
-    cinderactor.init( getResourcePath("interactor.cfg").string() );
+    cinderactor.init( getResourcePath("interactor_osx.cfg").string() );
 #endif
     cinderactor.set_draw_window(false);
     

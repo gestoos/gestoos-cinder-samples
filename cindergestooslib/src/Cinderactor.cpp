@@ -47,7 +47,7 @@ Cinderactor::StrokeType Cinderactor::detect_hand_stroke( int gest, float timeout
         int hand_gesture = get_hands().first.get_gesture();
         Vec2f hand_vel = Vec2f( get_hands().first.get_vel().x , get_hands().first.get_vel().y );
         
-        if( (hand_gesture == gest || hand_gesture == -1 ) && block_timer.getSeconds() >= timeout )
+        if( (hand_gesture == gest || gest == -1 ) && block_timer.getSeconds() >= timeout )
         {
             if( hand_vel.y < -6.0 && std::fabs( hand_vel.x ) < 4.0  )
             {
