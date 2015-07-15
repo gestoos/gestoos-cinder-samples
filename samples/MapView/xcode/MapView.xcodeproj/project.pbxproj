@@ -64,7 +64,7 @@
 		A1055A9C1B26FEE10053CE48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1055A971B26FEBF0053CE48 /* Images.xcassets */; };
 		A1055A9D1B2703710053CE48 /* ohio-bike-map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1055A951B26FE840053CE48 /* ohio-bike-map.jpg */; };
 		A1055AB91B273DC40053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB71B273DC40053CE48 /* help.png */; };
-		A1C2F8601B413715001CFA33 /* mapView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C2F85F1B413715001CFA33 /* mapView-Info.plist */; };
+		A1C2F8601B413715001CFA33 /* MapView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C2F85F1B413715001CFA33 /* MapView-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -174,7 +174,7 @@
 		1F2DBC151B3304020097CF9D /* G_Hand_Close_light.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Hand_Close_light.dat; path = ../../../../data/G_Hand_Close_light.dat; sourceTree = "<group>"; };
 		1F2DBC161B3304020097CF9D /* G_Hand_L.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = G_Hand_L.dat; path = ../../../../data/G_Hand_L.dat; sourceTree = "<group>"; };
 		1F2DBC171B3304020097CF9D /* Hand_huge.dat */ = {isa = PBXFileReference; lastKnownFileType = text; name = Hand_huge.dat; path = ../../../../data/Hand_huge.dat; sourceTree = "<group>"; };
-		1FA851F41B1DAB6400687554 /* mapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA851F41B1DAB6400687554 /* MapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FDB73741B175AFD0030589F /* mapTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mapTile.cpp; path = ../src/mapTile.cpp; sourceTree = "<group>"; };
 		1FDB73751B175AFD0030589F /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = ../src/Slider.cpp; sourceTree = "<group>"; };
 		1FDB73781B175B150030589F /* mapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mapTile.h; path = ../include/mapTile.h; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		1FDB737A1B175B150030589F /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* mapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapView_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* MapView.temp_caseinsensitive_rename_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.temp_caseinsensitive_rename_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
@@ -191,7 +191,7 @@
 		A1055A971B26FEBF0053CE48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mapView/Images.xcassets; sourceTree = "<group>"; };
 		A1055AB71B273DC40053CE48 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = ../resources/help.png; sourceTree = "<group>"; };
 		A1055ABA1B273E290053CE48 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
-		A1C2F85F1B413715001CFA33 /* mapView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mapView-Info.plist"; sourceTree = "<group>"; };
+		A1C2F85F1B413715001CFA33 /* MapView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MapView-Info.plist"; sourceTree = "<group>"; };
 		A1E08DC41B147AD2003ED9FF /* Cinderactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinderactor.h; sourceTree = "<group>"; };
 		A1E08DC51B147AD2003ED9FF /* MovingRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingRect.h; sourceTree = "<group>"; };
 		A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FA851F41B1DAB6400687554 /* mapView.app */,
+				1FA851F41B1DAB6400687554 /* MapView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
-				A1C2F85F1B413715001CFA33 /* mapView-Info.plist */,
+				A1C2F85F1B413715001CFA33 /* MapView-Info.plist */,
 				1F2DBC141B3303CD0097CF9D /* libs */,
 				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
 				E104C53C0FFAB250008D4255 /* Headers */,
@@ -336,7 +336,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* mapView_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* MapView.temp_caseinsensitive_rename_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -405,9 +405,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FA851A31B1DAB6400687554 /* mapView */ = {
+		1FA851A31B1DAB6400687554 /* MapView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA851F11B1DAB6400687554 /* Build configuration list for PBXNativeTarget "mapView" */;
+			buildConfigurationList = 1FA851F11B1DAB6400687554 /* Build configuration list for PBXNativeTarget "MapView" */;
 			buildPhases = (
 				1FA851A41B1DAB6400687554 /* Resources */,
 				1FA851A91B1DAB6400687554 /* Sources */,
@@ -419,10 +419,10 @@
 			);
 			dependencies = (
 			);
-			name = mapView;
+			name = MapView;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Earthquake;
-			productReference = 1FA851F41B1DAB6400687554 /* mapView.app */;
+			productReference = 1FA851F41B1DAB6400687554 /* MapView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -433,7 +433,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "mapView" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MapView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -447,7 +447,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FA851A31B1DAB6400687554 /* mapView */,
+				1FA851A31B1DAB6400687554 /* MapView */,
 			);
 		};
 /* End PBXProject section */
@@ -460,7 +460,7 @@
 				A1055AB91B273DC40053CE48 /* help.png in Resources */,
 				A1055A9C1B26FEE10053CE48 /* Images.xcassets in Resources */,
 				A1055A9D1B2703710053CE48 /* ohio-bike-map.jpg in Resources */,
-				A1C2F8601B413715001CFA33 /* mapView-Info.plist in Resources */,
+				A1C2F8601B413715001CFA33 /* MapView-Info.plist in Resources */,
 				1FA851A81B1DAB6400687554 /* interactor.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,13 +489,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				COPY_PHASE_STRIP = NO;
-				FEZOOLIB_PATH = ../../../../lib/release/;
-				FEZOOLIB_PATH_DEV = ../../../..;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = mapView_Prefix.pch;
+				GCC_PREFIX_HEADER = MapView_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GESTOOS_SDK_LIB_PATH_DEV = "../../../../gestoosdk-osx-dependencies/osx_10_8";
 				GESTOOS_SDK_PATH = ../../../..;
@@ -505,7 +503,7 @@
 					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/mapView-Info.plist";
+				INFOPLIST_FILE = "MapView-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -536,7 +534,7 @@
 					"-lboost_serialization-mt",
 					"-lcurl.4",
 				);
-				PRODUCT_NAME = mapView;
+				PRODUCT_NAME = MapView;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -550,13 +548,11 @@
 				CINDER_PATH = ../../../lib/macos/cinder_0.8.6_mac;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FEZOOLIB_PATH = ../../../../lib/release/;
-				FEZOOLIB_PATH_DEV = ../../../..;
 				GCC_FAST_MATH = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = mapView_Prefix.pch;
+				GCC_PREFIX_HEADER = MapView_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GESTOOS_SDK_LIB_PATH_DEV = "../../../../gestoosdk-osx-dependencies/osx_10_8";
 				GESTOOS_SDK_PATH = ../../../..;
@@ -566,7 +562,7 @@
 					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/mapView-Info.plist";
+				INFOPLIST_FILE = "MapView-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -597,7 +593,7 @@
 					"-lboost_serialization-mt",
 					"-lcurl.4",
 				);
-				PRODUCT_NAME = mapView;
+				PRODUCT_NAME = MapView;
 				STRIP_INSTALLED_PRODUCT = YES;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
 				WRAPPER_EXTENSION = app;
@@ -651,7 +647,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FA851F11B1DAB6400687554 /* Build configuration list for PBXNativeTarget "mapView" */ = {
+		1FA851F11B1DAB6400687554 /* Build configuration list for PBXNativeTarget "MapView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FA851F21B1DAB6400687554 /* Debug */,
@@ -660,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "mapView" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MapView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
