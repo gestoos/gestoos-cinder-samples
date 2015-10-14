@@ -9,7 +9,7 @@ A set of examples that show how to use Gestoos SDK interactive power with Cinder
 
         cd <your gestoos path>
         git clone https://github.com/gestoos/gestoos-cinder-samples.git 
-3. (Windows only) Download Cinder library and copy the content of the <CINDER_DIR>/lib folder into <GESTOOS_DIR>/gestoos-cinder-samples/lib/win64/cinder_0.8.6_win/lib
+3. (Windows only) Download [Cinder libraries](https://libcinder.org/static/releases/cinder_0.8.6_vc2013.zip) and copy the content of the CINDER_DIR/lib folder into GESTOOS_DIR/gestoos-cinder-samples/lib/win64/cinder_0.8.6_win/lib
 
 ## How to run the samples
 
