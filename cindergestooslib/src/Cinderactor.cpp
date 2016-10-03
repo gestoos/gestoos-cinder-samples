@@ -36,7 +36,9 @@ void Cinderactor::init(const std::string & ini_file )
 #endif
     std::cout << ">>>>>>>>>>>> BUNDLE : bundle_path " << bundle_path << std::endl;
     gestoos::nui::Interactor::set_resources_path(bundle_path);
-    gestoos::nui::Interactor::init( ini_file );
+    gestoos::nui::Interactor::set_video_mode(gestoos::CaptureRGBD::QVGA);
+    gestoos::nui::Interactor::init( ini_file , bundle_path);
+    
     init_ok = true;
 }
 
