@@ -7,41 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2DBBF11B3303B10097CF9D /* libboost_date_time-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBCE1B3303B10097CF9D /* libboost_date_time-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF21B3303B10097CF9D /* libboost_filesystem-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBCF1B3303B10097CF9D /* libboost_filesystem-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF31B3303B10097CF9D /* libboost_program_options-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD01B3303B10097CF9D /* libboost_program_options-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF41B3303B10097CF9D /* libboost_serialization-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD11B3303B10097CF9D /* libboost_serialization-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF51B3303B10097CF9D /* libboost_system-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD21B3303B10097CF9D /* libboost_system-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF61B3303B10097CF9D /* libboost_thread-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD31B3303B10097CF9D /* libboost_thread-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF71B3303B10097CF9D /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD41B3303B10097CF9D /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF81B3303B10097CF9D /* libcurl.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD51B3303B10097CF9D /* libcurl.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBF91B3303B10097CF9D /* libiconv.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD61B3303B10097CF9D /* libiconv.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBFA1B3303B10097CF9D /* libidn.11.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD71B3303B10097CF9D /* libidn.11.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBFB1B3303B10097CF9D /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD81B3303B10097CF9D /* libintl.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBFC1B3303B10097CF9D /* libjpeg.9.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBD91B3303B10097CF9D /* libjpeg.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBFD1B3303B10097CF9D /* liblzma.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBDA1B3303B10097CF9D /* liblzma.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBFE1B3303B10097CF9D /* libOniFile.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBDB1B3303B10097CF9D /* libOniFile.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBBFF1B3303B10097CF9D /* libopencv_calib3d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBDC1B3303B10097CF9D /* libopencv_calib3d.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC001B3303B10097CF9D /* libopencv_core.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBDD1B3303B10097CF9D /* libopencv_core.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC011B3303B10097CF9D /* libopencv_features2d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBDE1B3303B10097CF9D /* libopencv_features2d.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC021B3303B10097CF9D /* libopencv_flann.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBDF1B3303B10097CF9D /* libopencv_flann.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC031B3303B10097CF9D /* libopencv_highgui.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE01B3303B10097CF9D /* libopencv_highgui.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC041B3303B10097CF9D /* libopencv_imgcodecs.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE11B3303B10097CF9D /* libopencv_imgcodecs.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC051B3303B10097CF9D /* libopencv_imgproc.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE21B3303B10097CF9D /* libopencv_imgproc.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC061B3303B10097CF9D /* libopencv_ml.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE31B3303B10097CF9D /* libopencv_ml.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC071B3303B10097CF9D /* libopencv_objdetect.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE41B3303B10097CF9D /* libopencv_objdetect.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC081B3303B10097CF9D /* libopencv_video.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE51B3303B10097CF9D /* libopencv_video.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC091B3303B10097CF9D /* libopencv_videoio.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE61B3303B10097CF9D /* libopencv_videoio.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC0A1B3303B10097CF9D /* libOpenNI2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE71B3303B10097CF9D /* libOpenNI2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC0B1B3303B10097CF9D /* libpng15.15.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE81B3303B10097CF9D /* libpng15.15.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC0C1B3303B10097CF9D /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBE91B3303B10097CF9D /* libPS1080.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC0D1B3303B10097CF9D /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBEA1B3303B10097CF9D /* libPSLink.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC0E1B3303B10097CF9D /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBEB1B3303B10097CF9D /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC0F1B3303B10097CF9D /* libtiff.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBEC1B3303B10097CF9D /* libtiff.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC101B3303B10097CF9D /* libusb-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBED1B3303B10097CF9D /* libusb-1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC111B3303B10097CF9D /* libwebp.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBEE1B3303B10097CF9D /* libwebp.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC121B3303B20097CF9D /* libz.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBEF1B3303B10097CF9D /* libz.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F2DBC131B3303B20097CF9D /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBBF01B3303B10097CF9D /* OpenNI.ini */; };
 		1F2DBC181B3304020097CF9D /* G_Hand_Close_light.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBC151B3304020097CF9D /* G_Hand_Close_light.dat */; };
 		1F2DBC191B3304020097CF9D /* G_Hand_L.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBC161B3304020097CF9D /* G_Hand_L.dat */; };
 		1F2DBC1A1B3304020097CF9D /* Hand_huge.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F2DBC171B3304020097CF9D /* Hand_huge.dat */; };
@@ -65,6 +30,43 @@
 		A1055A9D1B2703710053CE48 /* ohio-bike-map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1055A951B26FE840053CE48 /* ohio-bike-map.jpg */; };
 		A1055AB91B273DC40053CE48 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = A1055AB71B273DC40053CE48 /* help.png */; };
 		A1C2F8601B413715001CFA33 /* MapView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C2F85F1B413715001CFA33 /* MapView-Info.plist */; };
+		A6295E291DA2B3DD00C460F1 /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E041DA2B3DD00C460F1 /* OpenNI.ini */; };
+		A6295E2A1DA2B3DD00C460F1 /* libwebp.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E051DA2B3DD00C460F1 /* libwebp.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E2B1DA2B3DD00C460F1 /* libusb-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E061DA2B3DD00C460F1 /* libusb-1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E2C1DA2B3DD00C460F1 /* libturbojpeg.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E071DA2B3DD00C460F1 /* libturbojpeg.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E2D1DA2B3DD00C460F1 /* libtiff.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E081DA2B3DD00C460F1 /* libtiff.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E2E1DA2B3DD00C460F1 /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E091DA2B3DD00C460F1 /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E2F1DA2B3DD00C460F1 /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E0A1DA2B3DD00C460F1 /* libPSLink.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E301DA2B3DD00C460F1 /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E0B1DA2B3DD00C460F1 /* libPS1080.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E311DA2B3DD00C460F1 /* libpng16.16.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E0C1DA2B3DD00C460F1 /* libpng16.16.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E321DA2B3DE00C460F1 /* liborbbec.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E0D1DA2B3DD00C460F1 /* liborbbec.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E331DA2B3DE00C460F1 /* libOpenNI2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E0E1DA2B3DD00C460F1 /* libOpenNI2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E341DA2B3DE00C460F1 /* libopencv_videoio.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E0F1DA2B3DD00C460F1 /* libopencv_videoio.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E351DA2B3DE00C460F1 /* libopencv_video.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E101DA2B3DD00C460F1 /* libopencv_video.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E361DA2B3DE00C460F1 /* libopencv_objdetect.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E111DA2B3DD00C460F1 /* libopencv_objdetect.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E371DA2B3DE00C460F1 /* libopencv_ml.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E121DA2B3DD00C460F1 /* libopencv_ml.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E381DA2B3DE00C460F1 /* libopencv_imgproc.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E131DA2B3DD00C460F1 /* libopencv_imgproc.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E391DA2B3DE00C460F1 /* libopencv_imgcodecs.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E141DA2B3DD00C460F1 /* libopencv_imgcodecs.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E3A1DA2B3DE00C460F1 /* libopencv_highgui.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E151DA2B3DD00C460F1 /* libopencv_highgui.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E3B1DA2B3DE00C460F1 /* libopencv_flann.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E161DA2B3DD00C460F1 /* libopencv_flann.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E3C1DA2B3DE00C460F1 /* libopencv_features2d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E171DA2B3DD00C460F1 /* libopencv_features2d.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E3D1DA2B3DE00C460F1 /* libopencv_core.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E181DA2B3DD00C460F1 /* libopencv_core.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E3E1DA2B3DE00C460F1 /* libopencv_calib3d.3.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E191DA2B3DD00C460F1 /* libopencv_calib3d.3.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E3F1DA2B3DE00C460F1 /* libjpeg.9.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E1A1DA2B3DD00C460F1 /* libjpeg.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E401DA2B3DE00C460F1 /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E1B1DA2B3DD00C460F1 /* libintl.8.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E411DA2B3DE00C460F1 /* libidn.11.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E1C1DA2B3DD00C460F1 /* libidn.11.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E421DA2B3DE00C460F1 /* libiconv.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E1D1DA2B3DD00C460F1 /* libiconv.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E431DA2B3DE00C460F1 /* libglfw3.3.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E1E1DA2B3DD00C460F1 /* libglfw3.3.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E441DA2B3DE00C460F1 /* libfreenect2.0.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E1F1DA2B3DD00C460F1 /* libfreenect2.0.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E451DA2B3DE00C460F1 /* libfreenect2.0.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E201DA2B3DD00C460F1 /* libfreenect2.0.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E461DA2B3DE00C460F1 /* libcurl.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E211DA2B3DD00C460F1 /* libcurl.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E471DA2B3DE00C460F1 /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E221DA2B3DD00C460F1 /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E481DA2B3DE00C460F1 /* libboost_thread-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E231DA2B3DD00C460F1 /* libboost_thread-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E491DA2B3DE00C460F1 /* libboost_system-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E241DA2B3DD00C460F1 /* libboost_system-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E4A1DA2B3DE00C460F1 /* libboost_serialization-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E251DA2B3DD00C460F1 /* libboost_serialization-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E4B1DA2B3DE00C460F1 /* libboost_program_options-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E261DA2B3DD00C460F1 /* libboost_program_options-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E4C1DA2B3DE00C460F1 /* libboost_filesystem-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E271DA2B3DD00C460F1 /* libboost_filesystem-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A6295E4D1DA2B3DE00C460F1 /* libboost_date_time-mt.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6295E281DA2B3DD00C460F1 /* libboost_date_time-mt.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,41 +88,43 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				1F2DBBF11B3303B10097CF9D /* libboost_date_time-mt.dylib in CopyFiles */,
-				1F2DBBF21B3303B10097CF9D /* libboost_filesystem-mt.dylib in CopyFiles */,
-				1F2DBBF31B3303B10097CF9D /* libboost_program_options-mt.dylib in CopyFiles */,
-				1F2DBBF41B3303B10097CF9D /* libboost_serialization-mt.dylib in CopyFiles */,
-				1F2DBBF51B3303B10097CF9D /* libboost_system-mt.dylib in CopyFiles */,
-				1F2DBBF61B3303B10097CF9D /* libboost_thread-mt.dylib in CopyFiles */,
-				1F2DBBF71B3303B10097CF9D /* libcrypto.1.0.0.dylib in CopyFiles */,
-				1F2DBBF81B3303B10097CF9D /* libcurl.4.dylib in CopyFiles */,
-				1F2DBBF91B3303B10097CF9D /* libiconv.2.dylib in CopyFiles */,
-				1F2DBBFA1B3303B10097CF9D /* libidn.11.dylib in CopyFiles */,
-				1F2DBBFB1B3303B10097CF9D /* libintl.8.dylib in CopyFiles */,
-				1F2DBBFC1B3303B10097CF9D /* libjpeg.9.dylib in CopyFiles */,
-				1F2DBBFD1B3303B10097CF9D /* liblzma.5.dylib in CopyFiles */,
-				1F2DBBFE1B3303B10097CF9D /* libOniFile.dylib in CopyFiles */,
-				1F2DBBFF1B3303B10097CF9D /* libopencv_calib3d.3.0.dylib in CopyFiles */,
-				1F2DBC001B3303B10097CF9D /* libopencv_core.3.0.dylib in CopyFiles */,
-				1F2DBC011B3303B10097CF9D /* libopencv_features2d.3.0.dylib in CopyFiles */,
-				1F2DBC021B3303B10097CF9D /* libopencv_flann.3.0.dylib in CopyFiles */,
-				1F2DBC031B3303B10097CF9D /* libopencv_highgui.3.0.dylib in CopyFiles */,
-				1F2DBC041B3303B10097CF9D /* libopencv_imgcodecs.3.0.dylib in CopyFiles */,
-				1F2DBC051B3303B10097CF9D /* libopencv_imgproc.3.0.dylib in CopyFiles */,
-				1F2DBC061B3303B10097CF9D /* libopencv_ml.3.0.dylib in CopyFiles */,
-				1F2DBC071B3303B10097CF9D /* libopencv_objdetect.3.0.dylib in CopyFiles */,
-				1F2DBC081B3303B10097CF9D /* libopencv_video.3.0.dylib in CopyFiles */,
-				1F2DBC091B3303B10097CF9D /* libopencv_videoio.3.0.dylib in CopyFiles */,
-				1F2DBC0A1B3303B10097CF9D /* libOpenNI2.dylib in CopyFiles */,
-				1F2DBC0B1B3303B10097CF9D /* libpng15.15.dylib in CopyFiles */,
-				1F2DBC0C1B3303B10097CF9D /* libPS1080.dylib in CopyFiles */,
-				1F2DBC0D1B3303B10097CF9D /* libPSLink.dylib in CopyFiles */,
-				1F2DBC0E1B3303B10097CF9D /* libssl.1.0.0.dylib in CopyFiles */,
-				1F2DBC0F1B3303B10097CF9D /* libtiff.5.dylib in CopyFiles */,
-				1F2DBC101B3303B10097CF9D /* libusb-1.0.0.dylib in CopyFiles */,
-				1F2DBC111B3303B10097CF9D /* libwebp.4.dylib in CopyFiles */,
-				1F2DBC121B3303B20097CF9D /* libz.1.dylib in CopyFiles */,
-				1F2DBC131B3303B20097CF9D /* OpenNI.ini in CopyFiles */,
+				A6295E291DA2B3DD00C460F1 /* OpenNI.ini in CopyFiles */,
+				A6295E2A1DA2B3DD00C460F1 /* libwebp.4.dylib in CopyFiles */,
+				A6295E2B1DA2B3DD00C460F1 /* libusb-1.0.0.dylib in CopyFiles */,
+				A6295E2C1DA2B3DD00C460F1 /* libturbojpeg.0.dylib in CopyFiles */,
+				A6295E2D1DA2B3DD00C460F1 /* libtiff.5.dylib in CopyFiles */,
+				A6295E2E1DA2B3DD00C460F1 /* libssl.1.0.0.dylib in CopyFiles */,
+				A6295E2F1DA2B3DD00C460F1 /* libPSLink.dylib in CopyFiles */,
+				A6295E301DA2B3DD00C460F1 /* libPS1080.dylib in CopyFiles */,
+				A6295E311DA2B3DD00C460F1 /* libpng16.16.dylib in CopyFiles */,
+				A6295E321DA2B3DE00C460F1 /* liborbbec.dylib in CopyFiles */,
+				A6295E331DA2B3DE00C460F1 /* libOpenNI2.dylib in CopyFiles */,
+				A6295E341DA2B3DE00C460F1 /* libopencv_videoio.3.0.dylib in CopyFiles */,
+				A6295E351DA2B3DE00C460F1 /* libopencv_video.3.0.dylib in CopyFiles */,
+				A6295E361DA2B3DE00C460F1 /* libopencv_objdetect.3.0.dylib in CopyFiles */,
+				A6295E371DA2B3DE00C460F1 /* libopencv_ml.3.0.dylib in CopyFiles */,
+				A6295E381DA2B3DE00C460F1 /* libopencv_imgproc.3.0.dylib in CopyFiles */,
+				A6295E391DA2B3DE00C460F1 /* libopencv_imgcodecs.3.0.dylib in CopyFiles */,
+				A6295E3A1DA2B3DE00C460F1 /* libopencv_highgui.3.0.dylib in CopyFiles */,
+				A6295E3B1DA2B3DE00C460F1 /* libopencv_flann.3.0.dylib in CopyFiles */,
+				A6295E3C1DA2B3DE00C460F1 /* libopencv_features2d.3.0.dylib in CopyFiles */,
+				A6295E3D1DA2B3DE00C460F1 /* libopencv_core.3.0.dylib in CopyFiles */,
+				A6295E3E1DA2B3DE00C460F1 /* libopencv_calib3d.3.0.dylib in CopyFiles */,
+				A6295E3F1DA2B3DE00C460F1 /* libjpeg.9.dylib in CopyFiles */,
+				A6295E401DA2B3DE00C460F1 /* libintl.8.dylib in CopyFiles */,
+				A6295E411DA2B3DE00C460F1 /* libidn.11.dylib in CopyFiles */,
+				A6295E421DA2B3DE00C460F1 /* libiconv.2.dylib in CopyFiles */,
+				A6295E431DA2B3DE00C460F1 /* libglfw3.3.1.dylib in CopyFiles */,
+				A6295E441DA2B3DE00C460F1 /* libfreenect2.0.1.dylib in CopyFiles */,
+				A6295E451DA2B3DE00C460F1 /* libfreenect2.0.1.0.dylib in CopyFiles */,
+				A6295E461DA2B3DE00C460F1 /* libcurl.4.dylib in CopyFiles */,
+				A6295E471DA2B3DE00C460F1 /* libcrypto.1.0.0.dylib in CopyFiles */,
+				A6295E481DA2B3DE00C460F1 /* libboost_thread-mt.dylib in CopyFiles */,
+				A6295E491DA2B3DE00C460F1 /* libboost_system-mt.dylib in CopyFiles */,
+				A6295E4A1DA2B3DE00C460F1 /* libboost_serialization-mt.dylib in CopyFiles */,
+				A6295E4B1DA2B3DE00C460F1 /* libboost_program_options-mt.dylib in CopyFiles */,
+				A6295E4C1DA2B3DE00C460F1 /* libboost_filesystem-mt.dylib in CopyFiles */,
+				A6295E4D1DA2B3DE00C460F1 /* libboost_date_time-mt.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +201,43 @@
 		A1E08DC71B147AD2003ED9FF /* Cinderactor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cinderactor.cpp; sourceTree = "<group>"; };
 		A1E08DC81B147AD2003ED9FF /* MovingRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingRect.cpp; sourceTree = "<group>"; };
 		A1E08DCB1B147B19003ED9FF /* interactor.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = interactor.cfg; path = ../resources/interactor.cfg; sourceTree = "<group>"; };
+		A6295E041DA2B3DD00C460F1 /* OpenNI.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = OpenNI.ini; path = ../../../../third_party/lib/OpenNI.ini; sourceTree = "<group>"; };
+		A6295E051DA2B3DD00C460F1 /* libwebp.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwebp.4.dylib; path = ../../../../third_party/lib/libwebp.4.dylib; sourceTree = "<group>"; };
+		A6295E061DA2B3DD00C460F1 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libusb-1.0.0.dylib"; path = "../../../../third_party/lib/libusb-1.0.0.dylib"; sourceTree = "<group>"; };
+		A6295E071DA2B3DD00C460F1 /* libturbojpeg.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libturbojpeg.0.dylib; path = ../../../../third_party/lib/libturbojpeg.0.dylib; sourceTree = "<group>"; };
+		A6295E081DA2B3DD00C460F1 /* libtiff.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtiff.5.dylib; path = ../../../../third_party/lib/libtiff.5.dylib; sourceTree = "<group>"; };
+		A6295E091DA2B3DD00C460F1 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = ../../../../third_party/lib/libssl.1.0.0.dylib; sourceTree = "<group>"; };
+		A6295E0A1DA2B3DD00C460F1 /* libPSLink.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPSLink.dylib; path = ../../../../third_party/lib/libPSLink.dylib; sourceTree = "<group>"; };
+		A6295E0B1DA2B3DD00C460F1 /* libPS1080.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPS1080.dylib; path = ../../../../third_party/lib/libPS1080.dylib; sourceTree = "<group>"; };
+		A6295E0C1DA2B3DD00C460F1 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = ../../../../third_party/lib/libpng16.16.dylib; sourceTree = "<group>"; };
+		A6295E0D1DA2B3DD00C460F1 /* liborbbec.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liborbbec.dylib; path = ../../../../third_party/lib/liborbbec.dylib; sourceTree = "<group>"; };
+		A6295E0E1DA2B3DD00C460F1 /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI2.dylib; path = ../../../../third_party/lib/libOpenNI2.dylib; sourceTree = "<group>"; };
+		A6295E0F1DA2B3DD00C460F1 /* libopencv_videoio.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.0.dylib; path = ../../../../third_party/lib/libopencv_videoio.3.0.dylib; sourceTree = "<group>"; };
+		A6295E101DA2B3DD00C460F1 /* libopencv_video.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.3.0.dylib; path = ../../../../third_party/lib/libopencv_video.3.0.dylib; sourceTree = "<group>"; };
+		A6295E111DA2B3DD00C460F1 /* libopencv_objdetect.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.3.0.dylib; path = ../../../../third_party/lib/libopencv_objdetect.3.0.dylib; sourceTree = "<group>"; };
+		A6295E121DA2B3DD00C460F1 /* libopencv_ml.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_ml.3.0.dylib; path = ../../../../third_party/lib/libopencv_ml.3.0.dylib; sourceTree = "<group>"; };
+		A6295E131DA2B3DD00C460F1 /* libopencv_imgproc.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.3.0.dylib; path = ../../../../third_party/lib/libopencv_imgproc.3.0.dylib; sourceTree = "<group>"; };
+		A6295E141DA2B3DD00C460F1 /* libopencv_imgcodecs.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.0.dylib; path = ../../../../third_party/lib/libopencv_imgcodecs.3.0.dylib; sourceTree = "<group>"; };
+		A6295E151DA2B3DD00C460F1 /* libopencv_highgui.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.3.0.dylib; path = ../../../../third_party/lib/libopencv_highgui.3.0.dylib; sourceTree = "<group>"; };
+		A6295E161DA2B3DD00C460F1 /* libopencv_flann.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.3.0.dylib; path = ../../../../third_party/lib/libopencv_flann.3.0.dylib; sourceTree = "<group>"; };
+		A6295E171DA2B3DD00C460F1 /* libopencv_features2d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.3.0.dylib; path = ../../../../third_party/lib/libopencv_features2d.3.0.dylib; sourceTree = "<group>"; };
+		A6295E181DA2B3DD00C460F1 /* libopencv_core.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.0.dylib; path = ../../../../third_party/lib/libopencv_core.3.0.dylib; sourceTree = "<group>"; };
+		A6295E191DA2B3DD00C460F1 /* libopencv_calib3d.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.0.dylib; path = ../../../../third_party/lib/libopencv_calib3d.3.0.dylib; sourceTree = "<group>"; };
+		A6295E1A1DA2B3DD00C460F1 /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libjpeg.9.dylib; path = ../../../../third_party/lib/libjpeg.9.dylib; sourceTree = "<group>"; };
+		A6295E1B1DA2B3DD00C460F1 /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libintl.8.dylib; path = ../../../../third_party/lib/libintl.8.dylib; sourceTree = "<group>"; };
+		A6295E1C1DA2B3DD00C460F1 /* libidn.11.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidn.11.dylib; path = ../../../../third_party/lib/libidn.11.dylib; sourceTree = "<group>"; };
+		A6295E1D1DA2B3DD00C460F1 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../../../../third_party/lib/libiconv.2.dylib; sourceTree = "<group>"; };
+		A6295E1E1DA2B3DD00C460F1 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = ../../../../third_party/lib/libglfw3.3.1.dylib; sourceTree = "<group>"; };
+		A6295E1F1DA2B3DD00C460F1 /* libfreenect2.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect2.0.1.dylib; path = ../../../../third_party/lib/libfreenect2.0.1.dylib; sourceTree = "<group>"; };
+		A6295E201DA2B3DD00C460F1 /* libfreenect2.0.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect2.0.1.0.dylib; path = ../../../../third_party/lib/libfreenect2.0.1.0.dylib; sourceTree = "<group>"; };
+		A6295E211DA2B3DD00C460F1 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = ../../../../third_party/lib/libcurl.4.dylib; sourceTree = "<group>"; };
+		A6295E221DA2B3DD00C460F1 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = ../../../../third_party/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
+		A6295E231DA2B3DD00C460F1 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../third_party/lib/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
+		A6295E241DA2B3DD00C460F1 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../third_party/lib/libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		A6295E251DA2B3DD00C460F1 /* libboost_serialization-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_serialization-mt.dylib"; path = "../../../../third_party/lib/libboost_serialization-mt.dylib"; sourceTree = "<group>"; };
+		A6295E261DA2B3DD00C460F1 /* libboost_program_options-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_program_options-mt.dylib"; path = "../../../../third_party/lib/libboost_program_options-mt.dylib"; sourceTree = "<group>"; };
+		A6295E271DA2B3DD00C460F1 /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_filesystem-mt.dylib"; path = "../../../../third_party/lib/libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
+		A6295E281DA2B3DD00C460F1 /* libboost_date_time-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_date_time-mt.dylib"; path = "../../../../third_party/lib/libboost_date_time-mt.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +361,43 @@
 		29B97314FDCFA39411CA2CEA /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				A6295E041DA2B3DD00C460F1 /* OpenNI.ini */,
+				A6295E051DA2B3DD00C460F1 /* libwebp.4.dylib */,
+				A6295E061DA2B3DD00C460F1 /* libusb-1.0.0.dylib */,
+				A6295E071DA2B3DD00C460F1 /* libturbojpeg.0.dylib */,
+				A6295E081DA2B3DD00C460F1 /* libtiff.5.dylib */,
+				A6295E091DA2B3DD00C460F1 /* libssl.1.0.0.dylib */,
+				A6295E0A1DA2B3DD00C460F1 /* libPSLink.dylib */,
+				A6295E0B1DA2B3DD00C460F1 /* libPS1080.dylib */,
+				A6295E0C1DA2B3DD00C460F1 /* libpng16.16.dylib */,
+				A6295E0D1DA2B3DD00C460F1 /* liborbbec.dylib */,
+				A6295E0E1DA2B3DD00C460F1 /* libOpenNI2.dylib */,
+				A6295E0F1DA2B3DD00C460F1 /* libopencv_videoio.3.0.dylib */,
+				A6295E101DA2B3DD00C460F1 /* libopencv_video.3.0.dylib */,
+				A6295E111DA2B3DD00C460F1 /* libopencv_objdetect.3.0.dylib */,
+				A6295E121DA2B3DD00C460F1 /* libopencv_ml.3.0.dylib */,
+				A6295E131DA2B3DD00C460F1 /* libopencv_imgproc.3.0.dylib */,
+				A6295E141DA2B3DD00C460F1 /* libopencv_imgcodecs.3.0.dylib */,
+				A6295E151DA2B3DD00C460F1 /* libopencv_highgui.3.0.dylib */,
+				A6295E161DA2B3DD00C460F1 /* libopencv_flann.3.0.dylib */,
+				A6295E171DA2B3DD00C460F1 /* libopencv_features2d.3.0.dylib */,
+				A6295E181DA2B3DD00C460F1 /* libopencv_core.3.0.dylib */,
+				A6295E191DA2B3DD00C460F1 /* libopencv_calib3d.3.0.dylib */,
+				A6295E1A1DA2B3DD00C460F1 /* libjpeg.9.dylib */,
+				A6295E1B1DA2B3DD00C460F1 /* libintl.8.dylib */,
+				A6295E1C1DA2B3DD00C460F1 /* libidn.11.dylib */,
+				A6295E1D1DA2B3DD00C460F1 /* libiconv.2.dylib */,
+				A6295E1E1DA2B3DD00C460F1 /* libglfw3.3.1.dylib */,
+				A6295E1F1DA2B3DD00C460F1 /* libfreenect2.0.1.dylib */,
+				A6295E201DA2B3DD00C460F1 /* libfreenect2.0.1.0.dylib */,
+				A6295E211DA2B3DD00C460F1 /* libcurl.4.dylib */,
+				A6295E221DA2B3DD00C460F1 /* libcrypto.1.0.0.dylib */,
+				A6295E231DA2B3DD00C460F1 /* libboost_thread-mt.dylib */,
+				A6295E241DA2B3DD00C460F1 /* libboost_system-mt.dylib */,
+				A6295E251DA2B3DD00C460F1 /* libboost_serialization-mt.dylib */,
+				A6295E261DA2B3DD00C460F1 /* libboost_program_options-mt.dylib */,
+				A6295E271DA2B3DD00C460F1 /* libboost_filesystem-mt.dylib */,
+				A6295E281DA2B3DD00C460F1 /* libboost_date_time-mt.dylib */,
 				A1C2F85F1B413715001CFA33 /* MapView-Info.plist */,
 				1F2DBC141B3303CD0097CF9D /* libs */,
 				A1E08DC21B147AD2003ED9FF /* cindergestooslib */,
@@ -500,7 +578,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
+					"\"$(GESTOOS_SDK_PATH)/third_party/include/OpenNI2/Include\"/**",
+					"\"$(GESTOOS_SDK_PATH)/third_party/include\"",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
 				INFOPLIST_FILE = "MapView-Info.plist";
@@ -510,6 +589,7 @@
 					"$(inherited)",
 					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(PROJECT_DIR)",
+					"\"$(GESTOOS_SDK_PATH)/third_party/lib\"",
 				);
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = (
@@ -533,6 +613,7 @@
 					"-lboost_thread-mt",
 					"-lboost_serialization-mt",
 					"-lcurl.4",
+					"-lfreenect2.0.1",
 				);
 				PRODUCT_NAME = MapView;
 				USER_HEADER_SEARCH_PATHS = "$(CINDER_PATH)/include ../include";
@@ -559,7 +640,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(CINDER_PATH)/boost",
 					/usr/local/include,
-					"\"$(GESTOOS_SDK_PATH)/include/OpenNI2/Include\"/**",
+					"\"$(GESTOOS_SDK_PATH)/third_party/include/OpenNI2/Include\"/**",
+					"\"$(GESTOOS_SDK_PATH)/third_party/include\"",
 					"\"$(GESTOOS_SDK_PATH)/include\"",
 				);
 				INFOPLIST_FILE = "MapView-Info.plist";
@@ -569,6 +651,7 @@
 					"$(inherited)",
 					"\"$(GESTOOS_SDK_PATH)/lib\"",
 					"$(PROJECT_DIR)",
+					"\"$(GESTOOS_SDK_PATH)/third_party/lib\"",
 				);
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = (
@@ -592,6 +675,7 @@
 					"-lboost_thread-mt",
 					"-lboost_serialization-mt",
 					"-lcurl.4",
+					"-lfreenect2.0.1",
 				);
 				PRODUCT_NAME = MapView;
 				STRIP_INSTALLED_PRODUCT = YES;
