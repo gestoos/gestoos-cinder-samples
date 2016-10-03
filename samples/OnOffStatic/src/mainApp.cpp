@@ -4,6 +4,7 @@
 #include "cinder/Rand.h"
 #include "cinder/Thread.h"
 #include <fezoolib/Core/Timestamp.hpp>
+#include <fezoolib/Core/CaptureRGBD.hpp>
 
 using namespace ci;
 using namespace ci::app;
@@ -48,6 +49,12 @@ public:
     void processThread();
     
     Cinderactor cinderactor;
+    
+    gestoos::CaptureRGBD capture;
+    bool camera_connected;
+    cv::Mat depth_copy;
+    
+    boost::mutex d_mutex;
     
     shared_ptr<std::thread>		mThread;
     bool can_process_thread;
@@ -127,6 +134,11 @@ void exampleApp::processThread()
 {
    	ci::ThreadSetup threadSetup; // instantiate this if you're talking to Cinder from a secondary thread
     
+    camera_connected = capture.init("", gestoos::CaptureRGBD::SensorMode::OPENNI, gestoos::CaptureRGBD::FPS30, gestoos::CaptureRGBD::FrameResolution::QVGA, true); //, true, false);
+    capture.set_depth_registration(false);
+    
+    cout << "Camera conected " << camera_connected << endl;
+    
     //Configure the cinderactor
 #ifdef _WIN32 // this flag is always defined in Windows 32/64
 	cinderactor.init(".\\resources\\interactor.cfg");
@@ -139,12 +151,29 @@ void exampleApp::processThread()
     while(can_process_thread)
     {
 		gestoos::Timestamp ts = gestoos::clock_ts();
-        cinderactor.process();
+        
+        capture.get_frame();
+        
+        //Copy frame
+        boost::mutex::scoped_lock lock(d_mutex);
+        {
+            depth_copy = capture.depth_frame().clone();
+        }
+        
+        //Update current app
+        if (!depth_copy.empty())
+        {
+                        
+           cinderactor.process(depth_copy);
+        }
+        
+        
+        
 		gestoos::Timestamp ts2 = gestoos::clock_ts();
 
 		gestoos::Timestamp diff_ts = ts2 - ts;
 
-		this->elapsed = diff_ts.seconds()*1000.0 + diff_ts.millis();
+        this->elapsed = diff_ts.seconds()*1000.0 + diff_ts.total_milliseconds();
     }
 }
 
@@ -153,7 +182,6 @@ void exampleApp::update()
     help->update();
 
 	detected_gesture = cinderactor.get_gesture();
-	
 	switch (detected_gesture.id) {
 	case GESTURE_TEE:
 		gesture_pos = 1;
